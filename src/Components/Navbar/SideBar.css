@@ -58,18 +58,18 @@
 }
 
 .side-cont .view-profile{
-    margin-top: 5px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
     background: #605E5E 0% 0% no-repeat padding-box;
     height: 7%;
     width: 100%;
-    font: normal normal normal 12px/25px Calibri;
+    font: normal normal normal 13px/25px Calibri;
     
 }
 
 .side-cont .common{
-    font: normal normal normal 12px/25px Calibri;
+    font: normal normal normal 13px/25px Calibri;
     margin-left: 32px;
     
 }
