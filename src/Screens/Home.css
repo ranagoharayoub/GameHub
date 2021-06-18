@@ -26,10 +26,8 @@
     justify-content: center;
     align-items: flex-end; 
     text-align: center;
-    /* font-size: 50px;
-    font-weight: bold; */
     font: normal normal bold 80px/100px Bahnschrift;
-    /* background-color: violet; */
+
 }
 
 .main-cont .play{
