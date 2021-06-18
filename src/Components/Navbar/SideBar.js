@@ -14,7 +14,7 @@ function SideBar({toggle, off}) {
                 <div>Name</div>
             </div>
             <div className='cash-cont'>
-                <img src='/icons/alert.png' height='16px' alt='alert'></img>
+                <img src='/icons/caution.png' height='16px' alt='alert'></img>
                 <div>Cash Matches</div>
                 <FormControlLabel style={{marginLeft:'5px'}}
                     control={<Switch  size="small" checked={checked} onChange={()=> setchecked(!checked)} />}
