@@ -1,72 +1,14 @@
 .home-cont{
-    height: 100vh;
+    min-height: 93vh;
     width: 100%;
     background-color: aquamarine;
     display: flex;
     flex-direction: column;
-}
-
-.home-cont .navbar{
-    height: 6vh;
-    width: 100%;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: white;
-}
-
-.navbar .Links{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
-    width: 30%;
-    font-size: small;
-    /* background-color: violet; */
-}
-
-
-.Links>div:hover{
-    cursor: pointer;
-    border-bottom: 3px solid rgb(255, 153, 0);
-    
-}
-.navbar .title{
-
-    width: 40%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background-color: yellow; */
-}
-.title>img{
-    cursor: pointer;
-}
-
-.navbar .icons-div{
-    width: 30%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-end;
-    /* background-color: brown; */
-}
-
-.icons-div .icons{
-    width: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    /* background-color: tomato; */
-}
-
-.icons>img, .icons>div{
-    cursor: pointer;
+    background-color: aquamarine;
 }
 
 .home-cont .main-cont{
-    flex: 1;
+    height: 93vh;
     background-image: url('../bg/background.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -84,18 +26,21 @@
     justify-content: center;
     align-items: flex-end; 
     text-align: center;
-    font-size: 50px;
-    font-weight: bold;
+    /* font-size: 50px;
+    font-weight: bold; */
+    font: normal normal bold 80px/100px Bahnschrift;
     /* background-color: violet; */
 }
 
 .main-cont .play{
-    
-    padding: 5px 30px;
-    background-color: rgb(255, 153, 0);
+
+    padding: 10px 50px;
+    background-color: #f69204;
     outline: none;
     border: none;
     margin-top: 80px;
     cursor: pointer;
-    font-weight: 600;
+    font-size: large;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
 }
