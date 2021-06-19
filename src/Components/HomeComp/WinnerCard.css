@@ -10,7 +10,7 @@
     justify-content: space-evenly;
     border-top: 5px solid white;
     position: relative;
-    padding-top: 20px;
+    padding-top: 40px;
 }
 
 .winner-card .avatar{
@@ -20,7 +20,7 @@
     transform: translateX(-50%);
     height: 100px;
     width: 100px;
-    border: 1px solid white;
+    border: 2px solid white;
 }
 
 .winner-crown{
