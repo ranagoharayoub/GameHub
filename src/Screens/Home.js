@@ -6,6 +6,7 @@ import 'react-owl-carousel2/src/owl.theme.default.css';
 import Corousal from '../Components/HomeComp/Corousal'
 import TournamentCard from '../Components/HomeComp/TournamentCard';
 import StatsCard from '../Components/HomeComp/StatsCard';
+import WinnerCard from '../Components/HomeComp/WinnerCard';
 
 function Home() {
 
@@ -13,7 +14,7 @@ function Home() {
         items: 5,
         dotsEach: true,
         rewind: true,
-        autoplay: true,
+        autoplay: false,
         nav: true,
         navText : ['<i class="fa fa-2x fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-2x fa-angle-right" aria-hidden="true"></i>']
     };
@@ -59,6 +60,14 @@ function Home() {
                     <StatsCard img='/icons/champions_crowned.png' number='4,325' title='CHAMPIONS CROWNED'></StatsCard>
                     <StatsCard img='/icons/winnings_paid.png' number='$57,000' title='WINNINGS PAID'></StatsCard>
                     <StatsCard img='/icons/active_tournaments.png' number='76' title='ACTIVE TOURNAMENTS'></StatsCard>
+                </div>
+            </div>
+            <div className='champ-cont'>
+                <div className='title'>CHAMPIONS OF THE WEEK</div>
+                <div className='winner-cont'>
+                    <div className='corner-cards'><WinnerCard></WinnerCard></div>
+                    <div className='center-card'><WinnerCard yellow={true}></WinnerCard></div>
+                    <div className='corner-cards'><WinnerCard pale={true} ></WinnerCard></div>
                 </div>
             </div>
         </div>
