@@ -1,0 +1,48 @@
+.footer{
+    height: 30vh;
+    width: 100%;
+    background: #000000 0% 0% no-repeat padding-box;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0px 100px;
+}
+
+.footer .contact-col{
+    height: 80%;
+    width: 20%;
+    /* background-color: aquamarine; */
+}
+
+.footer .company-col{
+    height: 80%;
+    width: 20%;
+    /* background-color: aquamarine; */
+}
+
+.footer .payment-col{
+    height: 80%;
+    width: 20%;
+    /* background-color: aquamarine; */
+}
+
+.footer .social-col{
+    height: 80%;
+    width: 20%;
+    /* background-color: aquamarine; */
+}
+
+.company-col .title, .contact-col .title{
+    font: normal normal bold 20px/40px Arial;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.contact-col .links, .company-col .links{
+    font: normal normal normal 20px/20px Calibri;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    }

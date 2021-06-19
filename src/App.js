@@ -7,6 +7,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -15,9 +16,8 @@ function App() {
         <Switch>
           <Route exact path='/'  ><Home></Home></Route>
         </Switch>
+        <Footer></Footer>
       </Router>
-      
-    
   );
 }
 
