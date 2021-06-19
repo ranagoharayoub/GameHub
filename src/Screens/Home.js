@@ -48,7 +48,10 @@ function Home() {
                     <TournamentCard></TournamentCard>
                     <TournamentCard></TournamentCard>
                     <TournamentCard></TournamentCard>
+                    <TournamentCard></TournamentCard>
+                    <TournamentCard></TournamentCard>
                 </div>
+                <button className='view-btn'>view all</button>
             </div>
         </div>
     )

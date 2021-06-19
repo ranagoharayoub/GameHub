@@ -5,7 +5,10 @@ function TournamentCard() {
     return (
         <div className='tourn-card'>
             <div className='upper'>
-                <img className='tourn-img' src='/logo192.png' alt='img'></img>
+                <div className='img-badge'>
+                    <img className='tourn-img' src='https://wallpaperaccess.com/full/2314507.jpg' alt='img'></img>
+                    <img className='badge' src='/icons/badge.png' alt='badge'></img>
+                </div>
                 <div className='tourn-cont'>
                         <div className='tourn-title'>5v5 FIFA CHIP</div>
                         <div className='tourn-time'>
@@ -31,13 +34,14 @@ function TournamentCard() {
                             </div>
                             <div className='column'>
                                 <div className='entry'>PLATFORM</div>
-                                <div className='numbers'> XBOX,PS5</div>
+                                <div className='numbers' style={{fontSize:'small'}}> XBOX,PS5, PC,MOBILE</div>
                             </div>
                         </div>
                 </div>
             </div>
             <div className='bottom'>
-
+                    <div className='view-details'>VIEW DETAILS</div>
+                    <img style={{marginLeft:'2px'}} src='/icons/right-arrow .png' alt='arrow'></img>
             </div>
         </div>
     )

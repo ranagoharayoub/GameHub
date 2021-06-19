@@ -16,12 +16,14 @@
 
 .corousal-card .discr{
     position: absolute;
+    background-color: black;
+    opacity: 0.5;
     bottom: 10%;
-    right: 2%;
-    left: 2%;
+    right: 0%;
+    left: 0%;
     font: normal normal bold 20px/20px Arial;
     letter-spacing: 0px;
     color: #FFFFFF;
     text-transform: uppercase;
-    
+
 }
