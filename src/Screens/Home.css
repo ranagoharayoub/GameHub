@@ -27,7 +27,7 @@
     align-items: flex-end; 
     text-align: center;
     font: normal normal bold 80px/100px Source Sans Pro;
-    font-family: sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 
 }
 
@@ -42,4 +42,46 @@
     font-size: large;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.home-cont .games-corousal{
+    min-height: 80vh;
+    width: 100%;
+    background: #000000 0% 0% no-repeat padding-box;
+    border: 1px solid #303030;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 100px;
+}
+
+.games-corousal .game-title{
+    font: normal normal bold 80px/49px Arial;
+}
+
+.games-corousal .select{
+    font: normal normal normal 20px/100px Calibri;
+}
+
+.owl-prev {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 40%;
+    left: -5%;
+    background-color: #f69204 !important;
+    display: block !important;
+    /* border:0px solid black; */
+}
+
+.owl-next {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 40%;
+    right: -5%;
+    display: block !important;
+    background-color: #f69204 !important;
+    /* border:0px solid black; */
 }

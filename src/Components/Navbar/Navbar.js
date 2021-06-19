@@ -16,10 +16,10 @@ function Navbar() {
             </div>
             <div className='icons-div'>
                 <div className='icons'>
-                    <img src='/icons/search.png' height='12px'  alt='search'></img>
-                    <img src='/icons/alert.png' height='12px' alt='search'></img>
+                    <img src='/icons/search.png' height='15px'  alt='search'></img>
+                    <img src='/icons/alert.png' height='15px' alt='search'></img>
                     <Avatar alt="UserName" src="/" />
-                    <div style={{fontSize:'small', fontWeight:'lighter', color:'lightgray'}} >Name</div>
+                    <div style={{fontSize:'small', color:'lightgray'}} >Name</div>
                     <img onClick={()=> setdisplay(true)} src='/icons/dropdown.png' height='6.1px' alt='search'></img>
                 </div>
             </div>
