@@ -146,6 +146,7 @@
 
 .stats-cont .title{
     font: normal normal bold 80px/49px Bahnschrift;
+    font-family: 'Bahnschrift', sans-serif;  
     letter-spacing: 0px;
     color: #FFFFFF;
     text-transform: uppercase;
