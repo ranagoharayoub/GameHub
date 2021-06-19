@@ -18,10 +18,18 @@ function Footer() {
                 <div className='links'>FAQ</div>
             </div>
             <div className='payment-col'>
-                <div></div>
+                <img style={{marginLeft:'6px'}} src='/icons/gamehub.png' height='30px' alt='logo'></img>
+                <img src='/icons/Payment_Trust_Badges.png' height='80px' alt='payment'></img>
             </div>
             <div className='social-col'>
-
+                <div className='social-icons'>
+                    <img src='/icons/facebook.png' height='28px' alt='logo'></img>
+                    <img src='/icons/instagram.png' height='28px' alt='logo'></img>
+                    <img src='/icons/tiktok12.png' height='28px' alt='logo'></img>
+                    <img src='/icons/twitter.png' height='28px' alt='logo'></img>
+                </div>
+                <div className='cc'>© 2021 Gamehub Inc All Rights Reserved</div>
+                <div className='policy'> Terms of Service | Privacy Policy</div>
             </div>
         </div>
     )
