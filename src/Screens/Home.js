@@ -7,6 +7,7 @@ import Corousal from '../Components/HomeComp/Corousal'
 import TournamentCard from '../Components/HomeComp/TournamentCard';
 import StatsCard from '../Components/HomeComp/StatsCard';
 import WinnerCard from '../Components/HomeComp/WinnerCard';
+import NewsCard from '../Components/HomeComp/NewsCard';
 
 function Home() {
 
@@ -68,6 +69,14 @@ function Home() {
                     <div className='corner-cards'><WinnerCard></WinnerCard></div>
                     <div className='center-card'><WinnerCard yellow={true}></WinnerCard></div>
                     <div className='corner-cards'><WinnerCard pale={true} ></WinnerCard></div>
+                </div>
+            </div>
+            <div className='game-news'>
+                <div className='title'>GAMEHUB NEWS</div>
+                <div className='game-news-cards'>
+                    <NewsCard></NewsCard>
+                    <NewsCard></NewsCard>
+                    <NewsCard></NewsCard>
                 </div>
             </div>
         </div>
