@@ -85,3 +85,37 @@
     background-color: #f69204 !important;
     /* border:0px solid black; */
 }
+
+.home-cont .featured-tournament{
+    min-height: 100vh;
+    width: 100%;
+    background: #4A4747 0% 0% no-repeat padding-box;
+    border: 1px solid #303030;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 100px;
+    color: white;
+}
+
+@import url('http://fonts.cdnfonts.com/css/bahnschrift');
+
+                
+.featured-tournament .title{
+    font: normal normal bold 60px/40px Bahnschrift;
+    font-family: 'Bahnschrift', sans-serif;                                           
+    
+}
+
+.featured-tournament .hot{
+    font: normal normal normal 25px/100px Calibri;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+
+.featured-tournament .card-grid{
+    min-height: max-content;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto ;
+}

@@ -4,6 +4,7 @@ import OwlCarousel from 'react-owl-carousel2';
 import 'react-owl-carousel2/lib/styles.css';
 import 'react-owl-carousel2/src/owl.theme.default.css';
 import Corousal from '../Components/HomeComp/Corousal'
+import TournamentCard from '../Components/HomeComp/TournamentCard';
 
 
 function Home() {
@@ -38,6 +39,16 @@ function Home() {
                     <div><Corousal></Corousal></div>
                     <div><Corousal></Corousal></div>
                 </OwlCarousel>
+            </div>
+            <div className='featured-tournament'>
+                <div className='title'>FEATURED TOURNAMENTS</div>
+                <div className='hot'>Hot and trending tournaments</div>
+                <div className='card-grid'>
+                    <TournamentCard></TournamentCard>
+                    <TournamentCard></TournamentCard>
+                    <TournamentCard></TournamentCard>
+                    <TournamentCard></TournamentCard>
+                </div>
             </div>
         </div>
     )

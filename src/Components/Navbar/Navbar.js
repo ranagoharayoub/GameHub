@@ -19,7 +19,7 @@ function Navbar() {
                     <img src='/icons/search.png' height='15px'  alt='search'></img>
                     <img src='/icons/alert.png' height='15px' alt='search'></img>
                     <Avatar alt="UserName" src="/" />
-                    <div style={{fontSize:'small', color:'lightgray'}} >Name</div>
+                    <div style={{fontSize:'small', opacity: '0.7'}} >Name</div>
                     <img onClick={()=> setdisplay(true)} src='/icons/dropdown.png' height='6.1px' alt='search'></img>
                 </div>
             </div>
