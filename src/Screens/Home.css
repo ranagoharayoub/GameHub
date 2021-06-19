@@ -80,7 +80,7 @@
     height: auto;
     position: absolute;
     top: 40%;
-    right: -3.5%;
+    right: -5%;
     display: block !important;
     background-color: #f69204 !important;
     /* border:0px solid black; */
@@ -90,7 +90,6 @@
     min-height: 100vh;
     width: 100%;
     background: #4A4747 0% 0% no-repeat padding-box;
-    border: 1px solid #303030;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -132,4 +131,32 @@
     color: #F69204;
     text-transform: uppercase;
     opacity: 1;
+}
+
+.home-cont .stats-cont{
+    min-height: 50vh;
+    width: 100%;
+    background: #4A4747 0% 0% no-repeat padding-box;
+    /* border: 1px solid #303030; */
+    display: flex;
+    flex-direction: column;
+    padding: 50px 100px;
+    color: white;
+}
+
+.stats-cont .title{
+    font: normal normal bold 80px/49px Bahnschrift;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    opacity: 1;
+    margin-left: 50px;
+}
+
+.stats-cont .card-flex{
+    margin-top: 50px;
+    height: 35vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }

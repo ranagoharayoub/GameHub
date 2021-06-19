@@ -5,7 +5,7 @@ import 'react-owl-carousel2/lib/styles.css';
 import 'react-owl-carousel2/src/owl.theme.default.css';
 import Corousal from '../Components/HomeComp/Corousal'
 import TournamentCard from '../Components/HomeComp/TournamentCard';
-
+import StatsCard from '../Components/HomeComp/StatsCard';
 
 function Home() {
 
@@ -52,6 +52,14 @@ function Home() {
                     <TournamentCard></TournamentCard>
                 </div>
                 <button className='view-btn'>view all</button>
+            </div>
+            <div className='stats-cont'>
+                <div className='title'>statistics</div>
+                <div className='card-flex'>
+                    <StatsCard img='/icons/champions_crowned.png' number='4,325' title='CHAMPIONS CROWNED'></StatsCard>
+                    <StatsCard img='/icons/winnings_paid.png' number='$57,000' title='WINNINGS PAID'></StatsCard>
+                    <StatsCard img='/icons/active_tournaments.png' number='76' title='ACTIVE TOURNAMENTS'></StatsCard>
+                </div>
             </div>
         </div>
     )
