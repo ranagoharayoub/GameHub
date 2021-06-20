@@ -1,12 +1,16 @@
 import { Menu } from '@material-ui/icons'
 import React from 'react'
+import { useState } from 'react'
+import MobileMenu from './MobileMenu'
 import './MobileNavbar.css'
 
 function MobileNavbar() {
+    const [menuOn, setmenuOn] = useState(false)
     return (
         <div className='mob-navbar'>
-            <div className='menu'>
-                <Menu></Menu>
+            <MobileMenu menuOn={menuOn}></MobileMenu>
+            <div  className='menu'>
+                <Menu onClick={()=>setmenuOn(!menuOn)}></Menu>
             </div>
             <div className='logo'>
                 <img src='/icons/gamehub.png' height='25px' alt='logo'></img>
