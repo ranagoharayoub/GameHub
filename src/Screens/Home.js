@@ -74,9 +74,9 @@ function Home({width}) {
             <div className='champ-cont'>
                 <div className='title'>CHAMPIONS OF THE WEEK</div>
                 <div className='winner-cont'>
-                    <div className='corner-cards'><WinnerCard></WinnerCard></div>
-                    <div className='center-card'><WinnerCard yellow={true}></WinnerCard></div>
-                    <div className='corner-cards'><WinnerCard pale={true} ></WinnerCard></div>
+                    <div className='corner-cards'><WinnerCard width={width}></WinnerCard></div>
+                    <div className='center-card'><WinnerCard width={width} yellow={true}></WinnerCard></div>
+                    <div className='corner-cards'><WinnerCard width={width} pale={true} ></WinnerCard></div>
                 </div>
             </div>
             <div className='game-news'>
