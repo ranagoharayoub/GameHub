@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './TournamentCard.css'
 
-function TournamentCard() {
+function TournamentCard({width}) {
+    const [name, setname] = useState('score-cont');
+    
+    useEffect(() => {
+        width >= '800'? setname('score-cont') : setname('mob-score')
+    }, [width])
+    
+
     return (
         <div className='tourn-card'>
             <div className='upper'>
@@ -15,7 +22,7 @@ function TournamentCard() {
                             <div className='time'>Jun 10, 2:30 PM ET</div>
                             <div className='starts'>Starts in 1H 35 M</div>
                         </div>
-                        <div className='score-cont'>
+                        <div className='score-cont' style={ name==='score-cont'? {display:'flex'}: {display:'none'}}>
                             <div className='column'>
                                 <div className='entry'>ENTRY</div>
                                 <div className='numbers' style={{display:'flex'}}> 10 <div style={{fontSize:'small', marginLeft:'5px'}}>credits</div></div>
@@ -39,9 +46,31 @@ function TournamentCard() {
                         </div>
                 </div>
             </div>
+            <div className='mob-score' style={ name==='mob-score'? {display:'flex'}: {display:'none'}}>
+                            <div className='column'>
+                                <div className='entry'>ENTRY</div>
+                                <div className='numbers' style={{display:'flex'}}> 10 <div style={{fontSize:'small', marginLeft:'5px'}}>credits</div></div>
+                            </div>
+                            <div className='column'>
+                                <div className='entry'>TEAM SIZE</div>
+                                <div className='numbers'>2v2</div>
+                            </div>
+                            <div className='column'>
+                                <div className='entry'>MAX TEAMS</div>
+                                <div className='numbers'>5</div>
+                            </div>
+                            <div className='column'>
+                                <div className='entry'>ENTERED</div>
+                                <div className='numbers'>5</div>
+                            </div>
+                            <div className='column'>
+                                <div className='entry'>PLATFORM</div>
+                                <div className='numbers' style={{fontSize:'small'}}> XBOX,PS5, PC,MOBILE</div>
+                            </div>
+            </div>
             <div className='bottom'>
                     <div className='view-details'>VIEW DETAILS</div>
-                    <img style={{marginLeft:'2px'}} src='/icons/right-arrow .png' alt='arrow'></img>
+                    <img style={{marginLeft:'20px'}} src='/icons/right-arrow .png' alt='arrow'></img>
             </div>
         </div>
     )

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Home.css'
 import OwlCarousel from 'react-owl-carousel2';
 import 'react-owl-carousel2/lib/styles.css';
@@ -9,14 +9,22 @@ import StatsCard from '../Components/HomeComp/StatsCard';
 import WinnerCard from '../Components/HomeComp/WinnerCard';
 import NewsCard from '../Components/HomeComp/NewsCard';
 
-function Home() {
-
+function Home({width}) {
+        const [items, setitems] = useState(null)
+        const [nav, setnav] = useState(false)
+        useEffect(() => {
+            width >= 800? setitems(5) : setitems(3);
+            width >= 800? setnav(true) : setnav(false);
+        }, [width])
+        
+        console.log(items)
     const options = {
-        items: 5,
+        items: items,
         dotsEach: true,
-        rewind: true,
+        margin: 3,
+        rewind: false,
         autoplay: false,
-        nav: true,
+        nav: nav,
         navText : ['<i class="fa fa-2x fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-2x fa-angle-right" aria-hidden="true"></i>']
     };
 
@@ -46,12 +54,12 @@ function Home() {
                 <div className='title'>FEATURED TOURNAMENTS</div>
                 <div className='hot'>Hot and trending tournaments</div>
                 <div className='card-grid'>
-                    <TournamentCard></TournamentCard>
-                    <TournamentCard></TournamentCard>
-                    <TournamentCard></TournamentCard>
-                    <TournamentCard></TournamentCard>
-                    <TournamentCard></TournamentCard>
-                    <TournamentCard></TournamentCard>
+                    <TournamentCard width={width}></TournamentCard>
+                    <TournamentCard width={width}></TournamentCard>
+                    <TournamentCard width={width}></TournamentCard>
+                    <TournamentCard width={width}></TournamentCard>
+                    <TournamentCard width={width}></TournamentCard>
+                    <TournamentCard width={width}></TournamentCard>
                 </div>
                 <button className='view-btn'>view all</button>
             </div>
