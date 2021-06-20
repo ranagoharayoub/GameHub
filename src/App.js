@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import Footer from './Components/Footer/Footer';
 import { useEffect, useState } from 'react';
+import MobileNavbar from './Components/Navbar/MobileNavbar';
 
 function App() {
   const [width, setwidth] = useState(window.innerWidth)
@@ -24,7 +25,13 @@ function App() {
   console.log(width)
   return (
       <Router>
-        <Navbar></Navbar>
+        {
+          width> '800' ?
+          <Navbar></Navbar>
+          :
+          <MobileNavbar></MobileNavbar>
+          
+        }
         <Switch>
           <Route exact path='/'  ><Home width={width}></Home></Route>
         </Switch>
