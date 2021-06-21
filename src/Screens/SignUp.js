@@ -35,6 +35,10 @@ export default class SignUp extends Component {
                                     <div>Symbols</div>
                                 </div>
                             </div>
+                            <div className='pass-strength'>
+                                <div className='line'></div>
+                                <div className='strength'>Weak</div>
+                            </div>
                             <input required className='input-fields' type='password' placeholder='Confirm Password'></input>
                             <label className='phone'>Phone Number</label>
                             <div>

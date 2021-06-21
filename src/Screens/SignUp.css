@@ -1,5 +1,5 @@
 .signup-cont{
-    min-height: 200vh;
+    min-height: 220vh;
     width: 100%;
     background-image: url('../bg/background.png');
     background-position: center;
@@ -80,12 +80,36 @@
     opacity: 1;
 }
 
+.signup-sect .pass-strength{
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pass-strength .line{
+    width: 90%;
+    height: 5px;
+    background: #3C3A3A 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.pass-strength .strength{
+    font: normal normal 400 18px/46px Bahnschrift;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 0.57;
+}
+
 .form-sect .phone{
     font: normal normal 400 20px/25px Bahnschrift;
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;
 }
+
 
 .form-sect .dob-sec{
     display: flex;
