@@ -5,39 +5,39 @@ function MobileMenu({menuOn}) {
     return (
         <div className='menu-cont' style={menuOn?{display:'flex'}:{display:'none'}}>
             <div className='ico-title'>
-                <img src='/icons/alert.png' height='20px' alt='icon'></img>
+                <img src='/icons/search.png' height='20px' alt='icon'></img>
                 <div className='title'>Find players/Teams</div>
             </div>
             <div className='ico-title'>
-                <img src='/icons/alert.png' height='20px' alt='icon'></img>
+                <img src='/icons/home.png' height='20px' alt='icon'></img>
                 <div className='title'>Home</div>
             </div>
             <div className='ico-title'>
-                <img src='/icons/alert.png' height='20px' alt='icon'></img>
+                <img src='/icons/trophy.png' height='20px' alt='icon'></img>
                 <div className='title'>Tournaments</div>
             </div>
             <div className='ico-title'>
-                <img src='/icons/alert.png' height='20px' alt='icon'></img>
+                <img src='/icons/Calendar.png' height='20px' alt='icon'></img>
                 <div className='title'>Timed Events</div>
             </div>
             <div className='ico-title'>
-                <img src='/icons/alert.png' height='20px' alt='icon'></img>
+                <img src='/icons/dollar.png' height='20px' alt='icon'></img>
                 <div className='title'>Cash Matches</div>
             </div>
             <div className='ico-title'>
-                <img src='/icons/alert.png' height='20px' alt='icon'></img>
+                <img src='/icons/chart.png' height='20px' alt='icon'></img>
                 <div className='title'>Leaderboards</div>
             </div>
             <div className='ico-title'>
-                <img src='/icons/alert.png' height='20px' alt='icon'></img>
+                <img src='/icons/news.png' height='20px' alt='icon'></img>
                 <div className='title'>News</div>
             </div>
             <div className='ico-title'>
-                <img src='/icons/alert.png' height='20px' alt='icon'></img>
+                <img src='/icons/profits.png' height='12px' alt='icon'></img>
                 <div className='title'>Stats Tracker</div>
             </div>
             <div className='ico-title'>
-                <img src='/icons/alert.png' height='20px' alt='icon'></img>
+                <img src='/icons/Help.png' height='20px' alt='icon'></img>
                 <div className='title'>FAQ</div>
             </div>
             <div className='lang' style={{paddingLeft:'20px', marginTop:'15vh'}}>

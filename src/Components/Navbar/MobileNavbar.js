@@ -1,4 +1,4 @@
-import { Menu } from '@material-ui/icons'
+import { Close, Menu } from '@material-ui/icons'
 import React from 'react'
 import { useState } from 'react'
 import MobileMenu from './MobileMenu'
@@ -10,7 +10,12 @@ function MobileNavbar() {
         <div className='mob-navbar'>
             <MobileMenu menuOn={menuOn}></MobileMenu>
             <div  className='menu'>
-                <Menu onClick={()=>setmenuOn(!menuOn)}></Menu>
+                {
+                    menuOn?
+                    <Close onClick={()=>setmenuOn(!menuOn)}></Close>
+                    :
+                    <Menu onClick={()=>setmenuOn(!menuOn)}></Menu>
+                } 
             </div>
             <div className='logo'>
                 <img src='/icons/gamehub.png' height='25px' alt='logo'></img>
