@@ -8,9 +8,9 @@ function Navbar() {
     return (
         <div className='navbar'>
             <div className='Links'>
-                <Link style={{textDecoration:'none', color:'inherit'}} to='/'>HOMES</Link>
-                <Link style={{textDecoration:'none', color:'inherit'}} to='/games'>GAMES</Link>
-                <Link style={{textDecoration:'none', color:'inherit'}} to='/tournament'>TOURNAMENT</Link>
+                <Link className='link-cont' style={{textDecoration:'none', color:'inherit'}} to='/'>HOME</Link>
+                <Link className='link-cont' style={{textDecoration:'none', color:'inherit'}} to='/games'>GAMES</Link>
+                <Link className='link-cont' style={{textDecoration:'none', color:'inherit'}} to='/tournament'>TOURNAMENT</Link>
             </div>
             <div className='title'>
             <Link to='/'><img src='/icons/gamehub.png' height='30px' alt='search'></img></Link> 

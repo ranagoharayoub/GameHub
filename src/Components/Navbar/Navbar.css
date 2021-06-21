@@ -1,5 +1,5 @@
 .navbar{
-    min-height: 7vh;
+    height: 7vh;
     width: 100%;
     background-color: #212121;
     display: flex;
@@ -9,22 +9,33 @@
 }
 
 .navbar .Links{
+    box-sizing: border-box;
     padding-left: 20px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 100%;
     width: 30%;
-    font: normal normal normal 18px/12px Arial;
-
+    /* background-color: yellow; */
+    /* border-bottom: 5px solid #f69204; */
+    font-size:18px ;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-
-.Links>div:hover{
-    cursor: pointer;
-    /* border-bottom: 3px solid #f69204; */
-    
+.Links .link-cont{
+    border-top: 5px solid transparent;
+    width: max-content;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* background-color: yellowgreen; */
+    border-bottom: 5px solid transparent;
 }
+
+.Links .link-cont:hover{
+    border-bottom: 5px solid #f69204;
+}
+
 
 
 .navbar .title{
