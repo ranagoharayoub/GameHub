@@ -13,9 +13,34 @@ export default class SignUp extends Component {
                             <input required className='input-fields' type='text' placeholder='Username'></input>
                             <input required className='input-fields' type='email' placeholder='Email Address'></input>
                             <input required className='input-fields' type='password' placeholder='Create Password'></input>
+                            <div className='issues'>
+                                <div className='warning'>
+                                    <img src='/icons/cancel.png' alt='cancel'></img>
+                                    <div>10 characters</div>
+                                </div>
+                                <div className='warning'>
+                                    <img src='/icons/cancel.png' alt='cancel'></img>
+                                    <div>Upper Case</div>
+                                </div>
+                                <div className='warning'>
+                                    <img src='/icons/cancel.png' alt='cancel'></img>
+                                    <div>Lower Case</div>
+                                </div>
+                                <div className='warning'>
+                                    <img src='/icons/cancel.png' alt='cancel'></img>
+                                    <div>Numbers</div>
+                                </div>
+                                <div className='warning'>
+                                    <img src='/icons/cancel.png' alt='cancel'></img>
+                                    <div>Symbols</div>
+                                </div>
+                            </div>
                             <input required className='input-fields' type='password' placeholder='Confirm Password'></input>
                             <label className='phone'>Phone Number</label>
-                            <input required className='input-fields' type="tel"></input>
+                            <div>
+                            <input required style={{width:'20%', borderRight: '1px solid white'}} placeholder='+1' className='input-fields' type="tel"></input>
+                            <input required style={{width:'80%'}} className='input-fields' type="tel" placeholder='e.g. 1324568974555'></input>
+                            </div>
                             <select name="time" className='input-fields' id="pet-select">
                                 <option value="">Your preferred time zone</option>
                                 <option value="dog">Dog</option>
