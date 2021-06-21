@@ -133,6 +133,7 @@
     color: #F69204;
     text-transform: uppercase;
     opacity: 1;
+    cursor: pointer;
 }
 
 .home-cont .stats-cont{

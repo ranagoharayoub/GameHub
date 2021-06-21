@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Navbar.css'
 import Sidebar from './SideBar'
 import {Avatar} from '@material-ui/core'
+import { Link } from 'react-router-dom'
 function Navbar() {
     const [display, setdisplay] = useState(false)
     return (
@@ -12,7 +13,7 @@ function Navbar() {
                 <div>TOURNAMENT</div>
             </div>
             <div className='title'>
-            <img src='/icons/gamehub.png' height='30px' alt='search'></img>
+            <Link><img src='/icons/gamehub.png' height='30px' alt='search'></img></Link> 
             </div>
             <div className='icons-div'>
                 <div className='icons'>

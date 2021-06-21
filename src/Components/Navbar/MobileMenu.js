@@ -1,7 +1,8 @@
 import React from 'react'
 import './MobileMenu.css'
 import { ArrowDropDown } from '@material-ui/icons'
-function MobileMenu({menuOn}) {
+import { Link } from 'react-router-dom'
+function MobileMenu({menuOn, off}) {
     return (
         <div className='menu-cont' style={menuOn?{display:'flex'}:{display:'none'}}>
             <div className='ico-title'>
@@ -12,10 +13,10 @@ function MobileMenu({menuOn}) {
                 <img src='/icons/home.png' height='20px' alt='icon'></img>
                 <div className='title'>Home</div>
             </div>
-            <div className='ico-title'>
+            <Link onClick={off} className='ico-title' to='/tournament'>
                 <img src='/icons/trophy.png' height='20px' alt='icon'></img>
                 <div className='title'>Tournaments</div>
-            </div>
+            </Link>
             <div className='ico-title'>
                 <img src='/icons/Calendar.png' height='20px' alt='icon'></img>
                 <div className='title'>Timed Events</div>

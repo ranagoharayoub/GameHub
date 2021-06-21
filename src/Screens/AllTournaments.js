@@ -8,7 +8,7 @@ function AllTournaments({width}) {
         <div className='all-tourn'>
             <div className='title'>all tournaments</div>
             <div className='sub-title'>View all of our upcoming tournaments</div>
-            <div className='filter-cont' style={width>'800' ? {display:'none'} : {display:'flex'}}><div>Filter</div></div>
+            <div className='filter-cont' style={width>'800' ? {display:'none'} : {display:'flex'}}><div style={{fontSize:'small', fontFamily:'arial'}}>Filter</div></div>
             <div className='cards-sec'>
                     <TournamentCard width={width}></TournamentCard>
                     <TournamentCard width={width}></TournamentCard>

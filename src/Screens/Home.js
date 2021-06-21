@@ -8,6 +8,7 @@ import TournamentCard from '../Components/HomeComp/TournamentCard';
 import StatsCard from '../Components/HomeComp/StatsCard';
 import WinnerCard from '../Components/HomeComp/WinnerCard';
 import NewsCard from '../Components/HomeComp/NewsCard';
+import { Link } from 'react-router-dom';
 
 function Home({width}) {
         const [items, setitems] = useState(null)
@@ -61,7 +62,7 @@ function Home({width}) {
                     <TournamentCard width={width}></TournamentCard>
                     <TournamentCard width={width}></TournamentCard>
                 </div>
-                <button className='view-btn'>view all</button>
+               <Link to='/tournament'><button className='view-btn'>view all</button></Link> 
             </div>
             <div className='stats-cont'>
                 <div className='title'>statistics</div>
