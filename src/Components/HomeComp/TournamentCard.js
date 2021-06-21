@@ -15,7 +15,7 @@ function TournamentCard({width}) {
                 <div className='img-badge'>
                     <img className='tourn-img' src='https://wallpaperaccess.com/full/2314507.jpg' alt='img'></img>
                     <img className='badge' src='/icons/badge.png' alt='badge'></img>
-                    <div className='price'>$100</div>
+                    <div className='price' style={{color:'black'}}>$100</div>
                 </div>
                 <div className='tourn-cont'>
                         <div className='tourn-title' style={{color:'white'}}>5v5 FIFA CHIP</div>
