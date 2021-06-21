@@ -12,7 +12,7 @@
 
 .signup-cont .signup-sect{
     min-height: 120vh;
-    width: 50%;
+    width: 40%;
     background: #272727 0% 0% no-repeat padding-box;
     opacity: 1;
     border-top: 10px solid #F69204;
@@ -28,12 +28,12 @@
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;
-    width: 70%;
+    width: 85%;
 }
 
 .signup-sect .subtitle{
     color: #95989A;
-    font: normal normal normal 25px/30px Arial;
+    font: normal normal normal 20px/30px Arial;
     letter-spacing: 0px;
     opacity: 1;
     display: flex;
@@ -92,7 +92,7 @@
 }
 
 .pass-strength .line{
-    width: 90%;
+    width: 85%;
     height: 5px;
     background: #3C3A3A 0% 0% no-repeat padding-box;
     opacity: 1;

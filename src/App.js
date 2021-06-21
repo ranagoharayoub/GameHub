@@ -13,6 +13,7 @@ import MobileNavbar from './Components/Navbar/MobileNavbar';
 import AllTournaments from './Screens/AllTournaments';
 import AllGames from './Screens/AllGames';
 import SignUp from './Screens/SignUp';
+import Login from './Screens/Login';
 
 function App() {
   const [width, setwidth] = useState(window.innerWidth)
@@ -40,6 +41,7 @@ function App() {
           <Route path='/tournament'  ><AllTournaments width={width}></AllTournaments></Route>
           <Route path='/games'  ><AllGames width={width}></AllGames></Route>
           <Route path='/signup'  ><SignUp width={width}></SignUp></Route>
+          <Route path='/login'  ><Login width={width}></Login></Route>
         </Switch>
         <Footer></Footer>
       </Router>
