@@ -16,23 +16,23 @@ export default class SignUp extends Component {
                             <div className='issues'>
                                 <div className='warning'>
                                     <img src='/icons/cancel.png' alt='cancel'></img>
-                                    <div>10 characters</div>
+                                    <div style={{marginLeft:'10px'}}>10 characters</div>
                                 </div>
                                 <div className='warning'>
                                     <img src='/icons/cancel.png' alt='cancel'></img>
-                                    <div>Upper Case</div>
+                                    <div style={{marginLeft:'10px'}}>Upper Case</div>
                                 </div>
                                 <div className='warning'>
                                     <img src='/icons/cancel.png' alt='cancel'></img>
-                                    <div>Lower Case</div>
+                                    <div style={{marginLeft:'10px'}}>Lower Case</div>
                                 </div>
                                 <div className='warning'>
                                     <img src='/icons/cancel.png' alt='cancel'></img>
-                                    <div>Numbers</div>
+                                    <div style={{marginLeft:'10px'}}>Numbers</div>
                                 </div>
                                 <div className='warning'>
                                     <img src='/icons/cancel.png' alt='cancel'></img>
-                                    <div>Symbols</div>
+                                    <div style={{marginLeft:'10px'}}>Symbols</div>
                                 </div>
                             </div>
                             <div className='pass-strength'>
@@ -68,7 +68,7 @@ export default class SignUp extends Component {
                             </div>
                             <div className='captcha'>
                                 <input style={{width:'60%', backgroundColor:"white"}} className='input-fields'></input>
-                                <div style={{width:'35%', display:'flex', alignItems:'center'}} className='input-fields'>Captcha code</div>
+                                <div style={{width:'35%', display:'flex', alignItems:'center'}} className='captcha-code'>Captcha code</div>
                             </div>
                             <div className='check-policy'>
                                 <input className='checkbox' type='checkbox'></input>
