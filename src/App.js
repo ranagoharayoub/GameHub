@@ -10,6 +10,7 @@ import {
 import Footer from './Components/Footer/Footer';
 import { useEffect, useState } from 'react';
 import MobileNavbar from './Components/Navbar/MobileNavbar';
+import AllTournaments from './Screens/AllTournaments';
 
 function App() {
   const [width, setwidth] = useState(window.innerWidth)
@@ -34,6 +35,7 @@ function App() {
         }
         <Switch>
           <Route exact path='/'  ><Home width={width}></Home></Route>
+          <Route path='/tournament'  ><AllTournaments width={width}></AllTournaments></Route>
         </Switch>
         <Footer></Footer>
       </Router>
