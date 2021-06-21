@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 import MobileNavbar from './Components/Navbar/MobileNavbar';
 import AllTournaments from './Screens/AllTournaments';
 import AllGames from './Screens/AllGames';
+import SignUp from './Screens/SignUp';
 
 function App() {
   const [width, setwidth] = useState(window.innerWidth)
@@ -38,6 +39,7 @@ function App() {
           <Route exact path='/'  ><Home width={width}></Home></Route>
           <Route path='/tournament'  ><AllTournaments width={width}></AllTournaments></Route>
           <Route path='/games'  ><AllGames width={width}></AllGames></Route>
+          <Route path='/signup'  ><SignUp width={width}></SignUp></Route>
         </Switch>
         <Footer></Footer>
       </Router>
