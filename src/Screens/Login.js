@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './Login.css'
+import { Link } from 'react-router-dom';
+
 export default class Login extends Component {
 
     render() {
@@ -7,7 +9,7 @@ export default class Login extends Component {
             <div className='login-cont'>
                 <div className='login-sect'>
                     <div className='title'>SIGN IN</div>
-                    <div className='subtitle'>Not a member Yet?<div style={{color:'#F69204', marginLeft:'5px'}}>Join Free!</div></div>
+                    <div className='subtitle'>Not a member Yet?<Link to='/signup' style={{color:'#F69204', marginLeft:'5px', textDecoration:'none'}}>Join Free!</Link></div>
                     <div className='social-login-fb'>
                         <img src='/icons/fb.png' height='20px' alt='fb'></img>
                         <div className='title'>Continue with Facebook</div>

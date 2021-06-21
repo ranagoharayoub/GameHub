@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './SignUp.css'
 
 export default class SignUp extends Component {
@@ -8,7 +9,7 @@ export default class SignUp extends Component {
             <div className='signup-cont'>
                 <div className='signup-sect'>
                     <div className='title'>STEP UP YOUR GAME JOIN TODAY</div>
-                    <div className='subtitle'>Already a member?<div style={{color:'#F69204', marginLeft:'5px'}}> Sign in</div></div>
+                    <div className='subtitle'>Already a member?<Link to='/login' style={{color:'#F69204', marginLeft:'5px', textDecoration:'none'}}> Sign in</Link></div>
                     <form className='form-sect'>
                             <input required className='input-fields' type='text' placeholder='Username'></input>
                             <input required className='input-fields' type='email' placeholder='Email Address'></input>
