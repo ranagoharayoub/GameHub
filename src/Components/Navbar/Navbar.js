@@ -8,12 +8,12 @@ function Navbar() {
     return (
         <div className='navbar'>
             <div className='Links'>
-                <div>HOMES</div>
-                <div>GAMES</div>
-                <div>TOURNAMENT</div>
+                <Link style={{textDecoration:'none', color:'inherit'}} to='/'>HOMES</Link>
+                <Link style={{textDecoration:'none', color:'inherit'}} to='/games'>GAMES</Link>
+                <Link style={{textDecoration:'none', color:'inherit'}} to='/tournament'>TOURNAMENT</Link>
             </div>
             <div className='title'>
-            <Link><img src='/icons/gamehub.png' height='30px' alt='search'></img></Link> 
+            <Link to='/'><img src='/icons/gamehub.png' height='30px' alt='search'></img></Link> 
             </div>
             <div className='icons-div'>
                 <div className='icons'>

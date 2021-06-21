@@ -17,7 +17,7 @@ function TournamentCard({width}) {
                     <img className='badge' src='/icons/badge.png' alt='badge'></img>
                 </div>
                 <div className='tourn-cont'>
-                        <div className='tourn-title'>5v5 FIFA CHIP</div>
+                        <div className='tourn-title' style={{color:'white'}}>5v5 FIFA CHIP</div>
                         <div className='tourn-time'>
                             <div className='time'>Jun 10, 2:30 PM ET</div>
                             <div className='starts'>Starts in 1H 35 M</div>
