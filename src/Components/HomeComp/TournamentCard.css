@@ -36,6 +36,15 @@
     width: auto;
 }
 
+.upper .price{
+    position: absolute;
+    bottom: -2%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: small;
+    font-weight: 600;
+}
+
 .upper .tourn-cont{
     flex: 1;
     height: 100%;
@@ -158,6 +167,15 @@
         transform: translateX(-50%);
         height: 40px;
         width: auto;
+    }
+
+    .upper .price{
+        position: absolute;
+        bottom: 2%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: x-small;
+        font-weight: bold;
     }
     
     .upper .tourn-cont{
