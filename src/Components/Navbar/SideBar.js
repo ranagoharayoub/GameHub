@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import './SideBar.css'
 import {FormControlLabel,Switch} from '@material-ui/core'
-import { ArrowDropDown } from '@material-ui/icons'
-
+import { ArrowDropDown} from '@material-ui/icons'
+import { Link } from 'react-router-dom';
 function SideBar({toggle, off}) {
 
     const [checked, setchecked] = useState(false)
@@ -43,7 +43,7 @@ function SideBar({toggle, off}) {
             <div className='common' >Purchased Items</div>
             <div className='common' >Prize Claims</div>
             <div  className='line'></div>
-            <div className='common' >Account Settings</div>
+            <Link to='/settings' className='common' >Account Settings</Link>
             <div className='common' >Sign out</div>
             <div className='lang'>
                 <button>
