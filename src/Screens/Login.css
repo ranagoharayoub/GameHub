@@ -110,7 +110,7 @@
 
 @media (max-width: 800px) {
     .login-cont{
-        min-height: 95vh;
+        min-height: 110vh;
         width: 100%;
         background-image: url('../bg/background.png');
         background-position: center;
