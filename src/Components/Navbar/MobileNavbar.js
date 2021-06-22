@@ -22,7 +22,7 @@ function MobileNavbar() {
                <Link to='/'><img src='/icons/gamehub.png' height='25px' alt='logo'></img></Link> 
             </div>
             <div className='login'>
-                <button className='login-btn'>Login</button>
+                <Link to='/login' className='login-btn'>Login</Link>
             </div>
         </div>
     )
