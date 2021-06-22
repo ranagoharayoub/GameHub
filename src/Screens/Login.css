@@ -25,6 +25,7 @@
 .login-cont .title{
     text-align: center;
     font: normal normal normal 40px/40px Bahnschrift;
+    font-family: 'Bahnschrift', sans-serif;
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;
@@ -119,11 +120,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 20px 20px;
     }
     
     .login-cont .login-sect{
-        min-height: 85vh;
-        width: 90%;
+        height: max-content;
+        width: 100%;
         background: #272727 0% 0% no-repeat padding-box;
         opacity: 1;
         border-top: 5px solid #F69204;
