@@ -43,7 +43,7 @@ function SideBar({toggle, off}) {
             <div className='common' >Purchased Items</div>
             <div className='common' >Prize Claims</div>
             <div  className='line'></div>
-            <Link to='/settings' className='common' >Account Settings</Link>
+            <Link to='/settings' onClick={off} className='common' >Account Settings</Link>
             <div className='common' >Sign out</div>
             <div className='lang'>
                 <button>

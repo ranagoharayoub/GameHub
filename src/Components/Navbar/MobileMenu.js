@@ -37,6 +37,10 @@ function MobileMenu({menuOn, off}) {
                 <img src='/icons/profits.png' height='12px' alt='icon'></img>
                 <div className='title'>Stats Tracker</div>
             </div>
+            <Link onClick={off} to='/settings' className='ico-title'>
+                <img src='/icons/profits.png' height='12px' alt='icon'></img>
+                <div className='title'>Settings</div>
+            </Link>
             <div className='ico-title'>
                 <img src='/icons/Help.png' height='20px' alt='icon'></img>
                 <div className='title'>FAQ</div>

@@ -15,6 +15,7 @@ import AllGames from './Screens/AllGames';
 import SignUp from './Screens/SignUp';
 import Login from './Screens/Login';
 import Settings from './Screens/Settings';
+import Matches from './Screens/Matches';
 
 function App() {
   const [width, setwidth] = useState(window.innerWidth)
@@ -44,6 +45,7 @@ function App() {
           <Route path='/signup'  ><SignUp width={width}></SignUp></Route>
           <Route path='/login'  ><Login width={width}></Login></Route>
           <Route path='/settings'  ><Settings width={width}></Settings></Route>
+          <Route path='/matches'  ><Matches width={width}></Matches></Route>
         </Switch>
         <Footer></Footer>
       </Router>
