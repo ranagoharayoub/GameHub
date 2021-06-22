@@ -1,0 +1,102 @@
+.settings-cont{
+    min-height: 93vh;
+    width: 100%;
+    background-color: black;
+    padding: 0px 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-cont .title{
+    font: normal normal bold 40px/87px Bahnschrift;
+    font-family: 'Bahnschrift', sans-serif;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.settings-cont .settings-sec{
+    flex: 1;
+    width: 100%;
+    background: #272727 0% 0% no-repeat padding-box;
+    opacity: 1;
+    border-top: 5px solid #747474 ;
+    border-color: #747474;
+    padding: 10px 20px;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-sec .setting-form{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.setting-form .subtitle{
+    font: normal normal bold 20px/40px Bahnschrift;
+    font-family: 'Bahnschrift', sans-serif;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.setting-form .flex{
+    display: flex;
+    /* background-color: chartreuse; */
+    align-items:flex-end;
+    height: max-content;
+    
+}
+
+.setting-form .col{
+    display: flex;
+    flex-direction: column;
+}
+
+.setting-form .label{
+    font: normal normal normal 15px/40px Arial;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 0.7;
+}
+
+.setting-form .input{
+    height: 5vh;
+    width: 30vw;
+    border: 2px solid #CCCCCC;
+    border-radius: 4px;
+    background-color: #272727;
+    margin-right: 10px;
+}
+
+.setting-form .hr{
+    background: #4A4747 0% 0% no-repeat padding-box;
+    opacity: 1;
+    margin: 10px 0px;
+}
+
+.btn{
+    height: 5vh;
+    width: 10vw;
+    border: 2px solid #747474;
+    border-radius: 4px;
+    opacity: 1;
+    font: normal normal bold 12px/0px Arial;
+    letter-spacing: 0px;
+    color: #747474;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.setting-form .issues{
+    padding: 0px 0px;
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    grid-row-gap: 10px;
+    margin: 10px 0px;
+}
