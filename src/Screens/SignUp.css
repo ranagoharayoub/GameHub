@@ -130,6 +130,13 @@
     margin-bottom: 20px;
 }
 
+#option *
+{
+    
+    margin: 10px 0px;
+    color: white;
+}
+
 .form-sect .captcha{
     display: flex;
     justify-content: space-between;
@@ -314,5 +321,7 @@
         color: #FFFFFF;
         opacity: 1;
     }
+
+
     
 }

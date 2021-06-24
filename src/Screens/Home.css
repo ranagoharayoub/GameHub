@@ -63,6 +63,15 @@
     font: normal normal normal 20px/100px Calibri;
 }
 
+
+#ba.owl-theme .owl-dots .owl-dot:last-child {
+  display: none !important;
+}
+
+.owl-item.active:first-child {
+    display: none;
+    }
+
 .owl-prev {
     width: auto;
     height: auto;

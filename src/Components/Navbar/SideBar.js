@@ -6,6 +6,10 @@ import { Link } from 'react-router-dom';
 function SideBar({toggle, off}) {
 
     const [checked, setchecked] = useState(false)
+    function signout () {
+        localStorage.removeItem("token");
+        window.location.href = "/"
+    }
 
     return (
         <div className='side-cont' style={toggle? {display:'flex'} : {display:'none'}}>
@@ -44,7 +48,7 @@ function SideBar({toggle, off}) {
             <div className='common' >Prize Claims</div>
             <div  className='line'></div>
             <Link to='/settings' onClick={off} className='common' >Account Settings</Link>
-            <div className='common' >Sign out</div>
+            <div className='common' onClick={() => signout()} >Sign out</div>
             <div className='lang'>
                 <button>
                     <img src='/icons/flag.png' alt='flag'></img>

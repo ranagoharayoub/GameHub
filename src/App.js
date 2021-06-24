@@ -16,10 +16,12 @@ import SignUp from './Screens/SignUp';
 import Login from './Screens/Login';
 import Settings from './Screens/Settings';
 import Matches from './Screens/Matches';
+import { useHistory } from 'react-router-dom';
+
 
 function App() {
   const [width, setwidth] = useState(window.innerWidth)
-  
+  const history = useHistory();
   useEffect(() => {
       const widthHandler = () => {
         setwidth(window.innerWidth)
@@ -43,7 +45,7 @@ function App() {
           <Route path='/tournament'  ><AllTournaments width={width}></AllTournaments></Route>
           <Route path='/games'  ><AllGames width={width}></AllGames></Route>
           <Route path='/signup'  ><SignUp width={width}></SignUp></Route>
-          <Route path='/login'  ><Login width={width}></Login></Route>
+          <Route path='/login'  ><Login width={width} history={history}></Login></Route>
           <Route path='/settings'  ><Settings width={width}></Settings></Route>
           <Route path='/matches'  ><Matches width={width}></Matches></Route>
         </Switch>
