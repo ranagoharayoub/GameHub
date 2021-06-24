@@ -190,7 +190,7 @@
     
     .tourn-cont .tourn-title{
         display: flex;
-        font: normal normal normal 35px/35px Bebas Neue;
+        font: normal normal normal 25px/35px Bebas Neue;
         font-family: 'Bebas Neue', cursive;
         
     }
@@ -203,14 +203,14 @@
     }
     
     .tourn-cont .time{
-        font: normal normal normal 13px/30px Calibri;
+        font: normal normal normal 10px/30px Calibri;
         letter-spacing: 0px;
         color: #FFFFFF;
         opacity: 0.6;
     }
     
     .tourn-cont .starts{
-        font: normal normal normal 13px/30px Arial;
+        font: normal normal normal 10px/30px Arial;
         letter-spacing: 0px;
         color: #FF0707;
         opacity: 1;

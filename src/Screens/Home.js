@@ -82,13 +82,13 @@ function Home({ width }) {
       await axios
         .get("https://gamehubx.com/api/v1/player-of-week/")
         .then((res) => {
-          console.log("data coming", champdata);
+          // console.log("data coming", champdata);
           
           setchampdata(res.data);
         });
     }
     callAPI()
-  })
+  }, [])
   // eslint-disable-next-line
   function arraymove(arr, fromIndex, toIndex) {
     var element = arr[fromIndex];
@@ -101,7 +101,7 @@ function Home({ width }) {
     width >= 800 ? setnav(true) : setnav(false);
   }, [width]);
 
-  console.log(items);
+  // console.log(items);
   const options = {
     center:false,
     items: items,

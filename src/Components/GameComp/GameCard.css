@@ -15,8 +15,9 @@
 .game-card .discr{
     position: absolute;
     background-color: black;
-    opacity: 0.5;
-    bottom: 10%;
+    opacity: 0.7;
+    top: 80%;
+    bottom: 0%;
     right: 0%;
     left: 0%;
     font: normal normal bold 17px/20px Arial;
@@ -46,8 +47,9 @@
     .game-card .discr{
         position: absolute;
         background-color: black;
-        opacity: 0.5;
-        bottom: 10%;
+        opacity: 0.7;
+        top: 80%;
+        bottom: 0%;
         right: 0%;
         left: 0%;
         font: normal normal bold 8px/8px Arial;

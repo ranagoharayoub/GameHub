@@ -3,7 +3,7 @@ import "./WinnerCard.css";
 import { Avatar } from "@material-ui/core";
 
 function WinnerCard({ yellow, pale, width, data }) {
-  console.log("data from props champs", data);
+  // console.log("data from props champs", data);
   return (
     <div className="big-cont">
       {width > "800" ? (
