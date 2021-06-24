@@ -1,5 +1,5 @@
 import { Save } from '@material-ui/icons'
-import React, { useState } from 'react'
+import React from 'react'
 import './Settings.css'
 function Settings({width}) {
 
