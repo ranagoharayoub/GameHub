@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     /* align-items: center; */
+    z-index: 111111111111111;
 }
 
 .side-cont .close{
@@ -69,7 +70,7 @@
 }
 
 .side-cont .common{
-    font: normal normal normal 13px/25px Calibri;
+    font: normal normal normal 13px/30px Calibri;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-left: 32px;
     text-decoration: none;

@@ -1,8 +1,8 @@
 import { Save } from '@material-ui/icons'
-import React from 'react'
+import React, { useState } from 'react'
 import './Settings.css'
 function Settings({width}) {
-    
+
     return (
         <div className='settings-cont'>
             <div className='title'>ACCOUNT SETTINGS</div>

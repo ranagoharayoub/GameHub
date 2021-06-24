@@ -41,11 +41,15 @@ function Navbar() {
                     <img src='/icons/search.png' height='15px'  alt='search'></img>
                     <img src='/icons/alert.png' height='15px' alt='search'></img>
                     <Avatar alt="UserName" src="/" />
-                    <div style={{fontSize:'small', opacity: '0.7'}} >Name</div>
-                    <img onClick={()=> setdisplay(true)} src='/icons/dropdown.png' height='6.1px' alt='search'></img>
+                    <div onClick={()=> setdisplay(true)} style={{fontSize:'small', opacity: '0.7'}} >Name</div>
+                    <img  src='/icons/dropdown.png' height='6.1px' alt='search'></img>
                     </div>
                     :
-                    <Link to='/signup' className='join-free-btn'>Join Free</Link>
+                    <div className='btn-flex'>
+                        <Link onClick={()=> setLoggedIn(true)} to='/login' className='home-login-btn'>Login</Link>
+                        <Link onClick={()=> setLoggedIn(true)} to='/signup' className='join-free-btn'>Join Free</Link>
+                    </div>
+
                 }
 
             </div>

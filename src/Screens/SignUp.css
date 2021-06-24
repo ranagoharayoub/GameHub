@@ -181,6 +181,7 @@
     .signup-sect .title{
         text-align: center;
         font: normal normal normal 25px/40px Bahnschrift;
+        font-family: 'Bahnschrift', sans-serif;    
         letter-spacing: 0px;
         color: #FFFFFF;
         opacity: 1;
