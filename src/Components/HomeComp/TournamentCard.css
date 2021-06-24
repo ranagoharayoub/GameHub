@@ -252,7 +252,8 @@
     }
     
     .column .numbers{
-        font: normal normal normal 13px/20px Calibri;
+        font: normal normal normal 10px/20px Calibri;
+        word-wrap: break-word;
         letter-spacing: 0px;
         color: #FFFFFF;
         opacity: 1;
