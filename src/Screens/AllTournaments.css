@@ -11,7 +11,7 @@
 
 .all-tourn .title{
     font: normal normal bold 60px/0px Bahnschrift;
-    
+    font-family: 'Bahnschrift', sans-serif;
     letter-spacing: 0px;
     color: #FFFFFF;
     text-transform: uppercase;
@@ -52,6 +52,7 @@
     .all-tourn .title{
         margin-top: 40px;
         font: normal normal bold 25px/0px Bahnschrift;
+        font-family: 'Bahnschrift', sans-serif;  
         width: 100%;
         text-align: center;
         letter-spacing: 0px;

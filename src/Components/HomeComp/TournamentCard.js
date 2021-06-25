@@ -25,7 +25,7 @@ function TournamentCard({ width, data }) {
           <img className="tourn-img" src={data.image} alt="img"></img>
           <img className="badge" src="/icons/badge.png" alt="badge"></img>
           <div className="price" style={{ color: "black" }}>
-            {data.entry_fee}
+            ${data.entry_fee}
           </div>
         </div>
         <div className="tourn-cont">
