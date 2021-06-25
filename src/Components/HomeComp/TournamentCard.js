@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./TournamentCard.css";
 import Timer from "react-compound-timer";
+import { Link } from "react-router-dom";
 
 function TournamentCard({ width, data }) {
   const [name, setname] = useState("score-cont");
@@ -24,11 +25,7 @@ function TournamentCard({ width, data }) {
           <img className="tourn-img" src={data.image} alt="img"></img>
           <img className="badge" src="/icons/badge.png" alt="badge"></img>
           <div className="price" style={{ color: "black" }}>
-<<<<<<< HEAD
             ${data.entry_fee}
-=======
-            {data.entry_fee}
->>>>>>> a9968eb7060debd9f449f917c4fb8ae1f172c7fe
           </div>
         </div>
         <div className="tourn-cont">
@@ -117,7 +114,7 @@ function TournamentCard({ width, data }) {
         </div>
       </div>
       <div className="bottom">
-        <div className="view-details">VIEW DETAILS</div>
+        <Link to='/indigame' className="view-details">VIEW DETAILS</Link>
         <img
           style={{ marginLeft: "20px" }}
           src="/icons/right-arrow .png"

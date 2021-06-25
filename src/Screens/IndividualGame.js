@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import './IndividualGame.css'
 import TournamentCard from "../Components/HomeComp/TournamentCard";
 import axios from "axios";
-function IndividualGame(width) {
+
+function IndividualGame({width}) {
     const [tourdata, settourdata] = useState([]);
 
     useEffect(() => {
