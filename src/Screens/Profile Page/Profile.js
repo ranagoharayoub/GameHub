@@ -7,6 +7,8 @@ import twitter from "../Images/twitter.png";
 // import fortnite from "../Images/fortnite.jpg";
 // import Timer from "react-compound-timer";
 import axios from "axios";
+import { useParams } from 'react-router-dom';
+
 
 function Profile() {
   const [textUnderline, setTextUnderline] = useState("Overview");
@@ -18,6 +20,9 @@ function Profile() {
   const [min, setmin] = useState(0);
   const [hour, sethour] = useState(0);
   const [day, setday] = useState(0);
+
+  const params = useParams()  
+  console.log("PARASM in pro",params)
 
   const [gamestate, setgamestate] = useState({
     id: 1,
@@ -34,65 +39,43 @@ function Profile() {
     game: 4,
   });
 
-  // useEffect(async () => {
-  //   await axios
-  //     .get("https://gamehubx.com/api/v1/user-profile/7/")
-  //     .then((res) => {
-  //       setdata(res.data);
-  //       setgamedata(res.data.overview);
-  //       // console.log("this is my data and overview", data);
-  //       // console.log("this is my data and overview", gamedata);
-  //       var dt1 = new Date(data.last_login);
-  //       console.log("date coming from data on load", dt1.toLocaleDateString());
-  //       var dt2 = new Date();
-
-  //       var diff = (dt2.getTime() - dt1.getTime()) / 1000;
-  //       diff /= 60;
-  //       setmin(Math.abs(Math.round(diff)));
-  //       console.log("diff in minutes", Math.abs(Math.round(diff)));
-
-  //       var diff2 = (dt2.getTime() - dt1.getTime()) / 1000;
-  //       diff2 /= 60 * 60;
-  //       console.log("diff in hours", Math.abs(Math.round(diff2)));
-  //       sethour(Math.abs(Math.round(diff2)));
-  //       console.log("diff in days", Math.abs(Math.floor(diff2 / 24)));
-  //       setday(Math.abs(Math.floor(diff2 / 24)));
-  //       setsec(hour * 60);
-  //     });
-  // }, []);
 
   useEffect(() => {
     const callAPI =  async () => {
        await axios
-        .get("https://gamehubx.com/api/v1/user-profile/7/")
+        .get("https://gamehubx.com/api/v1/user-profile/"+params.id+"/")
         .then((res) => {
           setdata(res.data);
           setgamedata(res.data.overview);
           // console.log("this is my data and overview", data);
           // console.log("this is my data and overview", gamedata);
-          var dt1 = new Date(data.last_login);
-          console.log("date coming from data on load", dt1.toLocaleDateString());
-          var dt2 = new Date();
-  
-          var diff = (dt2.getTime() - dt1.getTime()) / 1000;
-          diff /= 60;
-          setmin(Math.abs(Math.round(diff)));
-          console.log("diff in minutes", Math.abs(Math.round(diff)));
-  
-          var diff2 = (dt2.getTime() - dt1.getTime()) / 1000;
-          diff2 /= 60 * 60;
-          console.log("diff in hours", Math.abs(Math.round(diff2)));
-          sethour(Math.abs(Math.round(diff2)));
-          console.log("diff in days", Math.abs(Math.floor(diff2 / 24)));
-          setday(Math.abs(Math.floor(diff2 / 24)));
-          setsec(hour * 60);
+         
         });
     }
     callAPI()
-  }, [data.last_login, hour])
+  }, [params.id])
+
+  useEffect(() =>{
+    var dt1 = new Date(data.last_login);
+    console.log("date coming from data on load", dt1.toLocaleDateString());
+    var dt2 = new Date();
+
+    var diff = (dt2.getTime() - dt1.getTime()) / 1000;
+    diff /= 60;
+    setmin(Math.abs(Math.round(diff)));
+    console.log("diff in minutes", Math.abs(Math.round(diff)));
+
+    var diff2 = (dt2.getTime() - dt1.getTime()) / 1000;
+    diff2 /= 60 * 60;
+    console.log("diff in hours", Math.abs(Math.round(diff2)));
+    sethour(Math.abs(Math.round(diff2)));
+    console.log("diff in days", Math.abs(Math.floor(diff2 / 24)));
+    setday(Math.abs(Math.floor(diff2 / 24)));
+    setsec(hour * 60);
+  },[data, hour])
 
   function changestate(data) {
-    console.log("change state function");
+    // console.log("change state function");
     setgamestate(data);
   }
 
@@ -124,10 +107,22 @@ function Profile() {
               {data.username}
             </h2>
             <p className="text-xs text-textGray md:text-base">
+              {data.length >0 ? 
+              <>  
               {sec < 60 && <p> Last Login {sec} seconds ago </p>}
-              {sec > 60 && hour < 24 && <p> Last Login {hour} hours ago </p>}
+              {min > 0 && min < 60 && <p> Last Login {min} minutes ago </p>}
+              {min > 60 && hour < 24 && <p> Last Login {hour} hours ago </p>}
               {hour > 24 && day <= 1 && <p> Last Login {day} day ago </p>}
               {day > 1 && <p> Last Login {day} days ago </p>}
+              </>
+              :<> 
+              {sec < 60 && <p> Last Login {sec} seconds ago </p>}
+              {min > 0 && min < 60 && <p> Last Login {min} minutes ago </p>}
+              {min > 60 && hour < 24 && <p> Last Login {hour} hours ago </p>}
+              {hour > 24 && day <= 1 && <p> Last Login {day} day ago </p>}
+              {day > 1 && <p> Last Login {day} days ago </p>} 
+              </> }
+              
             </p>
             <div className="flex w-full mt-2 md:hidden">
               <img src={facebook} alt="" className="h-3 w-3 mr-2" />

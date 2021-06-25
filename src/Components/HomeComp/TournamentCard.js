@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./TournamentCard.css";
 import Timer from "react-compound-timer";
-import { Link } from "react-router-dom";
+
 
 function TournamentCard({ width, data }) {
   const [name, setname] = useState("score-cont");
@@ -114,7 +114,7 @@ function TournamentCard({ width, data }) {
         </div>
       </div>
       <div className="bottom">
-        <Link to='/indigame' className="view-details">VIEW DETAILS</Link>
+        <div className="view-details">VIEW DETAILS</div>
         <img
           style={{ marginLeft: "20px" }}
           src="/icons/right-arrow .png"

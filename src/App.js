@@ -50,8 +50,10 @@ function App() {
           <Route path='/login'  ><Login width={width} history={history}></Login></Route>
           <Route path='/settings'  ><Settings width={width}></Settings></Route>
           <Route path='/matches'  ><Matches width={width}></Matches></Route>
-          <Route path='/profile'  > <MainPro /> </Route>
-          <Route path='/indigame'  ><IndividualGame width={width}></IndividualGame></Route>
+          <Route path='/profile/:id'  > <MainPro /> </Route>
+          {/* <Route path='/indigame'  ><IndividualGame width={width}></IndividualGame></Route> */}
+          <Route path='/:game/:ind'  ><IndividualGame width={width}></IndividualGame></Route>
+          {/* <Route exact path="/:game/:ind" component={Indgames} /> */}
         </Switch>
         <Footer></Footer>
       </Router>

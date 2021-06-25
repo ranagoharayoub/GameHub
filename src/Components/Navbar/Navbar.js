@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 function Navbar() {
     const [display, setdisplay] = useState(false);
     const [LoggedIn, setLoggedIn] = useState(false);
+    const [name, setname] = useState("");
 
     // useEffect(async () => {
     //     var tok = localStorage.getItem("token");
@@ -20,6 +21,8 @@ function Navbar() {
                 console.log("token check in navbar",tok)
                 if(tok){
                     setLoggedIn(true)
+                    var name = localStorage.getItem("name");
+                    setname(name);
                 }}
                 callAPI()
     }, [])
@@ -41,13 +44,15 @@ function Navbar() {
                     <img src='/icons/search.png' height='15px'  alt='search'></img>
                     <img src='/icons/alert.png' height='15px' alt='search'></img>
                     <Link to='/profile'><Avatar alt="UserName" src="/" /></Link>
-                    <div onClick={()=> setdisplay(true)} style={{fontSize:'small', opacity: '0.7'}} >Name</div>
+                    <div onClick={()=> setdisplay(true)} style={{fontSize:'small', opacity: '0.7'}} >{name}</div>
                     <img  src='/icons/dropdown.png' height='6.1px' alt='search'></img>
                     </div>
                     :
                     <div className='btn-flex'>
-                        <Link onClick={()=> setLoggedIn(true)} to='/login' className='home-login-btn'>Login</Link>
-                        <Link onClick={()=> setLoggedIn(true)} to='/signup' className='join-free-btn'>Join Free</Link>
+                        {/* <Link onClick={()=> setLoggedIn(true)} to='/login' className='home-login-btn'>Login</Link>
+                        <Link onClick={()=> setLoggedIn(true)} to='/signup' className='join-free-btn'>Join Free</Link> */}
+                        <Link to='/login' className='home-login-btn'>Login</Link>
+                        <Link to='/signup' className='join-free-btn'>Join Free</Link>
                     </div>
 
                 }

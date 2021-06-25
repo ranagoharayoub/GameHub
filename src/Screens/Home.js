@@ -33,33 +33,6 @@ function Home({ width }) {
   const [champdata, setchampdata] = useState([]);
   
 
-  // useEffect(async () => {
-  //   await axios.get("https://gamehubx.com/api/v1/game/").then((res) => {
-  //     setdata(res.data);
-  //     //   console.log("data coming", gamedata);
-  //   });
-
-  //   await axios
-  //     .get("https://gamehubx.com/api/v1/tournament/?featured=1")
-  //     .then((res) => {
-  //       settourdata(res.data);
-  //       //console.log("data coming", tourdata);
-  //     });
-
-  //   await axios.get("https://gamehubx.com/api/v1/statistics/").then((res) => {
-  //     setstatdata(res.data);
-  //     //console.log("data coming", statdata);
-  //   });
-
-  //   await axios
-  //     .get("https://gamehubx.com/api/v1/player-of-week/")
-  //     .then((res) => {
-  //       console.log("data coming", champdata);
-        
-  //       setchampdata(res.data);
-  //     });
-  // }, []);
-
   useEffect(() => {
     const callAPI = async () => {
       await axios.get("https://gamehubx.com/api/v1/game/").then((res) => {
@@ -108,7 +81,7 @@ function Home({ width }) {
     dotsEach: true,
     margin: 3,
     loop:false,
-    rewind: false,
+    rewind: true,
     autoplay: false,
     nav: nav,
     navText: [
@@ -120,6 +93,7 @@ function Home({ width }) {
   return (
     <div className="home-cont">
       <div className="main-cont">
+        <video className="video-cont" src='/Video/herovid.mp4'  autoPlay loop muted ></video>
         <div className="find">
           FIND YOUR <br></br>PERFECT TOURNAMENT
         </div>

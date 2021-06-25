@@ -8,22 +8,26 @@
 
 .home-cont .main-cont{
     height: 93vh;
-    background-image: url('../bg/background.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #4A4747;
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
+    position: relative;
+}
+
+.main-cont .video-cont{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 .main-cont .find{
-    height: 60%; 
-    display: flex;
-    justify-content: center;
-    align-items: flex-end; 
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    width: 1000px;
     text-align: center;
     font: normal normal bold 80px/100px Source Sans Pro;
     font-family: 'Source Sans Pro', sans-serif;
@@ -31,7 +35,10 @@
 }
 
 .main-cont .play{
-
+    position: absolute;
+    bottom: 10%;
+    right: 50%;
+    transform: translate(50%, -50%);
     padding: 10px 50px;
     background-color: #f69204;
     outline: none;
@@ -64,15 +71,15 @@
 }
 
 
-/* #ba.owl-theme {
-  display: none !important;
-} */
-
-.owl-dots {display: block !important;}
-.owl-dots .owl-dot { display: inline-block !important;}
-
-.owl-item.active:first-child {
+/* #ba.owl-theme .owl-dots .owl-dot:last-child {
     display: none;
+  } */
+
+/* .owl-dots {display: none !important;} */
+.owl-dot { display: inline-block !important;}
+
+.owl-item.active:first-child{
+    display: none !important;
     }
 
 .owl-prev {
@@ -257,9 +264,6 @@
 @media (max-width: 800px) {
     .home-cont .main-cont{
         height: 93vh;
-        background-image: url('../bg/background.png');
-        background-position: right;
-        background-size: cover;
         color: white;
         display: flex;
         flex-direction: column;
@@ -269,11 +273,13 @@
     }
 
     .main-cont .find{
-        height: 60%; 
+        text-align: center;
+        width: 200px;
+        top: 50%;
+        right: 50%;
         display: flex;
         justify-content: center;
-        align-items: flex-end; 
-        text-align: center;
+        transform: translate(50%, -50%);
         font: normal normal bold 40px/40px Source Sans Pro;
         font-family: 'Source Sans Pro', sans-serif;
     }
