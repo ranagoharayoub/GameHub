@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 import './SideBar.css'
 import {FormControlLabel,Switch} from '@material-ui/core'
-import { ArrowDropDown } from '@material-ui/icons'
-
+import { ArrowDropDown} from '@material-ui/icons'
+import { Link } from 'react-router-dom';
 function SideBar({toggle, off}) {
 
     const [checked, setchecked] = useState(false)
+    function signout () {
+        localStorage.removeItem("token");
+        window.location.href = "/"
+    }
 
     return (
         <div className='side-cont' style={toggle? {display:'flex'} : {display:'none'}}>
@@ -43,8 +47,8 @@ function SideBar({toggle, off}) {
             <div className='common' >Purchased Items</div>
             <div className='common' >Prize Claims</div>
             <div  className='line'></div>
-            <div className='common' >Account Settings</div>
-            <div className='common' >Sign out</div>
+            <Link to='/settings' onClick={off} className='common' >Account Settings</Link>
+            <div className='common' onClick={() => signout()} >Sign out</div>
             <div className='lang'>
                 <button>
                     <img src='/icons/flag.png' alt='flag'></img>

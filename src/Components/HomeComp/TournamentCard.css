@@ -36,6 +36,15 @@
     width: auto;
 }
 
+.upper .price{
+    position: absolute;
+    bottom: -2%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: small;
+    font-weight: 600;
+}
+
 .upper .tourn-cont{
     flex: 1;
     height: 100%;
@@ -159,6 +168,15 @@
         height: 40px;
         width: auto;
     }
+
+    .upper .price{
+        position: absolute;
+        bottom: 2%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: x-small;
+        font-weight: bold;
+    }
     
     .upper .tourn-cont{
         flex: 1;
@@ -172,7 +190,7 @@
     
     .tourn-cont .tourn-title{
         display: flex;
-        font: normal normal normal 35px/35px Bebas Neue;
+        font: normal normal normal 25px/35px Bebas Neue;
         font-family: 'Bebas Neue', cursive;
         
     }
@@ -185,14 +203,14 @@
     }
     
     .tourn-cont .time{
-        font: normal normal normal 13px/30px Calibri;
+        font: normal normal normal 10px/30px Calibri;
         letter-spacing: 0px;
         color: #FFFFFF;
         opacity: 0.6;
     }
     
     .tourn-cont .starts{
-        font: normal normal normal 13px/30px Arial;
+        font: normal normal normal 10px/30px Arial;
         letter-spacing: 0px;
         color: #FF0707;
         opacity: 1;
@@ -234,7 +252,8 @@
     }
     
     .column .numbers{
-        font: normal normal normal 15px/20px Calibri;
+        font: normal normal normal 10px/20px Calibri;
+        word-wrap: break-word;
         letter-spacing: 0px;
         color: #FFFFFF;
         opacity: 1;
