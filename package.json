@@ -10,7 +10,10 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "react": "^17.0.2",
+<<<<<<< HEAD
     "react-axios": "^2.0.5",
+=======
+>>>>>>> a9968eb7060debd9f449f917c4fb8ae1f172c7fe
     "react-compound-timer": "^1.2.0",
     "react-dom": "^17.0.2",
     "react-owl-carousel2": "^0.3.0",

@@ -19,7 +19,10 @@ import Matches from './Screens/Matches';
 import { useHistory } from 'react-router-dom';
 import Profile from './Screens/Profile';
 import HeroFade from './Components/ProfileComp/HeroFade';
+<<<<<<< HEAD
 import IndividualGame from './Screens/IndividualGame';
+=======
+>>>>>>> a9968eb7060debd9f449f917c4fb8ae1f172c7fe
 
 
 function App() {
@@ -52,7 +55,10 @@ function App() {
           <Route path='/settings'  ><Settings width={width}></Settings></Route>
           <Route path='/matches'  ><Matches width={width}></Matches></Route>
           <Route path='/profile'  ><HeroFade></HeroFade><Profile></Profile></Route>
+<<<<<<< HEAD
           <Route path='/indigame'  ><IndividualGame width={width}></IndividualGame></Route>
+=======
+>>>>>>> a9968eb7060debd9f449f917c4fb8ae1f172c7fe
         </Switch>
         <Footer></Footer>
       </Router>
