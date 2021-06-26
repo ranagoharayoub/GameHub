@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-
+import { useParams } from 'react-router-dom';
 import axios from "axios";
 
 function HeroFade() {
   const [data, setdata] = useState([]);
+  const params = useParams()  
+
   // useEffect(
   //   async () => {
   //   await axios
@@ -16,12 +18,13 @@ function HeroFade() {
   useEffect(() => {
     const callAPI = async () => {
       await axios
-        .get("https://gamehubx.com/api/v1/user-profile/7/")
+        .get("https://gamehubx.com/api/v1/user-profile/" + params.id+"/" )
         .then((res) => {
           setdata(res.data);
         });
     }
     callAPI()
+    // eslint-disable-next-line
   }, [])
 
   return (

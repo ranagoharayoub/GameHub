@@ -82,6 +82,12 @@
     display: none !important;
     }
 
+    .owl-carousel .active span {
+        width:10px;
+        height:10px;
+        background: #f69204 !important;
+    }
+
 .owl-prev {
     width: auto;
     height: auto;
@@ -305,6 +311,7 @@
         width: 100%;
         font: normal normal normal 12px/50px Calibri;
     }
+
 
     .home-cont .featured-tournament{
         min-height: 100vh;

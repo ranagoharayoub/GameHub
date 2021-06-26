@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 
 
 export default class Login extends Component {
@@ -11,6 +12,10 @@ export default class Login extends Component {
       email: "",
       pass: "",
     };
+  }
+
+  responseFacebook = (response) => {
+    console.log(response);
   }
 
   login = async (e) => {
@@ -72,10 +77,23 @@ export default class Login extends Component {
               Join Free!
             </Link>
           </div>
-          <div className="social-login-fb">
+          <FacebookLogin
+            appId="134199658730762"
+              autoLoad
+              callback={this.responseFacebook()}
+              render={renderProps => (
+                <button className="social-login-fb" onClick={renderProps.onClick}>
+                  
             <img src="/icons/fb.png" height="20px" alt="fb"></img>
             <div className="title">Continue with Facebook</div>
-          </div>
+          
+                </button>
+              )}
+            />
+          {/* <div className="social-login-fb">
+            <img src="/icons/fb.png" height="20px" alt="fb"></img>
+            <div className="title">Continue with Facebook</div>
+          </div> */}
           <div
             className="social-login-google"
             style={{ backgroundColor: "white" }}

@@ -85,8 +85,8 @@ function Home({ width }) {
     autoplay: false,
     nav: nav,
     navText: [
-      '<i class="fa fa-2x fa-angle-left" aria-hidden="true"></i>',
-      '<i class="fa fa-2x fa-angle-right" aria-hidden="true"></i>',
+      '<i class="fa fa-2x fa-angle-left" style="color: #f69204" aria-hidden="true"></i>',
+      '<i class="fa fa-2x fa-angle-right" style="color: #f69204" aria-hidden="true"></i>',
     ],
   };
 

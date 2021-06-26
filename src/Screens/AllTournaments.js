@@ -33,7 +33,7 @@ function AllTournaments({ width }) {
         className="filter-cont"
         style={width > "800" ? { display: "none" } : { display: "flex" }}
       >
-        <div style={{ fontSize: "small", fontFamily: "arial" }}>Filter</div>
+        {/* <div style={{ fontSize: "small", fontFamily: "arial" }}>Filter</div> */}
       </div>
       <div className="cards-sec">
         {tourdata.map((ent) => {

@@ -109,6 +109,10 @@ function MobileMenu({menuOn, off}) {
                 <img src='/icons/trophy.png' height='20px' alt='icon'></img>
                 <div className='title'>Tournaments</div>
             </Link>
+            <Link onClick={off} className='ico-title' to='/games'>
+                <img src='/icons/trophy.png' height='20px' alt='icon'></img>
+                <div className='title'>Games</div>
+            </Link>
             <div className='ico-title'>
                 <img src='/icons/Calendar.png' height='20px' alt='icon'></img>
                 <div className='title'>Timed Events</div>

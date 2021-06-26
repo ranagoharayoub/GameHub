@@ -55,24 +55,48 @@ function Profile() {
     callAPI()
   }, [params.id])
 
-  useEffect(() =>{
-    var dt1 = new Date(data.last_login);
-    console.log("date coming from data on load", dt1.toLocaleDateString());
-    var dt2 = new Date();
+  // useEffect(() =>{
+  //   function effectFunction(){
+  //   var dt1 = new Date(data.last_login);
+  //   console.log("date coming from data on load", dt1.toLocaleDateString());
+  //   var dt2 = new Date();
 
-    var diff = (dt2.getTime() - dt1.getTime()) / 1000;
-    diff /= 60;
-    setmin(Math.abs(Math.round(diff)));
-    console.log("diff in minutes", Math.abs(Math.round(diff)));
+  //   var diff = (dt2.getTime() - dt1.getTime()) / 1000;
+  //   diff /= 60;
+  //   setmin(Math.abs(Math.round(diff)));
+  //   console.log("diff in minutes", Math.abs(Math.round(diff)));
 
-    var diff2 = (dt2.getTime() - dt1.getTime()) / 1000;
-    diff2 /= 60 * 60;
-    console.log("diff in hours", Math.abs(Math.round(diff2)));
-    sethour(Math.abs(Math.round(diff2)));
-    console.log("diff in days", Math.abs(Math.floor(diff2 / 24)));
-    setday(Math.abs(Math.floor(diff2 / 24)));
-    setsec(hour * 60);
-  },[data, hour])
+  //   var diff2 = (dt2.getTime() - dt1.getTime()) / 1000;
+  //   diff2 /= 60 * 60;
+  //   console.log("diff in hours", Math.abs(Math.round(diff2)));
+  //   sethour(Math.abs(Math.round(diff2)));
+  //   console.log("diff in days", Math.abs(Math.floor(diff2 / 24)));
+  //   setday(Math.abs(Math.floor(diff2 / 24)));
+  //   setsec(hour * 60); }
+  // },[data, hour])
+
+  React.useEffect(
+    function effectFunction() {
+      var dt1 = new Date(data.last_login);
+      console.log("date coming from data on load", dt1.toLocaleDateString());
+      var dt2 = new Date();
+  
+      var diff = (dt2.getTime() - dt1.getTime()) / 1000;
+      diff /= 60;
+      setmin(Math.abs(Math.round(diff)));
+      console.log("diff in minutes", Math.abs(Math.round(diff)));
+  
+      var diff2 = (dt2.getTime() - dt1.getTime()) / 1000;
+      diff2 /= 60 * 60;
+      console.log("diff in hours", Math.abs(Math.round(diff2)));
+      sethour(Math.abs(Math.round(diff2)));
+      console.log("diff in days", Math.abs(Math.floor(diff2 / 24)));
+      setday(Math.abs(Math.floor(diff2 / 24)));
+      setsec(hour * 60); 
+    },
+    // eslint-disable-next-line
+    [data]
+  );
 
   function changestate(data) {
     // console.log("change state function");
@@ -109,14 +133,15 @@ function Profile() {
             <p className="text-xs text-textGray md:text-base">
               {data.length >0 ? 
               <>  
-              {sec < 60 && <p> Last Login {sec} seconds ago </p>}
+              {min < 1 && sec < 60  &&  <p> Last Login {sec} seconds ago </p>}
               {min > 0 && min < 60 && <p> Last Login {min} minutes ago </p>}
               {min > 60 && hour < 24 && <p> Last Login {hour} hours ago </p>}
               {hour > 24 && day <= 1 && <p> Last Login {day} day ago </p>}
               {day > 1 && <p> Last Login {day} days ago </p>}
               </>
-              :<> 
-              {sec < 60 && <p> Last Login {sec} seconds ago </p>}
+              :
+              <> 
+              {min < 1 && sec < 60  &&  <p> Last Login {sec} seconds ago </p>}
               {min > 0 && min < 60 && <p> Last Login {min} minutes ago </p>}
               {min > 60 && hour < 24 && <p> Last Login {hour} hours ago </p>}
               {hour > 24 && day <= 1 && <p> Last Login {day} day ago </p>}

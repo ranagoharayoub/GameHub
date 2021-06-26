@@ -37,7 +37,8 @@
 }
 
 .winner-card .name{
-    font: normal normal normal 35px/10px Arial;
+    font: normal normal lighter 35px/10px Calibri;
+    /* font-weight: 100; */
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;

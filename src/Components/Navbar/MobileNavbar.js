@@ -29,7 +29,7 @@ function MobileNavbar() {
                 callAPI()
     }, [])
     return (
-        <div className='mob-navbar'>
+        <div className='mob-navbar' >
             <MobileMenu menuOn={menuOn} off={()=>setmenuOn(false)}></MobileMenu>
             <div  className='menu'>
                 {
@@ -39,11 +39,11 @@ function MobileNavbar() {
                     <Menu onClick={()=>setmenuOn(!menuOn)}></Menu>
                 } 
             </div>
-            <div className='logo'>
-               <Link to='/'><img src='/icons/gamehub.png' height='25px' alt='logo'></img></Link> 
+            <div className='logo' style={LoggedIn?{width:'80%', paddingRight:'20%'}: null} >
+               <Link to='/'><img src='/icons/gamehub.png' width='100px' alt='logo'></img></Link> 
             </div>
             {LoggedIn === false && 
-            <div className='login'>
+            <div className='login' >
             <Link to='/login' className='login-btn'>Login</Link>
             </div>
             }
