@@ -1,8 +1,8 @@
 .side-cont{
-    position: absolute;
+    position: fixed;
     left: 85%;
     right: 0%;
-    top: 7vh;
+    top: 0%;
     bottom: 0%;
     background-color: #4A4747;
     display: flex;

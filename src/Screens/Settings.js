@@ -2,7 +2,8 @@ import { Save } from "@material-ui/icons";
 import React, {useState } from "react";
 import "./Settings.css";
 import axios from "axios";
-
+import { Button, Modal} from "react-bootstrap";
+/*eslint-disable*/
 function Settings({ width }) {
   const [state, setState] = React.useState({
     username: "",
@@ -17,12 +18,22 @@ function Settings({ width }) {
   });
 
   const [cross, setcross] = useState("/icons/cancel.png");
+  
+  const [show, setShow] = useState(false);
+  const [modaltext, setmodaltext] = useState("");
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const [curntpass, setcurntpass] = useState("");
+  const [pass, setpass] = useState("");
+  const [conpass, setconpass] = useState("");
 
   async function usersave() {
     console.log("userbutton working");
+    
     var tok = localStorage.getItem("token");
     var id = localStorage.getItem("userdata");
-  const headers = {
+    const headers = {
       "Authorization": "Token "+tok,
       "Content-Type": "application/json;charset=UTF-8",
     };
@@ -34,12 +45,16 @@ function Settings({ width }) {
         headers: headers,
       })
       .then((response) => {
-        alert("successfully changed username")
-        console.log(response);
+        setmodaltext("successfully changed username")
+        setShow(true)
+        // alert("successfully changed username")
+        // console.log(response);
       })
       .catch((error) => {
-        console.log(error);
-        alert("unable to change username")
+        setmodaltext("couldn't change password")
+        setShow(true)
+        // console.log(error);
+        // alert("unable to change username")
       });
   }
 
@@ -52,7 +67,7 @@ function Settings({ width }) {
       "Content-Type": "application/json;charset=UTF-8",
     };
     var data = JSON.stringify({
-        "phone_number": state.email
+        "email": state.email
       });
     await axios
       .patch("https://gamehubx.com/api/v1/user-profile/" + id + "/", data, {
@@ -84,15 +99,60 @@ function Settings({ width }) {
         headers: headers,
       })
       .then((response) => {
-        alert("successfully changed phone")
-        console.log(response);
+        setmodaltext("successfully changed phone")
+        setShow(true)
       })
       .catch((error) => {
-        alert("unable to change phone")
-        console.log(error);
+        setmodaltext("unable to change phone")
+        setShow(true)
       });
   }
 
+  async function savepass(){
+    console.log("change pass btn",curntpass ,pass, conpass);
+    var tok = localStorage.getItem("token");
+    var id = localStorage.getItem("userdata");
+  const headers = {
+      "Authorization": "Token "+tok,
+      "Content-Type": "application/json",
+    };
+    var data = JSON.stringify({
+      "old_password": state.currntpass,
+      "new_password1": state.pass,
+      "new_password2": state.confpass
+    });
+    // await axios
+    //   .post("https://gamehubx.com/api/v1/auth/password/change/",data , {
+    //     headers: headers,
+    //   })
+    //   .then((response) => {
+    //     setmodaltext("successfully changed password")
+    //     setShow(true)
+    //   })
+    //   .catch((error) => {
+    //     setmodaltext("couldn't changed password")
+    //     setShow(true)
+    //   });
+
+      await axios({
+        method: "post",
+        url: "https://gamehubx.com/api/v1/auth/password/change/",
+        headers: headers,
+        data: {
+          old_password: curntpass,
+          new_password1: pass,
+          new_password2: conpass
+        },
+      })
+        .then((response) => {
+          setmodaltext("successfully changed password")
+          setShow(true)
+        })
+        .catch((error) => {
+          setmodaltext("couldn't changed password")
+          setShow(true)
+        });
+  }
 
   //   useEffect(() => {
   //     console.log(state);
@@ -104,13 +164,13 @@ function Settings({ width }) {
       ...state,
       [evt.target.name]: value,
     });
-    //console.log(state);
+    console.log(state);
   }
 
   React.useEffect(
     function effectFunction() {
-      console.log("checkin in side effect");
-      var pass = state.pass;
+      console.log("in use effect pass",pass);
+      //var pass = state.pass;
       // eslint-disable-next-line
       var reg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{9,32}$/;
       // eslint-disable-next-line
@@ -120,7 +180,7 @@ function Settings({ width }) {
 
       if (pass !== undefined) {
         if (test & format.test(pass) & (pass.length > 9)) {
-          console.log("contains symbol and length of pass", state.pass.length);
+          console.log("contains symbol and length of pass",pass.length);
           setState({ btnstate: false });
           setcross("/icons/tick.png");
           console.log("pass3");
@@ -144,20 +204,37 @@ function Settings({ width }) {
         }
       }
     },
-    [state.pass]
+    [pass]
   );
 
   function handleChange2(evt) {
     const value = evt.target.value;
-    setState({
-      ...state,
-      [evt.target.name]: value,
-    });
-    //console.log(state);
+    setcurntpass(value)
+  }
+
+  function handleChange3(evt) {
+    const value = evt.target.value;
+    setpass(value)
+  }
+
+  function handleChange4(evt) {
+    const value = evt.target.value;
+    setconpass(value)
   }
 
   return (
     <div className="settings-cont">
+            <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{modaltext}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+            </Modal>
       <div className="title">ACCOUNT SETTINGS</div>
       <div className="settings-sec">
         <form className="setting-form">
@@ -277,8 +354,8 @@ function Settings({ width }) {
               className="input"
               type="password"
               name="currntpass"
-              value={state.currntpass}
-              onChange={handleChange}
+              value={curntpass}
+              onChange={handleChange2}
               placeholder="current Password"
               style={width > "800" ? { width: "25%" } : null}
             ></input>
@@ -288,8 +365,8 @@ function Settings({ width }) {
                 type="password"
                 placeholder="Create Password"
                 name="pass"
-                value={state.pass}
-                onChange={handleChange2}
+                value={pass}
+                onChange={handleChange3}
                 style={width > "800" ? { width: "98%" } : null}
               ></input>
               {cross !== undefined && (
@@ -316,39 +393,18 @@ function Settings({ width }) {
                   </div>
                 </div>
               )}
-              {/* <div className="issues">
-                <div className="warning">
-                  <img src={state.cross} alt="cancel"></img>
-                  <div style={{ marginLeft: "10px" }}>10 characters</div>
-                </div>
-                <div className="warning">
-                  <img src="/icons/cancel.png" alt="cancel"></img>
-                  <div style={{ marginLeft: "10px" }}>Upper Case</div>
-                </div>
-                <div className="warning">
-                  <img src="/icons/cancel.png" alt="cancel"></img>
-                  <div style={{ marginLeft: "10px" }}>Lower Case</div>
-                </div>
-                <div className="warning">
-                  <img src="/icons/cancel.png" alt="cancel"></img>
-                  <div style={{ marginLeft: "10px" }}>Numbers</div>
-                </div>
-                <div className="warning">
-                  <img src="/icons/cancel.png" alt="cancel"></img>
-                  <div style={{ marginLeft: "10px" }}>Symbols</div>
-                </div>
-              </div> */}
+              
             </div>
             <input
               className="input"
               type="password"
               name="confpass"
-              value={state.confpass}
-              onChange={handleChange}
+              value={conpass}
+              onChange={handleChange4}
               placeholder="confirm Password"
               style={width > "800" ? { width: "25%" } : null}
             ></input>
-            <div className="btn">Change Password</div>
+            <div className="btn" onClick={() => savepass()}>Change Password</div>
           </div>
           <hr></hr>
           <div className="subtitle" style={{ marginTop: "15px" }}>

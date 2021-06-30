@@ -28,7 +28,9 @@ function Navbar() {
     }, [])
 
     return (
+        
         <div className='navbar'>
+
             <div className='Links'>
                 <Link className='link-cont' style={{textDecoration:'none', color:'inherit'}} to='/'>HOME</Link>
                 <Link className='link-cont' style={{textDecoration:'none', color:'inherit'}} to='/games'>GAMES</Link>
@@ -56,9 +58,9 @@ function Navbar() {
                     </div>
 
                 }
-
+                        <Sidebar toggle={display} off={()=> setdisplay(false)}></Sidebar>
             </div>
-            <Sidebar toggle={display} off={()=> setdisplay(false)}></Sidebar>
+
         </div>
     )
 }

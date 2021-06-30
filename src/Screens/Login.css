@@ -50,6 +50,18 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    /* padding: 0px 0px; */
+}
+
+.login-cont .content-center{
+    height: 7vh;
+    width: 100%;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0px 0px;
+    /* background-color: #F69204; */
 }
 
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./TournamentCard.css";
 import Timer from "react-compound-timer";
-
+import {Link} from 'react-router-dom'
 
 function TournamentCard({ width, data }) {
   const [name, setname] = useState("score-cont");
@@ -17,6 +17,10 @@ function TournamentCard({ width, data }) {
     var dou2 = myDate.getTime() - date.getTime();
     return dou2;
   }
+
+  // function abc (a) {
+  //   return a.replace(/\s/g, "-");
+  // }
 
   return (
     <div className="tourn-card">
@@ -114,7 +118,7 @@ function TournamentCard({ width, data }) {
         </div>
       </div>
       <div className="bottom">
-        <div className="view-details">VIEW DETAILS</div>
+        <Link to={`/indtour/:${data.id}`} className="view-details">VIEW DETAILS</Link>
         <img
           style={{ marginLeft: "20px" }}
           src="/icons/right-arrow .png"
