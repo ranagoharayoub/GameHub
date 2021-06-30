@@ -1,0 +1,190 @@
+.champion-main {
+  background: #303030;
+  padding-top: 60px;
+}
+.champion-label {
+  background: #4a4747;
+  display: flex;
+  border: 2px solid #707070;
+  padding: 20px 0;
+}
+.champion-cell {
+  width: 33%;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.champion-list {
+  display: flex;
+  padding: 25px 0;
+  border-bottom: 2px solid #707070;
+  margin: 0 20px;
+}
+.champion-list .champion-cell:first-child {
+  display: flex;
+  justify-content: center;
+}
+.champion-list .champion-cell {
+  font-size: 18px;
+}
+.champion-list .champion-cell:nth-child(3) {
+  color: #f69204;
+}
+.champion-logo img {
+  width: 85px;
+  height: 90px;
+}
+.champ-text h4 {
+  font-size: 20px;
+  margin: 0;
+  line-height: 1.1;
+}
+.champ-text p {
+  margin: 0;
+  opacity: 0.5;
+}
+.champ-text {
+  text-align: left;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.team-row-text {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 47px;
+  color: #fff;
+}
+.team-row-text p {
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 600;
+  opacity: 0.7;
+}
+.small-arrow {
+  width: 70px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 40px;
+  font-size: 16px;
+}
+/* ============================ Media Query 991 ================================== */
+@media only screen and (max-width: 991px) {
+  .champion-logo img {
+    width: 80px;
+    height: 85px;
+  }
+  .champion-logo img {
+    width: 57px;
+    height: 60px;
+  }
+}
+/* ============================ Media Query 767 ================================== */
+@media only screen and (max-width: 767px) {
+  .champion-cell {
+    font-size: 16px;
+  }
+  .champ-text h4 {
+    font-size: 15px;
+  }
+  .champ-text p {
+    font-size: 12px;
+  }
+  .champion-list .champion-cell {
+    font-size: 15px;
+  }
+  .champ-text {
+    margin-left: 10px;
+  }
+  .champion-logo img {
+    width: 55px;
+    height: 60px;
+  }
+  .champion-list .champion-cell:first-child {
+    width: 45%;
+    justify-content: flex-start;
+  }
+  .champion-label .champion-cell:first-child {
+    width: 45%;
+  }
+}
+/* ============================ Media Query 599 ================================== */
+@media only screen and (max-width: 599px) {
+  .champion-list {
+    margin: 0 8px;
+  }
+  .champion-logo img {
+    width: 45px;
+    height: 50px;
+  }
+  .champion-cell {
+    font-size: 14px;
+  }
+  .champ-text p {
+    font-size: 10px;
+  }
+  .champion-list .champion-cell {
+    font-size: 14px;
+  }
+  .champion-label {
+    padding: 15px 0;
+  }
+  .champion-label {
+    padding: 10px 0;
+  }
+}
+
+/* ============================ Media Query 499 ================================== */
+@media only screen and (max-width: 499px) {
+  .champion-cell {
+    font-size: 11px;
+  }
+  .champion-logo img {
+    width: 35px;
+    height: 40px;
+  }
+  .champion-list .champion-cell {
+    font-size: 13px;
+  }
+  .champion-cell {
+    font-size: 10px;
+  }
+  .champion-list .champion-cell {
+    font-size: 11px;
+  }
+  .champ-text h4 {
+    font-size: 12px;
+  }
+  .champ-text p {
+    font-size: 9px;
+  }
+  .champion-label .champion-cell:first-child {
+    width: 58%;
+  }
+  .champion-list .champion-cell:first-child {
+    width: 58%;
+  }
+  .team-row-text p {
+    font-size: 11px;
+  }
+  .small-arrow {
+    width: 30px;
+    font-size: 11px;
+    margin-left: 20px;
+  }
+  .champion-list {
+    padding: 15px 0;
+  }
+}
+/* ============================ Media Query 400 ================================== */
+@media only screen and (max-width: 400px) {
+  .champion-cell {
+    font-size: 8px;
+  }
+}
