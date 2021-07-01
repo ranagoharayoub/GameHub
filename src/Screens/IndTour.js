@@ -14,26 +14,30 @@ import Teams from "../Components/Tounament/Teams";
 import Admin from "../Components/Tounament/Admin";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import '../mdl-tabs-links/material.teal-indigo.min.css'
 /*eslint-disable*/
 export default function IndTour() {
+
 const [data, setdata] = useState([])
 const [loading, setloading] = useState(true)
 const {gameId} =useParams()
-
 const number = (a) => {
     return a.replace(":", "");
   }
   useEffect(() => {
+    // componentHandler.upgradeDom();
 
-    
       const callApi = async() =>{
         await axios.get('https://gamehubx.com/api/v1/tournament/'+number(gameId)+'/').then((res)=> setdata(res.data)).catch((error)=> console.log(error))
         console.log(data)
         setloading(false)
+        componentHandler.upgradeDom()
        }
        callApi()
-    
+       
   }, [gameId])
+
+
 
   return (
     // Inctour Main
@@ -105,7 +109,7 @@ const number = (a) => {
             <div class="mdl-cell">
               <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
                 <div class="mdl-tabs__tab-bar">
-                  <a href="#prizes" class="mdl-tabs__tab is-active">
+                  <a href="#prizes"  class="mdl-tabs__tab is-active" >
                     <img src={tabIcon1} />
                     Prizes
                   </a>
@@ -117,7 +121,7 @@ const number = (a) => {
                     <img src={tabIcon3} />
                     BRACKET
                   </a>
-                  <a href="#team" class="mdl-tabs__tab">
+                  <a href="#team"  class="mdl-tabs__tab">
                     <img src={tabIcon4} />
                     TEAMS
                   </a>
@@ -154,19 +158,19 @@ const number = (a) => {
                   </div>
                 </div>
                 {/* ================ Rules =============== */}
-                <div class="mdl-tabs__panel" id="rules">
+                <div class="mdl-tabs__panel"  id="rules">
                   <Rules />
                 </div>
                 {/* ================ Bracket =============== */}
-                <div class="mdl-tabs__panel" id="bracket">
+                <div class="mdl-tabs__panel"  id="bracket">
                   <Bracket max_team={data.max_team} />
                 </div>
                 {/* ================ Team =============== */}
-                <div class="mdl-tabs__panel" id="team">
+                <div class="mdl-tabs__panel"  id="team">
                   <Teams />
                 </div>
                 {/* ================ Admin =============== */}
-                <div class="mdl-tabs__panel" id="admin">
+                <div class="mdl-tabs__panel"  id="admin">
                   <Admin />
                 </div>
               </div>

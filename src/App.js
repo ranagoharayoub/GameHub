@@ -1,4 +1,5 @@
 import './App.css';
+import './mdl-tabs-links/material.teal-indigo.min.css'
 import Home from './Screens/Home';
 import Navbar from './Components/Navbar/Navbar'
 

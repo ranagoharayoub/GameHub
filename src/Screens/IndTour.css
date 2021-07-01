@@ -30,17 +30,18 @@ body {
   top: -290px;
   left: 0.5%;
   right: 0.5%;
-  height: 374px;
+  height: 320px;
 }
 .tournament-card-img-box {
-  width: 332px;
-  height: 374px;
+  width: 385px;
+  height: 320px;
 }
 .tournament-card-img-box img {
   width: 100%;
   height: 100%;
 }
 .tournament-card-text-box {
+  width: 100%;
   padding: 23px 35px 0;
 }
 .tournament-card-text-box h2 {
@@ -148,7 +149,7 @@ body {
   background: #f69204;
 }
 .inctour-tabs-section .mdl-tabs__tab {
-  padding: 0 123px;
+  padding: 0 7.5%;
   height: auto;
 }
 .inctour-tabs-section .mdl-grid:first-child {
@@ -156,7 +157,7 @@ body {
 }
 .inctour-tabs-section .mdl-grid {
   position: relative;
-  margin-top: 90px;
+  margin-top: 30px;
   padding: 0;
 }
 .inctour-tabs-section .mdl-tabs__panel {
@@ -177,6 +178,9 @@ body {
   padding: 30px;
   width: 25%;
   margin: 0 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 .prize-card:first-child {
   margin-left: 0;
@@ -228,6 +232,7 @@ body {
   letter-spacing: 0.01em;
   text-transform: uppercase;
   color: #fff;
+  padding-top: 15px;
 }
 .tournament-rules-tab-content .accordion-item {
   border: 0;
@@ -817,16 +822,16 @@ body {
 /* ===================================== Media Query 1350 ====================================== */
 @media only screen and (max-width: 1350px) {
   .tournament-card-img-box {
-    height: 350px;
+    height: 300px;
   }
   .tournament-card-inner {
-    height: 350px;
+    height: 300px;
   }
   .tournament-card-text-box h2 {
     font-size: 38px;
   }
   .inctour-tabs-section .mdl-tabs__tab {
-    padding: 0 90px;
+    padding: 0 7%;
   }
   .prize-card {
     width: 33%;
@@ -847,7 +852,7 @@ body {
     margin-top: 30px;
   }
   .inctour-tabs-section .mdl-tabs__tab {
-    padding: 0 50px;
+    padding: 0 6%;
   }
   .staff-icon {
     width: 40px;
