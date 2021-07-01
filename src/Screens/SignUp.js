@@ -457,7 +457,7 @@ export default class SignUp extends Component {
                 fontSize: "large",
                 fontWeight: "600",
               }}
-              disabled={this.state.btnstate}
+              // disabled={this.state.btnstate}
             >
               JOIN NOW
             </button>
