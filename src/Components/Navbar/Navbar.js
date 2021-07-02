@@ -21,8 +21,8 @@ function Navbar() {
                 console.log("token check in navbar",tok)
                 if(tok){
                     setLoggedIn(true)
-                    var name = localStorage.getItem("name");
-                    setname(name);
+                    var username = localStorage.getItem("name");
+                    setname(username);
                 }}
                 callAPI()
     }, [])
@@ -45,7 +45,7 @@ function Navbar() {
                     <div className='icons'>
                     <img src='/icons/search.png' height='15px'  alt='search'></img>
                     <img src='/icons/alert.png' height='15px' alt='search'></img>
-                    <Link to='/profile'><Avatar alt="UserName" src="/" /></Link>
+                    <Avatar alt={name} src="/" />
                     <div onClick={()=> setdisplay(true)} style={{fontSize:'small', opacity: '0.7'}} >{name}</div>
                     <img  src='/icons/dropdown.png' height='6.1px' alt='search'></img>
                     </div>

@@ -20,7 +20,7 @@ export default class SignUp extends Component {
       term: "",
       eight: "",
       cross: "/icons/cancel.png",
-      passstate: "weak",
+      passstate: "Weak",
       btnstate: true,
     };
   }
@@ -85,10 +85,10 @@ export default class SignUp extends Component {
       }
 
       if (pass.length < 5) {
-        this.setState({ passstate: "weak" });
+        this.setState({ passstate: "Weak" });
       }
       if ((pass.length >= 5) & (pass.length < 10)) {
-        this.setState({ passstate: "medium" });
+        this.setState({ passstate: "Medium" });
       }
       if (pass.length >= 10) {
         this.setState({ passstate: "Strong" });
@@ -109,7 +109,7 @@ export default class SignUp extends Component {
         headers: {},
         data: {
           username: this.state.username,
-          name: "saadkhalid",
+          name: "",
           email: this.state.email,
           dob: this.state.year + "-" + this.state.month + "-" + this.state.day,
           password: this.state.pass,
@@ -119,6 +119,7 @@ export default class SignUp extends Component {
       })
         .then((response) => {
           console.log(response);
+          alert('Account Created')
         })
         .catch((error) => {
           console.log(error.response);
@@ -160,6 +161,7 @@ export default class SignUp extends Component {
           <form className="form-sect">
             <input
               required
+              id='inputcolor'
               className="input-fields"
               name="username"
               value={this.state.username}
@@ -168,6 +170,7 @@ export default class SignUp extends Component {
               placeholder="Username"
             ></input>
             <input
+              id='inputcolor'
               required
               className="input-fields"
               name="email"
@@ -177,6 +180,7 @@ export default class SignUp extends Component {
               placeholder="Email Address"
             ></input>
             <input
+              id='inputcolor'
               required
               className="input-fields"
               name="pass"
@@ -208,10 +212,11 @@ export default class SignUp extends Component {
               </div>
             </div>
             <div className="pass-strength">
-              <div className="line"></div>
+              <div className="line" style={this.state.passstate==="Medium"?{backgroundColor:'red'}:this.state.passstate==='Strong'?{backgroundColor:'green'}:null}></div>
               <div className="strength">{this.state.passstate}</div>
             </div>
             <input
+              id='inputcolor'
               required
               className="input-fields"
               name="confpass"
@@ -223,6 +228,7 @@ export default class SignUp extends Component {
             <label className="phone">Phone Number</label>
             <div>
               <input
+                id='inputcolor'
                 required
                 style={{ width: "20%", borderRight: "1px solid white" }}
                 name="phoneext"
@@ -233,6 +239,7 @@ export default class SignUp extends Component {
                 type="tel"
               ></input>
               <input
+                id='inputcolor'
                 required
                 style={{ width: "80%" }}
                 className="input-fields"
@@ -414,6 +421,7 @@ export default class SignUp extends Component {
             </div>
             <div className="captcha">
               <input
+              id='inputcolor'
                 style={{ width: "60%", backgroundColor: "white" }}
                 className="input-fields"
               ></input>
@@ -426,6 +434,7 @@ export default class SignUp extends Component {
             </div>
             <div className="check-policy">
               <input
+              id='inputcolor'
                 className="checkbox"
                 name="term"
                 type="checkbox"
@@ -437,6 +446,7 @@ export default class SignUp extends Component {
             </div>
             <div className="check-policy">
               <input
+              id='inputcolor'
                 className="checkbox"
                 name="eight"
                 type="checkbox"
@@ -457,7 +467,7 @@ export default class SignUp extends Component {
                 fontSize: "large",
                 fontWeight: "600",
               }}
-              // disabled={this.state.btnstate}
+              disabled={this.state.btnstate}
             >
               JOIN NOW
             </button>

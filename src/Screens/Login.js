@@ -39,7 +39,7 @@ export default class Login extends Component {
         console.log(response.data);
         localStorage.setItem("token", response.data.key);
         localStorage.setItem("userdata", response.data.user_detail.id);
-        localStorage.setItem("name", response.data.user_detail.name);
+        localStorage.setItem("name", response.data.user_detail.username);
         //   var tok = localStorage.getItem("token");
         //   var user = localStorage.getItem("userdata");
         //   console.log("token from Storage", tok);
@@ -150,6 +150,7 @@ export default class Login extends Component {
           <form className="form-sect">
             <label className="label">Email Address</label>
             <input
+            id='inputcolor'
               className="input-fields"
               name="email"
               required
@@ -158,6 +159,7 @@ export default class Login extends Component {
             ></input>
             <label className="label">Password</label>
             <input
+            id='inputcolor'
               className="input-fields"
               name="pass"
               required

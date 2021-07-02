@@ -48,6 +48,10 @@
     flex-direction: column;
 }
 
+#inputcolor{
+    color: white;
+}
+
 .form-sect .input-fields, .captcha .captcha-code{
     height: 8vh;
     background: #4A4747 0% 0% no-repeat padding-box;
@@ -94,7 +98,7 @@
 .pass-strength .line{
     width: 85%;
     height: 5px;
-    background: #3C3A3A 0% 0% no-repeat padding-box;
+    background-color: #3C3A3A;
     opacity: 1;
 }
 

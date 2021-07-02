@@ -15,6 +15,7 @@ function Settings({ width }) {
     confpass: "",
     cross: "/icons/tick.png",
     btnstate: "true",
+    timezone:''
   });
 
   const [cross, setcross] = useState("/icons/cancel.png");
@@ -121,18 +122,7 @@ function Settings({ width }) {
       "new_password1": state.pass,
       "new_password2": state.confpass
     });
-    // await axios
-    //   .post("https://gamehubx.com/api/v1/auth/password/change/",data , {
-    //     headers: headers,
-    //   })
-    //   .then((response) => {
-    //     setmodaltext("successfully changed password")
-    //     setShow(true)
-    //   })
-    //   .catch((error) => {
-    //     setmodaltext("couldn't changed password")
-    //     setShow(true)
-    //   });
+
 
       await axios({
         method: "post",
@@ -152,6 +142,32 @@ function Settings({ width }) {
           setmodaltext("couldn't changed password")
           setShow(true)
         });
+  }
+
+  const saveTime = async () =>{
+    console.log(state.timezone)
+    var tok = localStorage.getItem("token");
+    var id = localStorage.getItem("userdata");
+  const headers = {
+      "Authorization": "Token "+tok,
+      "Content-Type": "application/json;charset=UTF-8",
+    };
+    var data = JSON.stringify({
+        "timezone": state.timezone
+      });
+    await axios
+      .patch("https://gamehubx.com/api/v1/user-profile/" + id + "/", data, {
+        headers: headers,
+      })
+      .then((response) => {
+        setmodaltext("successfully changed TimeZone")
+        setShow(true);
+      })
+      .catch((error) => {
+        setmodaltext("unable to change Timezone")
+        setShow(error);
+      });
+
   }
 
   //   useEffect(() => {
@@ -256,6 +272,7 @@ function Settings({ width }) {
                 }
               >
                 <input
+                id='inputcolor'
                   placeholder="Username"
                   name="username"
                   value={state.username}
@@ -267,8 +284,8 @@ function Settings({ width }) {
                   onClick={() => usersave()}
                   style={
                     width < "800"
-                      ? { marginRight: "0px", color: "white" }
-                      : { color: "white", marginRight: "10px" }
+                      ? { marginRight: "0px", color: "white",  cursor:'pointer' }
+                      : { color: "white", marginRight: "10px", cursor:'pointer' }
                   }
                 ></Save>
               </div>
@@ -284,14 +301,15 @@ function Settings({ width }) {
                 }
               >
                 <input
+                id='inputcolor'
                   className="input"
                   name="email"
                   value={state.email}
                   onChange={handleChange}
                   placeholder="email"
-                  style={width < "800" ? { width: "80vw" } : null}
+                  style={width < "800" ? { width: "80vw"} : null}
                 ></input>
-                <Save   style={{ color: "white" }}
+                <Save   style={{ color: "white" , cursor:'pointer' }}
                 onClick={() => emailsave()}
                 ></Save>
               </div>
@@ -308,6 +326,7 @@ function Settings({ width }) {
               }
             >
               <input
+              id='inputcolor'
                 className="input"
                 type="tel"
                 placeholder="+1"
@@ -329,6 +348,7 @@ function Settings({ width }) {
                 }
               ></input>
               <input
+              id='inputcolor'
                 className="input"
                 type="tel"
                 name="phone"
@@ -351,16 +371,18 @@ function Settings({ width }) {
             style={{ alignItems: "flex-start", marginTop: "10px" }}
           >
             <input
+            id='inputcolor'
               className="input"
               type="password"
               name="currntpass"
               value={curntpass}
               onChange={handleChange2}
-              placeholder="current Password"
+              placeholder="Current Password"
               style={width > "800" ? { width: "25%" } : null}
             ></input>
             <div className="col">
               <input
+              id='inputcolor'
                 className="input"
                 type="password"
                 placeholder="Create Password"
@@ -396,12 +418,13 @@ function Settings({ width }) {
               
             </div>
             <input
+            id='inputcolor'
               className="input"
               type="password"
               name="confpass"
               value={conpass}
               onChange={handleChange4}
-              placeholder="confirm Password"
+              placeholder="Confirm Password"
               style={width > "800" ? { width: "25%" } : null}
             ></input>
             <div className="btn" onClick={() => savepass()}>Change Password</div>
@@ -410,21 +433,28 @@ function Settings({ width }) {
           <div className="subtitle" style={{ marginTop: "15px" }}>
             LOCATION
           </div>
-          <div className="flex">
+          <div className="flex" style={width> 800? {width:'60%'}: null}>
             <div className="col">
               <label className="label">Area</label>
-              <select className="input">
-                <option value="Eastern">Eastern</option>
+              <select value={state.timezone}
+              onChange={(e) => setState({timezone: e.target.value})} className="input" style={{backgroundColor:"#4A4747"}}>
+                <option value="0">Your preferred time zone </option>
+                <option value="+5">(GMT+5) Africa/Abidjan </option>
+                <option value="-5">(GMT-5) Africa/Accra </option>
+                <option value="0">(GMT0) Africa/Bamako </option>
+                <option value="+2">(GMT+2) Africa/Banjul </option>
+                <option value="+8">(GMT+8) Africa/Bissau </option>
+                <option value="-8">(GMT-8) Africa/Casablanca </option>
               </select>
             </div>
-            <div className="col">
+            <div className="col" style={{display:'none'}}>
               <label className="label">Region</label>
-              <input className="input"></input>
+              <input id='inputcolor' className="input"></input>
             </div>
             {width > "800" ? (
-              <div className="btn">Change Timezone</div>
+              <div className="col btn" onClick={saveTime}>Change Timezone</div>
             ) : (
-              <div className="save-btn">Save</div>
+              <div className="save-btn" onClick={saveTime}>Save</div>
             )}
           </div>
         </form>
