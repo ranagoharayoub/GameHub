@@ -20,6 +20,11 @@ export default function IndTour() {
 
 const [data, setdata] = useState([])
 const [loading, setloading] = useState(true)
+const [state, setstate] = useState({
+  firstprize:'',
+  secondprize:'',
+  thirdprize:'',
+})
 const {gameId} =useParams()
 const number = (a) => {
     return a.replace(":", "");
@@ -32,13 +37,31 @@ const number = (a) => {
         console.log(data)
         setloading(false)
         componentHandler.upgradeDom()
+         
        }
        callApi()
-       
   }, [gameId])
 
 
+useEffect(() => {
+  if (!loading) {
+    try {
+      setstate({
+      firstprize: data.tournament_prizes[0].amount,
+      secondprize: data.tournament_prizes[1].amount,
+      thirdprize: data.tournament_prizes[2].amount,
+    })
+  } catch (error) {
+    console.log(error)
+  }
+  }
+}, [loading])
 
+
+
+
+
+console.log(state)
   return (
     // Inctour Main
     <div class="inctour-main">
@@ -89,7 +112,8 @@ const number = (a) => {
                 <div class="tour-small-item">
                   <div class="tour-small-tax">
                     <p>TOP PRIZE</p>
-                    <p>${ loading ? null :  data.tournament_prizes[0].amount}</p>
+                    {/* <p>${ loading ? null :  data.tournament_prizes[0].amount}</p> */}
+                    <p>${state.firstprize}</p>
                   </div>
                 </div>
               </div>
@@ -139,19 +163,22 @@ const number = (a) => {
                         <div class="prize-card">
                           <h4>1st Place</h4>
                           <img src={prizeIcon} />
-                          <h5>${ loading ? null :  data.tournament_prizes[0].amount}</h5>
+                          {/* <h5>${ loading ? null :  data.tournament_prizes[0].amount}</h5> */}
+                          <h5>${state.firstprize}</h5>
                         </div>
                         {/* ========== Prize Card 2 ============ */}
                         <div class="prize-card">
                           <h4>2nd Place</h4>
                           <img src={prizeIcon} />
-                          <h5>${ loading ? null :  data.tournament_prizes[1].amount}</h5>
+                          {/* <h5>${ loading ? null :  data.tournament_prizes[1].amount}</h5> */}
+                          <h5>${state.secondprize}</h5>
                         </div>
                         {/* ========== Prize Card 3 ============ */}
                         <div class="prize-card">
                           <h4>3rd Place</h4>
                           <img src={prizeIcon} />
-                          <h5>${ loading ? null :  data.tournament_prizes[2].amount}</h5>
+                          {/* <h5>${ loading ? null :  data.tournament_prizes[2].amount}</h5> */}
+                          <h5>${state.thirdprize}</h5>
                         </div>
                       </div>
                     </div>
