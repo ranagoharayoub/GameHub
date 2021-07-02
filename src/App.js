@@ -23,7 +23,7 @@ import IndividualGame from './Screens/IndividualGame';
 import IndTour from './Screens/IndTour'
 import FbGlogin from './Screens/SocialLoginPagesSignup/FbGlogin'
 import Champions from './Screens/Champions'
-
+import AfterSignup from './Screens/AfterSignup'
 
 function App() {
   const [width, setwidth] = useState(window.innerWidth)
@@ -52,6 +52,7 @@ function App() {
           <Route path="/indtour/:gameId"><IndTour /></Route>
           <Route path='/games'  ><AllGames width={width}></AllGames></Route>
           <Route path='/signup'  ><SignUp width={width}></SignUp></Route>
+          <Route path='/success'  ><AfterSignup></AfterSignup></Route>
           <Route path='/login'  ><Login width={width} history={history}></Login></Route>
           <Route path='/fbglogin'><FbGlogin></FbGlogin></Route>
           <Route path='/settings'  ><Settings width={width}></Settings></Route>

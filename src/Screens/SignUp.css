@@ -64,10 +64,16 @@
     
 }
 
+
+
+option{
+    color: white;
+}
+
 .form-sect .issues{
     padding: 0px 15px;
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto ;
     grid-row-gap: 10px;
     margin-bottom: 20px;
     
