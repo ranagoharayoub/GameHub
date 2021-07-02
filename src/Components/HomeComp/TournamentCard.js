@@ -18,9 +18,6 @@ function TournamentCard({ width, data }) {
     return dou2;
   }
 
-  // function abc (a) {
-  //   return a.replace(/\s/g, "-");
-  // }
 
   return (
     <div className="tourn-card">
@@ -37,7 +34,8 @@ function TournamentCard({ width, data }) {
             {data.title}
           </div>
           <div className="tourn-time">
-            <div className="time">{data.start_on}</div>
+            {/* <div className="time">{new Date(data.start_on).getFullYear()}-{}{new Date(data.start_on).getMonth()+1}-{new Date(data.start_on).getDate()}</div> */}
+            <div className="time">{new Date(data.start_on).toDateString()}</div>
             <div className="starts">
               Starts in{" "}
               {

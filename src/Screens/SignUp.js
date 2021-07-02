@@ -25,7 +25,7 @@ export default class SignUp extends Component {
       passStrength: false,
       success : false,
       show:false,
-      modaltext:'error',
+      modaltext:'',
     };
   }
 
@@ -245,6 +245,7 @@ export default class SignUp extends Component {
             <label className="phone">Phone Number</label>
             <div>
               <input
+                required
                 id='inputcolor'                
                 style={{ width: "20%", borderRight: "1px solid white" }}
                 name="phoneext"
@@ -255,6 +256,7 @@ export default class SignUp extends Component {
                 type="tel"
               ></input>
               <input
+              required
                 id='inputcolor'
                 style={{ width: "80%" }}
                 className="input-fields"
@@ -268,12 +270,12 @@ export default class SignUp extends Component {
             <select
               required
               className="input-fields"
-              id="pet-select"
+              // id="pet-select"
               name="timezone"
               value={this.state.timezone}
               onChange={(e) => this.handleChange(e)}
             >
-              <option value="0">Your preferred time zone </option>
+              <option value="">Your preferred time zone </option>
               <option value="+5">(GMT+5) Africa/Abidjan </option>
               <option value="-5">(GMT-5) Africa/Accra </option>
               <option value="0">(GMT0) Africa/Bamako </option>
@@ -290,7 +292,7 @@ export default class SignUp extends Component {
                 value={this.state.day}
                 onChange={(e) => this.handleChange(e)}
               >
-                <option value="0">Day</option>
+                <option value="">Day</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -330,7 +332,7 @@ export default class SignUp extends Component {
                 value={this.state.month}
                 onChange={(e) => this.handleChange(e)}
               >
-                <option value="0">Month</option>
+                <option value="">Month</option>
                 <option value="1">Jan</option>
                 <option value="2">Feb</option>
                 <option value="3">Mar</option>

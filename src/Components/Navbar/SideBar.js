@@ -83,7 +83,7 @@ function SideBar({ toggle, off }) {
           alt="avatar"
           height="12px"
         ></img>
-        <div> <Link to={`/profile/${id}`}> View Profile </Link></div>
+        <Link style={{textDecoration:'none', color:'white'}} to={`/profile/${id}`}> View Profile </Link>
       </div>
       
       <div className="common">My Matches</div>

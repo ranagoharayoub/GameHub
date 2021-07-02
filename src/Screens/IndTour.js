@@ -85,7 +85,7 @@ console.log(state)
                 <b>Platform:</b> {data.platform_detail}
               </p>
               <p>
-                <b>Registration:</b> OPEN <span>{data.start_on}</span>
+                <b>Registration:</b> OPEN <span>{new Date(data.start_on).toLocaleString()}</span>
               </p>
               <div class="tour-small-main">
                 <div class="tour-small-item">

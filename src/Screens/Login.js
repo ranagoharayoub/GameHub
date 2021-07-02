@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 import GoogleLogin from 'react-google-login';
-
+import { Button, Modal} from "react-bootstrap";
 
 // /icons/fb.png
 
@@ -14,6 +14,8 @@ export default class Login extends Component {
     this.state = {
       email: "",
       pass: "",
+      show:false,
+      modaltext:'',
     };
   }
 
@@ -48,8 +50,9 @@ export default class Login extends Component {
         window.location.href = "/";
       })
       .catch((error) => {
-        //console.log(error.response.data.key);
-        alert("credentials not correct");
+        // console.log(error.response.data.key);
+        this.setState({modaltext:"Credentials are not correct"});
+        this.setState({ show: true });
       });
   };
 
@@ -103,6 +106,17 @@ export default class Login extends Component {
   render() {
     return (
       <div className="login-cont">
+                <Modal show={this.state.show} onHide={()=> this.setState({show: false})}>
+        <Modal.Header closeButton>
+          <Modal.Title></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{this.state.modaltext}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={()=> this.setState({show: false})}>
+            Close
+          </Button>
+        </Modal.Footer>
+            </Modal>
         <div className="login-sect">
           <div className="title">SIGN IN</div>
           <div className="subtitle">
@@ -135,7 +149,7 @@ export default class Login extends Component {
             />
           
    <GoogleLogin
-    clientId={'836636335348-erahbhm5b6b98reaotutopvldc606be6.apps.googleusercontent.com'}
+    clientId={'431419828404-n5tfmqqqlkohd0luqiu8rsqrs657fshk.apps.googleusercontent.com'}
     onSuccess={ this.responseGoogle}
     onFailure={this.responseGoogle}
     className="social-login-google"
@@ -147,7 +161,7 @@ export default class Login extends Component {
             <div className="title" style={{paddingLeft:"25px"}}>Continue with Google</div>
           </button>
   </GoogleLogin>
-          <form className="form-sect">
+          <form className="form-sect" onSubmit={(e) => this.login(e)}>
             <label className="label">Email Address</label>
             <input
             id='inputcolor'
@@ -172,8 +186,9 @@ export default class Login extends Component {
               <div className="checkbox-label">Remember me on this Device</div>
             </div>
             <button
+            type='submit'
               className="input-fields"
-              onClick={(e) => this.login(e)}
+              // onClick={(e) => this.login(e)}
               style={{
                 marginTop: "50px",
                 backgroundColor: "#F69204",
