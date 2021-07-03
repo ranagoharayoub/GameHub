@@ -52,6 +52,21 @@ body {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+.tournament-card-text-box .enroll-now{
+  background-color: #F69204;
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  margin-top: 5px;
+  width: 15%;
+  padding: 10px 0px;
+  border-radius: 5px;
+}
+
+
 .tour-lower-text {
   padding-top: 10px;
 }
@@ -878,6 +893,21 @@ body {
   }
   .mdl-tabs__tab img {
     height: 40px;
+  }
+
+  .tournament-card-text-box .enroll-now{
+    background-color: #F69204;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    margin-left: 10%;
+    width: 80%;
+    padding: 5px 0px;
   }
 }
 /* ===================================== Media Query 767 ====================================== */

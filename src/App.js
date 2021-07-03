@@ -49,7 +49,7 @@ function App() {
         <Switch>
           <Route exact path='/'  ><Home width={width}></Home></Route>
           <Route path='/tournament'  ><AllTournaments width={width}></AllTournaments></Route>
-          <Route path="/indtour/:gameId"><IndTour /></Route>
+          <Route path="/indtour/:gameId"><IndTour width={width}/></Route>
           <Route path='/games'  ><AllGames width={width}></AllGames></Route>
           <Route path='/signup'  ><SignUp width={width}></SignUp></Route>
           <Route path='/success'  ><AfterSignup></AfterSignup></Route>

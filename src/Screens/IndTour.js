@@ -16,7 +16,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import '../mdl-tabs-links/material.teal-indigo.min.css'
 /*eslint-disable*/
-export default function IndTour() {
+export default function IndTour({width}) {
 
 const [data, setdata] = useState([])
 const [loading, setloading] = useState(true)
@@ -118,6 +118,7 @@ console.log(state)
                 </div>
               </div>
             </div>
+            <div className='enroll-now'>Enroll Now</div>
           </div>
         </div>
       </div>
