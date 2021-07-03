@@ -95,7 +95,7 @@ function SideBar({ toggle, off }) {
       <div className="common">Purchased Items</div>
       <div className="common">Prize Claims</div>
       <div className="line"></div>
-      <Link to="/settings" onClick={off} className="common">
+      <Link to={`/settings/${id}`} onClick={off} className="common">
         Account Settings
       </Link>
       <div className="common" onClick={() => signout()}>

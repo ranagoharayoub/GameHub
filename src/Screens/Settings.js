@@ -1,14 +1,41 @@
 import { Save } from "@material-ui/icons";
-import React, {useState } from "react";
+import React, {useEffect, useState } from "react";
 import "./Settings.css";
 import axios from "axios";
 import { Button, Modal} from "react-bootstrap";
+import { useParams } from "react-router-dom";
 /*eslint-disable*/
 function Settings({ width }) {
+
+  const {id}=useParams()
+
+  const [userinfo, setuserinfo] = useState({
+    name: '',
+    email:'',
+    phone:'',
+  })
+
+
+  useEffect(() => {
+    const callAPI =  async () => {
+      try {
+        const {data: {username, email, phone_number}} = await axios.get("https://gamehubx.com/api/v1/user-profile/"+id+"/") 
+        setuserinfo({name:username, email: email, phone: phone_number})
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    
+    callAPI()
+    
+  }, [id])
+
+    console.log(userinfo)
+
   const [state, setState] = React.useState({
-    username: "",
-    email: "",
-    phoneext: "",
+    username: userinfo.name,
+    email: userinfo.email,
+    phoneext: userinfo.phone,
     phone: "",
     currntpass: "",
     pass: "12",
@@ -17,6 +44,8 @@ function Settings({ width }) {
     btnstate: "true",
     timezone:''
   });
+
+
 
   const [cross, setcross] = useState("/icons/cancel.png");
   

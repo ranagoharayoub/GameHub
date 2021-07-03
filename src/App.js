@@ -55,7 +55,7 @@ function App() {
           <Route path='/success'  ><AfterSignup></AfterSignup></Route>
           <Route path='/login'  ><Login width={width} history={history}></Login></Route>
           <Route path='/fbglogin'><FbGlogin></FbGlogin></Route>
-          <Route path='/settings'  ><Settings width={width}></Settings></Route>
+          <Route path='/settings/:id'  ><Settings width={width}></Settings></Route>
           <Route path='/matches'  ><Matches width={width}></Matches></Route>
           <Route path='/champs'  ><Champions></Champions></Route>
           <Route path='/profile/:id'  > <MainPro /> </Route>
