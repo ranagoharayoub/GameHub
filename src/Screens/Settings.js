@@ -30,12 +30,12 @@ function Settings({ width }) {
     
   }, [id])
 
-    console.log(userinfo)
+    console.log(userinfo.name? userinfo.name: 'fetch')
 
   const [state, setState] = React.useState({
-    username: userinfo.name,
-    email: userinfo.email,
-    phoneext: userinfo.phone,
+    username: '',
+    email:'',
+    phoneext: '',
     phone: "",
     currntpass: "",
     pass: "12",
@@ -45,7 +45,9 @@ function Settings({ width }) {
     timezone:''
   });
 
-
+useEffect(() => {
+  setState({username: userinfo.name, email: userinfo.email, phone: userinfo.phone})
+}, [userinfo])
 
   const [cross, setcross] = useState("/icons/cancel.png");
   
