@@ -83,13 +83,13 @@ function SideBar({ toggle, off }) {
           alt="avatar"
           height="12px"
         ></img>
-        <Link style={{textDecoration:'none', color:'white'}} to={`/profile/${id}`}> View Profile </Link>
+        <Link onClick={off} style={{textDecoration:'none', color:'white'}} to={`/profile/${id}`}> View Profile </Link>
       </div>
       
-      <div className="common">My Matches</div>
+      <Link to='/matches' className="common">My Matches</Link>
       <div className="common">My Teams</div>
       <div className="common">Team Invites</div>
-      <div className="common">My Tickets</div>
+      <Link to='/ticket' onClick={off} className="common">My Tickets</Link>
       <div className="line"></div>
       <div className="common">My Bank</div>
       <div className="common">Purchased Items</div>

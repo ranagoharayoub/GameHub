@@ -24,7 +24,8 @@ import IndTour from './Screens/IndTour'
 import FbGlogin from './Screens/SocialLoginPagesSignup/FbGlogin'
 import Champions from './Screens/Champions'
 import AfterSignup from './Screens/AfterSignup'
-
+import Tickets from './Screens/Tickets'
+import Faq from './Screens/Faq'
 function App() {
   const [width, setwidth] = useState(window.innerWidth)
   const history = useHistory();
@@ -51,6 +52,7 @@ function App() {
           <Route path='/tournament'  ><AllTournaments width={width}></AllTournaments></Route>
           <Route path="/indtour/:gameId"><IndTour width={width}/></Route>
           <Route path='/games'  ><AllGames width={width}></AllGames></Route>
+          <Route path='/ticket'  ><Tickets></Tickets></Route>
           <Route path='/signup'  ><SignUp width={width}></SignUp></Route>
           <Route path='/success'  ><AfterSignup></AfterSignup></Route>
           <Route path='/login'  ><Login width={width} history={history}></Login></Route>
@@ -61,7 +63,7 @@ function App() {
           <Route path='/profile/:id'  > <MainPro /> </Route>
           {/* <Route path='/indigame'  ><IndividualGame width={width}></IndividualGame></Route> */}
           <Route path='/:game/:ind'  ><IndividualGame width={width}></IndividualGame></Route>
-          {/* <Route exact path="/:game/:ind" component={Indgames} /> */}
+          <Route path='/faq'><Faq></Faq></Route>
         </Switch>
         <Footer></Footer>
       </Router>

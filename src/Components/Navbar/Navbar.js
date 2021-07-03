@@ -42,7 +42,7 @@ function Navbar() {
             <div className='icons-div'>
                 {
                     LoggedIn?
-                    <div className='icons'>
+                    <div className='icons-cont'>
                     <img src='/icons/search.png' height='15px'  alt='search'></img>
                     <img src='/icons/alert.png' height='15px' alt='search'></img>
                     <Avatar alt={name} src="/" />

@@ -1,0 +1,530 @@
+body {
+  font-family: Arial;
+  overflow-x: hidden;
+}
+.tickets-main {
+  background: #303030;
+  padding: 35px 0;
+  height: 100vh;
+}
+.tickets-container {
+  max-width: 600px;
+  min-width: 300px;
+  margin: auto;
+}
+.tickets-container h1 {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 45px;
+  margin: 0;
+}
+.create-new-box {
+  width: 100%;
+  padding: 15px 0;
+}
+.create-new-box button {
+  background: #f69204;
+  color: #000000;
+  text-decoration: none;
+  width: 100%;
+  border: 0;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 20px 0;
+  border-radius: 4px;
+}
+.create-new-box .create-btn {
+  background: #f69204;
+  color: #000000;
+  text-decoration: none;
+  width: 100%;
+  border: 0;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 20px 0;
+}
+.create-ticket-box {
+  max-width: 500px;
+  min-width: 280px;
+  background: #272727;
+  margin: 50px auto 0;
+}
+.create-box-line {
+  width: 100%;
+  background: #f69204;
+  height: 10px;
+}
+.create-ticket-box-inner {
+  color: #fff;
+  padding: 30px;
+}
+.create-ticket-box h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+  font-family: Arial;
+}
+.create-ticket-box p {
+  opacity: 0.7;
+  margin: 0;
+  padding-top: 10px;
+  font-size: 14px;
+}
+.dropdown-menu {
+  padding: 0;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+}
+.btn-success:hover {
+  background: #f69204;
+  color: #000;
+}
+.btn-check:active + .btn-success,
+.btn-check:checked + .btn-success,
+.btn-success.active,
+.btn-success:active,
+.show > .btn-success.dropdown-toggle {
+  color: #000;
+  background-color: #f69204;
+  border-color: #f69204;
+  box-shadow: none;
+  border-radius: 4px;
+}
+.btn-check:active + .btn-success:focus,
+.btn-check:checked + .btn-success:focus,
+.btn-success.active:focus,
+.btn-success:active:focus,
+.show > .btn-success.dropdown-toggle:focus {
+  box-shadow: none;
+}
+.btn-check:focus + .btn-success,
+.btn-success:focus {
+  box-shadow: none;
+}
+.btn-check:focus + .btn-success,
+.btn-success:focus {
+  background-color: #f69204;
+  border-color: #f69204;
+  color: #000;
+}
+.dropdown-item:focus,
+.dropdown-item:hover {
+  background-color: transparent;
+}
+.dropdown-toggle::after {
+  display: none;
+}
+.bottom-btns {
+  display: flex;
+  justify-content: space-between;
+}
+.bottom-btn {
+  background: #3b3939;
+  width: 49.5%;
+  padding: 15px 0;
+  text-align: center;
+}
+.bottom-btn a {
+  text-decoration: none;
+  color: #f69204;
+  font-size: 15px;
+}
+.ticket-cat-main {
+  margin: 35px 0;
+}
+.ticket-cat-main .dropdown-submenu {
+  background: #4a4747;
+  padding: 15px 20px;
+  color: #fff;
+  opacity: 0.7;
+  font-family: Arial;
+  font-size: 17px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+.ticket-cat-main .dropdown-submenu-container a.dropdown-submenu::after {
+  display: inline-block;
+  content: "";
+  transform: rotate(0deg);
+  right: 15px;
+  top: 21px;
+}
+.ticket-cat-main .dropdown-submenu-container .dropdown-menu {
+  border-radius: 0;
+  top: 50px;
+  left: 0;
+}
+.ticket-cat-main .dropdown-menu {
+  background-color: #4a4747;
+}
+.ticket-cat-main .dropdown-menu a {
+  background-color: #4a4747;
+  border-bottom: 1px solid #707070;
+}
+.catgory-menu .dropdown-submenu-container a.dropdown-submenu::after {
+  display: none;
+}
+.general-submenu .dropdown-item {
+  position: absolute;
+  top: -490px;
+  height: 400px;
+  width: 500px;
+  background: #272727 !important;
+  padding: 0;
+  color: #fff;
+  left: -32px;
+}
+.general-submenu {
+  position: absolute;
+  top: -520px;
+  width: 500px;
+  left: -32px;
+}
+.general-submenu .modal-content {
+  width: 106%;
+  border-radius: 0;
+  background-color: #272727;
+}
+.general-submenu .modal-body {
+  padding: 0;
+  color: #fff;
+}
+.general-subb-dropdown {
+  margin: 40px 0;
+}
+.general-submenu .general-sub-cat-inner {
+  padding: 25px;
+}
+.general-subb-cat .dropdown-submenu-container .dropdown-item {
+  position: static;
+  top: 0;
+  height: auto;
+  width: 100%;
+  border-bottom: 0;
+  background: #4a4747 !important;
+  padding: 15px 25px;
+  font-size: 14.5px;
+}
+.general-subb-cat {
+  margin: 40px 0;
+  width: 100%;
+}
+.general-subb-cat
+  .dropdown-submenu-container
+  a.dropdown-item.dropdown-submenu.dropdown-toggle::after {
+  display: inline-block;
+  content: "";
+  transform: rotate(0deg);
+  right: 15px;
+  top: 21px;
+  position: absolute;
+}
+.general-subb-cat.last
+  .dropdown-submenu-container
+  a.dropdown-item.dropdown-submenu.dropdown-toggle::after {
+  display: none;
+}
+.general-sub-cat-inner .general-subb-cat.last {
+  margin-bottom: 0;
+}
+.general-add {
+  padding: 40px 0;
+}
+.general-add p {
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  padding-top: 0;
+}
+.general-add p .fas.fa-plus-circle {
+  font-size: 25px;
+  margin-right: 10px;
+  color: #f69204;
+}
+.general-forms textarea {
+  background: #3b3939;
+  border: none;
+  width: 100%;
+  padding: 20px;
+  color: #fff;
+  opacity: 0.6;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Arial;
+}
+.general-forms textarea::placeholder {
+  color: #fff;
+  opacity: 0.6;
+}
+.modal-body .bottom-btn a {
+  background-color: transparent;
+  border: none;
+}
+.mobile {
+  display: none;
+}
+
+/* ================================ My Custom Css ==================================== */
+
+.modal-content {
+  width: 64%;
+  border-radius: 0;
+  margin: auto;
+  background-color: #272727;
+  border: none;
+  color: #fff;
+}
+.modal-header {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.modal-footer {
+  border-top: none;
+}
+.btn-check:focus + .btn-primary,
+.btn-primary:focus {
+  color: #000;
+  background-color: #f69204;
+  border-color: #f69204;
+  box-shadow: none !important;
+}
+.btn-primary:hover {
+  color: #000;
+  background-color: #f69204;
+  border-color: #f69204;
+}
+.modal-title {
+  font-size: 28px;
+  font-weight: 600;
+}
+.modal-body p {
+  opacity: 0.7;
+}
+.modal-footer {
+  flex-wrap: nowrap;
+  padding: 0;
+}
+.modal-footer .btn {
+  border-radius: 0;
+  width: 50%;
+}
+.modal-footer .btn.btn-primary {
+  background-color: #3b3939;
+  border: none;
+  color: #f69204;
+  margin: 0;
+  padding: 15px 0;
+  margin-right: 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.modal-footer .btn.btn-primary:nth-child(2) {
+  margin-left: 5px;
+  margin-right: 0;
+}
+.modal-body {
+  padding-bottom: 0;
+}
+.modal {
+  margin-top: 50px;
+}
+.modal.show .modal-dialog {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+@media only screen and (max-width: 991px) {
+  .modal-content {
+    width: 95%;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .tickets-container {
+    padding: 0 20px;
+  }
+  .tickets-container h1 {
+    font-size: 34px;
+  }
+  .create-new-box button {
+    font-size: 15px;
+    padding: 15px 0;
+  }
+  .tickets-main {
+    position: relative;
+  }
+  .create-ticket-box {
+    position: absolute;
+    top: -133px;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    min-width: 100%;
+    margin: 0;
+    background-color: #303030;
+  }
+  .create-box-line {
+    display: none;
+  }
+  .create-ticket-box-inner {
+    padding: 30px 0;
+  }
+  .general-submenu .modal-content {
+    background-color: #303030;
+    border: 0;
+    width: 108%;
+  }
+  .general-submenu {
+    max-width: 100%;
+    top: -300px;
+  }
+  .modal {
+    background: #303030;
+  }
+  .modal-content {
+    width: 100%;
+    background: #303030;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .modal-footer {
+    padding: 0 15px;
+  }
+  .general-sub-cat-inner h2 {
+    margin-bottom: 5px;
+    font-size: 35px;
+  }
+  .general-add {
+    padding: 19px 0;
+  }
+  .general-submenu .general-sub-cat-inner {
+    padding: 25px 15px;
+  }
+  .general-submenu.tournaments-submenu {
+    top: -430px;
+  }
+}
+@media only screen and (max-width: 599px) {
+  .general-submenu {
+    max-width: 100%;
+  }
+  .modal-dialog {
+    width: 109%;
+  }
+  .modal.show .modal-dialog {
+    margin-top: 0;
+    margin-bottom: 130px;
+  }
+  .general-submenu .modal-content {
+    padding-top: 50px;
+    width: 105%;
+  }
+  .general-submenu.tournaments-submenu {
+    top: -390px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .modal-content {
+    padding-right: 75px;
+  }
+  .modal-footer .btn.btn-primary {
+    padding: 14px 0;
+    font-size: 14px;
+  }
+  .general-submenu .modal-content {
+    padding-top: 35px;
+    padding-right: 0;
+    width: 100%;
+  }
+  .general-submenu.tournaments-submenu {
+    top: -367px;
+  }
+}
+@media only screen and (max-width: 499px) {
+  .create-ticket-box p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+  .create-ticket-box h2 {
+    font-size: 26px;
+  }
+  .ticket-cat-main .dropdown-submenu {
+    font-size: 14px;
+  }
+  .bottom-btn a {
+    font-size: 14px;
+  }
+  .create-ticket-box-inner {
+    padding-bottom: 10px;
+  }
+  .general-submenu {
+    left: -10px;
+  }
+  .general-submenu .general-sub-cat-inner {
+    padding: 25px 0;
+  }
+  .modal-dialog {
+    width: 107%;
+    left: -10px;
+  }
+  .modal-content {
+    padding-right: 30px;
+  }
+  .general-sub-cat-inner h2 {
+    font-size: 35px;
+  }
+  .modal-footer {
+    padding: 0 15px;
+  }
+  .general-submenu .modal-content {
+    padding-top: 0;
+    padding: 0 20px 0 13px;
+  }
+  .general-submenu.tournaments-submenu {
+    top: -331px;
+  }
+  .modal.show .modal-dialog {
+    margin-bottom: 170px;
+  }
+  .tickets-container h1 {
+    font-size: 26px;
+  }
+  .create-new-box button {
+    padding: 11px 0;
+  }
+  .general-submenu .modal-footer {
+    padding: 0 !important;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .modal-dialog {
+    width: 109%;
+  }
+  .modal.show .modal-dialog {
+    margin-bottom: 280px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .general-sub-cat-inner h2 {
+    font-size: 30px;
+  }
+  .create-ticket-box p {
+    font-size: 11px;
+  }
+  .general-add p .fas.fa-plus-circle {
+    font-size: 19px;
+  }
+  .general-add p {
+    font-size: 13px;
+  }
+  .modal.show .modal-dialog {
+    margin-bottom: 380px;
+  }
+}

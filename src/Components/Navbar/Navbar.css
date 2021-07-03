@@ -62,16 +62,16 @@
 
 
 
-.icons-div .icons{
+.icons-div .icons-cont{
     width: 60%;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /* background-color: tomato; */
+    /* background-color: transparent; */
 }
 
 
-.icons>img, .icons>div{
+.icons>img, .icons-cont>div{
     cursor: pointer;
 }
 
