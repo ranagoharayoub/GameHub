@@ -65,6 +65,9 @@
 }
 
 
+select{
+    color: lightgray;
+}
 
 option{
     color: white;

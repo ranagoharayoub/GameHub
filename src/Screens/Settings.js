@@ -469,13 +469,13 @@ useEffect(() => {
               <label className="label">Area</label>
               <select value={state.timezone}
               onChange={(e) => setState({timezone: e.target.value})} className="input" style={{backgroundColor:"#4A4747"}}>
-                <option value="0">Your preferred time zone </option>
-                <option value="+5">(GMT+5) Africa/Abidjan </option>
-                <option value="-5">(GMT-5) Africa/Accra </option>
-                <option value="0">(GMT0) Africa/Bamako </option>
-                <option value="+2">(GMT+2) Africa/Banjul </option>
-                <option value="+8">(GMT+8) Africa/Bissau </option>
-                <option value="-8">(GMT-8) Africa/Casablanca </option>
+              <option value="">Your preferred time zone </option>
+              <option value="+5">Africa/Abidjan (GMT+5) </option>
+              <option value="-5">Africa/Accra (GMT-5) </option>
+              <option value="0">Africa/Bamako (GMT0) </option>
+              <option value="+2">Africa/Banjul (GMT+2) </option>
+              <option value="+8">Africa/Bissau (GMT+8) </option>
+              <option value="-8">Africa/Casablanca (GMT-8) </option>
               </select>
             </div>
             <div className="col" style={{display:'none'}}>
