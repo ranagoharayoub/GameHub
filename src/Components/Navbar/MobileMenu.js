@@ -64,7 +64,7 @@ function MobileMenu({menuOn, off}) {
                 <div className='title'>Cash Matches</div>
             </div>
             <div className='ico-title'>
-                <img src='/icons/chart.png' height='20px' alt='icon'></img>
+                <img src='/icons/Chart.png' height='20px' alt='icon'></img>
                 <div className='title'>Leaderboards</div>
             </div>
             <div className='ico-title'>
@@ -123,7 +123,7 @@ function MobileMenu({menuOn, off}) {
                 <div className='title'>Cash Matches</div>
             </div>
             <div className='ico-title'>
-                <img src='/icons/chart.png' height='20px' alt='icon'></img>
+                <img src='/icons/Chart.png' height='20px' alt='icon'></img>
                 <div className='title'>Leaderboards</div>
             </div>
             <div className='ico-title'>

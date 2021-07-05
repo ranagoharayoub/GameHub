@@ -10,6 +10,7 @@ import WinnerCard from "../Components/HomeComp/WinnerCard";
 import NewsCard from "../Components/HomeComp/NewsCard";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import video from '../Video/herovid.mp4'
 
 function Home({ width }) {
   // eslint-disable-next-line
@@ -93,7 +94,7 @@ function Home({ width }) {
   return (
     <div className="home-cont">
       <div className="main-cont">
-        <video className="video-cont" src='/Video/herovid.mp4'  autoPlay loop muted ></video>
+        <video className="video-cont" src={video}  autoPlay loop muted ></video>
         <div className="find">
           FIND YOUR <br></br>PERFECT TOURNAMENT
         </div>

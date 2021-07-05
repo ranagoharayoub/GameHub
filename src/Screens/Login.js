@@ -107,7 +107,7 @@ export default class Login extends Component {
     return (
       <div className="login-cont">
                 <Modal show={this.state.show} onHide={()=> this.setState({show: false})}>
-        <Modal.Header closeButton>
+        <Modal.Header >
           <Modal.Title></Modal.Title>
         </Modal.Header>
         <Modal.Body>{this.state.modaltext}</Modal.Body>

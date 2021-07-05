@@ -20,7 +20,7 @@ export default class SignUp extends Component {
       year: "",
       term: "",
       eight: "",
-      cross: "/icons/cancel.png",
+      cross: "/icons/Cancel.png",
       passstate: "Weak",
       passStrength: false,
       success : false,
@@ -85,7 +85,7 @@ export default class SignUp extends Component {
         console.log("pass3");
       } else {
         console.log("fail3");
-        this.setState({ cross: "/icons/cancel.png" }, () => {});
+        this.setState({ cross: "/icons/Cancel.png" }, () => {});
         this.setState({ passStrength: false }, () => {});
       }
 
@@ -149,7 +149,7 @@ export default class SignUp extends Component {
     return (
       <div className="signup-cont">
          <Modal show={this.state.show} onHide={()=> this.setState({show: false})}>
-        <Modal.Header closeButton>
+        <Modal.Header >
           <Modal.Title></Modal.Title>
         </Modal.Header>
         <Modal.Body>{this.state.modaltext}</Modal.Body>

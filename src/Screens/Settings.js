@@ -49,7 +49,7 @@ useEffect(() => {
   setState({username: userinfo.name, email: userinfo.email, phone: userinfo.phone})
 }, [userinfo])
 
-  const [cross, setcross] = useState("/icons/cancel.png");
+  const [cross, setcross] = useState("/icons/Cancle.png");
   
   const [show, setShow] = useState(false);
   const [modaltext, setmodaltext] = useState("");
@@ -233,9 +233,9 @@ useEffect(() => {
           console.log("pass3");
         } else {
           console.log("fail3");
-          setState({ cross: "/icons/cancel.png" });
+          setState({ cross: "/icons/Cancel.png" });
           setState({ btnstate: true });
-          setcross("/icons/cancel.png");
+          setcross("/icons/Cancel.png");
         }
       }
 
@@ -272,7 +272,7 @@ useEffect(() => {
   return (
     <div className="settings-cont">
             <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+        <Modal.Header >
           <Modal.Title></Modal.Title>
         </Modal.Header>
         <Modal.Body>{modaltext}</Modal.Body>
@@ -425,23 +425,23 @@ useEffect(() => {
               {cross !== undefined && (
                 <div className="issues">
                   <div className="warning">
-                    <img src={cross} alt="cancel"></img>
+                    <img src={cross} alt="Cancel"></img>
                     <div style={{ marginLeft: "10px" }}>10 characters</div>
                   </div>
                   <div className="warning">
-                    <img src={cross} alt="cancel"></img>
+                    <img src={cross} alt="Cancel"></img>
                     <div style={{ marginLeft: "10px" }}>Upper Case</div>
                   </div>
                   <div className="warning">
-                    <img src={cross} alt="cancel"></img>
+                    <img src={cross} alt="Cancel"></img>
                     <div style={{ marginLeft: "10px" }}>Lower Case</div>
                   </div>
                   <div className="warning">
-                    <img src={cross} alt="cancel"></img>
+                    <img src={cross} alt="Cancel"></img>
                     <div style={{ marginLeft: "10px" }}>Numbers</div>
                   </div>
                   <div className="warning">
-                    <img src={cross} alt="cancel"></img>
+                    <img src={cross} alt="Cancel"></img>
                     <div style={{ marginLeft: "10px" }}>Symbols</div>
                   </div>
                 </div>

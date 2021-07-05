@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Matches.css";
 import img from "../bg/feature.png";
+
 /*eslint-disable*/
 export default function Matches() {
+        useEffect(() => {
+            componentHandler.upgradeDom()
+        }, [])
     return (
         <div>
             <div class="matches-main">
