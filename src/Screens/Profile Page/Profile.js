@@ -15,6 +15,7 @@ function Profile() {
   const [textUnderlined, setTextUnderlined] = useState("Fortnite");
   const [data, setdata] = useState([]);
   const [gamedata, setgamedata] = useState([]);
+  const [profilepic, setprofilepic] = useState(null)
   const [sec, setsec] = useState(0);
   // eslint-disable-next-line
   const [min, setmin] = useState(0);
@@ -53,27 +54,9 @@ function Profile() {
         });
     }
     callAPI()
-  }, [params.id])
+  }, [data.image])
 
-  // useEffect(() =>{
-  //   function effectFunction(){
-  //   var dt1 = new Date(data.last_login);
-  //   console.log("date coming from data on load", dt1.toLocaleDateString());
-  //   var dt2 = new Date();
 
-  //   var diff = (dt2.getTime() - dt1.getTime()) / 1000;
-  //   diff /= 60;
-  //   setmin(Math.abs(Math.round(diff)));
-  //   console.log("diff in minutes", Math.abs(Math.round(diff)));
-
-  //   var diff2 = (dt2.getTime() - dt1.getTime()) / 1000;
-  //   diff2 /= 60 * 60;
-  //   console.log("diff in hours", Math.abs(Math.round(diff2)));
-  //   sethour(Math.abs(Math.round(diff2)));
-  //   console.log("diff in days", Math.abs(Math.floor(diff2 / 24)));
-  //   setday(Math.abs(Math.floor(diff2 / 24)));
-  //   setsec(hour * 60); }
-  // },[data, hour])
 
   React.useEffect(
     function effectFunction() {
@@ -103,22 +86,29 @@ function Profile() {
     setgamestate(data);
   }
 
-  // function getsec(a) {
-  //   var myDate = new Date(a); // a is start_on
-  //   console.log("cross check", myDate.toLocaleTimeString());
-  //   var date = new Date(); // current date
-  //   var dou2 = myDate.getTime() - date.getTime();
-  //   var newdate = new Date(dou2);
+   const filehandler = () =>{
+          console.log(profilepic);
 
-  //   // var diff = (date.getTime() - myDate.getTime()) / 1000;
-  //   // diff /= 60 * 60;
-  //   // console.log("diff in hours", Math.abs(Math.round(diff)));
+          var token = localStorage.getItem('token');
+          var id = localStorage.getItem('userdata')
+          const headers = ({
+              "Authorization" : "Token " + token,
+              "Content-Type":"multipart/form-data",            
+          })
 
-  //   return dou2;
-  // }
+          const fd = new FormData();
+          fd.append("image", profilepic, profilepic.name);
+
+          axios.patch("https://gamehubx.com/api/v1/user-profile/"+id+"/", fd, {
+            headers: headers,
+          }).then(res=> console.log(res)).catch(Error => console.log(Error))
+   }
+
+  
 
   return (
     <div className="flex flex-col bg-darkGray w-full">
+      
       <div className="flex justify-center md:justify-start md:w-full">
         <img
           src={data.image}
@@ -130,6 +120,7 @@ function Profile() {
             <h2 className="text-white text-2xl font-semibold md:text-6xl">
               {data.username}
             </h2>
+            
             <p className="text-xs text-textGray md:text-base">
               {data.length >0 ? 
               <>  
@@ -149,6 +140,8 @@ function Profile() {
               </> }
               
             </p>
+            <input type='file' onChange={(e)=>{console.log(e.target.files[0]); setprofilepic(e.target.files[0])}} ></input>
+            <button onClick={filehandler} className="text-white ring-1 ring-white rounded-none py-1 px-1 text-xs font-thin focus:outline-none md:px-4 md:py-3 md:text-base md:mr-14 md:mt-5 md:hover:bg-white md:hover:text-black">Upload</button>
             <div className="flex w-full mt-2 md:hidden">
               <img src={facebook} alt="" className="h-3 w-3 mr-2" />
               <img src={instagram} alt="" className="h-3 w-3 mr-2" />
