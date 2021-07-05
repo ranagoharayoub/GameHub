@@ -54,7 +54,7 @@ function Profile() {
         });
     }
     callAPI()
-  }, [data.image])
+  }, [params.id, data.image])
 
 
 
