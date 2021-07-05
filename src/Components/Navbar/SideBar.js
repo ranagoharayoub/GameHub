@@ -86,7 +86,7 @@ function SideBar({ toggle, off }) {
         <Link onClick={off} style={{textDecoration:'none', color:'white'}} to={`/profile/${id}`}> View Profile </Link>
       </div>
       
-      <Link to='/matches' className="common">My Matches</Link>
+      <Link to='/matches' onClick={off} className="common">My Matches</Link>
       <div className="common">My Teams</div>
       <div className="common">Team Invites</div>
       <Link to='/ticket' onClick={off} className="common">My Tickets</Link>

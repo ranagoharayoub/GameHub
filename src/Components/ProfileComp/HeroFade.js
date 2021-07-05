@@ -25,9 +25,11 @@ useEffect(() => {
     <div className="relative w-full h-40 md:h-72">
       <img src={data.cover_image} alt="" className="w-full h-full" />
       <div className="absolute top-0 bg-black h-full w-full text-white opacity-70"></div>
-      <button className="absolute top-6 right-2 text-white ring-1 ring-white rounded-none py-1 px-1 text-xs font-thin focus:outline-none md:px-4 md:py-3 md:text-base md:mr-14 md:mt-5 md:hover:bg-white md:hover:text-black transition-all ease-in duration-200">
+      <input type='file' className="absolute top-6 right-2 text-white ring-1 ring-white rounded-none py-1 px-1 text-xs font-thin focus:outline-none md:px-4 md:py-3 md:text-base md:mr-14 md:mt-5 md:hover:bg-white md:hover:text-black transition-all ease-in duration-200" />
+
+      {/* <button className="absolute top-6 right-2 text-white ring-1 ring-white rounded-none py-1 px-1 text-xs font-thin focus:outline-none md:px-4 md:py-3 md:text-base md:mr-14 md:mt-5 md:hover:bg-white md:hover:text-black transition-all ease-in duration-200">
         Upload New Image
-      </button>
+      </button> */}
     </div>
   );
 }
