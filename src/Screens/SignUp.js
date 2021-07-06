@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import "./SignUp.css";
+import "./Models.css";
 import axios from "axios";
-import { Button, Modal} from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 
 export default class SignUp extends Component {
   constructor(props) {
@@ -23,9 +24,9 @@ export default class SignUp extends Component {
       cross: "/icons/Cancel.png",
       passstate: "Weak",
       passStrength: false,
-      success : false,
-      show:false,
-      modaltext:'',
+      success: false,
+      show: false,
+      modaltext: "",
     };
   }
 
@@ -47,7 +48,7 @@ export default class SignUp extends Component {
           this.state.timezone,
           this.state.day + "-" + this.state.month + "-" + this.state.year,
           this.state.term,
-          this.state.eight,
+          this.state.eight
         );
       }
     );
@@ -80,7 +81,6 @@ export default class SignUp extends Component {
         );
         this.setState({ cross: "/icons/tick.png" });
         this.setState({ passStrength: true });
-        
 
         console.log("pass3");
       } else {
@@ -124,41 +124,45 @@ export default class SignUp extends Component {
       })
         .then((response) => {
           console.log(response);
-          this.setState({success: true});
+          this.setState({ success: true });
         })
-        
+
         .catch((error) => {
           console.log(error.response);
-          this.setState({modaltext:"USERNAME or Email Already in use"});
+          this.setState({ modaltext: "USERNAME or Email Already in use" });
           this.setState({ show: true });
-
         });
     } else {
-      this.setState({modaltext:"Passwords don't match or it is not strong"});
+      this.setState({ modaltext: "Passwords don't match or it is not strong" });
       this.setState({ show: true });
     }
 
-  
-    console.log(this.state.success)
+    console.log(this.state.success);
   };
 
-  render () {
-     if (this.state.success) {
-       return <Redirect to='/success'/>;
-     }
+  render() {
+    if (this.state.success) {
+      return <Redirect to="/success" />;
+    }
     return (
       <div className="signup-cont">
-         <Modal show={this.state.show} onHide={()=> this.setState({show: false})}>
-        <Modal.Header >
-          <Modal.Title></Modal.Title>
-        </Modal.Header>
-        <Modal.Body>{this.state.modaltext}</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={()=> this.setState({show: false})}>
-            Close
-          </Button>
-        </Modal.Footer>
-            </Modal>
+        <Modal
+          show={this.state.show}
+          onHide={() => this.setState({ show: false })}
+        >
+          <Modal.Header>
+            <Modal.Title></Modal.Title>
+          </Modal.Header>
+          <Modal.Body>{this.state.modaltext}</Modal.Body>
+          <Modal.Footer>
+            <Button
+              variant="secondary"
+              onClick={() => this.setState({ show: false })}
+            >
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
         <div className="signup-sect">
           <div className="title">STEP UP YOUR GAME JOIN TODAY</div>
           <div className="subtitle">
@@ -178,7 +182,7 @@ export default class SignUp extends Component {
           <form className="form-sect" onSubmit={(e) => this.handlesubmit(e)}>
             <input
               required
-              id='inputcolor'
+              id="inputcolor"
               className="input-fields"
               name="username"
               value={this.state.username}
@@ -187,7 +191,7 @@ export default class SignUp extends Component {
               placeholder="Username*"
             ></input>
             <input
-              id='inputcolor'
+              id="inputcolor"
               required
               className="input-fields"
               name="email"
@@ -197,7 +201,7 @@ export default class SignUp extends Component {
               placeholder="Email Address*"
             ></input>
             <input
-              id='inputcolor'
+              id="inputcolor"
               required
               className="input-fields"
               name="pass"
@@ -229,11 +233,20 @@ export default class SignUp extends Component {
               </div>
             </div>
             <div className="pass-strength">
-              <div className="line" style={this.state.passstate==="Medium"?{backgroundColor:'red'}:this.state.passstate==='Strong'?{backgroundColor:'green'}:null}></div>
+              <div
+                className="line"
+                style={
+                  this.state.passstate === "Medium"
+                    ? { backgroundColor: "red" }
+                    : this.state.passstate === "Strong"
+                    ? { backgroundColor: "green" }
+                    : null
+                }
+              ></div>
               <div className="strength">{this.state.passstate}</div>
             </div>
             <input
-              id='inputcolor'
+              id="inputcolor"
               required
               className="input-fields"
               name="confpass"
@@ -246,7 +259,7 @@ export default class SignUp extends Component {
             <div>
               <input
                 required
-                id='inputcolor'                
+                id="inputcolor"
                 style={{ width: "20%", borderRight: "1px solid white" }}
                 name="phoneext"
                 value={this.state.phoneext}
@@ -256,8 +269,8 @@ export default class SignUp extends Component {
                 type="tel"
               ></input>
               <input
-              required
-                id='inputcolor'
+                required
+                id="inputcolor"
                 style={{ width: "80%" }}
                 className="input-fields"
                 type="tel"
@@ -442,7 +455,7 @@ export default class SignUp extends Component {
             </div>
             <div className="captcha">
               <input
-              // id='inputcolor'
+                // id='inputcolor'
                 style={{ width: "60%", backgroundColor: "white" }}
                 className="input-fields"
               ></input>
@@ -455,8 +468,8 @@ export default class SignUp extends Component {
             </div>
             <div className="check-policy">
               <input
-              required
-              id='inputcolor'
+                required
+                id="inputcolor"
                 className="checkbox"
                 name="term"
                 type="checkbox"
@@ -468,8 +481,8 @@ export default class SignUp extends Component {
             </div>
             <div className="check-policy">
               <input
-              required
-              id='inputcolor'
+                required
+                id="inputcolor"
                 className="checkbox"
                 name="eight"
                 type="checkbox"
@@ -481,7 +494,7 @@ export default class SignUp extends Component {
               </div>
             </div>
             <button
-            type='submit'
+              type="submit"
               className="input-fields"
               // onClick={(e) => this.handlesubmit(e)}
               style={{
