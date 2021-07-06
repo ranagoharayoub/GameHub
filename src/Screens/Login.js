@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import "./Login.css";
+import "./Models.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
-import GoogleLogin from 'react-google-login';
-import { Button, Modal} from "react-bootstrap";
+import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
+import GoogleLogin from "react-google-login";
+import { Button, Modal } from "react-bootstrap";
 
 // /icons/fb.png
 
@@ -14,8 +15,8 @@ export default class Login extends Component {
     this.state = {
       email: "",
       pass: "",
-      show:false,
-      modaltext:'',
+      show: false,
+      modaltext: "",
     };
   }
 
@@ -51,7 +52,7 @@ export default class Login extends Component {
       })
       .catch((error) => {
         // console.log(error.response.data.key);
-        this.setState({modaltext:"Credentials are not correct"});
+        this.setState({ modaltext: "Credentials are not correct" });
         this.setState({ show: true });
       });
   };
@@ -68,55 +69,63 @@ export default class Login extends Component {
   }
 
   responseFacebook = (response) => {
-    console.log(response)
-  }
+    console.log(response);
+  };
 
   responseGoogle = async (response) => {
     console.log(response);
-    console.log(this.props)
+    console.log(this.props);
     var res = response;
-    console.log("access token",res.accessToken);
-    if(  typeof response !== undefined){
-      console.log("in conditions")
+    console.log("access token", res.accessToken);
+    if (typeof response !== undefined) {
+      console.log("in conditions");
       await axios({
         method: "post",
         url: "https://gamehubx.com/api/v1/login/google/",
         headers: {},
         data: {
-          "access_token": res.accessToken,
-          "code": ""
+          access_token: res.accessToken,
+          code: "",
         },
       })
         .then((response) => {
           console.log(response.data.user_detail);
           this.props.history.push({
-            pathname: '/fbglogin',
-            state: { data: response.data.user_detail }
-          })
+            pathname: "/fbglogin",
+            state: { data: response.data.user_detail },
+          });
         })
         .catch((error) => {
           console.log(error.response);
           //alert("Couldn't Login ");
         });
     }
-  }
-  
-  compclicked = () => { console.log("clicked")}
+  };
+
+  compclicked = () => {
+    console.log("clicked");
+  };
 
   render() {
     return (
       <div className="login-cont">
-                <Modal show={this.state.show} onHide={()=> this.setState({show: false})}>
-        <Modal.Header >
-          <Modal.Title></Modal.Title>
-        </Modal.Header>
-        <Modal.Body>{this.state.modaltext}</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={()=> this.setState({show: false})}>
-            Close
-          </Button>
-        </Modal.Footer>
-            </Modal>
+        <Modal
+          show={this.state.show}
+          onHide={() => this.setState({ show: false })}
+        >
+          <Modal.Header>
+            <Modal.Title></Modal.Title>
+          </Modal.Header>
+          <Modal.Body>{this.state.modaltext}</Modal.Body>
+          <Modal.Footer>
+            <Button
+              variant="secondary"
+              onClick={() => this.setState({ show: false })}
+            >
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
         <div className="login-sect">
           <div className="title">SIGN IN</div>
           <div className="subtitle">
@@ -138,33 +147,39 @@ export default class Login extends Component {
             autoLoad={false}
             callback={this.responseFacebook}
             onClick={this.compclicked}
-            render={renderProps => (
-                <button className="social-login-fb"  onClick={renderProps.onClick}>
-                  
-            <img src="/icons/fb.png" height="20px" alt="fb"></img>
-            <div className="title">Continue with Facebook</div>
-          
-                </button>
-              )}
-            />
-          
-   <GoogleLogin
-    clientId={'431419828404-n5tfmqqqlkohd0luqiu8rsqrs657fshk.apps.googleusercontent.com'}
-    onSuccess={ this.responseGoogle}
-    onFailure={this.responseGoogle}
-    className="social-login-google"
-    style={{padding:'0px 0px', margin:'0px 0px', backgroundColor:'black'}}
-    icon={false}
-  >
-          <button className=' content-center'>
-            <img src="/icons/google.png" height="20px" alt="fb"></img>
-            <div className="title" style={{paddingLeft:"25px"}}>Continue with Google</div>
-          </button>
-  </GoogleLogin>
+            render={(renderProps) => (
+              <button className="social-login-fb" onClick={renderProps.onClick}>
+                <img src="/icons/fb.png" height="20px" alt="fb"></img>
+                <div className="title">Continue with Facebook</div>
+              </button>
+            )}
+          />
+
+          <GoogleLogin
+            clientId={
+              "431419828404-n5tfmqqqlkohd0luqiu8rsqrs657fshk.apps.googleusercontent.com"
+            }
+            onSuccess={this.responseGoogle}
+            onFailure={this.responseGoogle}
+            className="social-login-google"
+            style={{
+              padding: "0px 0px",
+              margin: "0px 0px",
+              backgroundColor: "black",
+            }}
+            icon={false}
+          >
+            <button className=" content-center">
+              <img src="/icons/google.png" height="20px" alt="fb"></img>
+              <div className="title" style={{ paddingLeft: "25px" }}>
+                Continue with Google
+              </div>
+            </button>
+          </GoogleLogin>
           <form className="form-sect" onSubmit={(e) => this.login(e)}>
             <label className="label">Email Address</label>
             <input
-            id='inputcolor'
+              id="inputcolor"
               className="input-fields"
               name="email"
               required
@@ -173,7 +188,7 @@ export default class Login extends Component {
             ></input>
             <label className="label">Password</label>
             <input
-            id='inputcolor'
+              id="inputcolor"
               className="input-fields"
               name="pass"
               required
@@ -186,7 +201,7 @@ export default class Login extends Component {
               <div className="checkbox-label">Remember me on this Device</div>
             </div>
             <button
-            type='submit'
+              type="submit"
               className="input-fields"
               // onClick={(e) => this.login(e)}
               style={{
