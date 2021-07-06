@@ -5,7 +5,7 @@ import axios from "axios";
 function HeroFade() {
   const [data, setdata] = useState([]);
   const params = useParams()  
-  const [image, setimage] = useState(null)
+  
 
   useEffect(() => {
     const callAPI = async () => {
@@ -20,28 +20,40 @@ function HeroFade() {
   }, [data])
 
 
-  const uploadHandler = async() =>{
-    var token = localStorage.getItem("token");
-    var id = localStorage.getItem("userdata");
-    console.log(image)
-    const headers = {
-      "Authorization": "Token "+token,
-      "Content-Type":"multipart/form-data",
+  const uploadHandler = async(e) =>{
+ 
+    console.log('success',e.target.files[0])
+    
+    if (e.target.files[0]) {
+      var token = localStorage.getItem("token");
+      var id = localStorage.getItem("userdata");
+      
+      const headers = {
+        "Authorization": "Token "+token,
+        "Content-Type":"multipart/form-data",
+      }
+      const fd = new FormData()
+      fd.append('cover_image', e.target.files[0], e.target.files[0].name)
+  
+      await axios.patch("https://gamehubx.com/api/v1/user-profile/" + id+"/",fd, {
+        headers: headers
+      } ).then((res)=> console.log('uploaded success',res)).catch((error)=> console.log('uploaded error',error))
+    } else {
+      console.log('image is not selected')
     }
-    const fd = new FormData()
-    fd.append('cover_image', image, image.name)
-
-    await axios.patch("https://gamehubx.com/api/v1/user-profile/" + id+"/",fd, {
-      headers: headers
-    } ).then((res)=> console.log('uploaded success',res)).catch((error)=> console.log('uploaded error',error))
   }
 
   return (
     <div className="relative w-full h-40 md:h-72">
       <img src={data.cover_image} alt="" className="w-full h-full" />
       <div className="absolute top-0 bg-black h-full w-full text-white opacity-70"></div>
-      <input type='file' onChange={(e)=>{console.log(e.target.files[0]); setimage(e.target.files[0])} } className="absolute top-6 left-5 text-white ring-1 ring-white rounded-none py-1 px-1 text-xs font-thin focus:outline-none md:px-4 md:py-3 md:text-base md:mr-14 md:mt-5  md:hover:text-black transition-all ease-in duration-200"></input>
-      <button onClick={uploadHandler} className="absolute top-6 right-2 text-white ring-1 ring-white rounded-none py-1 px-1 text-xs font-thin focus:outline-none md:px-4 md:py-3 md:text-base md:mr-14 md:mt-5 md:hover:bg-white md:hover:text-black transition-all ease-in duration-200">
+      <div style={{height:"0px", overflow:"hidden"}}>
+          <input id="fileInput"  type='file' onChange={(e)=>{console.log(e.target.files[0]); if (e.target.files[0]) {
+            uploadHandler(e)
+          }} } style={{height:"0px", overflow:"hidden"}} ></input>
+      </div>
+      {/* <input type='file' onChange={(e)=>{console.log(e.target.files[0]); setimage(e.target.files[0])} } className="absolute top-6 left-5 text-white ring-1 ring-white rounded-none py-1 px-1 text-xs font-thin focus:outline-none md:px-4 md:py-3 md:text-base md:mr-14 md:mt-5  md:hover:text-black transition-all ease-in duration-200"></input> */}
+      <button onClick={()=>document.getElementById("fileInput").click()} className="absolute top-6 right-2 text-white ring-1 ring-white rounded-none py-1 px-1 text-xs font-thin focus:outline-none md:px-4 md:py-3 md:text-base md:mr-14 md:mt-5 md:hover:bg-white md:hover:text-black transition-all ease-in duration-200">
         Upload New Image
       </button>
     </div>

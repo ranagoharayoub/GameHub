@@ -13,7 +13,7 @@ import Bracket from "../Components/Tounament/Bracket";
 import Teams from "../Components/Tounament/Teams";
 import Admin from "../Components/Tounament/Admin";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import {useParams, useHistory} from "react-router-dom";
 import '../mdl-tabs-links/material.teal-indigo.min.css'
 /*eslint-disable*/
 export default function IndTour({width}) {
@@ -26,6 +26,10 @@ const [state, setstate] = useState({
   thirdprize:'',
 })
 const {gameId} =useParams()
+let history = useHistory()
+
+var token = localStorage.getItem('token')
+
 const number = (a) => {
     return a.replace(":", "");
   }
@@ -40,6 +44,8 @@ const number = (a) => {
          
        }
        callApi()
+
+      
   }, [gameId])
 
 
@@ -57,6 +63,15 @@ useEffect(() => {
   }
 }, [loading])
 
+const enrollHandler = () =>{
+    if (token) {
+      history.push('/matches')
+    } else {
+      history.push("/login");
+    }
+
+
+}
 
 
 
@@ -118,7 +133,8 @@ console.log(state)
                 </div>
               </div>
             </div>
-            <div className='enroll-now'>Enroll Now</div>
+            <div onClick={enrollHandler} className='enroll-now'>Enroll Now</div>
+            {/* <Link to={token?'/matches': '/login'} onClick={enrollHandler} className='enroll-now'>Enroll Now</Link> */}
           </div>
         </div>
       </div>

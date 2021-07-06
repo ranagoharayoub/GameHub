@@ -4,10 +4,10 @@ import facebook from "../Images/facebook.png";
 import instagram from "../Images/instagram.png";
 import tiktok from "../Images/tik-tok.png";
 import twitter from "../Images/twitter.png";
-// import fortnite from "../Images/fortnite.jpg";
-// import Timer from "react-compound-timer";
+
 import axios from "axios";
 import { useParams } from 'react-router-dom';
+import {CameraEnhanceTwoTone } from "@material-ui/icons";
 
 
 function Profile() {
@@ -15,7 +15,7 @@ function Profile() {
   const [textUnderlined, setTextUnderlined] = useState("Fortnite");
   const [data, setdata] = useState([]);
   const [gamedata, setgamedata] = useState([]);
-  const [profilepic, setprofilepic] = useState(null)
+  const [profilepic, setprofilepic] = useState(false)
   const [sec, setsec] = useState(0);
   // eslint-disable-next-line
   const [min, setmin] = useState(0);
@@ -47,6 +47,7 @@ function Profile() {
         .get("https://gamehubx.com/api/v1/user-profile/"+params.id+"/")
         .then((res) => {
           setdata(res.data);
+          // setprofilepic(res.data.image);
           setgamedata(res.data.overview);
           // console.log("this is my data and overview", data);
           // console.log("this is my data and overview", gamedata);
@@ -54,7 +55,9 @@ function Profile() {
         });
     }
     callAPI()
-  }, [params.id, data.image])
+    console.log('profilepic',profilepic)
+    // eslint-disable-next-line
+  }, [profilepic])
 
 
 
@@ -86,9 +89,9 @@ function Profile() {
     setgamestate(data);
   }
 
-   const filehandler = () =>{
-          console.log(profilepic);
-
+   const filehandler = async(e) =>{
+          console.log('success', e.target.files[0]);
+          if (e.target.files[0]) {
           var token = localStorage.getItem('token');
           var id = localStorage.getItem('userdata')
           const headers = ({
@@ -97,11 +100,14 @@ function Profile() {
           })
 
           const fd = new FormData();
-          fd.append("image", profilepic, profilepic.name);
+          fd.append("image", e.target.files[0], e.target.files[0].name);
 
-          axios.patch("https://gamehubx.com/api/v1/user-profile/"+id+"/", fd, {
+          await axios.patch("https://gamehubx.com/api/v1/user-profile/"+id+"/", fd, {
             headers: headers,
-          }).then(res=> console.log(res)).catch(Error => console.log(Error))
+          }).then(res=> {console.log(res); setprofilepic(true)}).catch(Error => console.log(Error))
+          } else {
+            console.log('pic not selected')
+          }
    }
 
   
@@ -140,8 +146,11 @@ function Profile() {
               </> }
               
             </p>
-            <input type='file' onChange={(e)=>{console.log(e.target.files[0]); setprofilepic(e.target.files[0])}} ></input>
-            <button onClick={filehandler} className="text-white ring-1 ring-white rounded-none py-1 px-1 text-xs font-thin focus:outline-none md:px-4 md:py-3 md:text-base md:mr-14 md:mt-5 md:hover:bg-white md:hover:text-black">Upload</button>
+            <input id='inputfile' style={{height:"0px", overflow:"hidden"}} type='file' onChange={(e)=>{console.log(e.target.files[0]); if (e.target.files[0]) {
+              filehandler(e)
+            }}} ></input>
+
+            <CameraEnhanceTwoTone onClick={()=>document.getElementById('inputfile').click()} style={{cursor:'pointer'}} color='action' fontSize='large'></CameraEnhanceTwoTone>
             <div className="flex w-full mt-2 md:hidden">
               <img src={facebook} alt="" className="h-3 w-3 mr-2" />
               <img src={instagram} alt="" className="h-3 w-3 mr-2" />
