@@ -191,7 +191,7 @@ console.log(state)
                 </div>
                 {/* ================ Bracket =============== */}
                 <div class="mdl-tabs__panel"  id="bracket">
-                  <Bracket max_team={data.max_team} />
+                  <Bracket team_size={data.team_size} />
                 </div>
                 {/* ================ Team =============== */}
                 <div class="mdl-tabs__panel"  id="team">
