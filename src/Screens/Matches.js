@@ -1,12 +1,37 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Matches.css";
+import {Link} from 'react-router-dom'
 import img from "../bg/feature.png";
+import axios from "axios";
 
 /*eslint-disable*/
-export default function Matches() {
+export default function Matches({width}) {
+
+        const [upcoming, setupcoming] = useState(null)
+        const [inProgress, setinProgress] = useState(null)
         useEffect(() => {
+            var userid = localStorage.getItem('userdata')
+           const callAPI = async() =>{
+            await axios
+            .get("https://gamehubx.com/api/v1/tournament/?user="+userid)
+            .then((res)=>{console.log(res); setupcoming(res.data)})
+            
+            // .then((data)=>{setupcoming(res.data); console.log('upcoming',upcoming)}) 
+            .catch(error => console.log(error))
+           }
+            callAPI()
+            const callAPI2 = async() =>{
+                await axios
+                .get("https://gamehubx.com/api/v1/tournament/?user="+userid+"&status=ongoing")
+                .then((res)=>{console.log(res); setinProgress(res.data)})
+                
+                // .then((data)=>{setupcoming(res.data); console.log('upcoming',upcoming)}) 
+                .catch(error => console.log(error))
+               }
+               callAPI2()
             componentHandler.upgradeDom()
         }, [])
+
     return (
         <div>
             <div class="matches-main">
@@ -43,49 +68,64 @@ export default function Matches() {
                 {/* Matches Cards */}
 
             <div class="row">
+                
                     {/* Card 1 */}
                 <div class="col-lg-6">
-                    <div class="feature-card">
+                    {
+                        upcoming?
+                        upcoming.map((data)=>
+                        <div class="feature-card">
+                        
                         <div class="feature-card-inner">
-                            <div class="feature-img-side">
-                                <div class="feature-img-box">
-                                    <img src={img} alt="Feature" />
+                        <div class="feature-img-side">
+                            <div class="feature-img-box">
+                                {/* <img src={img} alt="Feature" /> */}
+                                <img src={data.image} alt="Feature" />
+                            </div>
+                        </div>
+                        <div class="feature-text-side">
+                            <h3>{data.title}</h3>
+                            <p>{data.start_on}<span>Starts in 1H 35 M</span></p>
+                            <div class="feature-middle-row">
+                                <div class="feature-item entery">
+                                    <p>Entry</p>
+                                    <p><span>{data.entry_fee}</span> credits</p>
+                                </div>
+                                <div class="feature-item team-sale">
+                                    <p>Team Size</p>
+                                    <p>{data.team_size}</p>
+                                    {/* <p><span>2</span>v<span>2</span></p> */}
+                                </div>
+                                <div class="feature-item max-teams">
+                                    <p>Max Teams</p>
+                                    <p><span>{data.max_team}</span></p>
+                                </div>
+                                <div class="feature-item entered">
+                                    <p>Entered</p>
+                                    <p><span>{data.game}</span></p>
+                                </div>
+                                <div class="feature-item platform">
+                                    <p>Platform</p>
+                                    <p>{data.platform_detail}</p>
                                 </div>
                             </div>
-                            <div class="feature-text-side">
-                                <h3>5v5 FIFA CHIP</h3>
-                                <p>Jun 10,2:30 PM ET <span>Starts in 1H 35 M</span></p>
-                                <div class="feature-middle-row">
-                                    <div class="feature-item entery">
-                                        <p>Entry</p>
-                                        <p><span>10</span> credits</p>
-                                    </div>
-                                    <div class="feature-item team-sale">
-                                        <p>Team Sale</p>
-                                        <p><span>2</span>v<span>2</span></p>
-                                    </div>
-                                    <div class="feature-item max-teams">
-                                        <p>Max Teams</p>
-                                        <p><span>5</span></p>
-                                    </div>
-                                    <div class="feature-item entered">
-                                        <p>Entered</p>
-                                        <p><span>5</span></p>
-                                    </div>
-                                    <div class="feature-item platform">
-                                        <p>Platform</p>
-                                        <p>XBOX,PSS, PC,MOBILE</p>
-                                    </div>
-                                </div>
-                                </div>
-                        </div>
-                        <div class="feature-detail-btn">
-                            <a href="#">View Details <i class="fas fa-arrow-right"></i></a>
-                        </div>
+                            </div>
                     </div>
+
+                       
+                    <div class="feature-detail-btn">
+                        <Link to={"/indtour/:"+data.id}>View Details <i class="fas fa-arrow-right"></i></Link>
+                    </div>
+                    </div>
+                        
+                        
+                        )
+                    :
+                    null
+                     }
                 </div>
                 {/* Card 2 */}
-                <div class="col-lg-6">
+                {/* <div class="col-lg-6">
                     <div class="feature-card">
                         <div class="feature-card-inner">
                             <div class="feature-img-side">
@@ -124,9 +164,9 @@ export default function Matches() {
                             <a href="#">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 {/* Card 3 */}
-                <div class="col-lg-6">
+                {/* <div class="col-lg-6">
                     <div class="feature-card">
                         <div class="feature-card-inner">
                             <div class="feature-img-side">
@@ -165,9 +205,9 @@ export default function Matches() {
                             <a href="#">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 {/* Card 4 */}
-                <div class="col-lg-6">
+                {/* <div class="col-lg-6">
                     <div class="feature-card">
                         <div class="feature-card-inner">
                             <div class="feature-img-side">
@@ -204,8 +244,8 @@ export default function Matches() {
                         </div>
                         <div class="feature-detail-btn">
                             <a href="#">View Details <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
+                        </div> */}
+                    {/* </div> */}
                 </div>
            </div>
 
@@ -219,36 +259,40 @@ export default function Matches() {
                     <div class="row">
                         {/* Card 1 */}
                         <div class="col-lg-7 col-md-12">
-                            <div class="feature-card">
+                            {
+                                inProgress? 
+                                inProgress.map((data)=>
+                                <div class="feature-card">
                                 <div class="feature-card-inner">
                                     <div class="feature-img-side">
                                         <div class="feature-img-box">
-                                            <img src={img} alt="Feature" />
+                                            <img src={data.image} alt="Feature" />
                                         </div>
                                     </div>
                                     <div class="feature-text-side">
-                                        <h3>5v5 FIFA CHIP</h3>
-                                        <p>Jun 10,2:30 PM ET <span>Started</span></p>
+                                        <h3>{data.title}</h3>
+                                        <p>{data.start_on}<span>Started</span></p>
                                         <div class="feature-middle-row">
                                             <div class="feature-item entery">
                                                 <p>Entry</p>
-                                                <p><span>10</span> credits</p>
+                                                <p><span>{data.entry_fee}</span> credits</p>
                                             </div>
                                             <div class="feature-item team-sale">
-                                                <p>Team Sale</p>
-                                                <p><span>2</span>v<span>2</span></p>
+                                                <p>Team Size</p>
+                                                {/* <p><span>2</span>v<span>2</span></p> */}
+                                                <p>{data.team_size}</p>
                                             </div>
                                             <div class="feature-item max-teams">
                                                 <p>Max Teams</p>
-                                                <p><span>5</span></p>
+                                                <p><span>{data.max_team}</span></p>
                                             </div>
                                             <div class="feature-item entered">
                                                 <p>Entered</p>
-                                                <p><span>5</span></p>
+                                                <p><span>{data.game}</span></p>
                                             </div>
                                             <div class="feature-item platform">
                                                 <p>Platform</p>
-                                                <p>XBOX,PSS, PC,MOBILE</p>
+                                                <p>{data.platform_detail}</p>
                                             </div>
                                         </div>
                                         </div>
@@ -278,16 +322,22 @@ export default function Matches() {
                                         </div>
                                 </div>
                                 <div class="feature-detail-btn">
-                                    <a href="#">View Details <i class="fas fa-arrow-right"></i></a>
+                                    <Link to={"/indtour/:"+data.id}>View Details <i class="fas fa-arrow-right"></i></Link>
                                 </div>
                             </div>
+                                )
+                                :
+                                null
+                            }
+                            
+                            
                         </div>
                         {/* Card 2 */}
-                        <div class="col-lg-7 col-md-12">
-                            <div class="feature-card">
+                        {/* <div class="col-lg-7 col-md-12"> */}
+                            {/* <div class="feature-card">
                                 <div class="feature-card-inner">
                                     <div class="feature-img-side">
-                                        <div class="feature-img-box">
+                                         <div class="feature-img-box">
                                             <img src={img} alt="Feature" />
                                         </div>
                                     </div>
@@ -345,8 +395,8 @@ export default function Matches() {
                                 <div class="feature-detail-btn">
                                     <a href="#">View Details <i class="fas fa-arrow-right"></i></a>
                                 </div>
-                            </div>
-                        </div>
+                            </div> */}
+                        {/* </div> */}
                     </div>
                     </div>
                 </div>
@@ -356,6 +406,6 @@ export default function Matches() {
                  </div>
                </div>
             </div>
-        </div>
+        // </div>
     );
 }
