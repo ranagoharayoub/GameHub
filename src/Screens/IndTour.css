@@ -533,20 +533,22 @@ body {
   .tournament-details-tab-bracket-group:nth-of-type(even)::after {
   height: 1193.472px;
 }
-.round-5-of-6 {
+.round-1-of-6:nth-child(5) {
   padding-top: 1296px;
   transition: 0.2s ease-out;
 }
-.round-5-of-6 .tournament-details-tab-bracket-group:nth-child(2)::after {
+.round-1-of-6:nth-child(5)
+  .tournament-details-tab-bracket-group:nth-child(2)::after {
   display: none;
 }
-.round-6-of-6 .tournament-details-tab-bracket-row {
+.round-1-of-6:nth-child(6) .tournament-details-tab-bracket-row {
   border-right: 0;
 }
-.round-6-of-6 .tournament-details-tab-bracket-group:nth-child(2)::after {
+.round-1-of-6:nth-child(6)
+  .tournament-details-tab-bracket-group:nth-child(2)::after {
   display: none;
 }
-.round-6-of-6 {
+.round-1-of-6:nth-child(6) {
   padding-top: 1340px;
   transition: 0.2s ease-out;
 }
@@ -600,11 +602,11 @@ body {
   padding-top: 0;
   /* background-color: lawngreen; */
 }
-.compact-tab .round-5-of-6 {
+.compact-tab .round-1-of-6:nth-child(5) {
   padding-top: 0;
   /* background-color: lightcoral; */
 }
-.compact-tab .round-6-of-6 {
+.compact-tab .round-1-of-6:nth-child(6) {
   padding-top: 0;
   /* background-color: lightcyan; */
 }
@@ -846,7 +848,7 @@ body {
   font-size: 25px;
   color: #303030;
 }
-.round-6-of-6 .tournament-details-tab-bracket-group:before {
+.round-1-of-6:nth-child(6) .tournament-details-tab-bracket-group:before {
   top: 30%;
 }
 /* ===================================== Media Query 1350 ====================================== */
@@ -1156,10 +1158,10 @@ body {
   .round-1-of-6:nth-child(4) .tournament-details-tab-bracket-row:nth-child(2) {
     margin-bottom: 974.472px;
   }
-  .round-5-of-6 {
+  .round-1-of-6:nth-child(5) {
     padding-top: 1158px;
   }
-  .round-6-of-6 {
+  .round-1-of-6:nth-child(6) {
     padding-top: 1195px;
   }
 }
