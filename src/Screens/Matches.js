@@ -7,33 +7,38 @@ import TournamentCard from "../Components/HomeComp/TournamentCard";
 
 /*eslint-disable*/
 export default function Matches({ width }) {
+  const [upcoming, setupcoming] = useState(null);
+  const [inProgress, setinProgress] = useState(null);
 
+  useEffect(() => {
+    var userid = localStorage.getItem("userdata");
+    const callAPI = async () => {
+      await axios
+        .get("https://gamehubx.com/api/v1/tournament/?user=" + userid)
+        .then((res) => setupcoming(res.data))
 
-        const [upcoming, setupcoming] = useState(null)
-        const [inProgress, setinProgress] = useState(null)
+        // .then((data)=>{setupcoming(res.data); console.log('upcoming',upcoming)})
+        .catch((error) => console.log(error));
+    };
+    callAPI();
+    const callAPI2 = async () => {
+      await axios
+        .get(
+          "https://gamehubx.com/api/v1/tournament/?user=" +
+            userid +
+            "&status=ongoing"
+        )
+        .then((res) => {
+          console.log(res);
+          setinProgress(res.data);
+        })
 
-        useEffect(() => {
-            var userid = localStorage.getItem('userdata')
-           const callAPI = async() =>{
-            await axios
-            .get("https://gamehubx.com/api/v1/tournament/?user="+userid)
-            .then((res)=>setupcoming(res.data))
-            
-            // .then((data)=>{setupcoming(res.data); console.log('upcoming',upcoming)}) 
-            .catch(error => console.log(error))
-           }
-            callAPI()
-            const callAPI2 = async() =>{
-                await axios
-                .get("https://gamehubx.com/api/v1/tournament/?user="+userid+"&status=ongoing")
-                .then((res)=>{console.log(res); setinProgress(res.data)})
-                
-                // .then((data)=>{setupcoming(res.data); console.log('upcoming',upcoming)}) 
-                .catch(error => console.log(error))
-               }
-               callAPI2()
-            componentHandler.upgradeDom()
-        }, [])
+        // .then((data)=>{setupcoming(res.data); console.log('upcoming',upcoming)})
+        .catch((error) => console.log(error));
+    };
+    callAPI2();
+    componentHandler.upgradeDom();
+  }, []);
 
   return (
     <div>
@@ -131,17 +136,21 @@ export default function Matches({ width }) {
                           ))
                         : null}  */}
                       {/* Card 2 */}
-                      <div class="col-lg-6">
-                  {/* ----------------Give Styling to Feature Cards. Most possibly Grid---------- */}
-                    <div class="feature-card">
-                     { upcoming?
-                      upcoming.map((ent) => {
-          return <TournamentCard width={width} data={ent}></TournamentCard>;
-        })
-      :
-      null}
-      
-                        {/* <div class="feature-card-inner">
+                      <div class="col-lg-12">
+                        {/* ----------------Give Styling to Feature Cards. Most possibly Grid---------- */}
+                        <div class="feature-card">
+                          {upcoming
+                            ? upcoming.map((ent) => {
+                                return (
+                                  <TournamentCard
+                                    width={width}
+                                    data={ent}
+                                  ></TournamentCard>
+                                );
+                              })
+                            : null}
+
+                          {/* <div class="feature-card-inner">
                             <div class="feature-img-side">
                                 <div class="feature-img-box">
                                     <img src={img} alt="Feature" />
@@ -178,100 +187,100 @@ export default function Matches({ width }) {
                             <a href="#">View Details <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div> */}
-                </div> 
-
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                {/* ================ in-progress TOURNAMENTS =============== */}
-                <div class="mdl-tabs__panel" id="mattab2">
-                  <div class="progress-tab">
-                    <div class="row">
-                      {/* Card 1 */}
-                      <div class="col-lg-7 col-md-12">
-                        {inProgress
-                          ? inProgress.map((data) => (
-                              <div class="feature-card">
-                                <div class="feature-card-inner">
-                                  <div class="feature-img-side">
-                                    <div class="feature-img-box">
-                                      <img src={data.image} alt="Feature" />
-                                    </div>
-                                  </div>
-                                  <div class="feature-text-side">
-                                    <h3>{data.title}</h3>
-                                    <p>
-                                      {data.start_on}
-                                      <span>Started</span>
-                                    </p>
-                                    <div class="feature-middle-row">
-                                      <div class="feature-item entery">
-                                        <p>Entry</p>
-                                        <p>
-                                          <span>{data.entry_fee}</span> credits
-                                        </p>
-                                      </div>
-                                      <div class="feature-item team-sale">
-                                        <p>Team Size</p>
-                                        {/* <p><span>2</span>v<span>2</span></p> */}
-                                        <p>{data.team_size}</p>
-                                      </div>
-                                      <div class="feature-item max-teams">
-                                        <p>Max Teams</p>
-                                        <p>
-                                          <span>{data.max_team}</span>
-                                        </p>
-                                      </div>
-                                      <div class="feature-item entered">
-                                        <p>Entered</p>
-                                        <p>
-                                          <span>{data.game}</span>
-                                        </p>
-                                      </div>
-                                      <div class="feature-item platform">
-                                        <p>Platform</p>
-                                        <p>{data.platform_detail}</p>
+                  {/* ================ in-progress TOURNAMENTS =============== */}
+                  <div class="mdl-tabs__panel" id="mattab2">
+                    <div class="progress-tab">
+                      <div class="row">
+                        {/* Card 1 */}
+                        <div class="col-lg-7 col-md-12">
+                          {inProgress
+                            ? inProgress.map((data) => (
+                                <div class="feature-card">
+                                  <div class="feature-card-inner">
+                                    <div class="feature-img-side">
+                                      <div class="feature-img-box">
+                                        <img src={data.image} alt="Feature" />
                                       </div>
                                     </div>
+                                    <div class="feature-text-side">
+                                      <h3>{data.title}</h3>
+                                      <p>
+                                        {data.start_on}
+                                        <span>Started</span>
+                                      </p>
+                                      <div class="feature-middle-row">
+                                        <div class="feature-item entery">
+                                          <p>Entry</p>
+                                          <p>
+                                            <span>{data.entry_fee}</span>{" "}
+                                            credits
+                                          </p>
+                                        </div>
+                                        <div class="feature-item team-sale">
+                                          <p>Team Size</p>
+                                          {/* <p><span>2</span>v<span>2</span></p> */}
+                                          <p>{data.team_size}</p>
+                                        </div>
+                                        <div class="feature-item max-teams">
+                                          <p>Max Teams</p>
+                                          <p>
+                                            <span>{data.max_team}</span>
+                                          </p>
+                                        </div>
+                                        <div class="feature-item entered">
+                                          <p>Entered</p>
+                                          <p>
+                                            <span>{data.game}</span>
+                                          </p>
+                                        </div>
+                                        <div class="feature-item platform">
+                                          <p>Platform</p>
+                                          <p>{data.platform_detail}</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="round">
+                                      <button class="round-btn desk">
+                                        round 2
+                                      </button>
+                                      <button class="round-btn mob">
+                                        round 1
+                                      </button>
+                                      <form action="#">
+                                        <div class="input-item">
+                                          <input type="radio" value="Win" />
+                                          <label>Win</label>
+                                        </div>
+                                        <div class="input-item">
+                                          <input type="radio" value="Lose" />
+                                          <label>Lose</label>
+                                        </div>
+                                      </form>
+                                      <button class="round-btn desk">
+                                        Upload result
+                                      </button>
+                                      <button class="round-btn mob">
+                                        Round 2
+                                      </button>
+                                    </div>
                                   </div>
-                                  <div class="round">
-                                    <button class="round-btn desk">
-                                      round 2
-                                    </button>
-                                    <button class="round-btn mob">
-                                      round 1
-                                    </button>
-                                    <form action="#">
-                                      <div class="input-item">
-                                        <input type="radio" value="Win" />
-                                        <label>Win</label>
-                                      </div>
-                                      <div class="input-item">
-                                        <input type="radio" value="Lose" />
-                                        <label>Lose</label>
-                                      </div>
-                                    </form>
-                                    <button class="round-btn desk">
-                                      Upload result
-                                    </button>
-                                    <button class="round-btn mob">
-                                      Round 2
-                                    </button>
+                                  <div class="feature-detail-btn">
+                                    <Link to={"/indtour/:" + data.id}>
+                                      View Details{" "}
+                                      <i class="fas fa-arrow-right"></i>
+                                    </Link>
                                   </div>
                                 </div>
-                                <div class="feature-detail-btn">
-                                  <Link to={"/indtour/:" + data.id}>
-                                    View Details{" "}
-                                    <i class="fas fa-arrow-right"></i>
-                                  </Link>
-                                </div>
-                              </div>
-                            ))
-                          : null}
-                      </div>
-                      {/* Card 2 */}
-                      {/* <div class="col-lg-7 col-md-12"> */}
-                      {/* <div class="feature-card">
+                              ))
+                            : null}
+                        </div>
+                        {/* Card 2 */}
+                        {/* <div class="col-lg-7 col-md-12"> */}
+                        {/* <div class="feature-card">
                                 <div class="feature-card-inner">
                                     <div class="feature-img-side">
                                          <div class="feature-img-box">
@@ -333,7 +342,8 @@ export default function Matches({ width }) {
                                     <a href="#">View Details <i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div> */}
-                      {/* </div> */}
+                        {/* </div> */}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -343,6 +353,5 @@ export default function Matches({ width }) {
         </div>
       </div>
     </div>
-    // </div>
   );
 }
