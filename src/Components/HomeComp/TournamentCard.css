@@ -31,7 +31,7 @@
     object-fit: cover;
 }
 
-.upper .badge{
+.upper .badge-price{
     position: absolute;
     bottom: -30px;
     left: 50%;
@@ -166,13 +166,14 @@
         object-fit: cover;
     }
     
-    .upper .badge{
+    .upper .badge-price{
         position: absolute;
         bottom: -20px;
         left: 50%;
         transform: translateX(-50%);
         height: 50px;
         width: auto;
+        /* background-color: red; */
     }
 
     .upper .price{

@@ -3,6 +3,7 @@ import "./Matches.css";
 import {Link} from 'react-router-dom'
 import img from "../bg/feature.png";
 import axios from "axios";
+import TournamentCard from "../Components/HomeComp/TournamentCard";
 
 /*eslint-disable*/
 export default function Matches({width}) {
@@ -14,7 +15,7 @@ export default function Matches({width}) {
            const callAPI = async() =>{
             await axios
             .get("https://gamehubx.com/api/v1/tournament/?user="+userid)
-            .then((res)=>{console.log(res); setupcoming(res.data)})
+            .then((res)=>setupcoming(res.data))
             
             // .then((data)=>{setupcoming(res.data); console.log('upcoming',upcoming)}) 
             .catch(error => console.log(error))
@@ -71,7 +72,14 @@ export default function Matches({width}) {
                 
                     {/* Card 1 */}
                 <div class="col-lg-6">
-                    {
+                    { upcoming?
+                    upcoming.map((ent) => {
+            return <TournamentCard width={width} data={ent}></TournamentCard>;
+            })
+        :
+        null
+        }
+                    {/* {
                         upcoming?
                         upcoming.map((data)=>
                         <div class="feature-card">
@@ -79,13 +87,13 @@ export default function Matches({width}) {
                         <div class="feature-card-inner">
                         <div class="feature-img-side">
                             <div class="feature-img-box">
-                                {/* <img src={img} alt="Feature" /> */}
+                                
                                 <img src={data.image} alt="Feature" />
                             </div>
                         </div>
                         <div class="feature-text-side">
                             <h3>{data.title}</h3>
-                            <p>{data.start_on}<span>Starts in 1H 35 M</span></p>
+                            <p>{new Date(data.start_on).toDateString()}<span style={{marginLeft:'10px'}}>Starts in 1H 35 M</span></p>
                             <div class="feature-middle-row">
                                 <div class="feature-item entery">
                                     <p>Entry</p>
@@ -94,7 +102,7 @@ export default function Matches({width}) {
                                 <div class="feature-item team-sale">
                                     <p>Team Size</p>
                                     <p>{data.team_size}</p>
-                                    {/* <p><span>2</span>v<span>2</span></p> */}
+                                    
                                 </div>
                                 <div class="feature-item max-teams">
                                     <p>Max Teams</p>
@@ -122,7 +130,7 @@ export default function Matches({width}) {
                         )
                     :
                     null
-                     }
+                     } */}
                 </div>
                 {/* Card 2 */}
                 {/* <div class="col-lg-6">
@@ -271,7 +279,8 @@ export default function Matches({width}) {
                                     </div>
                                     <div class="feature-text-side">
                                         <h3>{data.title}</h3>
-                                        <p>{data.start_on}<span>Started</span></p>
+                                        {/* {new Date().toLocaleDateString} */}
+                                        <p>{Date(data.start_on).toDateString()}<span>Started</span></p>
                                         <div class="feature-middle-row">
                                             <div class="feature-item entery">
                                                 <p>Entry</p>

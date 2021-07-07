@@ -24,7 +24,8 @@ function TournamentCard({ width, data }) {
       <div className="upper">
         <div className="img-badge">
           <img className="tourn-img" src={data.image} alt="img"></img>
-          <img className="badge" src="/icons/badge.png" alt="badge"></img>
+          {/* <img className="badge" src="/icons/badge.png" alt="badge"></img> */}
+          <img className="badge-price" src="/icons/badge.png" alt="badge"></img>
           <div className="price" style={{ color: "black" }}>
             ${data.entry_fee}
           </div>

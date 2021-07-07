@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Login.css";
 import "./Models.css";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import axios from "axios";
 import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
 import GoogleLogin from "react-google-login";
@@ -9,7 +9,7 @@ import { Button, Modal } from "react-bootstrap";
 
 // /icons/fb.png
 
-export default class Login extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,6 +25,8 @@ export default class Login extends Component {
   //     console.log("the data in props",this.props.location.state.data);
   //   }
   // }
+
+ 
 
   login = async (e) => {
     e.preventDefault();
@@ -73,11 +75,13 @@ export default class Login extends Component {
   };
 
   responseGoogle = async (response) => {
+
     console.log(response);
-    console.log(this.props);
+    console.log(this.props.width);
     var res = response;
     console.log("access token", res.accessToken);
     if (typeof response !== undefined) {
+      
       console.log("in conditions");
       await axios({
         method: "post",
@@ -90,14 +94,22 @@ export default class Login extends Component {
       })
         .then((response) => {
           console.log(response.data.user_detail);
-          this.props.history.push({
-            pathname: "/fbglogin",
-            state: { data: response.data.user_detail },
-          });
+          const routingFunction = (param) => {
+            this.props.history.push({
+                pathname: "/fbglogin",
+                state: param
+            });
+        }
+        routingFunction({ data: response.data.user_detail })
+
+          // this.props.history.push({
+          //   pathname: "/fbglogin",
+          //   state: { data: response.data.user_detail },
+          // });
         })
         .catch((error) => {
           console.log(error.response);
-          //alert("Couldn't Login ");
+          console.log("Couldn't Login ");
         });
     }
   };
@@ -107,6 +119,8 @@ export default class Login extends Component {
   };
 
   render() {
+    const {width, history} = this.props
+    console.log(width,history)
     return (
       <div className="login-cont">
         <Modal
@@ -167,14 +181,14 @@ export default class Login extends Component {
               margin: "0px 0px",
               backgroundColor: "black",
             }}
-            icon={false}
+            icon={true}
           >
-            <button className=" content-center">
+            {/* <button className=" content-center" >
               <img src="/icons/google.png" height="20px" alt="fb"></img>
               <div className="title" style={{ paddingLeft: "25px" }}>
                 Continue with Google
               </div>
-            </button>
+            </button> */}
           </GoogleLogin>
           <form className="form-sect" onSubmit={(e) => this.login(e)}>
             <label className="label">Email Address</label>
@@ -221,3 +235,5 @@ export default class Login extends Component {
     );
   }
 }
+
+export default withRouter(Login)

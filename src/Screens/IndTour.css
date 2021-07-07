@@ -53,20 +53,19 @@ body {
   margin-bottom: 0;
 }
 
-.tournament-card-text-box .enroll-now{
-  background-color: #F69204;
+.tournament-card-text-box .enroll-now {
+  background-color: #f69204;
   color: white;
   display: flex;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
-  margin-top: 5px;
+  margin-top: 0px;
   width: 15%;
   padding: 10px 0px;
   border-radius: 5px;
   cursor: pointer;
 }
-
 
 .tour-lower-text {
   padding-top: 10px;
@@ -488,74 +487,82 @@ body {
   padding-bottom: 5px;
   line-height: 31px;
 }
-.round-2-of-6 {
+.round-1-of-6:nth-child(2) {
   padding-top: 82px;
   transition: 0.2s ease-out;
 }
-.round-2-of-6 .tournament-details-tab-bracket-row:nth-child(2) {
+.round-1-of-6:nth-child(2) .tournament-details-tab-bracket-row:nth-child(2) {
   margin-bottom: 201px;
 }
-.round-2-of-6 .tournament-details-tab-bracket-group:nth-of-type(odd)::after {
+.round-1-of-6:nth-child(2)
+  .tournament-details-tab-bracket-group:nth-of-type(odd)::after {
   height: 200px;
 }
-.round-2-of-6 .tournament-details-tab-bracket-group:nth-of-type(even)::after {
+.round-1-of-6:nth-child(2)
+  .tournament-details-tab-bracket-group:nth-of-type(even)::after {
   height: 200px;
 }
-.round-3-of-6 {
+.round-1-of-6:nth-child(3) {
   padding-top: 240px;
   transition: 0.2s ease-out;
 }
-.round-3-of-6 .tournament-details-tab-bracket-row:nth-child(2) {
+.round-1-of-6:nth-child(3) .tournament-details-tab-bracket-row:nth-child(2) {
   margin-bottom: 532.8px;
 }
-.round-3-of-6 .tournament-details-tab-bracket-group:nth-of-type(odd)::after {
+.round-1-of-6:nth-child(3)
+  .tournament-details-tab-bracket-group:nth-of-type(odd)::after {
   height: 532.8px;
 }
-.round-3-of-6 .tournament-details-tab-bracket-group:nth-of-type(even)::after {
+.round-1-of-6:nth-child(3)
+  .tournament-details-tab-bracket-group:nth-of-type(even)::after {
   height: 532.8px;
 }
-.round-4-of-6 {
+.round-1-of-6:nth-child(4) {
   padding-top: 576px;
   transition: 0.2s ease-out;
 }
-.round-4-of-6 .tournament-details-tab-bracket-row:nth-child(2) {
+.round-1-of-6:nth-child(4) .tournament-details-tab-bracket-row:nth-child(2) {
   margin-bottom: 1193.472px;
   transition: 0.2s ease-out;
 }
-.round-4-of-6 .tournament-details-tab-bracket-group:nth-of-type(odd)::after {
+.round-1-of-6:nth-child(4)
+  .tournament-details-tab-bracket-group:nth-of-type(odd)::after {
   height: 1193.472px;
 }
-.round-4-of-6 .tournament-details-tab-bracket-group:nth-of-type(even)::after {
+.round-1-of-6:nth-child(4)
+  .tournament-details-tab-bracket-group:nth-of-type(even)::after {
   height: 1193.472px;
 }
-.round-5-of-6 {
+.round-1-of-6:nth-child(5) {
   padding-top: 1296px;
   transition: 0.2s ease-out;
 }
-.round-5-of-6 .tournament-details-tab-bracket-group:nth-child(2)::after {
+.round-1-of-6:nth-child(5)
+  .tournament-details-tab-bracket-group:nth-child(2)::after {
   display: none;
 }
-.round-6-of-6 .tournament-details-tab-bracket-row {
+.round-1-of-6:nth-child(6) .tournament-details-tab-bracket-row {
   border-right: 0;
 }
-.round-6-of-6 .tournament-details-tab-bracket-group:nth-child(2)::after {
+.round-1-of-6:nth-child(6)
+  .tournament-details-tab-bracket-group:nth-child(2)::after {
   display: none;
 }
-.round-6-of-6 {
+.round-1-of-6:nth-child(6) {
   padding-top: 1340px;
   transition: 0.2s ease-out;
 }
-.round-2-of-6
+.round-1-of-6:nth-child(2)
   .tournament-details-tab-bracket-group.last
   .tournament-details-tab-bracket-row:nth-child(2) {
   margin-bottom: 0 !important;
 }
-.round-3-of-6
+.round-1-of-6:nth-child(3)
   .tournament-details-tab-bracket-group.last
   .tournament-details-tab-bracket-row:nth-child(2) {
   margin-bottom: 0;
 }
-.round-4-of-6
+.round-1-of-6:nth-child(4)
   .tournament-details-tab-bracket-group.last
   .tournament-details-tab-bracket-row:nth-child(2) {
   margin-bottom: 0;
@@ -583,33 +590,39 @@ body {
 .compact-tab .tournament-details-tab-bracket-group:before {
   display: none;
 }
-.compact-tab .round-2-of-6 {
+.compact-tab .round-1-of-6:nth-child(2) {
   padding-top: 0;
   /* background-color: #3498db; */
 }
-.compact-tab .round-3-of-6 {
+.compact-tab .round-1-of-6:nth-child(3) {
   padding-top: 0;
   /* background-color: yellowgreen; */
 }
-.compact-tab .round-4-of-6 {
+.compact-tab .round-1-of-6:nth-child(4) {
   padding-top: 0;
   /* background-color: lawngreen; */
 }
-.compact-tab .round-5-of-6 {
+.compact-tab .round-1-of-6:nth-child(5) {
   padding-top: 0;
   /* background-color: lightcoral; */
 }
-.compact-tab .round-6-of-6 {
+.compact-tab .round-1-of-6:nth-child(6) {
   padding-top: 0;
   /* background-color: lightcyan; */
 }
-.compact-tab .round-2-of-6 .tournament-details-tab-bracket-row:nth-child(2) {
+.compact-tab
+  .round-1-of-6:nth-child(2)
+  .tournament-details-tab-bracket-row:nth-child(2) {
   margin-bottom: 0;
 }
-.compact-tab .round-3-of-6 .tournament-details-tab-bracket-row:nth-child(2) {
+.compact-tab
+  .round-1-of-6:nth-child(3)
+  .tournament-details-tab-bracket-row:nth-child(2) {
   margin-bottom: 0;
 }
-.compact-tab .round-4-of-6 .tournament-details-tab-bracket-row:nth-child(2) {
+.compact-tab
+  .round-1-of-6:nth-child(4)
+  .tournament-details-tab-bracket-row:nth-child(2) {
   margin-bottom: 0;
 }
 /* ================================== Teams ====================================== */
@@ -835,7 +848,7 @@ body {
   font-size: 25px;
   color: #303030;
 }
-.round-6-of-6 .tournament-details-tab-bracket-group:before {
+.round-1-of-6:nth-child(6) .tournament-details-tab-bracket-group:before {
   top: 30%;
 }
 /* ===================================== Media Query 1350 ====================================== */
@@ -896,8 +909,8 @@ body {
     height: 40px;
   }
 
-  .tournament-card-text-box .enroll-now{
-    background-color: #F69204;
+  .tournament-card-text-box .enroll-now {
+    background-color: #f69204;
     color: white;
     display: flex;
     justify-content: center;
@@ -911,7 +924,7 @@ body {
     padding: 5px 0px;
     cursor: pointer;
   }
-  .tournament-card-text-box .enroll-now:hover{
+  .tournament-card-text-box .enroll-now:hover {
     cursor: pointer;
   }
 }
@@ -1128,25 +1141,27 @@ body {
   .team-person {
     padding-top: 10px;
   }
-  .round-4-of-6 .tournament-details-tab-bracket-group:nth-of-type(odd)::after {
+  .round-1-of-6:nth-child(4)
+    .tournament-details-tab-bracket-group:nth-of-type(odd)::after {
     height: 1074.472px;
   }
-  .round-4-of-6 .tournament-details-tab-bracket-group:nth-of-type(even)::after {
+  .round-1-of-6:nth-child(4)
+    .tournament-details-tab-bracket-group:nth-of-type(even)::after {
     height: 1068.472px;
   }
-  .round-2-of-6 .tournament-details-tab-bracket-row:nth-child(2) {
+  .round-1-of-6:nth-child(2) .tournament-details-tab-bracket-row:nth-child(2) {
     margin-bottom: 177px;
   }
-  .round-3-of-6 .tournament-details-tab-bracket-row:nth-child(2) {
+  .round-1-of-6:nth-child(3) .tournament-details-tab-bracket-row:nth-child(2) {
     margin-bottom: 455.8px;
   }
-  .round-4-of-6 .tournament-details-tab-bracket-row:nth-child(2) {
+  .round-1-of-6:nth-child(4) .tournament-details-tab-bracket-row:nth-child(2) {
     margin-bottom: 974.472px;
   }
-  .round-5-of-6 {
+  .round-1-of-6:nth-child(5) {
     padding-top: 1158px;
   }
-  .round-6-of-6 {
+  .round-1-of-6:nth-child(6) {
     padding-top: 1195px;
   }
 }

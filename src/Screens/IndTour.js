@@ -118,9 +118,10 @@ console.log(state)
               <div class="tour-small-main">
                 <div class="tour-small-item">
                   <div class="tour-small-tax">
-                    <p>ENTRY FEE</p>
+                    <p >ENTRY</p>
                     {/* <p>$50</p> */}
-                    <p>${data.entry_fee}</p>
+                    <p style={{display:'flex'}} >{data.entry_fee}<p style={{fontSize:'small',textTransform:'lowercase', marginLeft:'5px'}}>Credits</p></p>
+                    
                   </div>
                 </div>
                 <div class="tour-small-item">
