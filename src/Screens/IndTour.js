@@ -63,9 +63,22 @@ useEffect(() => {
   }
 }, [loading])
 
-const enrollHandler = () =>{
+const enrollHandler = async() =>{
     if (token) {
-      history.push('/matches')
+     var userid = localStorage.getItem('userdata')
+     console.log('sending request')
+     const data = JSON.stringify({
+       "user": userid,
+       "tournament":number(gameId),
+     })
+     const headers = {
+       "Authorization": "Token "+ token,
+       "Content-Type": "application/json",
+     }
+     await axios.post('https://gamehubx.com/api/v1/tournament/'+number(gameId)+'/enroll/',data,{
+       headers: headers,
+     }).then(res => {console.log('enroll success',res); history.push("/matches")}).catch(error => console.log('enrol failure',error))
+
     } else {
       history.push("/login");
     }
