@@ -91,9 +91,17 @@ body {
 }
 .feature-card {
   width: 100%;
-  background: #272727;
-  padding: 25px;
   margin-bottom: 40px;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 50% 50%;
+}
+.feature-card .tourn-card {
+  width: 98.5%;
+  margin: 0 10px 10px 10px;
+}
+.tourn-card:nth-of-type(odd) {
+  margin-left: 0;
 }
 .feature-card-inner {
   display: flex;
@@ -277,6 +285,14 @@ body {
 @media only screen and (max-width: 991px) {
   .matches-inner .mdl-grid:nth-child(2) .mdl-cell {
     width: 100%;
+  }
+  .feature-card {
+    grid-template-rows: 1fr;
+    grid-template-columns: 100%;
+  }
+  .feature-card .tourn-card {
+    width: 100%;
+    margin: 10px 0;
   }
 }
 /* ========================== Media Query 767px ========================== */
