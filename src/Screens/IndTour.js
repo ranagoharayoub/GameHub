@@ -13,6 +13,7 @@ import Bracket from "../Components/Tounament/Bracket";
 import Teams from "../Components/Tounament/Teams";
 import Admin from "../Components/Tounament/Admin";
 import axios from "axios";
+import Timer from "react-compound-timer";
 import {useParams, useHistory} from "react-router-dom";
 import '../mdl-tabs-links/material.teal-indigo.min.css'
 /*eslint-disable*/
@@ -32,6 +33,14 @@ var token = localStorage.getItem('token')
 
 const number = (a) => {
     return a.replace(":", "");
+  }
+
+
+function getsec(a) {
+    var myDate = new Date(a); // a is start_on
+    var date = new Date(); // current date
+    var dou2 = myDate.getTime() - date.getTime();
+    return dou2;
   }
   useEffect(() => {
     // componentHandler.upgradeDom();
@@ -113,7 +122,14 @@ console.log(state)
                 <b>Platform:</b> {data.platform_detail}
               </p>
               <p>
-                <b>Registration:</b> OPEN <span>{new Date(data.start_on).toLocaleString()}</span>
+                <b>Registration:</b> OPEN <span>
+                Starts in{" "}
+              {
+                <Timer initialTime={getsec(data.start_on)} direction="backward">
+                  <Timer.Hours /> hours <Timer.Minutes /> minutes
+                </Timer>
+              }
+                  </span>
               </p>
               <div class="tour-small-main">
                 <div class="tour-small-item">

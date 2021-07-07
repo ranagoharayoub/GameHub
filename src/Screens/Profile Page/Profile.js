@@ -7,7 +7,7 @@ import twitter from "../Images/twitter.png";
 
 import axios from "axios";
 import { useParams } from 'react-router-dom';
-import {CameraEnhanceTwoTone } from "@material-ui/icons";
+import {Camera} from "@material-ui/icons";
 
 
 function Profile() {
@@ -150,7 +150,7 @@ function Profile() {
               filehandler(e)
             }}} ></input>
 
-            <CameraEnhanceTwoTone onClick={()=>document.getElementById('inputfile').click()} style={{cursor:'pointer'}} color='action' fontSize='large'></CameraEnhanceTwoTone>
+            <Camera  onClick={()=>document.getElementById('inputfile').click()} style={{cursor:'pointer', color:'white'}} fontSize='large'></Camera>
             <div className="flex w-full mt-2 md:hidden">
               <img src={facebook} alt="" className="h-3 w-3 mr-2" />
               <img src={instagram} alt="" className="h-3 w-3 mr-2" />
