@@ -81,8 +81,7 @@ function App() {
           <Route path='/settings/:id'  ><Settings width={width}></Settings></Route>
           <Route path='/matches'  ><Matches width={width}></Matches></Route>
           <Route path='/champs'  ><Champions></Champions></Route>
-          <Route path='/profile/:id'  > <MainPro /> </Route>
-          {/* <Route path='/indigame'  ><IndividualGame width={width}></IndividualGame></Route> */}
+          <Route path='/profile/:id'  > <MainPro width={width} /> </Route>
           <Route path='/:game/:ind'  ><IndividualGame width={width}></IndividualGame></Route>
           <Route path='/faq'><Faq></Faq></Route>
         </Switch>

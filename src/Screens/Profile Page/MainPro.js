@@ -2,11 +2,11 @@ import React from 'react'
 import HeroFade from './HeroFade'
 import Profile from './Profile'
 
-export default function MainPro() {
+export default function MainPro({width}) {
     return (
         <>  
             <HeroFade />
-            <Profile />    
+            <Profile width={width} />    
         </>
     )
 }

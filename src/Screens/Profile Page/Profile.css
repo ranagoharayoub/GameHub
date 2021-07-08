@@ -1,0 +1,12 @@
+
+
+@media (max-width: 800px) {
+    .img-styling{
+        margin-left: 0rem;
+        /* border: 1px solid white; */
+        margin-left: 5px;
+        width:30%;
+        margin-top: 5px;
+        object-fit: contain;
+    }
+}

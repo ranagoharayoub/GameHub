@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useContext } from "react";
+import './Profile.css'
 //import profilepicture from "../Images/random-user-test.png";
-import facebook from "../Images/facebook.png";
-import instagram from "../Images/instagram.png";
-import tiktok from "../Images/tik-tok.png";
-import twitter from "../Images/twitter.png";
+// import facebook from "../Images/facebook.png";
+// import instagram from "../Images/instagram.png";
+// import tiktok from "../Images/tik-tok.png";
+// import twitter from "../Images/twitter.png";
 import {ContextAPI} from '../../Context/Context'
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 import {Camera} from "@material-ui/icons";
 
 
-function Profile() {
+function Profile({width}) {
   const [textUnderline, setTextUnderline] = useState("Overview");
   const [textUnderlined, setTextUnderlined] = useState("Fortnite");
   const [data, setdata] = useState([]);
@@ -22,7 +23,7 @@ function Profile() {
   const [hour, sethour] = useState(0);
   const [day, setday] = useState(0);
 
-  const {profilepicture} = useContext(ContextAPI)
+  const profilepicture = useContext(ContextAPI)
   console.log('Contextprofile',profilepicture)
 
   const params = useParams()  
@@ -116,13 +117,15 @@ function Profile() {
   
 
   return (
-    <div className="flex flex-col bg-darkGray w-full">
+    <div style={width<'800' ?{overflowX:'hidden'}:null} className="flex flex-col bg-darkGray w-full md:w-full">
       
       <div className="flex justify-center md:justify-start md:w-full">
         <img
           src={data.image}
+          // src=''
           alt=""
-          className="rounded-sm h-1/3 w-1/3 md:h-48 md:w-48 -ml-20 md:ml-11 -mt-9 z-20"
+          className="rounded-sm h-1/3 w-1/3 md:h-48 md:w-48 -ml-20 md:ml-11 -mt-9 z-20 img-styling"
+          // className="img-styling"
         />
         <div className="md:flex md:flex-row md:w-full md:justify-between md:self-center">
           <div className="ml-7 flex flex-col -mr-16 md:mt-4">
@@ -154,7 +157,7 @@ function Profile() {
             }}} ></input>
 
             <Camera  onClick={()=>document.getElementById('inputfile').click()} style={{cursor:'pointer', color:'white'}} fontSize='large'></Camera>
-            <div className="flex w-full mt-2 md:hidden">
+            {/* <div className="flex w-full mt-2 md:hidden">
               <img src={facebook} alt="" className="h-3 w-3 mr-2" />
               <img src={instagram} alt="" className="h-3 w-3 mr-2" />
               <img src={tiktok} alt="" className="h-3 w-3 mr-2" />
@@ -167,7 +170,7 @@ function Profile() {
               <img src={instagram} alt="" className="h-6 w-6 mr-2" />
               <img src={tiktok} alt="" className="h-6 w-6 mr-2" />
               <img src={twitter} alt="" className="h-6 w-6 mr-2" />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -225,7 +228,7 @@ function Profile() {
             );
           })}
           {/* my map ending of game title */}
-          {/* <h4
+          <h4
             className={
               textUnderlined === "Fortnite"
                 ? "mr-5 border-b-2 border-neonGreen text-white rounded-b-sm md:pb-2 z-20 text-sm font-thin md:text-xl transition-colors ease-in duration-300 cursor-pointer"
@@ -260,19 +263,17 @@ function Profile() {
             }}
           >
             Tom Clancy
-          </h4> */}
+          </h4>
         </div>
 
         <div className="h-0.5 -mt-0.5 mx-8 bg-scrollCol rounded-l-full rounded-r-full"></div>
         <div>
-          {/* start of my state */}
+ 
 
           <div className="mx-8 flex mt-3 pb-10 md:pb-0 md:bg-darkGray md:mt-10">
             <img
               src={gamestate.game_image}
               alt=""
-              // height={40}
-              // width={40}
               style={{ flex: "0.25" }}
               className="h-16 w-24 md:h-52 md:w-52 mr-2 lg:h-52 lg:w-44 xl:h-80 xl:w-48"
             />
@@ -309,7 +310,7 @@ function Profile() {
           {/* end of my state */}
           {/* <div className="mx-8 flex mt-3 pb-10 md:pb-0 md:bg-darkGray md:mt-10">
             <img
-              src={fortnite}
+              src=''
               alt=""
               height={40}
               width={40}
