@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 //import profilepicture from "../Images/random-user-test.png";
 import facebook from "../Images/facebook.png";
 import instagram from "../Images/instagram.png";
 import tiktok from "../Images/tik-tok.png";
 import twitter from "../Images/twitter.png";
-
+import {ContextAPI} from '../../Context/Context'
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 import {Camera} from "@material-ui/icons";
@@ -21,6 +21,9 @@ function Profile() {
   const [min, setmin] = useState(0);
   const [hour, sethour] = useState(0);
   const [day, setday] = useState(0);
+
+  const {profilepicture, setprofilepicture} = useContext(ContextAPI)
+  console.log('Contextprofile',profilepicture)
 
   const params = useParams()  
   console.log("PARASM in pro",params)
@@ -47,7 +50,7 @@ function Profile() {
         .get("https://gamehubx.com/api/v1/user-profile/"+params.id+"/")
         .then((res) => {
           setdata(res.data);
-          // setprofilepic(res.data.image);
+          setprofilepicture(res.data.image);
           setgamedata(res.data.overview);
           // console.log("this is my data and overview", data);
           // console.log("this is my data and overview", gamedata);

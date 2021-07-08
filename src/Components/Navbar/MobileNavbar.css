@@ -9,7 +9,7 @@
 
 }
 
-.mob-navbar .menu, .mob-navbar .logo, .mob-navbar .login{
+.mob-navbar .menu, .mob-navbar .logo, .mob-navbar .login, .mob-navbar .after-login-icons{
     width:20%;
     height: 100%;
     display: flex;
@@ -18,23 +18,7 @@
     /* background-color: aquamarine; */
 }
 
-/* .mob-navbar .logo{
-    width: 20%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: aquamarine;
-}
 
-.mob-navbar .login{
-    width: 20%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: aquamarine;
-} */
 
 .login .login-btn{
     height: 100%;

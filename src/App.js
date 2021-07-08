@@ -26,9 +26,12 @@ import Champions from './Screens/Champions'
 import AfterSignup from './Screens/AfterSignup'
 import Tickets from './Screens/Tickets'
 import Faq from './Screens/Faq'
+import {ContextAPI} from './Context/Context'
 function App() {
   const [width, setwidth] = useState(window.innerWidth)
+  const [profilepicture, setprofilepicture] = useState(null)
   const history = useHistory();
+
   useEffect(() => {
       const widthHandler = () => {
         setwidth(window.innerWidth)
@@ -40,6 +43,7 @@ function App() {
   console.log(width)
   return (
       <Router>
+        <ContextAPI.Provider value={{profilepicture, setprofilepicture}}>
         {
           width> '800' ?
           <Navbar></Navbar>
@@ -66,6 +70,7 @@ function App() {
           <Route path='/faq'><Faq></Faq></Route>
         </Switch>
         <Footer></Footer>
+        </ContextAPI.Provider>
       </Router>
   );
 }

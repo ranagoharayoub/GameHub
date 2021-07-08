@@ -1,20 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import './Navbar.css'
 import Sidebar from './SideBar'
 import {Avatar} from '@material-ui/core'
+import {ContextAPI} from '../../Context/Context'
 import { Link } from 'react-router-dom'
 function Navbar() {
     const [display, setdisplay] = useState(false);
     const [LoggedIn, setLoggedIn] = useState(false);
     const [name, setname] = useState("");
 
-    // useEffect(async () => {
-    //     var tok = localStorage.getItem("token");
-    //     console.log("token check in navbar",tok)
-    //     if(tok){
-    //         setLoggedIn(true)
-    //     }
-    //   }, []);
+    const {profilepicture} = useContext(ContextAPI)
     useEffect(() => {
        const callAPI = async () => {
                 var tok = localStorage.getItem("token");
@@ -45,7 +40,7 @@ function Navbar() {
                     <div className='icons-cont'>
                     <img src='/icons/search.png' height='15px'  alt='search'></img>
                     <img src='/icons/alert.png' height='15px' alt='search'></img>
-                    <Avatar alt={name} src="/" />
+                    <Avatar alt={name} src={profilepicture} />
                     <div onClick={()=> setdisplay(true)} style={{fontSize:'small', opacity: '0.7'}} >{name}</div>
                     <img  src='/icons/dropdown.png' height='6.1px' alt='search'></img>
                     </div>
