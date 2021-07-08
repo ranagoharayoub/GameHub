@@ -22,7 +22,7 @@ function Profile() {
   const [hour, sethour] = useState(0);
   const [day, setday] = useState(0);
 
-  const {profilepicture, setprofilepicture} = useContext(ContextAPI)
+  const {profilepicture} = useContext(ContextAPI)
   console.log('Contextprofile',profilepicture)
 
   const params = useParams()  
@@ -50,7 +50,7 @@ function Profile() {
         .get("https://gamehubx.com/api/v1/user-profile/"+params.id+"/")
         .then((res) => {
           setdata(res.data);
-          setprofilepicture(res.data.image);
+          
           setgamedata(res.data.overview);
           // console.log("this is my data and overview", data);
           // console.log("this is my data and overview", gamedata);

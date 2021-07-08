@@ -27,9 +27,12 @@ import AfterSignup from './Screens/AfterSignup'
 import Tickets from './Screens/Tickets'
 import Faq from './Screens/Faq'
 import {ContextAPI} from './Context/Context'
+import axios from 'axios';
+
 function App() {
   const [width, setwidth] = useState(window.innerWidth)
   const [profilepicture, setprofilepicture] = useState(null)
+  // const [userdata, setuserdata] = useState(null)
   const history = useHistory();
 
   useEffect(() => {
@@ -39,11 +42,25 @@ function App() {
       window.onresize=widthHandler
   }, [width])
 
+  useEffect(() => {
+
+    const callAPI =  async (param) => {
+        await axios.get("https://gamehubx.com/api/v1/user-profile/"+param+"/") 
+                   .then(res => {console.log(res.data); setprofilepicture(res.data.image)})
+                   .catch(e=> console.log(e))
+
+    }
+    var id = localStorage.getItem("userdata")
+    if (id) {
+      callAPI(id)
+    }
+  }, [])
+
   
   console.log(width)
   return (
       <Router>
-        <ContextAPI.Provider value={{profilepicture, setprofilepicture}}>
+        <ContextAPI.Provider value={profilepicture}>
         {
           width> '800' ?
           <Navbar></Navbar>

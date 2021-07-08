@@ -9,7 +9,7 @@ function Navbar() {
     const [LoggedIn, setLoggedIn] = useState(false);
     const [name, setname] = useState("");
 
-    const {profilepicture} = useContext(ContextAPI)
+    const profilepicture = useContext(ContextAPI)
     useEffect(() => {
        const callAPI = async () => {
                 var tok = localStorage.getItem("token");

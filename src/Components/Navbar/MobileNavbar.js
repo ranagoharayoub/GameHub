@@ -12,7 +12,7 @@ function MobileNavbar() {
     // eslint-disable-next-line
     const [name, setname] = useState("");
 
-    const {profilepicture} = useContext(ContextAPI)
+    const profilepicture = useContext(ContextAPI)
     var userid = localStorage.getItem("userdata") 
     // useEffect(async () => {
     //     var tok = localStorage.getItem("token");
