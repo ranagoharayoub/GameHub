@@ -50,7 +50,7 @@ function MobileNavbar() {
             {LoggedIn?
             <Link to={`/profile/${userid}`} className='after-login-icons'>
                 <Avatar alt={name} src={profilepicture}></Avatar>
-                <div style={{marginLeft:'10px'}}>{name}</div>
+                {/* <div style={{marginLeft:'0px'}}>{name}</div> */}
             </Link>
             :     
             <div className='login' >
