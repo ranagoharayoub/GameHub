@@ -7,17 +7,17 @@ import { Link } from 'react-router-dom'
 function Navbar() {
     const [display, setdisplay] = useState(false);
     const [LoggedIn, setLoggedIn] = useState(false);
-    const [name, setname] = useState("");
+    // const [name, setname] = useState("");
 
-    const profilepicture = useContext(ContextAPI)
+    const [profilepicture, username] = useContext(ContextAPI)
     useEffect(() => {
        const callAPI = async () => {
                 var tok = localStorage.getItem("token");
                 console.log("token check in navbar",tok)
                 if(tok){
                     setLoggedIn(true)
-                    var username = localStorage.getItem("name");
-                    setname(username);
+                    // var username = localStorage.getItem("name");
+                    // setname(username);
                 }}
                 callAPI()
     }, [])
@@ -40,8 +40,8 @@ function Navbar() {
                     <div className='icons-cont'>
                     <img src='/icons/search.png' height='15px'  alt='search'></img>
                     <img src='/icons/alert.png' height='15px' alt='search'></img>
-                    <Avatar alt={name} src={profilepicture} />
-                    <div onClick={()=> setdisplay(true)} style={{fontSize:'small', opacity: '0.7'}} >{name}</div>
+                    <Avatar alt={username} src={profilepicture} />
+                    <div onClick={()=> setdisplay(true)} style={{fontSize:'small', opacity: '0.7'}} >{username}</div>
                     <img  src='/icons/dropdown.png' height='6.1px' alt='search'></img>
                     </div>
                     :

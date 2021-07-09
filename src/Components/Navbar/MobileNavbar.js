@@ -12,15 +12,9 @@ function MobileNavbar() {
     // eslint-disable-next-line
     const [name, setname] = useState("");
 
-    const profilepicture = useContext(ContextAPI)
+    const [profilepicture, username] = useContext(ContextAPI)
     var userid = localStorage.getItem("userdata") 
-    // useEffect(async () => {
-    //     var tok = localStorage.getItem("token");
-    //     console.log("token check in navbar",tok)
-    //     if(tok){
-    //         setLoggedIn(true)
-    //     }
-    //   }, []);
+
     useEffect(() => {
        const callAPI = async () => {
                 var tok = localStorage.getItem("token");
@@ -49,7 +43,7 @@ function MobileNavbar() {
             </div>
             {LoggedIn?
             <Link to={`/profile/${userid}`} className='after-login-icons'>
-                <Avatar alt={name} src={profilepicture}></Avatar>
+                <Avatar alt={username} src={profilepicture}></Avatar>
                 {/* <div style={{marginLeft:'0px'}}>{name}</div> */}
             </Link>
             :     

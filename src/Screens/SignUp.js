@@ -129,7 +129,7 @@ export default class SignUp extends Component {
 
         .catch((error) => {
           console.log(error.response);
-          this.setState({ modaltext: "USERNAME or Email Already in use" });
+          this.setState({ modaltext: error.response.data });
           this.setState({ show: true });
         });
     } else {

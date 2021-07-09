@@ -83,9 +83,9 @@ useEffect(() => {
         // console.log(response);
       })
       .catch((error) => {
-        setmodaltext("couldn't change password")
+        setmodaltext("couldn't chnge username")
         setShow(true)
-        // console.log(error);
+        console.log(error);
         // alert("unable to change username")
       });
   }
@@ -135,6 +135,7 @@ useEffect(() => {
         setShow(true)
       })
       .catch((error) => {
+        console.log(error)
         setmodaltext("unable to change phone")
         setShow(true)
       });
@@ -307,7 +308,7 @@ useEffect(() => {
                   placeholder="Username"
                   name="username"
                   value={state.username}
-                  onChange={handleChange}
+                  onChange={(evt)=>handleChange(evt)}
                   className="input"
                   style={width < "800" ? { width: "80vw" } : null}
                 ></input>
@@ -336,7 +337,7 @@ useEffect(() => {
                   className="input"
                   name="email"
                   value={state.email}
-                  onChange={handleChange}
+                  onChange={(evt)=>handleChange(evt)}
                   placeholder="email"
                   style={width < "800" ? { width: "80vw"} : null}
                 ></input>
@@ -363,7 +364,7 @@ useEffect(() => {
                 placeholder="+1"
                 name="phoneext"
                 value={state.phoneext}
-                onChange={handleChange}
+                onChange={(evt)=>handleChange(evt)}
                 style={
                   width < "800"
                     ? {
@@ -384,7 +385,7 @@ useEffect(() => {
                 type="tel"
                 name="phone"
                 value={state.phone}
-                onChange={handleChange}
+                onChange={(evt)=>handleChange(evt)}
                 placeholder="e.g. 1324568974555"
                 style={width < "800" ? { width: "70vw" } : null}
               ></input>
@@ -407,7 +408,7 @@ useEffect(() => {
               type="password"
               name="currntpass"
               value={curntpass}
-              onChange={handleChange2}
+              onChange={(evt)=>handleChange2(evt)}
               placeholder="Current Password"
               style={width > "800" ? { width: "25%" } : null}
             ></input>
@@ -419,7 +420,7 @@ useEffect(() => {
                 placeholder="Create Password"
                 name="pass"
                 value={pass}
-                onChange={handleChange3}
+                onChange={(evt)=>handleChange3(evt)}
                 style={width > "800" ? { width: "98%" } : null}
               ></input>
               {cross !== undefined && (
@@ -454,7 +455,7 @@ useEffect(() => {
               type="password"
               name="confpass"
               value={conpass}
-              onChange={handleChange4}
+              onChange={(evt)=>handleChange4(evt)}
               placeholder="Confirm Password"
               style={width > "800" ? { width: "25%" } : null}
             ></input>
@@ -483,9 +484,9 @@ useEffect(() => {
               <input id='inputcolor' className="input"></input>
             </div>
             {width > "800" ? (
-              <div className="col btn" onClick={saveTime}>Change Timezone</div>
+              <div className="col btn" onClick={()=>saveTime}>Change Timezone</div>
             ) : (
-              <div className="save-btn" onClick={saveTime}>Save</div>
+              <div className="save-btn" onClick={()=>saveTime}>Save</div>
             )}
           </div>
         </form>

@@ -32,7 +32,7 @@ import axios from 'axios';
 function App() {
   const [width, setwidth] = useState(window.innerWidth)
   const [profilepicture, setprofilepicture] = useState(null)
-  // const [userdata, setuserdata] = useState(null)
+  const [username, setusername] = useState(null)
   const history = useHistory();
 
   useEffect(() => {
@@ -46,7 +46,7 @@ function App() {
 
     const callAPI =  async (param) => {
         await axios.get("https://gamehubx.com/api/v1/user-profile/"+param+"/") 
-                   .then(res => {console.log(res.data); setprofilepicture(res.data.image)})
+                   .then(res => {console.log(res.data); setprofilepicture(res.data.image); setusername(res.data.username)})
                    .catch(e=> console.log(e))
 
     }
@@ -60,7 +60,7 @@ function App() {
   console.log(width)
   return (
       <Router>
-        <ContextAPI.Provider value={profilepicture}>
+        <ContextAPI.Provider value={[profilepicture, username]}>
         {
           width> '800' ?
           <Navbar></Navbar>

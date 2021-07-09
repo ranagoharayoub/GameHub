@@ -21,6 +21,8 @@ function TicketModal(props) {
   const [message, setmessage] = useState('')
   const [screenshot, setscreenshot] = useState(null)
 
+
+
 const ticketHandler = async(param)=>{
   console.log(ticketProof, message)
 
@@ -29,11 +31,12 @@ const ticketHandler = async(param)=>{
   var optionalProof1 = ticketProof1? ticketProof1 : emptyURL
   var optionalProof2 = ticketProof2? ticketProof2 : emptyURL
   var image = ''
-  imageToBase64(screenshot) // Path to the image
+  console.log('screenshot', screenshot)
+  await imageToBase64("https://www.google.com/logos/doodles/2021/argentina-independence-day-2021-6753651837108986-2x.png")
     .then(
         (response) => {
             console.log(response); // "cGF0aC90by9maWxlLmpwZw=="
-            image= response
+            image = response
         }
     )
     .catch(
@@ -41,8 +44,7 @@ const ticketHandler = async(param)=>{
             console.log(error); // Logs an error if there was one
         }
     )
- 
-  console.log('image',screenshot)
+ console.log('image',image)
   var token = localStorage.getItem('token')
   var userid = parseInt(localStorage.getItem('userdata'))
   const headers = ({
@@ -69,7 +71,7 @@ console.log(data)
         })
         .then(res => {console.log(res); setmodaltext('ticket submitted'); setShow(true)})
         .then(()=>{setmessage(""); setticketProof("") ;setticketProof1(""); setticketProof2("")})
-        .catch(error => {console.log(error); setmodaltext("ticket couldn't submitted"); setShow(true)})
+        .catch(error => {console.log(error); setmodaltext(error); setShow(true)})
 }
 
 return (

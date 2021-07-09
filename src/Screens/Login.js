@@ -53,8 +53,8 @@ class Login extends Component {
         window.location.href = "/";
       })
       .catch((error) => {
-        // console.log(error.response.data.key);
-        this.setState({ modaltext: "Credentials are not correct" });
+        console.log(error.response.data.non_field_errors[0]);
+        this.setState({ modaltext: error.response.data.non_field_errors[0]});
         this.setState({ show: true });
       });
   };
@@ -173,22 +173,22 @@ class Login extends Component {
             clientId={
               "431419828404-n5tfmqqqlkohd0luqiu8rsqrs657fshk.apps.googleusercontent.com"
             }
-            onSuccess={this.responseGoogle}
-            onFailure={this.responseGoogle}
+            onSuccess={()=>this.responseGoogle}
+            onFailure={()=>this.responseGoogle}
             className="social-login-google"
             style={{
               padding: "0px 0px",
               margin: "0px 0px",
               backgroundColor: "black",
             }}
-            icon={true}
+            icon={false}
           >
-            {/* <button className=" content-center" >
+            <button className=" content-center" >
               <img src="/icons/google.png" height="20px" alt="fb"></img>
-              <div className="title" style={{ paddingLeft: "25px" }}>
+              <div className="title" style={{ paddingLeft: "25px", color:'black' }}>
                 Continue with Google
               </div>
-            </button> */}
+            </button>
           </GoogleLogin>
           <form className="form-sect" onSubmit={(e) => this.login(e)}>
             <label className="label">Email Address</label>
