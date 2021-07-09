@@ -14,21 +14,21 @@ import video from '../Video/herovid.mp4'
 
 function Home({ width }) {
   // eslint-disable-next-line
-  Array.prototype.move = function (old_index, new_index) {
-    if (new_index >= this.length) {
-      var k = new_index - this.length;
-      while (k-- + 1) {
-        this.push(undefined);
-      }
-    }
-    this.splice(new_index, 0, this.splice(old_index, 1)[0]);
-  };
+  // Array.prototype.move = function (old_index, new_index) {
+  //   if (new_index >= this.length) {
+  //     var k = new_index - this.length;
+  //     while (k-- + 1) {
+  //       this.push(undefined);
+  //     }
+  //   }
+  //   this.splice(new_index, 0, this.splice(old_index, 1)[0]);
+  // };
 
 
 
   const [items, setitems] = useState(null);
   const [nav, setnav] = useState(false);
-  const [gamedata, setdata] = useState([]);
+  const [gamedata, setgamedata] = useState([]);
   const [tourdata, settourdata] = useState([]);
   const [statdata, setstatdata] = useState([]);
   const [champdata, setchampdata] = useState([]);
@@ -37,7 +37,7 @@ function Home({ width }) {
   useEffect(() => {
     const callAPI = async () => {
       await axios.get("https://gamehubx.com/api/v1/game/").then((res) => {
-        setdata(res.data);
+        setgamedata(res.data);
         //   console.log("data coming", gamedata);
       });
   
@@ -64,11 +64,11 @@ function Home({ width }) {
     callAPI()
   }, [])
   // eslint-disable-next-line
-  function arraymove(arr, fromIndex, toIndex) {
-    var element = arr[fromIndex];
-    arr.splice(fromIndex, 1);
-    arr.splice(toIndex, 0, element);
-  }
+  // function arraymove(arr, fromIndex, toIndex) {
+  //   var element = arr[fromIndex];
+  //   arr.splice(fromIndex, 1);
+  //   arr.splice(toIndex, 0, element);
+  // }
 
   useEffect(() => {
     width >= 800 ? setitems(5) : setitems(3);
@@ -76,13 +76,13 @@ function Home({ width }) {
   }, [width]);
 
 
-  var tourn = []
+  // var tourn = []
 
-  for (let index = 0; index < 6; index++) {
-    if (tourdata.length>0) {
-      tourn.push(<TournamentCard width={width} data={tourdata[index]}></TournamentCard>)
-    }
-  }
+  // for (let index = 0; index < 6; index++) {
+  //   if (tourdata.length>0) {
+  //     tourn.push(<TournamentCard width={width} data={tourdata[index]}></TournamentCard>)
+  //   }
+  // }
 
   // Caoursal Params;
   const options = {
@@ -131,11 +131,11 @@ function Home({ width }) {
         <div className="title">FEATURED TOURNAMENTS</div>
         <div className="hot">Hot and trending tournaments</div>
         <div className="card-grid">
-          {/* {tourdata.length > 0 &&
+          {tourdata.length > 0 &&
             tourdata.map((ent) => {
               return <TournamentCard width={width} data={ent}></TournamentCard>;
-            })} */}
-            {tourn}
+            })}
+            {/* {tourn} */}
           {/* <TournamentCard width={width}></TournamentCard>
           <TournamentCard width={width}></TournamentCard> */}
         </div>

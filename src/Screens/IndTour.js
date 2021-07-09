@@ -21,6 +21,8 @@ export default function IndTour({width}) {
 
 const [data, setdata] = useState([])
 const [loading, setloading] = useState(true)
+const [enrolled, setenrolled] = useState(null)
+const [alreadyEnrolled, setalreadyEnrolled] = useState([])
 const [state, setstate] = useState({
   firstprize:'',
   secondprize:'',
@@ -30,7 +32,8 @@ const {gameId} =useParams()
 let history = useHistory()
 
 var token = localStorage.getItem('token')
-
+var userid = parseInt(localStorage.getItem("userdata"))
+console.log(userid)
 const number = (a) => {
     return a.replace(":", "");
   }
@@ -42,19 +45,29 @@ function getsec(a) {
     var dou2 = myDate.getTime() - date.getTime();
     return dou2;
   }
+
+
+
   useEffect(() => {
     // componentHandler.upgradeDom();
 
       const callApi = async() =>{
-        await axios.get('https://gamehubx.com/api/v1/tournament/'+number(gameId)+'/').then((res)=> setdata(res.data)).catch((error)=> console.log(error))
-        console.log(data)
+        await axios.get('https://gamehubx.com/api/v1/tournament/'+number(gameId)+'/')
+        .then((res)=> setdata(res.data))
+        .catch((error)=> console.log(error))
         setloading(false)
+
         componentHandler.upgradeDom()
          
        }
        callApi()
 
-      
+      const callAPI2 = async () =>{
+        await axios.get("https://gamehubx.com/api/v1/tournament/1/enrolled/")
+        .then((res)=> {console.log(res); setenrolled(res.data)}).then(()=>console.log(enrolled))
+        .catch(err=> console.log(err))
+}
+      callAPI2()
   }, [gameId])
 
 
@@ -71,6 +84,9 @@ useEffect(() => {
   }
   }
 }, [loading])
+
+
+console.log(getsec(data.start_on))
 
 const enrollHandler = async() =>{
     if (token) {
@@ -95,10 +111,15 @@ const enrollHandler = async() =>{
 
 }
 
+  enrolled?
+   console.log('user enrolled?',enrolled.map((id)=> id.user).includes(userid)) 
+  :
+  null
 
 
+  // enrolled? setalreadyEnrolled(enrolled.map((id)=> id.user)) : null
+  
 
-console.log(state)
   return (
     // Inctour Main
     <div class="inctour-main">
@@ -124,11 +145,19 @@ console.log(state)
               <p>
                 <b>Registration:</b> OPEN <span>
                 Starts in{" "}
-              {
-                <Timer initialTime={getsec(data.start_on)} direction="backward">
+                {
+                  data.start_on?
+                  <Timer initialTime={getsec(data.start_on)} direction="backward">
                   <Timer.Hours /> hours <Timer.Minutes /> minutes
                 </Timer>
-              }
+                :
+                null
+                }
+
+              {/* <Timer initialTime={72000} >
+                <Timer.Hours>hours</Timer.Hours>
+                <Timer.Minutes>minutes</Timer.Minutes>
+              </Timer> */}
                   </span>
               </p>
               <div class="tour-small-main">
@@ -163,8 +192,34 @@ console.log(state)
                 </div>
               </div>
             </div>
-            <div onClick={enrollHandler} className='enroll-now'>Enroll Now</div>
-            {/* <Link to={token?'/matches': '/login'} onClick={enrollHandler} className='enroll-now'>Enroll Now</Link> */}
+            {
+              getsec(data.start_on) > 0?
+              enrolled?
+              enrolled.map((id)=> id.user).includes(userid)?
+              <div onClick={enrollHandler} className='enroll-now'>Already Enrolled</div>
+              :
+              <div onClick={enrollHandler} className='enroll-now'>Enroll Now</div>
+              :
+              null
+              :
+              null
+              // !alreadyEnrolled?
+              // <div onClick={enrollHandler} className='enroll-now'>Enroll Now</div>
+              // :
+              // alreadyEnrolled.includes(userid)?
+              // <div onClick={enrollHandler} className='enroll-now'>Already Enrolled</div>
+              // :
+              // <div onClick={enrollHandler} className='enroll-now'>Enroll Now</div>
+              // <div onClick={enrollHandler} className='enroll-now'>Enroll Now</div>
+              // if (alreadyEnrolled) {
+              //   if (alreadyEnrolled.includes(userid)) {
+              //     <div onClick={enrollHandler} className='enroll-now'>Already Enrolled</div>
+              //   } else {
+              //     <div onClick={enrollHandler} className='enroll-now'>Enroll Now</div>
+              //   }
+              // }
+              
+            }
           </div>
         </div>
       </div>
