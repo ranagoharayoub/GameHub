@@ -75,7 +75,16 @@ function Home({ width }) {
     width >= 800 ? setnav(true) : setnav(false);
   }, [width]);
 
-  // console.log(items);
+
+  var tourn = []
+
+  for (let index = 0; index < 6; index++) {
+    if (tourdata.length>0) {
+      tourn.push(<TournamentCard width={width} data={tourdata[index]}></TournamentCard>)
+    }
+  }
+
+  // Caoursal Params;
   const options = {
     center:false,
     items: items,
@@ -122,11 +131,11 @@ function Home({ width }) {
         <div className="title">FEATURED TOURNAMENTS</div>
         <div className="hot">Hot and trending tournaments</div>
         <div className="card-grid">
-          {tourdata.length > 0 &&
+          {/* {tourdata.length > 0 &&
             tourdata.map((ent) => {
               return <TournamentCard width={width} data={ent}></TournamentCard>;
-            })}
-
+            })} */}
+            {tourn}
           {/* <TournamentCard width={width}></TournamentCard>
           <TournamentCard width={width}></TournamentCard> */}
         </div>
