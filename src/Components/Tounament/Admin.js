@@ -1,7 +1,7 @@
 import React from "react";
-import teamImg from "../../bg/team-1.png";
+// import teamImg from "../../bg/team-1.png";
 /*eslint-disable*/
-export default function Admin() {
+export default function Admin({data}) {
   return (
     <div>
       {/* =================== Admin =================== */}
@@ -28,10 +28,10 @@ export default function Admin() {
           <div class="staff-cell">
             <div class="staff-profile">
               <div class="team-person-image-box">
-                <img src={teamImg} />
+                <img src={data.image} />
               </div>
               <div class="team-person">
-                <h2>TeamShmackeddd</h2>
+                <h2>{data.username}</h2>
                 <p>OLT Support</p>
               </div>
             </div>
@@ -54,7 +54,7 @@ export default function Admin() {
           </div>
         </div>
         {/* ====================== Profile 2 ========================= */}
-        <div class="profile-main">
+        {/* <div class="profile-main">
           <div class="staff-cell">
             <div class="staff-profile">
               <div class="team-person-image-box">
@@ -82,9 +82,9 @@ export default function Admin() {
           <div class="staff-cell">
             <p>042356565455</p>
           </div>
-        </div>
+        </div> */}
         {/* ====================== Profile 3 ========================= */}
-        <div class="profile-main">
+        {/* <div class="profile-main">
           <div class="staff-cell">
             <div class="staff-profile">
               <div class="team-person-image-box">
@@ -122,7 +122,7 @@ export default function Admin() {
               <i class="fas fa-angle-right"></i>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ export default function Matches({ width }) {
     var userid = localStorage.getItem("userdata");
     const callAPI = async () => {
       await axios
-        .get("https://gamehubx.com/api/v1/tournament/?user=" + userid)
+        .get("https://gamehubx.com/api/v1/tournament/?user=" + userid+ "&status=upcoming")
         .then((res) => setupcoming(res.data))
 
         // .then((data)=>{setupcoming(res.data); console.log('upcoming',upcoming)})

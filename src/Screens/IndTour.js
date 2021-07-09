@@ -22,7 +22,7 @@ export default function IndTour({width}) {
 const [data, setdata] = useState([])
 const [loading, setloading] = useState(true)
 const [enrolled, setenrolled] = useState(null)
-const [alreadyEnrolled, setalreadyEnrolled] = useState([])
+const [admins, setadmins] = useState(null)
 const [state, setstate] = useState({
   firstprize:'',
   secondprize:'',
@@ -68,6 +68,14 @@ function getsec(a) {
         .catch(err=> console.log(err))
 }
       callAPI2()
+
+
+      const callAPI3 = async()=>{
+        await axios.get("https://gamehubx.com/api/v1/tournament/"+number(gameId)+"/admins/")
+              .then((res)=>{console.log(res.data); setadmins(res.data)})
+              .catch((error)=>console.log(error))
+      }
+      callAPI3()
   }, [gameId])
 
 
@@ -283,7 +291,15 @@ const enrollHandler = async() =>{
                 </div>
                 {/* ================ Admin =============== */}
                 <div class="mdl-tabs__panel"  id="admin">
-                  <Admin />
+                  {
+                    admins?
+                    admins.map((data)=>
+                    <Admin data={data}/>
+                    )
+                    :
+                    null
+                  }
+                  
                 </div>
               </div>
             </div>
