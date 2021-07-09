@@ -111,14 +111,6 @@ const enrollHandler = async() =>{
 
 }
 
-  enrolled?
-   console.log('user enrolled?',enrolled.map((id)=> id.user).includes(userid)) 
-  :
-  null
-
-
-  // enrolled? setalreadyEnrolled(enrolled.map((id)=> id.user)) : null
-  
 
   return (
     // Inctour Main
@@ -153,13 +145,20 @@ const enrollHandler = async() =>{
                 :
                 null
                 }
-
-              {/* <Timer initialTime={72000} >
-                <Timer.Hours>hours</Timer.Hours>
-                <Timer.Minutes>minutes</Timer.Minutes>
-              </Timer> */}
                   </span>
               </p>
+              {
+              getsec(data.start_on) > 0?
+              enrolled?
+              enrolled.map((id)=> id.user).includes(userid)?
+              <div  className='enroll-now'>Already Enrolled</div>
+              :
+              <div onClick={()=>enrollHandler()} className='enroll-now'>Enroll Now</div>
+              :
+              null
+              :
+              null
+            }
               <div class="tour-small-main">
                 <div class="tour-small-item">
                   <div class="tour-small-tax">
@@ -192,34 +191,18 @@ const enrollHandler = async() =>{
                 </div>
               </div>
             </div>
-            {
+            {/* {
               getsec(data.start_on) > 0?
               enrolled?
               enrolled.map((id)=> id.user).includes(userid)?
-              <div onClick={enrollHandler} className='enroll-now'>Already Enrolled</div>
+              <div style={width<'800'?{width:'100%', height:'50px'}: null} className='enroll-now'>Already Enrolled</div>
               :
-              <div onClick={enrollHandler} className='enroll-now'>Enroll Now</div>
-              :
-              null
+              <div onClick={()=>enrollHandler()} className='enroll-now'>Enroll Now</div>
               :
               null
-              // !alreadyEnrolled?
-              // <div onClick={enrollHandler} className='enroll-now'>Enroll Now</div>
-              // :
-              // alreadyEnrolled.includes(userid)?
-              // <div onClick={enrollHandler} className='enroll-now'>Already Enrolled</div>
-              // :
-              // <div onClick={enrollHandler} className='enroll-now'>Enroll Now</div>
-              // <div onClick={enrollHandler} className='enroll-now'>Enroll Now</div>
-              // if (alreadyEnrolled) {
-              //   if (alreadyEnrolled.includes(userid)) {
-              //     <div onClick={enrollHandler} className='enroll-now'>Already Enrolled</div>
-              //   } else {
-              //     <div onClick={enrollHandler} className='enroll-now'>Enroll Now</div>
-              //   }
-              // }
-              
-            }
+              :
+              null
+            } */}
           </div>
         </div>
       </div>
