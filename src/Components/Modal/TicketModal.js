@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import imageToBase64 from 'image-to-base64/browser';
 import {
   NavDropdown,
   Modal,
@@ -18,10 +19,30 @@ function TicketModal(props) {
   const [ticketProof1, setticketProof1] = useState("")
   const [ticketProof2, setticketProof2] = useState("")
   const [message, setmessage] = useState('')
+  const [screenshot, setscreenshot] = useState(null)
 
 const ticketHandler = async(param)=>{
   console.log(ticketProof, message)
-console.log(ticketProof1)
+
+  const emptyURL = "http://127.0.0.1:8011/api/v1/ticket/"
+
+  var optionalProof1 = ticketProof1? ticketProof1 : emptyURL
+  var optionalProof2 = ticketProof2? ticketProof2 : emptyURL
+  var image = ''
+  imageToBase64(screenshot) // Path to the image
+    .then(
+        (response) => {
+            console.log(response); // "cGF0aC90by9maWxlLmpwZw=="
+            image= response
+        }
+    )
+    .catch(
+        (error) => {
+            console.log(error); // Logs an error if there was one
+        }
+    )
+ 
+  console.log('image',screenshot)
   var token = localStorage.getItem('token')
   var userid = parseInt(localStorage.getItem('userdata'))
   const headers = ({
@@ -29,25 +50,25 @@ console.log(ticketProof1)
     "Content-Type": "application/json"
   })
   
-console.log(param)
   const data = JSON.stringify({
-     
     "tickets_proof_links": [
       {"link": ticketProof},
-      {"link": ticketProof1},
-      {"link": ticketProof2},
+      {"link": optionalProof1},
+      {"link": optionalProof2},
 ],
+    "image": image,
     "message": message,
     "user": userid,
     "category": param,
   })
 console.log(data)
+
   await axios
         .post("https://gamehubx.com/api/v1/ticket/", data, {
           headers: headers
         })
         .then(res => {console.log(res); setmodaltext('ticket submitted'); setShow(true)})
-        .then(()=>{setmessage(""); setticketProof("") ;setticketProof1(""); setticketProof2()})
+        .then(()=>{setmessage(""); setticketProof("") ;setticketProof1(""); setticketProof2("")})
         .catch(error => {console.log(error); setmodaltext("ticket couldn't submitted"); setShow(true)})
 }
 
@@ -109,8 +130,11 @@ return (
                       <input name="tickets_proof_links" value={ticketProof} onChange={e=>setticketProof(e.target.value)} style={{width:'100%', height:'50px', backgroundColor:'#4a4747', padding:'0px 20px'}} type='text' placeholder='Proof Link 1'></input>
                     </div>
                     <div class="general-add">
+                      <input style={{display:'none'}} id="uploadimage" type='file' onChange={(e)=>{console.log(e.target.files[0]); if (e.target.files[0]) {
+                        setscreenshot(e.target.files[0])
+                      }}}></input>
                       <p>
-                        <i class="fas fa-plus-circle"></i>Add Game Results
+                        <i style={{cursor:'pointer'}} onClick={()=> document.getElementById("uploadimage").click()} class="fas fa-plus-circle"></i>Add Game Results
                         Screenshot Proof
                       </p>
                     </div>
