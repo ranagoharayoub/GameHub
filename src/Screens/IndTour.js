@@ -63,7 +63,7 @@ function getsec(a) {
        callApi()
 
       const callAPI2 = async () =>{
-        await axios.get("https://gamehubx.com/api/v1/tournament/1/enrolled/")
+        await axios.get("https://gamehubx.com/api/v1/tournament/"+number(gameId)+"/enrolled/")
         .then((res)=> {console.log(res); setenrolled(res.data)}).then(()=>console.log(enrolled))
         .catch(err=> console.log(err))
 }
@@ -143,7 +143,17 @@ const enrollHandler = async() =>{
                 <b>Platform:</b> {data.platform_detail}
               </p>
               <p>
-                <b>Registration:</b> OPEN <span>
+                {
+                  data.start_on?
+                  getsec(data.start_on)>0?
+                  <b>Registration: OPEN </b>
+                  :
+                  <b>Enrolled Temas: {" "}{enrolled? enrolled.length:null} </b>
+                  :
+                  null
+                }
+                {/* <b>Registration:</b> OPEN <span> */}
+                <span> 
                 Starts in{" "}
                 {
                   data.start_on?
@@ -199,18 +209,6 @@ const enrollHandler = async() =>{
                 </div>
               </div>
             </div>
-            {/* {
-              getsec(data.start_on) > 0?
-              enrolled?
-              enrolled.map((id)=> id.user).includes(userid)?
-              <div style={width<'800'?{width:'100%', height:'50px'}: null} className='enroll-now'>Already Enrolled</div>
-              :
-              <div onClick={()=>enrollHandler()} className='enroll-now'>Enroll Now</div>
-              :
-              null
-              :
-              null
-            } */}
           </div>
         </div>
       </div>
@@ -283,7 +281,14 @@ const enrollHandler = async() =>{
                 </div>
                 {/* ================ Bracket =============== */}
                 <div class="mdl-tabs__panel"  id="bracket">
-                  <Bracket team_size={data.team_size} />
+                  {
+                    // console.log(enrolled)
+                    enrolled ?
+                    <Bracket team_size={getsec(data.start_on)>0? data.max_team: enrolled.length} />
+                    :
+                    null
+                  }
+                  
                 </div>
                 {/* ================ Team =============== */}
                 <div class="mdl-tabs__panel"  id="team">

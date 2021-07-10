@@ -74,68 +74,7 @@ export default function Matches({ width }) {
                     {/* Matches Cards */}
 
                     <div class="row">
-                      {/* Card 1 */}
 
-                      {/* {upcoming
-                        ? upcoming.map((data) => (
-                            <div class="col-lg-6">
-                              <div class="feature-card">
-                                <div class="feature-card-inner">
-                                  <div class="feature-img-side">
-                                    <div class="feature-img-box">
-                                     
-                                      <img src={data.image} alt="Feature" />
-                                    </div>
-                                  </div>
-                                  <div class="feature-text-side">
-                                    <h3>{data.title}</h3>
-                                    <p>
-                                      {data.start_on}
-                                      <span>Starts in 1H 35 M</span>
-                                    </p>
-                                    <div class="feature-middle-row">
-                                      <div class="feature-item entery">
-                                        <p>Entry</p>
-                                        <p>
-                                          <span>{data.entry_fee}</span> credits
-                                        </p>
-                                      </div>
-                                      <div class="feature-item team-sale">
-                                        <p>Team Size</p>
-                                        <p>{data.team_size}</p>
-                                  
-                                      </div>
-                                      <div class="feature-item max-teams">
-                                        <p>Max Teams</p>
-                                        <p>
-                                          <span>{data.max_team}</span>
-                                        </p>
-                                      </div>
-                                      <div class="feature-item entered">
-                                        <p>Entered</p>
-                                        <p>
-                                          <span>{data.game}</span>
-                                        </p>
-                                      </div>
-                                      <div class="feature-item platform">
-                                        <p>Platform</p>
-                                        <p>{data.platform_detail}</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="feature-detail-btn">
-                                  <Link to={"/indtour/:" + data.id}>
-                                    View Details{" "}
-                                    <i class="fas fa-arrow-right"></i>
-                                  </Link>
-                                </div>
-                              </div>
-                            </div>
-                          ))
-                        : null}  */}
-                      {/* Card 2 */}
                       <div class="col-lg-12">
                         {/* ----------------Give Styling to Feature Cards. Most possibly Grid---------- */}
                         <div class="feature-card">
@@ -149,44 +88,6 @@ export default function Matches({ width }) {
                                 );
                               })
                             : null}
-
-                          {/* <div class="feature-card-inner">
-                            <div class="feature-img-side">
-                                <div class="feature-img-box">
-                                    <img src={img} alt="Feature" />
-                                </div>
-                            </div>
-                            <div class="feature-text-side">
-                                <h3>5v5 FIFA CHIP</h3>
-                                <p>Jun 10,2:30 PM ET <span>Starts in 1H 35 M</span></p>
-                                <div class="feature-middle-row">
-                                    <div class="feature-item entery">
-                                        <p>Entry</p>
-                                        <p><span>10</span> credits</p>
-                                    </div>
-                                    <div class="feature-item team-sale">
-                                        <p>Team Sale</p>
-                                        <p><span>2</span>v<span>2</span></p>
-                                    </div>
-                                    <div class="feature-item max-teams">
-                                        <p>Max Teams</p>
-                                        <p><span>5</span></p>
-                                    </div>
-                                    <div class="feature-item entered">
-                                        <p>Entered</p>
-                                        <p><span>5</span></p>
-                                    </div>
-                                    <div class="feature-item platform">
-                                        <p>Platform</p>
-                                        <p>XBOX,PSS, PC,MOBILE</p>
-                                    </div>
-                                </div>
-                                </div>
-                        </div>
-                        <div class="feature-detail-btn">
-                            <a href="#">View Details <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div> */}
                         </div>
                       </div>
                     </div>
@@ -278,71 +179,7 @@ export default function Matches({ width }) {
                               ))
                             : null}
                         </div>
-                        {/* Card 2 */}
-                        {/* <div class="col-lg-7 col-md-12"> */}
-                        {/* <div class="feature-card">
-                                <div class="feature-card-inner">
-                                    <div class="feature-img-side">
-                                         <div class="feature-img-box">
-                                            <img src={img} alt="Feature" />
-                                        </div>
-                                    </div>
-                                    <div class="feature-text-side">
-                                        <h3>5v5 FIFA CHIP</h3>
-                                        <p>Jun 10,2:30 PM ET <span>Started</span></p>
-                                        <div class="feature-middle-row">
-                                            <div class="feature-item entery">
-                                                <p>Entry</p>
-                                                <p><span>10</span> credits</p>
-                                            </div>
-                                            <div class="feature-item team-sale">
-                                                <p>Team Sale</p>
-                                                <p><span>2</span>v<span>2</span></p>
-                                            </div>
-                                            <div class="feature-item max-teams">
-                                                <p>Max Teams</p>
-                                                <p><span>5</span></p>
-                                            </div>
-                                            <div class="feature-item entered">
-                                                <p>Entered</p>
-                                                <p><span>5</span></p>
-                                            </div>
-                                            <div class="feature-item platform">
-                                                <p>Platform</p>
-                                                <p>XBOX,PSS, PC,MOBILE</p>
-                                            </div>
-                                        </div>
-                                        </div>
-                                        <div class="round">
-                                           <button class="round-btn desk">
-                                            round 2
-                                           </button>
-                                           <button class="round-btn mob">
-                                            round 1
-                                           </button>
-                                           <form action="#">
-                                               <div class="input-item">
-                                                    <input type="radio" value="Win" />
-                                                    <label>Win</label>
-                                               </div>
-                                               <div class="input-item">
-                                                    <input type="radio" value="Lose" />
-                                                    <label>Lose</label>
-                                               </div>
-                                           </form>
-                                           <button class="round-btn desk">
-                                            Upload result
-                                           </button>
-                                           <button class="round-btn mob">
-                                            round 2
-                                           </button>
-                                        </div>
-                                </div>
-                                <div class="feature-detail-btn">
-                                    <a href="#">View Details <i class="fas fa-arrow-right"></i></a>
-                                </div>
-                            </div> */}
-                        {/* </div> */}
+                       
                       </div>
                     </div>
                   </div>
