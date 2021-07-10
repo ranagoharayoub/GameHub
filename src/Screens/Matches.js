@@ -140,85 +140,36 @@ export default function Matches({ width }) {
                     <div class="progress-tab">
                       <div class="row">
                         {/* Card 1 */}
-                        <div class="col-lg-7 col-md-12">
+                        <div style={{marginTop:'50px'}} class="col-lg-7 col-md-12">
                           {inProgress
                             ? inProgress.map((data) => (
-                                <div class="feature-card">
-                                  <div class="feature-card-inner">
-                                    <div class="feature-img-side">
-                                      <div class="feature-img-box">
-                                        <img src={data.image} alt="Feature" />
-                                      </div>
+                              <div style={{display:'flex'}}>
+                              <TournamentCard width={width} data={data}></TournamentCard>
+                                   <div style={{backgroundColor:'#272727', marginBottom:'50px', paddingTop:'10px'}} class="round">
+                                       <button class="round-btn desk">
+                                         round 1
+                                       </button>
+                                       <button class="round-btn mob">
+                                         round 1
+                                       </button>
+                                       <form >
+                                         <div class="input-item">
+                                           <input type="radio" name="radio" value="Win" onChange={(e)=>setuserWon(e.target.value)} />
+                                           <label>Win</label>
+                                         </div>
+                                         <div class="input-item">
+                                           <input type="radio" name="radio" value="Lose" onChange={(e)=>setuserWon(e.target.value)}/>
+                                           <label>Lose</label>
+                                         </div>
+                                       </form>
+                                       <button onClick={()=>submitHandler(data.id)} class="round-btn desk">
+                                         Submit
+                                       </button>
+                                       <button class="round-btn mob">
+                                       Submit
+                                       </button>
                                     </div>
-                                    <div class="feature-text-side">
-                                      <h3>{data.title}</h3>
-                                      <p>
-                                        {data.start_on}
-                                        <span>Started</span>
-                                      </p>
-                                      <div class="feature-middle-row">
-                                        <div class="feature-item entery">
-                                          <p>Entry</p>
-                                          <p>
-                                            <span>{data.entry_fee}</span>{" "}
-                                            credits
-                                          </p>
-                                        </div>
-                                        <div class="feature-item team-sale">
-                                          <p>Team Size</p>
-                                          {/* <p><span>2</span>v<span>2</span></p> */}
-                                          <p>{data.team_size}</p>
-                                        </div>
-                                        <div class="feature-item max-teams">
-                                          <p>Max Teams</p>
-                                          <p>
-                                            <span>{data.max_team}</span>
-                                          </p>
-                                        </div>
-                                        <div class="feature-item entered">
-                                          <p>Entered</p>
-                                          <p>
-                                            <span>{data.game}</span>
-                                          </p>
-                                        </div>
-                                        <div class="feature-item platform">
-                                          <p>Platform</p>
-                                          <p>{data.platform_detail}</p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div class="round">
-                                      <button class="round-btn desk">
-                                        round 2
-                                      </button>
-                                      <button class="round-btn mob">
-                                        round 1
-                                      </button>
-                                      <form >
-                                        <div class="input-item">
-                                          <input type="radio" name="radio" value="Win" onChange={(e)=>setuserWon(e.target.value)} />
-                                          <label>Win</label>
-                                        </div>
-                                        <div class="input-item">
-                                          <input type="radio" name="radio" value="Lose" onChange={(e)=>setuserWon(e.target.value)}/>
-                                          <label>Lose</label>
-                                        </div>
-                                      </form>
-                                      <button onClick={()=>submitHandler(data.id)} class="round-btn desk">
-                                        Upload result
-                                      </button>
-                                      <button class="round-btn mob">
-                                        Round 2
-                                      </button>
-                                    </div>
-                                  </div>
-                                  <div class="feature-detail-btn">
-                                    <Link to={"/indtour/:" + data.id}>
-                                      View Details{" "}
-                                      <i class="fas fa-arrow-right"></i>
-                                    </Link>
-                                  </div>
-                                </div>
+                              </div>
                               ))
                             : null}
                         </div>
