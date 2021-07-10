@@ -29,8 +29,7 @@ function TournamentRound({ size, odd, round, enrollUser, isStarted, displayName}
   console.log(size, odd);
   return (
     <div class="round-1-of-6 tournament-details-tab-bracket-column">
-      <h5>{change(round)}</h5>
-  
+      {/* <h5>{change(round)}</h5> */}
       {rows}
       {
         isStarted?
@@ -41,7 +40,13 @@ function TournamentRound({ size, odd, round, enrollUser, isStarted, displayName}
         <img src={bracketIcon} alt="brack" />
         <div class="bracket-user-main">
           <div class="tournament-details-tab-bracket-user">
-            <div class="tournament-details-team">{displayName? enrollUser[enrollUser.length-1].username: null}</div>
+            {
+              displayName && enrollUser.length>0?
+              <div class="tournament-details-team">{enrollUser[enrollUser.length-1].username}</div>
+              :
+              null
+            }
+            {/* <div class="tournament-details-team">{displayName? enrollUser[enrollUser.length-1].username: null}</div> */}
           </div>
         </div>
       </div>

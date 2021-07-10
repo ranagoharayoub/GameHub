@@ -412,8 +412,20 @@ body {
   display: flex;
   cursor: grab;
 }
-.tournament-details-tab-bracket-column {
+#pills-compact .tournament-details-tab-bracket-column {
   width: 290px;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around; */
+}
+
+#pills-expand .tournament-details-tab-bracket-column {
+  width: 290px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 .tournament-details-tab-bracket-column h5 {
   margin-top: 10px;
@@ -426,10 +438,17 @@ body {
   font-family: Calibri;
 }
 .tournament-details-tab-bracket-group {
-  margin-bottom: 35px;
+  margin: 20px 0px;
   position: relative;
   width: 300px;
 }
+
+/* .tournament-details-tab-bracket-group:nth-child(last) {
+  margin-bottom: 35px;
+  position: relative;
+  width: 300px;
+} */
+
 .tournament-details-tab-bracket-row {
   display: flex;
   width: 245px;
@@ -490,7 +509,11 @@ body {
   padding-bottom: 5px;
   line-height: 31px;
 }
-.round-1-of-6:nth-child(2) {
+
+.round-1-of-6 .tournament-details-tab-bracket-column{
+
+}
+/* .round-1-of-6:nth-child(2) {
   padding-top: 82px;
   transition: 0.2s ease-out;
 }
@@ -554,7 +577,7 @@ body {
 .round-1-of-6:nth-child(6) {
   padding-top: 1340px;
   transition: 0.2s ease-out;
-}
+} */
 .round-1-of-6:nth-child(2)
   .tournament-details-tab-bracket-group.last
   .tournament-details-tab-bracket-row:nth-child(2) {
