@@ -1,7 +1,7 @@
 import React from "react";
 import GroupBrackets from "./GroupBrackets";
 import bracketIcon from "../../bg-icons/profile-tournament.webp";
-function TournamentRound({ size, odd, round, enrollUser, isStarted}) {
+function TournamentRound({ size, odd, round, enrollUser, isStarted, displayName}) {
 
 
   function change(a) {
@@ -23,7 +23,7 @@ function TournamentRound({ size, odd, round, enrollUser, isStarted}) {
     //         userArray = enrollUser.slice(index, index+2)
     //         console.log(userArray)
     // }
-    rows.push(<GroupBrackets isStarted={isStarted} userArray={userArray}></GroupBrackets>);
+    rows.push(<GroupBrackets isStarted={isStarted} userArray={displayName? userArray: []}></GroupBrackets>);
   }
 
   console.log(size, odd);
@@ -41,7 +41,7 @@ function TournamentRound({ size, odd, round, enrollUser, isStarted}) {
         <img src={bracketIcon} alt="brack" />
         <div class="bracket-user-main">
           <div class="tournament-details-tab-bracket-user">
-            <div class="tournament-details-team">{enrollUser[enrollUser.length-1].username}</div>
+            <div class="tournament-details-team">{displayName? enrollUser[enrollUser.length-1].username: null}</div>
           </div>
         </div>
       </div>

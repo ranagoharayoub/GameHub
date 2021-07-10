@@ -76,7 +76,7 @@ export default function Bracket({ team_size, gameId, enrollUser, isStarted }) {
         enrollUser= {enrollUser}
         isStarted ={isStarted}
           round = {name.length>0? name[index]: ""}
-        
+          displayName={index===0? true : false}
       ></TournamentRound>
     );
   }
