@@ -287,7 +287,13 @@ const enrollHandler = async() =>{
                 </div>
                 {/* ================ Team =============== */}
                 <div class="mdl-tabs__panel"  id="team">
-                  <Teams />
+                  {
+                    enrolled?
+                        <Teams data={enrolled} />
+                    :
+                    null
+                  }
+               
                 </div>
                 {/* ================ Admin =============== */}
                 <div class="mdl-tabs__panel"  id="admin">

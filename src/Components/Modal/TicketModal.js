@@ -31,8 +31,10 @@ const ticketHandler = async(param)=>{
   var optionalProof1 = ticketProof1? ticketProof1 : emptyURL
   var optionalProof2 = ticketProof2? ticketProof2 : emptyURL
   var image = ''
+
   console.log('screenshot', screenshot)
-  await imageToBase64("https://www.google.com/logos/doodles/2021/argentina-independence-day-2021-6753651837108986-2x.png")
+
+  await imageToBase64(screenshot)
     .then(
         (response) => {
             console.log(response); // "cGF0aC90by9maWxlLmpwZw=="
@@ -58,7 +60,7 @@ const ticketHandler = async(param)=>{
       {"link": optionalProof1},
       {"link": optionalProof2},
 ],
-    "image": image,
+    "image": "",
     "message": message,
     "user": userid,
     "category": param,
@@ -69,7 +71,7 @@ console.log(data)
         .post("https://gamehubx.com/api/v1/ticket/", data, {
           headers: headers
         })
-        .then(res => {console.log(res); setmodaltext('ticket submitted'); setShow(true)})
+        .then((res) => {console.log(res); setmodaltext('ticket submitted'); setShow(true)})
         .then(()=>{setmessage(""); setticketProof("") ;setticketProof1(""); setticketProof2("")})
         .catch(error => {console.log(error); setmodaltext(error); setShow(true)})
 }

@@ -4,6 +4,7 @@ import "./SignUp.css";
 import "./Models.css";
 import axios from "axios";
 import { Button, Modal } from "react-bootstrap";
+// import { GoogleReCaptcha } from "react-google-recaptcha-v3";
 
 export default class SignUp extends Component {
   constructor(props) {
@@ -367,26 +368,6 @@ export default class SignUp extends Component {
                 onChange={(e) => this.handleChange(e)}
               >
                 <option value="">Years</option>
-                <option value="1920">1920</option>
-                <option value="1921">1921</option>
-                <option value="1922">1922</option>
-                <option value="1923">1923</option>
-                <option value="1924">1924</option>
-                <option value="1925">1925</option>
-                <option value="1926">1926</option>
-                <option value="1927">1927</option>
-                <option value="1928">1928</option>
-                <option value="1929">1929</option>
-                <option value="1930">1930</option>
-                <option value="1931">1931</option>
-                <option value="1932">1932</option>
-                <option value="1933">1933</option>
-                <option value="1934">1934</option>
-                <option value="1935">1935</option>
-                <option value="1936">1936</option>
-                <option value="1937">1937</option>
-                <option value="1938">1938</option>
-                <option value="1939">1939</option>
                 <option value="1940">1940</option>
                 <option value="1941">1941</option>
                 <option value="1942">1942</option>
@@ -453,9 +434,10 @@ export default class SignUp extends Component {
                 <option value="2000">2003</option>
               </select>
             </div>
+            {/* <GoogleReCaptcha></GoogleReCaptcha> */}
             <div className="captcha">
               <input
-                // id='inputcolor'
+                
                 style={{ width: "60%", backgroundColor: "white" }}
                 className="input-fields"
               ></input>
