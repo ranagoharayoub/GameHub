@@ -1,11 +1,29 @@
-import React, { useState } from "react";
-// import bracketIcon from "../../bg-icons/profile-tournament.webp";
-// import GroupBrackets from "./GroupBrackets";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import TournamentRound from "./TournamentRound";
 /*eslint-disable*/
-export default function Bracket({ team_size }) {
+export default function Bracket({ team_size, gameId }) {
   const [odd, setodd] = useState(false);
+  const [roundName, setroundName] = useState(null)
+  const [roundArray, setroundArray] = useState(null)
 
+  useEffect(() => {
+    const callAPI = async() =>{
+      await axios.get("https://gamehubx.com/api/v1/tournament/"+gameId+"/bracket/")
+      .then((res)=> {console.log(res.data.bracket); setroundName(res.data.bracket)})
+      .catch((res)=> console.log(res))
+    }
+    callAPI()
+  }, [])
+
+  var name = []
+  
+  if (roundName) {
+    Object.keys(roundName).map(data => name.push(data))
+    console.log(name)
+  }
+
+ 
   var brackets = [];
 
   var size = team_size;
@@ -27,15 +45,6 @@ export default function Bracket({ team_size }) {
         brackets.push(size);
       }
 
-      //   size= size/2;
-      // if (size%2 !==0 && size!==1) {
-      //   brackets.push(size);
-      //   size = size+1;
-      // }
-      //  else {
-      //   brackets.push(size)
-      // }
-      // console.log(size)
       i++;
     }
     return i;
@@ -57,30 +66,13 @@ export default function Bracket({ team_size }) {
             : (brackets[index] - 1) / 2
         }
         odd={brackets[index] % 2 == 0 ? false : true}
+
+          round = {name.length>0? name[index]: ""}
+        
       ></TournamentRound>
     );
   }
 
-  // for (let index = 0; index < totalTournaments; index++) {
-  // setstore(brackets[index])
-  // console.log(store)
-  // if (brackets[index] !==0) {
-  //   setpropsize(brackets[index]/2);
-  //   setodd(true);
-  //   console.log(propsize, odd)
-  // } else {
-  //   setpropsize(brackets[index]/2);
-  //   console.log(propsize, odd)
-  // }
-
-  //     console.log(brackets[index],brackets[index]%2)
-
-  //     if (brackets[index]%2 !== 0) {
-  //       setodd(true)
-  //       console.log(odd)
-  //     }
-  //   col.push(<TournamentRound size={brackets[index]} odd={false}></TournamentRound>)
-  // }
 
   return (
     <div>

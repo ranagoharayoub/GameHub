@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Matches.css";
-import { Link } from "react-router-dom";
-import img from "../bg/feature.png";
 import axios from "axios";
 import { Button, Modal} from "react-bootstrap";
 import TournamentCard from "../Components/HomeComp/TournamentCard";

@@ -284,7 +284,7 @@ const enrollHandler = async() =>{
                   {
                     // console.log(enrolled)
                     enrolled ?
-                    <Bracket team_size={getsec(data.start_on)>0? data.max_team: enrolled.length} />
+                    <Bracket gameId={number(gameId)} team_size={getsec(data.start_on)>0? data.max_team: enrolled.length} />
                     :
                     null
                   }
