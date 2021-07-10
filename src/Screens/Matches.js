@@ -3,13 +3,17 @@ import "./Matches.css";
 import { Link } from "react-router-dom";
 import img from "../bg/feature.png";
 import axios from "axios";
+import { Button, Modal} from "react-bootstrap";
 import TournamentCard from "../Components/HomeComp/TournamentCard";
+
 
 /*eslint-disable*/
 export default function Matches({ width }) {
   const [upcoming, setupcoming] = useState(null);
   const [inProgress, setinProgress] = useState(null);
-
+  const [userWon, setuserWon] = useState(null)
+  const [show, setShow] = useState(false);
+  const [modaltext, setmodaltext] = useState("");
   useEffect(() => {
     var userid = localStorage.getItem("userdata");
     const callAPI = async () => {
@@ -40,8 +44,47 @@ export default function Matches({ width }) {
     componentHandler.upgradeDom();
   }, []);
 
+  const submitHandler = async(param) =>{
+
+    var userid = parseInt(localStorage.getItem("userdata"));
+    var is_won =  userWon==="Win"? true : false;
+    console.log(userid, is_won)
+    const data = JSON.stringify({
+      "user": userid,
+      "tournament": param,
+      "round": "round_1",
+      "is_won": is_won,
+    })
+
+    var token = localStorage.getItem('token')
+
+    const headers = {
+      "Authorization": "Token " + token,
+     "Content-Type": "application/json"
+    }
+
+    var URL = `https://gamehubx.com/api/v1/tournament/${param}/upload-result/`
+    console.log(URL, data, headers)
+
+    axios.post(URL, data, {
+      headers: headers
+    }).then((res) => {console.log(res); setmodaltext("Results Submitted Successfully"); setShow(true)})
+      .catch((error) => {console.log(error.response.data.status); setmodaltext(error.response.data.status); setShow(true)})
+  }
+
   return (
     <div>
+      <Modal show={show} onHide={()=> setShow(false)}>
+        <Modal.Header >
+          <Modal.Title></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{modaltext}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={()=> setShow(false)}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
       <div class="matches-main">
         <div class="matches-inner">
           <h1>MY MATCHES</h1>
@@ -151,17 +194,17 @@ export default function Matches({ width }) {
                                       <button class="round-btn mob">
                                         round 1
                                       </button>
-                                      <form action="#">
+                                      <form >
                                         <div class="input-item">
-                                          <input type="radio" value="Win" />
+                                          <input type="radio" name="radio" value="Win" onChange={(e)=>setuserWon(e.target.value)} />
                                           <label>Win</label>
                                         </div>
                                         <div class="input-item">
-                                          <input type="radio" value="Lose" />
+                                          <input type="radio" name="radio" value="Lose" onChange={(e)=>setuserWon(e.target.value)}/>
                                           <label>Lose</label>
                                         </div>
                                       </form>
-                                      <button class="round-btn desk">
+                                      <button onClick={()=>submitHandler(data.id)} class="round-btn desk">
                                         Upload result
                                       </button>
                                       <button class="round-btn mob">
