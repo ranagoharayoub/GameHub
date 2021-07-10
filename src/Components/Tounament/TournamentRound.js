@@ -35,7 +35,7 @@ function TournamentRound({ size, odd, round, enrollUser, isStarted, displayName}
         isStarted?
         <div
         class="tournament-details-tab-bracket-row"
-        style={odd ? { display: "flex" } : { display: "none" }}
+        style={odd ? { display: "flex", paddingTop:'20px', borderRight:'none' } : { display: "none" }}
       >
         <img src={bracketIcon} alt="brack" />
         <div class="bracket-user-main">
@@ -53,7 +53,7 @@ function TournamentRound({ size, odd, round, enrollUser, isStarted, displayName}
       :
       <div
         class="tournament-details-tab-bracket-row"
-        style={odd ? { display: "flex" } : { display: "none" }}
+        style={odd ? { display: "flex" , paddingTop:'20px', borderRight:'none'} : { display: "none" }}
       >
         <img src={bracketIcon} alt="brack" />
         <div class="bracket-user-main">
