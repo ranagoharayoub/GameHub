@@ -152,18 +152,23 @@ const enrollHandler = async() =>{
                   :
                   null
                 }
-                {/* <b>Registration:</b> OPEN <span> */}
-                <span> 
-                Starts in{" "}
+   
                 {
                   data.start_on?
-                  <Timer initialTime={getsec(data.start_on)} direction="backward">
-                  <Timer.Hours /> hours <Timer.Minutes /> minutes
-                </Timer>
-                :
-                null
+                  getsec(data.start_on)>0?
+                  <span> 
+                    Starts in{" "}
+                    <Timer initialTime={getsec(data.start_on)} direction="backward">
+                      <Timer.Hours /> hours <Timer.Minutes /> minutes
+                    </Timer>
+                    </span>
+                    :
+                    <span>
+                      Started
+                    </span>
+                  :
+                  null
                 }
-                  </span>
               </p>
               {
               getsec(data.start_on) > 0?
