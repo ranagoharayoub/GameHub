@@ -2,17 +2,24 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import TournamentRound from "./TournamentRound";
 /*eslint-disable*/
-export default function Bracket({ team_size, gameId }) {
-  const [odd, setodd] = useState(false);
+export default function Bracket({ team_size, gameId, enrollUser, isStarted }) {
+ 
   const [roundName, setroundName] = useState(null)
-  const [roundArray, setroundArray] = useState(null)
+  
+  console.log('enrollUser',enrollUser)
 
+    // for (let index = 0; index < enrollUser.length; index=index+2) {
+    //   const element = enrollUser.slice(index, index+2);
+    //   console.log("two user",element)
+    // }
+  
   useEffect(() => {
     const callAPI = async() =>{
       await axios.get("https://gamehubx.com/api/v1/tournament/"+gameId+"/bracket/")
       .then((res)=> {console.log(res.data.bracket); setroundName(res.data.bracket)})
       .catch((res)=> console.log(res))
     }
+
     callAPI()
   }, [])
 
@@ -66,7 +73,8 @@ export default function Bracket({ team_size, gameId }) {
             : (brackets[index] - 1) / 2
         }
         odd={brackets[index] % 2 == 0 ? false : true}
-
+        enrollUser= {enrollUser}
+        isStarted ={isStarted}
           round = {name.length>0? name[index]: ""}
         
       ></TournamentRound>

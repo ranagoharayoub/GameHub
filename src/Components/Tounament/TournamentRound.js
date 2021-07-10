@@ -1,7 +1,7 @@
 import React from "react";
 import GroupBrackets from "./GroupBrackets";
 import bracketIcon from "../../bg-icons/profile-tournament.webp";
-function TournamentRound({ size, odd, round}) {
+function TournamentRound({ size, odd, round, enrollUser, isStarted}) {
 
 
   function change(a) {
@@ -9,18 +9,43 @@ function TournamentRound({ size, odd, round}) {
   }
 
   console.log(change(round))
-
+  console.log('user length', enrollUser.length)
   var rows = [];
+  var userArray = []
   for (let index = 0; index < size; index++) {
-    rows.push(<GroupBrackets></GroupBrackets>);
+    if (isStarted) {
+      for (let index = 0; index < size*2; index=index+2) {
+        userArray = enrollUser.slice(index, index+2)
+        console.log(userArray)
+}
+    }
+    // for (let index = 0; index < size*2; index=index+2) {
+    //         userArray = enrollUser.slice(index, index+2)
+    //         console.log(userArray)
+    // }
+    rows.push(<GroupBrackets isStarted={isStarted} userArray={userArray}></GroupBrackets>);
   }
 
   console.log(size, odd);
   return (
     <div class="round-1-of-6 tournament-details-tab-bracket-column">
       <h5>{change(round)}</h5>
-      {/* <h5>ROund</h5> */}
+  
       {rows}
+      {
+        isStarted?
+        <div
+        class="tournament-details-tab-bracket-row"
+        style={odd ? { display: "flex" } : { display: "none" }}
+      >
+        <img src={bracketIcon} alt="brack" />
+        <div class="bracket-user-main">
+          <div class="tournament-details-tab-bracket-user">
+            <div class="tournament-details-team">{enrollUser[enrollUser.length-1].username}</div>
+          </div>
+        </div>
+      </div>
+      :
       <div
         class="tournament-details-tab-bracket-row"
         style={odd ? { display: "flex" } : { display: "none" }}
@@ -32,6 +57,8 @@ function TournamentRound({ size, odd, round}) {
           </div>
         </div>
       </div>
+      }
+
     </div>
   );
 }

@@ -1,7 +1,10 @@
 import React from 'react'
 import bracketIcon from "../../bg-icons/profile-tournament.webp";
 
-function GroupBrackets() {
+function GroupBrackets({userArray, isStarted}) {
+  if (isStarted && userArray.length>0) {
+    console.log(isStarted,userArray)
+  }
 
     return (
                     <div class="tournament-details-tab-bracket-group">
@@ -10,7 +13,7 @@ function GroupBrackets() {
                         <img src={bracketIcon} alt='brack'/>
                         <div class="bracket-user-main">
                           <div class="tournament-details-tab-bracket-user">
-                            <div class="tournament-details-team"></div>
+                            <div class="tournament-details-team">{userArray.length>0? userArray[0].username: null}</div>
                           </div>
                           <span class="tournament-match-holder"></span>
                         </div>
@@ -20,13 +23,11 @@ function GroupBrackets() {
                         <img src={bracketIcon} alt='brack'/>
                         <div class="bracket-user-main">
                           <div class="tournament-details-tab-bracket-user">
-                            <div class="tournament-details-team"></div>
+                            <div class="tournament-details-team">{userArray.length>0? userArray[1].username: null}</div>
                           </div>
                         </div>
                       </div>
-                    </div>
-        
-                
+                    </div>        
     )
 }
 
