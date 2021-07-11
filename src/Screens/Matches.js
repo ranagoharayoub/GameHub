@@ -147,7 +147,7 @@ export default function Matches({ width }) {
                               <TournamentCard width={width} data={data}></TournamentCard>
                                    <div style={{backgroundColor:'#272727', marginBottom:'50px', paddingTop:'10px'}} class="round">
                                        <button class="round-btn desk">
-                                         round 1
+                                         {data.current_round? data.current_round : "Round"}
                                        </button>
                                        <button class="round-btn mob">
                                          round 1
