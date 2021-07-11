@@ -1170,7 +1170,7 @@ body {
   .team-person {
     padding-top: 10px;
   }
-  .round-1-of-6:nth-child(4)
+  /* .round-1-of-6:nth-child(4)
     .tournament-details-tab-bracket-group:nth-of-type(odd)::after {
     height: 1074.472px;
   }
@@ -1192,7 +1192,7 @@ body {
   }
   .round-1-of-6:nth-child(6) {
     padding-top: 1195px;
-  }
+  } */
 }
 /* ===================================== Media Query 499 ====================================== */
 @media only screen and (max-width: 499px) {
