@@ -331,8 +331,8 @@
   }
   .feature-card {
     width: 100%;
-    padding: 10px 20px;
-    margin: 10px 0;
+    /* padding: 10px 20px;
+    margin: 10px 0; */
   }
   .round {
     position: absolute;
@@ -489,7 +489,7 @@
     padding: 5px 0;
   }
   .round {
-    right: 5px;
+    right: 10px;
   }
   .round button {
     font-size: 10px;

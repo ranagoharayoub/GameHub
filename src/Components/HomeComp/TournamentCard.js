@@ -35,16 +35,25 @@ function TournamentCard({ width, data }) {
             {data.title}
           </div>
           <div className="tourn-time">
-            {/* <div className="time">{new Date(data.start_on).getFullYear()}-{}{new Date(data.start_on).getMonth()+1}-{new Date(data.start_on).getDate()}</div> */}
+           
             <div className="time">{new Date(data.start_on).toDateString()}</div>
-            <div className="starts">
+            {
+              getsec(data.start_on)>0?
+              <div className="starts">
+              
               Starts in{" "}
-              {
+              
                 <Timer initialTime={getsec(data.start_on)} direction="backward">
                   <Timer.Hours /> hours <Timer.Minutes /> minutes
                 </Timer>
-              }
+              
             </div>
+            :
+            <div className="starts">
+              
+              Started
+            </div>
+            }
           </div>
           <div
             className="score-cont"

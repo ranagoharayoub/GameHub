@@ -21,6 +21,7 @@ export default function Matches({ width }) {
 
         // .then((data)=>{setupcoming(res.data); console.log('upcoming',upcoming)})
         .catch((error) => console.log(error));
+        componentHandler.upgradeDom();
     };
     callAPI();
     const callAPI2 = async () => {
@@ -37,9 +38,10 @@ export default function Matches({ width }) {
 
         // .then((data)=>{setupcoming(res.data); console.log('upcoming',upcoming)})
         .catch((error) => console.log(error));
+        componentHandler.upgradeDom();
     };
     callAPI2();
-    componentHandler.upgradeDom();
+    // componentHandler.upgradeDom();
   }, []);
 
   const submitHandler = async(param) =>{
@@ -114,7 +116,7 @@ export default function Matches({ width }) {
                     </div>
                     {/* Matches Cards */}
 
-                    <div class="row">
+                    <div style={{marginTop:'0px', marginRight:'0px', marginLeft:'0px'}} class="row">
 
                       <div class="col-lg-12">
                         {/* ----------------Give Styling to Feature Cards. Most possibly Grid---------- */}
@@ -135,8 +137,8 @@ export default function Matches({ width }) {
                   </div>
                   {/* ================ in-progress TOURNAMENTS =============== */}
                   <div class="mdl-tabs__panel" id="mattab2">
-                    <div class="progress-tab">
-                      <div class="row">
+                    <div style={{marginLeft:'20px', marginRight:'10px'}} class="progress-tab">
+                      <div class="row-card">
                         {/* Card 1 */}
                         <div style={{marginTop:'50px'}} class="col-lg-7 col-md-12">
                           {inProgress
@@ -163,7 +165,7 @@ export default function Matches({ width }) {
                                        <button onClick={()=>submitHandler(data.id)} class="round-btn desk">
                                          Submit
                                        </button>
-                                       <button class="round-btn mob">
+                                       <button onClick={()=>submitHandler(data.id)} class="round-btn mob">
                                        Submit
                                        </button>
                                     </div>
