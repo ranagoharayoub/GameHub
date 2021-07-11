@@ -132,6 +132,8 @@ export default function Bracket({ team_size, gameId, enrollUser, isStarted }) {
               <div class="tournament-details-tab-bracket table-responsive">
                 <div class="tournament-details-tab-bracket-container">
                   {/* ============== Round 1 ============== */}
+                  {/* <h5>{change(round)}</h5> */}
+                  {/* <h5>Round</h5> */}
                   {col}
                 </div>
               </div>

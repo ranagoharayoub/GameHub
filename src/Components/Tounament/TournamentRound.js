@@ -14,20 +14,20 @@ function TournamentRound({ size, odd, round, enrollUser, isStarted, displayName}
   var userArray = []
   for (let index = 0; index < size; index++) {
     if (isStarted) {
-      for (let index = 0; index < size*2; index=index+2) {
-        userArray = enrollUser.slice(index, index+2)
+      for (let i= 0; i < size*2; i=i+2) {
+        userArray = enrollUser.slice(i, i+2)
         console.log(userArray)
 }
     }
-    // for (let index = 0; index < size*2; index=index+2) {
-    //         userArray = enrollUser.slice(index, index+2)
-    //         console.log(userArray)
-    // }
-    rows.push(<GroupBrackets isStarted={isStarted} userArray={displayName? userArray: []}></GroupBrackets>);
+
+    rows.push(<GroupBrackets round={change(round)} lastCall={index===size-1? true: false} firstCall={index===0? true: false} isStarted={isStarted} userArray={displayName? userArray: []}></GroupBrackets>);
   }
 
   console.log(size, odd);
   return (
+    
+    // <div style={{display:'block',margin:'-0px 0px'}}>
+    //   <div style={{fontSize:'x-large', textTransform:'capitalize'}}>{change(round)}</div>
     <div class="round-1-of-6 tournament-details-tab-bracket-column">
       {/* <h5>{change(round)}</h5> */}
       {rows}
@@ -35,10 +35,11 @@ function TournamentRound({ size, odd, round, enrollUser, isStarted, displayName}
         isStarted?
         <div
         class="tournament-details-tab-bracket-row"
-        style={odd ? { display: "flex", paddingTop:'20px', borderRight:'none' } : { display: "none" }}
+        style={odd ? { display: "flex", paddingTop:'30px', borderRight:'none' } : { display: "none" }}
       >
         <img src={bracketIcon} alt="brack" />
         <div class="bracket-user-main">
+          
           <div class="tournament-details-tab-bracket-user">
             {
               displayName && enrollUser.length>0?
@@ -46,25 +47,30 @@ function TournamentRound({ size, odd, round, enrollUser, isStarted, displayName}
               :
               null
             }
-            {/* <div class="tournament-details-team">{displayName? enrollUser[enrollUser.length-1].username: null}</div> */}
           </div>
         </div>
       </div>
       :
-      <div
-        class="tournament-details-tab-bracket-row"
-        style={odd ? { display: "flex" , paddingTop:'20px', borderRight:'none'} : { display: "none" }}
-      >
-        <img src={bracketIcon} alt="brack" />
-        <div class="bracket-user-main">
-          <div class="tournament-details-tab-bracket-user">
-            <div class="tournament-details-team"></div>
+
+        <div
+          class="tournament-details-tab-bracket-row compact-single-bracket"
+          style={odd ? { display: "block" , borderRight:'none'} : { display: "none" }}
+        >
+          <div style={{height:'25px', fontWeight:'bold', textTransform:'capitalize'}}>Winner</div>
+            <div style={{display:'flex'}}>
+            <img src={bracketIcon} alt="brack" />
+            <div class="bracket-user-main">
+              <div class="tournament-details-tab-bracket-user">
+                <div class="tournament-details-team"></div>
+              </div>
+            </div>
           </div>
+          <div style={{height:'25px'}}></div>
         </div>
-      </div>
+
       }
 
-    </div>
+ </div>
   );
 }
 
