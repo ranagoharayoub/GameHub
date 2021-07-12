@@ -17,6 +17,7 @@ class Login extends Component {
       pass: "",
       show: false,
       modaltext: "",
+      forgot: false,
     };
   }
 
@@ -26,6 +27,14 @@ class Login extends Component {
   //   }
   // }
 
+  forgotPass = () =>{
+    this.setState({...this.state, show: true, forgot: true, modaltext:''})
+  }
+
+  passwordReset = () =>{
+    console.log('email', this.state.email)
+    this.setState({...this.state, forgot: false, modaltext:`We have sent an email at ${this.state.email}`})
+  }
  
 
   login = async (e) => {
@@ -45,11 +54,6 @@ class Login extends Component {
         localStorage.setItem("token", response.data.key);
         localStorage.setItem("userdata", response.data.user_detail.id);
         localStorage.setItem("name", response.data.user_detail.username);
-        //   var tok = localStorage.getItem("token");
-        //   var user = localStorage.getItem("userdata");
-        //   console.log("token from Storage", tok);
-        //   console.log("user id from Storage", user);
-        //window.open("/");
         window.location.href = "/";
       })
       .catch((error) => {
@@ -130,8 +134,25 @@ class Login extends Component {
           <Modal.Header>
             <Modal.Title></Modal.Title>
           </Modal.Header>
-          <Modal.Body>{this.state.modaltext}</Modal.Body>
+          <Modal.Body>
+            {this.state.modaltext}
+            <form  style={this.state.forgot? {display:'flex' ,alignItems:'center', width:"100", justifyContent:'center'}: {display:"none"}} onSubmit={()=>alert("Email sent")}>
+              {/* <label style={{color:'white'}} for='email'>Email</label> */}
+              <input
+                             
+                             name="email"
+                             required
+                             type="email"
+                             onChange={(e) => this.handleChange(e)}
+                             placeholder="Your Registered Email" style={{paddingLeft:"10px",backgroundColor:"transparent", height:"6vh", width:'75%', border:"1px solid white", borderRadius: '5px'
+            }}>
+
+            </input>
+              
+            </form>
+          </Modal.Body>
           <Modal.Footer>
+          <Button onClick={()=>this.passwordReset()} style={this.state.forgot? {height:'35px', padding:'0px 10px', display:'flex', alignItems:'center', justifyContent:'center', fontSize:'small', fontweight:'bold'}:{display:'none'}} type='submit'>Submit</Button>
             <Button
               variant="secondary"
               onClick={() => this.setState({ show: false })}
@@ -209,7 +230,7 @@ class Login extends Component {
               type="password"
               onChange={(e) => this.handleChange(e)}
             ></input>
-            <div className="forgot">Forgot Password?</div>
+            <div onClick={()=>{this.forgotPass()}} className="forgot">Forgot Password?</div>
             <div className="check-policy">
               <input className="checkbox" type="checkbox"></input>
               <div className="checkbox-label">Remember me on this Device</div>

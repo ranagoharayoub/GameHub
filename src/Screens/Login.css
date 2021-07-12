@@ -112,6 +112,9 @@
     color: #F69204;
     opacity: 1;
     margin-left: 20px;
+    cursor: pointer;
+    width: max-content;
+    /* background-color: white; */
 }
 
 .login-cont .check-policy{
