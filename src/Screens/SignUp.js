@@ -442,7 +442,8 @@ export default class SignUp extends Component {
             <div className="captcha">
             <ReCAPTCHA
               sitekey="6Lf1g48bAAAAAHDUDMbO2eD8EMZ29fy0EGetLegt"
-              onChange={()=>this.onChange()}
+              onChange={(value)=>this.onChange(value)}
+              theme='dark'
             />
               {/* <input
                 
