@@ -4,7 +4,7 @@ import "./SignUp.css";
 import "./Models.css";
 import axios from "axios";
 import { Button, Modal } from "react-bootstrap";
-// import { GoogleReCaptcha } from "react-google-recaptcha-v3";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default class SignUp extends Component {
   constructor(props) {
@@ -140,6 +140,10 @@ export default class SignUp extends Component {
 
     console.log(this.state.success);
   };
+
+   onChange = (value)=> {
+    console.log("Captcha value:", value);
+  }
 
   render() {
     if (this.state.success) {
@@ -436,7 +440,11 @@ export default class SignUp extends Component {
             </div>
             {/* <GoogleReCaptcha></GoogleReCaptcha> */}
             <div className="captcha">
-              <input
+            <ReCAPTCHA
+              sitekey="6Lf1g48bAAAAAHDUDMbO2eD8EMZ29fy0EGetLegt"
+              onChange={()=>this.onChange()}
+            />
+              {/* <input
                 
                 style={{ width: "60%", backgroundColor: "white" }}
                 className="input-fields"
@@ -446,7 +454,7 @@ export default class SignUp extends Component {
                 className="captcha-code"
               >
                 Captcha code
-              </div>
+              </div> */}
             </div>
             <div className="check-policy">
               <input
