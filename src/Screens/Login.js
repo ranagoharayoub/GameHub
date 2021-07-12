@@ -92,15 +92,15 @@ class Login extends Component {
           code: "",
         },
       })
-        .then((response) => {
-          console.log(response.data.user_detail);
+        .then((res) => {
+          console.log(res.data.user_detail);
           const routingFunction = (param) => {
             this.props.history.push({
                 pathname: "/fbglogin",
                 state: param
             });
         }
-        routingFunction({ data: response.data.user_detail })
+        routingFunction({ data: res.data.user_detail })
 
           // this.props.history.push({
           //   pathname: "/fbglogin",
