@@ -31,9 +31,25 @@ class Login extends Component {
     this.setState({...this.state, show: true, forgot: true, modaltext:''})
   }
 
-  passwordReset = () =>{
+  passwordReset = async() =>{
+
+    const URL = "https://gamehubx.com/api/v1/auth/password/reset/"
+    const data = JSON.stringify({
+      "email": this.state.email
+    })
+    const headers = {
+      "Content-Type": "application/json"
+    }
+    await axios.post(URL, data, {
+      headers: headers
+    }).then((res) => {console.log(res);
+      this.setState({...this.state, forgot: false, modaltext:`${res.data.detail} at ${this.state.email}`})
+       })
+      .catch((error)=> {console.log(error.response.data.email[0]);
+        this.setState({...this.state,modaltext:`${Object.keys(error.response.data)}: ${Object.values(error.response.data)}`})
+      })
     console.log('email', this.state.email)
-    this.setState({...this.state, forgot: false, modaltext:`We have sent an email at ${this.state.email}`})
+    
   }
  
 

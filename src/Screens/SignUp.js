@@ -132,7 +132,7 @@ export default class SignUp extends Component {
 
         .catch((error) => {
           console.log(error.response);
-          this.setState({ modaltext: error.response.data[0] });
+          this.setState({ modaltext: `${Object.keys(error.response.data)[0]}: ${Object.values(error.response.data)[0]}` });
           this.setState({ show: true });
         });
     } else {
