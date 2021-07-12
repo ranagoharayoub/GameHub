@@ -28,6 +28,7 @@ export default class SignUp extends Component {
       success: false,
       show: false,
       modaltext: "",
+      recaptcha: "",
     };
   }
 
@@ -121,6 +122,7 @@ export default class SignUp extends Component {
           password: this.state.pass,
           phone_number: this.state.phoneext + this.state.phone,
           timezone: this.state.timezone,
+          recaptcha: this.state.recaptcha,
         },
       })
         .then((response) => {
@@ -130,7 +132,7 @@ export default class SignUp extends Component {
 
         .catch((error) => {
           console.log(error.response);
-          this.setState({ modaltext: error.response.data });
+          this.setState({ modaltext: error.response.data[0] });
           this.setState({ show: true });
         });
     } else {
@@ -142,7 +144,8 @@ export default class SignUp extends Component {
   };
 
    onChange = (value)=> {
-    console.log("Captcha value:", value);
+    // console.log("Captcha value:", value);
+    this.setState({...this.state, recaptcha: value}, ()=>console.log('recaptcha',this.state.recaptcha))
   }
 
   render() {
