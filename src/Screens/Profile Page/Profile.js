@@ -8,7 +8,7 @@ import './Profile.css'
 import {ContextAPI} from '../../Context/Context'
 import axios from "axios";
 import { useParams } from 'react-router-dom';
-import {Camera} from "@material-ui/icons";
+import {AddAPhotoOutlined} from "@material-ui/icons";
 
 
 function Profile({width}) {
@@ -121,7 +121,7 @@ function Profile({width}) {
       
       <div className="flex justify-center md:justify-start md:w-full">
         <img
-          src={data.image}
+          src={data.image? data.image : 'icons/blank-profile-picture.webp'}
           // src=''
           alt=""
           className="rounded-sm h-1/3 w-1/3 md:h-48 md:w-48 -ml-20 md:ml-11 -mt-9 z-20 img-styling"
@@ -156,7 +156,7 @@ function Profile({width}) {
               filehandler(e)
             }}} ></input>
 
-            <Camera  onClick={()=>document.getElementById('inputfile').click()} style={{cursor:'pointer', color:'white'}} fontSize='large'></Camera>
+            <AddAPhotoOutlined  onClick={()=>document.getElementById('inputfile').click()} style={{cursor:'pointer', color:'white'}} fontSize='large'></AddAPhotoOutlined>
             {/* <div className="flex w-full mt-2 md:hidden">
               <img src={facebook} alt="" className="h-3 w-3 mr-2" />
               <img src={instagram} alt="" className="h-3 w-3 mr-2" />
@@ -188,7 +188,7 @@ function Profile({width}) {
           >
             Overview
           </h4>
-          <h4
+          {/* <h4
             className={
               textUnderline === "Tournaments"
                 ? "border-b-2 border-darkOrange text-white rounded-b-sm z-20 cursor-pointer md:text-xl md:pb-2"
@@ -199,7 +199,7 @@ function Profile({width}) {
             }}
           >
             Tournaments
-          </h4>
+          </h4> */}
         </div>
         <div className="h-0.5 -mt-0.5 mx-8 bg-scrollCol rounded-l-full rounded-r-full"></div>
         <h2 className="text-white text-2xl font-semibold ml-10 mt-7">
