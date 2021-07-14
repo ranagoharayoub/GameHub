@@ -11,7 +11,7 @@ export default function AfterSignup() {
             <h2>Almost Done!</h2>
             <p>
               Your account has been created. Please verify your account by
-              clicking the link found in the email we just sent.If you cannot
+              clicking the link found in the email we just sent. If you cannot
               locate the verification email please check your spam folder or to
               have the verification email resent.
               <Link to="/login">Go to Login Page</Link>

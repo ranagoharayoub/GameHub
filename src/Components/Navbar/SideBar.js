@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./SideBar.css";
-import { FormControlLabel, Switch } from "@material-ui/core";
+// import { FormControlLabel, Switch } from "@material-ui/core";
 import { ArrowDropDown } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
 function SideBar({ toggle, off }) {
-  const [checked, setchecked] = useState(false);
+  // const [checked, setchecked] = useState(false);
   const [name, setname] = useState("");
   const [id, setid] = useState("");
   function signout() {
@@ -37,7 +37,7 @@ function SideBar({ toggle, off }) {
       <div className="cash-cont">
         <img src="/icons/caution.png" height="16px" alt="alert"></img>
         <div>Cash Matches</div>
-        <FormControlLabel
+        {/* <FormControlLabel
           style={{ marginLeft: "5px" }}
           control={
             <Switch
@@ -46,11 +46,11 @@ function SideBar({ toggle, off }) {
               onChange={() => setchecked(!checked)}
             />
           }
-        />
+        /> */}
       </div>
       <div className="boxes">
         <div className="left-box">
-          <div style={{ font: "normal normal normal 12px/30px Bahnschrift" }}>
+          <div style={{ font: "normal normal normal 15px/30px Bahnschrift" }}>
             $0.00
           </div>
           <div
@@ -63,8 +63,8 @@ function SideBar({ toggle, off }) {
           </div>
         </div>
         <div className="right-box">
-          <div style={{ font: "normal normal normal 12px/30px Bahnschrift" }}>
-            0
+          <div style={{ font: "normal normal normal 15px/30px Bahnschrift" }}>
+            $0
           </div>
           <div
             style={{
@@ -78,12 +78,12 @@ function SideBar({ toggle, off }) {
       </div>
       <div className="view-profile">
         <img
-          style={{ margin: "0px 10px" }}
+          style={{ marginLeft: "10px" }}
           src="/icons/avatar.png"
           alt="avatar"
           height="12px"
         ></img>
-        <Link onClick={off} style={{textDecoration:'none', color:'white'}} to={`/profile/${id}`}> View Profile </Link>
+        <Link onClick={off} style={{textDecoration:'none', color:'white', paddingLeft:'5px'}} className='common' to={`/profile/${id}`}>View Profile </Link>
       </div>
       
       <Link to='/matches' onClick={off} className="common">My Matches</Link>

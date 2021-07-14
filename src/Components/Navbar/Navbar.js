@@ -16,6 +16,7 @@ function Navbar() {
                 console.log("token check in navbar",tok)
                 if(tok){
                     setLoggedIn(true)
+                    setdisplay(true)
                     // var username = localStorage.getItem("name");
                     // setname(username);
                 }}
