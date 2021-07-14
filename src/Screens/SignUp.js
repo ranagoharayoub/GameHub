@@ -23,6 +23,7 @@ export default class SignUp extends Component {
       term: "",
       eight: "",
       cross: "/icons/Cancel.png",
+      tick: "/icons/tick.png",
       passstate: "Weak",
       passStrength: false,
       success: false,
@@ -50,12 +51,13 @@ export default class SignUp extends Component {
           this.state.timezone,
           this.state.day + "-" + this.state.month + "-" + this.state.year,
           this.state.term,
-          this.state.eight
+          this.state.eight,
+          this.state.pass.length,
         );
       }
     );
   }
-
+  
   handleChange2(e) {
     let isChecked = e.target.checked;
     console.log("is check stuff", e.target.value);
@@ -81,13 +83,13 @@ export default class SignUp extends Component {
           "contains symbol and length of pass",
           this.state.pass.length
         );
-        this.setState({ cross: "/icons/tick.png" });
+        // this.setState({ cross: "/icons/tick.png" });
         this.setState({ passStrength: true });
 
         console.log("pass3");
       } else {
         console.log("fail3");
-        this.setState({ cross: "/icons/Cancel.png" }, () => {});
+        // this.setState({ cross: "/icons/Cancel.png" }, () => {});
         this.setState({ passStrength: false }, () => {});
       }
 
@@ -220,23 +222,61 @@ export default class SignUp extends Component {
             ></input>
             <div className="issues">
               <div className="warning">
-                <img src={this.state.cross} alt="cancel"></img>
+              <img
+                src={this.state.pass.trim().length>9?
+                  this.state.tick
+                  :
+                  this.state.cross
+                } 
+                alt="cancel">
+                </img>
                 <div style={{ marginLeft: "10px" }}>10 characters</div>
               </div>
               <div className="warning">
-                <img src={this.state.cross} alt="cancel"></img>
+                <img
+                src={/[A-Z]/.test(this.state.pass)?
+                  this.state.tick
+                  :
+                  this.state.cross
+                } 
+                alt="cancel">
+                </img>
                 <div style={{ marginLeft: "10px" }}>Upper Case</div>
               </div>
               <div className="warning">
-                <img src={this.state.cross} alt="cancel"></img>
+                <img
+                src={/[a-z]/.test(this.state.pass)?
+                  this.state.tick
+                  :
+                  this.state.cross
+                }
+                alt="cancel"
+                >
+                </img>
                 <div style={{ marginLeft: "10px" }}>Lower Case</div>
               </div>
               <div className="warning">
-                <img src={this.state.cross} alt="cancel"></img>
+              <img
+                src={/[0-9]/.test(this.state.pass)?
+                  this.state.tick
+                  :
+                  this.state.cross
+                }
+                alt="cancel"
+                >
+                </img>
                 <div style={{ marginLeft: "10px" }}>Numbers</div>
               </div>
               <div className="warning">
-                <img src={this.state.cross} alt="cancel"></img>
+              <img
+                src={/[`!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~]/.test(this.state.pass)?
+                  this.state.tick
+                  :
+                  this.state.cross
+                }
+                alt="cancel"
+                >
+                </img>
                 <div style={{ marginLeft: "10px" }}>Symbols</div>
               </div>
             </div>
