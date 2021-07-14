@@ -11,7 +11,7 @@ function Footer() {
                     <div className='links'>Contact</div>
                     <div className='links'> Terms & Conditions </div>
                 </div>
-                <div className='company-col'>
+                <div className='company-col company-col-2'>
                     <div className='title'>COMPANY</div>
                     <div className='links'>Create a Ticket</div>
                     <div className='links'>Contact us</div>

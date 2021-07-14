@@ -122,7 +122,8 @@ export default class SignUp extends Component {
           email: this.state.email,
           dob: this.state.year + "-" + this.state.month + "-" + this.state.day,
           password: this.state.pass,
-          phone_number: this.state.phoneext + this.state.phone,
+          country_code:this.state.phoneext,
+          phone_number:this.state.phone,
           timezone: this.state.timezone,
           recaptcha: this.state.recaptcha,
         },
@@ -359,7 +360,7 @@ export default class SignUp extends Component {
               <option value="-03:00">(GMT -3:00) Brazil, Buenos Aires, Georgetown</option>
               <option value="-02:00">(GMT -2:00) Mid-Atlantic</option>
               <option value="-01:00">(GMT -1:00) Azores, Cape Verde Islands</option>
-              <option value="+00:00" selected="selected">(GMT) Western Europe Time, London, Lisbon, Casablanca</option>
+              <option value="+00:00">(GMT) Western Europe Time, London, Lisbon, Casablanca</option>
               <option value="+01:00">(GMT +1:00) Brussels, Copenhagen, Madrid, Paris</option>
               <option value="+02:00">(GMT +2:00) Kaliningrad, South Africa</option>
               <option value="+03:00">(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg</option>

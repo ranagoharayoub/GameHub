@@ -13,14 +13,15 @@ function Settings({ width }) {
     name: '',
     email:'',
     phone:'',
+    country_code:'',
   })
 
 
   useEffect(() => {
     const callAPI =  async () => {
       try {
-        const {data: {username, email, phone_number}} = await axios.get("https://gamehubx.com/api/v1/user-profile/"+id+"/") 
-        setuserinfo({name:username, email: email, phone: phone_number})
+        const {data: {username, email, phone_number, country_code}} = await axios.get("https://gamehubx.com/api/v1/user-profile/"+id+"/") 
+        setuserinfo({name:username, email: email, phone: phone_number, country_code: country_code})
       } catch (error) {
         console.log(error)
       }
@@ -37,26 +38,26 @@ function Settings({ width }) {
     email:'',
     phoneext: '',
     phone: "",
-    currntpass: "",
-    pass: "12",
-    confpass: "",
-    cross: "/icons/tick.png",
+    // currntpass: "",
+    // pass: "",
+    // confpass: "",
+    // cross: "/icons/tick.png",
     btnstate: "true",
     timezone:''
   });
 
 useEffect(() => {
-  setState({username: userinfo.name, email: userinfo.email, phone: userinfo.phone})
+  setState({...state, username: userinfo.name, email: userinfo.email, phone: userinfo.phone, phoneext: userinfo.country_code})
 }, [userinfo])
 
-  const [cross, setcross] = useState("/icons/Cancle.png");
-  
+  const cross= "/icons/Cancel.png"
+  const tick= "/icons/tick.png"
   const [show, setShow] = useState(false);
   const [modaltext, setmodaltext] = useState("");
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const handleShow = () => setShow(true);
 
-  const [curntpass, setcurntpass] = useState("");
+  // const [curntpass, setcurntpass] = useState("");
   const [pass, setpass] = useState("");
   const [conpass, setconpass] = useState("");
 
@@ -124,7 +125,8 @@ useEffect(() => {
       "Content-Type": "application/json;charset=UTF-8",
     };
     var data = JSON.stringify({
-        "phone_number": state.phoneext+state.phone
+        "country_code": state.phoneext,
+        "phone_number": state.phone
       });
     await axios
       .patch("https://gamehubx.com/api/v1/user-profile/" + id + "/", data, {
@@ -142,7 +144,7 @@ useEffect(() => {
   }
 
   async function savepass(){
-    console.log("change pass btn",curntpass ,pass, conpass);
+    console.log("change pass btn" ,pass, conpass);
     var tok = localStorage.getItem("token");
     var id = localStorage.getItem("userdata");
   const headers = {
@@ -161,7 +163,7 @@ useEffect(() => {
         url: "https://gamehubx.com/api/v1/auth/password/change/",
         headers: headers,
         data: {
-          old_password: curntpass,
+          // old_password: curntpass,
           new_password1: pass,
           new_password2: conpass
         },
@@ -230,13 +232,13 @@ useEffect(() => {
         if (test & format.test(pass) & (pass.length > 9)) {
           console.log("contains symbol and length of pass",pass.length);
           setState({ btnstate: false });
-          setcross("/icons/tick.png");
+          // setcross("/icons/tick.png");
           console.log("pass3");
         } else {
           console.log("fail3");
-          setState({ cross: "/icons/Cancel.png" });
+          // setState({ cross: "/icons/Cancel.png" });
           setState({ btnstate: true });
-          setcross("/icons/Cancel.png");
+          // setcross("/icons/Cancel.png");
         }
       }
 
@@ -255,10 +257,10 @@ useEffect(() => {
     [pass]
   );
 
-  function handleChange2(evt) {
-    const value = evt.target.value;
-    setcurntpass(value)
-  }
+  // function handleChange2(evt) {
+  //   const value = evt.target.value;
+  //   setcurntpass(value)
+  // }
 
   function handleChange3(evt) {
     const value = evt.target.value;
@@ -392,7 +394,7 @@ useEffect(() => {
               {width > "800" ? (
                 <div className="btn" onClick={() => phonesave()}>Save Phone</div>
               ) : (
-                <Save style={{ color: "white" }}></Save>
+                <Save onClick={() => phonesave()} style={{ color: "white" }}></Save>
               )}
             </div>
           </div>
@@ -402,7 +404,7 @@ useEffect(() => {
             className="flex"
             style={{ alignItems: "flex-start", marginTop: "10px" }}
           >
-            <input
+            {/* <input
             id='inputcolor'
               className="input"
               type="password"
@@ -411,7 +413,7 @@ useEffect(() => {
               onChange={(evt)=>handleChange2(evt)}
               placeholder="Current Password"
               style={width > "800" ? { width: "25%" } : null}
-            ></input>
+            ></input> */}
             <div className="col">
               <input
               id='inputcolor'
@@ -421,29 +423,68 @@ useEffect(() => {
                 name="pass"
                 value={pass}
                 onChange={(evt)=>handleChange3(evt)}
-                style={width > "800" ? { width: "98%" } : null}
+                style={width > "800" ? { width: "90%" } : null}
               ></input>
               {cross !== undefined && (
                 <div className="issues">
                   <div className="warning">
-                    <img src={cross} alt="Cancel"></img>
+                  <img
+                src={pass.trim().length>9?
+                  tick
+                  :
+                  cross
+                } 
+                alt="cancel">
+                </img>
                     <div style={{ marginLeft: "10px" }}>10 characters</div>
                   </div>
                   <div className="warning">
-                    <img src={cross} alt="Cancel"></img>
+                  <img
+                    src={/[A-Z]/.test(pass)?
+                      tick
+                      :
+                      cross
+                    }
+                    alt="cancel"
+                    >
+                    </img>
                     <div style={{ marginLeft: "10px" }}>Upper Case</div>
                   </div>
                   <div className="warning">
-                    <img src={cross} alt="Cancel"></img>
+                  <img
+                    src={/[a-z]/.test(pass)?
+                      tick
+                      :
+                      cross
+                    }
+                    alt="cancel"
+                    >
+                  </img>
                     <div style={{ marginLeft: "10px" }}>Lower Case</div>
                   </div>
                   <div className="warning">
-                    <img src={cross} alt="Cancel"></img>
-                    <div style={{ marginLeft: "10px" }}>Numbers</div>
+                  <img
+                    src={/[0-9]/.test(pass)?
+                      tick
+                      :
+                      cross
+                    }
+                    alt="cancel"
+                    >
+                  </img>
+                    <div style={{ marginLeft: "10px" }}>Number</div>
                   </div>
                   <div className="warning">
-                    <img src={cross} alt="Cancel"></img>
-                    <div style={{ marginLeft: "10px" }}>Symbols</div>
+                  <img
+                    src={/[`!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?~]/.test(pass)?
+                      tick
+                      :
+                      cross
+                    }
+                    alt="cancel"
+                    >
+                  </img>
+                    <div style={{ marginLeft: "10px" }}>Symbol</div>
                   </div>
                 </div>
               )}
@@ -457,7 +498,7 @@ useEffect(() => {
               value={conpass}
               onChange={(evt)=>handleChange4(evt)}
               placeholder="Confirm Password"
-              style={width > "800" ? { width: "25%" } : null}
+              style={width > "800" ? { width: "40%" } : null}
             ></input>
             <div className="btn" onClick={() => savepass()}>Change Password</div>
           </div>
@@ -471,12 +512,52 @@ useEffect(() => {
               <select value={state.timezone}
               onChange={(e) => setState({timezone: e.target.value})} className="input" style={{backgroundColor:"#4A4747"}}>
               <option value="">Your preferred time zone </option>
-              <option value="+5">Africa/Abidjan (GMT+5) </option>
+              <option value="-12:00">(GMT -12:00) Eniwetok, Kwajalein</option>
+              <option value="-11:00">(GMT -11:00) Midway Island, Samoa</option>
+              <option value="-10:00">(GMT -10:00) Hawaii</option>
+              <option value="-09:50">(GMT -9:30) Taiohae</option>
+              <option value="-09:00">(GMT -9:00) Alaska</option>
+              <option value="-08:00">(GMT -8:00) Pacific Time (US &amp; Canada)</option>
+              <option value="-07:00">(GMT -7:00) Mountain Time (US &amp; Canada)</option>
+              <option value="-06:00">(GMT -6:00) Central Time (US &amp; Canada), Mexico City</option>
+              <option value="-05:00">(GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima</option>
+              <option value="-04:50">(GMT -4:30) Caracas</option>
+              <option value="-04:00">(GMT -4:00) Atlantic Time (Canada), Caracas, La Paz</option>
+              <option value="-03:50">(GMT -3:30) Newfoundland</option>
+              <option value="-03:00">(GMT -3:00) Brazil, Buenos Aires, Georgetown</option>
+              <option value="-02:00">(GMT -2:00) Mid-Atlantic</option>
+              <option value="-01:00">(GMT -1:00) Azores, Cape Verde Islands</option>
+              <option value="+00:00">(GMT) Western Europe Time, London, Lisbon, Casablanca</option>
+              <option value="+01:00">(GMT +1:00) Brussels, Copenhagen, Madrid, Paris</option>
+              <option value="+02:00">(GMT +2:00) Kaliningrad, South Africa</option>
+              <option value="+03:00">(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg</option>
+              <option value="+03:50">(GMT +3:30) Tehran</option>
+              <option value="+04:00">(GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi</option>
+              <option value="+04:50">(GMT +4:30) Kabul</option>
+              <option value="+05:00">(GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent</option>
+              <option value="+05:50">(GMT +5:30) Bombay, Calcutta, Madras, New Delhi</option>
+              <option value="+05:75">(GMT +5:45) Kathmandu, Pokhara</option>
+              <option value="+06:00">(GMT +6:00) Almaty, Dhaka, Colombo</option>
+              <option value="+06:50">(GMT +6:30) Yangon, Mandalay</option>
+              <option value="+07:00">(GMT +7:00) Bangkok, Hanoi, Jakarta</option>
+              <option value="+08:00">(GMT +8:00) Beijing, Perth, Singapore, Hong Kong</option>
+              <option value="+08:75">(GMT +8:45) Eucla</option>
+              <option value="+09:00">(GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk</option>
+              <option value="+09:50">(GMT +9:30) Adelaide, Darwin</option>
+              <option value="+10:00">(GMT +10:00) Eastern Australia, Guam, Vladivostok</option>
+              <option value="+10:50">(GMT +10:30) Lord Howe Island</option>
+              <option value="+11:00">(GMT +11:00) Magadan, Solomon Islands, New Caledonia</option>
+              <option value="+11:50">(GMT +11:30) Norfolk Island</option>
+              <option value="+12:00">(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka</option>
+              <option value="+12:75">(GMT +12:45) Chatham Islands</option>
+              <option value="+13:00">(GMT +13:00) Apia, Nukualofa</option>
+              <option value="+14:00">(GMT +14:00) Line Islands, Tokelau</option>
+              {/* <option value="+5">Africa/Abidjan (GMT+5) </option>
               <option value="-5">Africa/Accra (GMT-5) </option>
               <option value="0">Africa/Bamako (GMT0) </option>
               <option value="+2">Africa/Banjul (GMT+2) </option>
               <option value="+8">Africa/Bissau (GMT+8) </option>
-              <option value="-8">Africa/Casablanca (GMT-8) </option>
+              <option value="-8">Africa/Casablanca (GMT-8) </option> */}
               </select>
             </div>
             <div className="col" style={{display:'none'}}>
