@@ -174,7 +174,7 @@ export default class SignUp extends Component {
           </Modal.Footer>
         </Modal>
         <div className="signup-sect">
-          <div className="title">STEP UP YOUR GAME JOIN TODAY</div>
+          <div className="title">STEP UP YOUR GAME, JOIN TODAY!</div>
           <div className="subtitle">
             Already a member?
             <Link
@@ -265,7 +265,7 @@ export default class SignUp extends Component {
                 alt="cancel"
                 >
                 </img>
-                <div style={{ marginLeft: "10px" }}>Numbers</div>
+                <div style={{ marginLeft: "10px" }}>Number</div>
               </div>
               <div className="warning">
               <img
@@ -277,7 +277,7 @@ export default class SignUp extends Component {
                 alt="cancel"
                 >
                 </img>
-                <div style={{ marginLeft: "10px" }}>Symbols</div>
+                <div style={{ marginLeft: "10px" }}>Symbol</div>
               </div>
             </div>
             <div className="pass-strength">
