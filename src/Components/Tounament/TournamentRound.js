@@ -12,15 +12,14 @@ function TournamentRound({ size, odd, round, enrollUser, isStarted, displayName}
   console.log('user length', enrollUser.length)
   var rows = [];
   var userArray = []
-  for (let index = 0; index < size; index++) {
-    if (isStarted) {
-      for (let i= 0; i < size*2; i=i+2) {
-        userArray = enrollUser.slice(i, i+2)
-        console.log(userArray)
+  if (isStarted) {
+    for (let i= 0; i < size*2; i=i+2) {
+      userArray.push(enrollUser.slice(i, i+2))
+      console.log(userArray)
 }
-    }
-
-    rows.push(<GroupBrackets round={change(round)} lastCall={index===size-1? true: false} firstCall={index===0? true: false} isStarted={isStarted} userArray={displayName? userArray: []}></GroupBrackets>);
+  }
+  for (let index = 0; index < size; index++) {
+    rows.push(<GroupBrackets round={change(round)} lastCall={index===size-1? true: false} firstCall={index===0? true: false} isStarted={isStarted} userArray={displayName? userArray[index]: []}></GroupBrackets>);
   }
 
   console.log(size, odd);
