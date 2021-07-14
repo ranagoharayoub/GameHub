@@ -244,10 +244,17 @@ export default class SignUp extends Component {
               <div
                 className="line"
                 style={
+                  this.state.passstate==="Weak" && this.state.pass
+                  ?
+                  { backgroundColor: "red" }
+                  :
                   this.state.passstate === "Medium"
-                    ? { backgroundColor: "red" }
-                    : this.state.passstate === "Strong"
-                    ? { backgroundColor: "green" }
+                    ? 
+                    { backgroundColor: "#F69204" }
+                    : 
+                    this.state.passstate === "Strong"
+                    ? 
+                    { backgroundColor: "green" }
                     : null
                 }
               ></div>
@@ -263,7 +270,7 @@ export default class SignUp extends Component {
               type="password"
               placeholder="Confirm Password*"
             ></input>
-            <label className="phone">Phone Number</label>
+            <label className="phone">Phone Number*</label>
             <div>
               <input
                 required
@@ -297,12 +304,57 @@ export default class SignUp extends Component {
               onChange={(e) => this.handleChange(e)}
             >
               <option value="">Your preferred time zone </option>
+              <option value="-12:00">(GMT -12:00) Eniwetok, Kwajalein</option>
+              <option value="-11:00">(GMT -11:00) Midway Island, Samoa</option>
+              <option value="-10:00">(GMT -10:00) Hawaii</option>
+              <option value="-09:50">(GMT -9:30) Taiohae</option>
+              <option value="-09:00">(GMT -9:00) Alaska</option>
+              <option value="-08:00">(GMT -8:00) Pacific Time (US &amp; Canada)</option>
+              <option value="-07:00">(GMT -7:00) Mountain Time (US &amp; Canada)</option>
+              <option value="-06:00">(GMT -6:00) Central Time (US &amp; Canada), Mexico City</option>
+              <option value="-05:00">(GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima</option>
+              <option value="-04:50">(GMT -4:30) Caracas</option>
+              <option value="-04:00">(GMT -4:00) Atlantic Time (Canada), Caracas, La Paz</option>
+              <option value="-03:50">(GMT -3:30) Newfoundland</option>
+              <option value="-03:00">(GMT -3:00) Brazil, Buenos Aires, Georgetown</option>
+              <option value="-02:00">(GMT -2:00) Mid-Atlantic</option>
+              <option value="-01:00">(GMT -1:00) Azores, Cape Verde Islands</option>
+              <option value="+00:00" selected="selected">(GMT) Western Europe Time, London, Lisbon, Casablanca</option>
+              <option value="+01:00">(GMT +1:00) Brussels, Copenhagen, Madrid, Paris</option>
+              <option value="+02:00">(GMT +2:00) Kaliningrad, South Africa</option>
+              <option value="+03:00">(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg</option>
+              <option value="+03:50">(GMT +3:30) Tehran</option>
+              <option value="+04:00">(GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi</option>
+              <option value="+04:50">(GMT +4:30) Kabul</option>
+              <option value="+05:00">(GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent</option>
+              <option value="+05:50">(GMT +5:30) Bombay, Calcutta, Madras, New Delhi</option>
+              <option value="+05:75">(GMT +5:45) Kathmandu, Pokhara</option>
+              <option value="+06:00">(GMT +6:00) Almaty, Dhaka, Colombo</option>
+              <option value="+06:50">(GMT +6:30) Yangon, Mandalay</option>
+              <option value="+07:00">(GMT +7:00) Bangkok, Hanoi, Jakarta</option>
+              <option value="+08:00">(GMT +8:00) Beijing, Perth, Singapore, Hong Kong</option>
+              <option value="+08:75">(GMT +8:45) Eucla</option>
+              <option value="+09:00">(GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk</option>
+              <option value="+09:50">(GMT +9:30) Adelaide, Darwin</option>
+              <option value="+10:00">(GMT +10:00) Eastern Australia, Guam, Vladivostok</option>
+              <option value="+10:50">(GMT +10:30) Lord Howe Island</option>
+              <option value="+11:00">(GMT +11:00) Magadan, Solomon Islands, New Caledonia</option>
+              <option value="+11:50">(GMT +11:30) Norfolk Island</option>
+              <option value="+12:00">(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka</option>
+              <option value="+12:75">(GMT +12:45) Chatham Islands</option>
+              <option value="+13:00">(GMT +13:00) Apia, Nukualofa</option>
+              <option value="+14:00">(GMT +14:00) Line Islands, Tokelau</option>
+              {/* <option value="-10">Pacific/Honolulu( GMT-10)</option>
+              <option value="-9">America/Anchorage (GMT-9)</option>
+              <option value="-8">America/Los_Angeles (GMT-8)</option>
+              <option value="-7">America/Phoenix (GMT-7)</option>
+              <option value="-6">America/Chicago (GMT-6)</option>
+              <option value="-5">America/New_York (GMT-5)</option>
               <option value="+5">Africa/Abidjan (GMT+5) </option>
-              <option value="-5">Africa/Accra (GMT-5) </option>
               <option value="0">Africa/Bamako (GMT0) </option>
               <option value="+2">Africa/Banjul (GMT+2) </option>
               <option value="+8">Africa/Bissau (GMT+8) </option>
-              <option value="-8">Africa/Casablanca (GMT-8) </option>
+              <option value="-8">Africa/Casablanca (GMT-8) </option> */}
             </select>
             <label className="phone">Date of Birth*</label>
             <div className="dob-sec">
@@ -375,70 +427,93 @@ export default class SignUp extends Component {
                 onChange={(e) => this.handleChange(e)}
               >
                 <option value="">Years</option>
-                <option value="1940">1940</option>
-                <option value="1941">1941</option>
-                <option value="1942">1942</option>
-                <option value="1943">1943</option>
-                <option value="1944">1944</option>
-                <option value="1945">1945</option>
-                <option value="1946">1946</option>
-                <option value="1947">1947</option>
-                <option value="1948">1948</option>
-                <option value="1949">1949</option>
-                <option value="1950">1950</option>
-                <option value="1951">1951</option>
-                <option value="1952">1952</option>
-                <option value="1953">1953</option>
-                <option value="1954">1954</option>
-                <option value="1955">1955</option>
-                <option value="1956">1956</option>
-                <option value="1957">1957</option>
-                <option value="1958">1958</option>
-                <option value="1959">1959</option>
-                <option value="1960">1960</option>
-                <option value="1961">1961</option>
-                <option value="1962">1962</option>
-                <option value="1963">1963</option>
-                <option value="1964">1964</option>
-                <option value="1965">1965</option>
-                <option value="1966">1966</option>
-                <option value="1967">1967</option>
-                <option value="1968">1968</option>
-                <option value="1969">1969</option>
-                <option value="1970">1970</option>
-                <option value="1971">1971</option>
-                <option value="1972">1972</option>
-                <option value="1973">1973</option>
-                <option value="1974">1974</option>
-                <option value="1975">1975</option>
-                <option value="1976">1976</option>
-                <option value="1977">1977</option>
-                <option value="1978">1978</option>
-                <option value="1979">1979</option>
-                <option value="1980">1980</option>
-                <option value="1981">1981</option>
-                <option value="1982">1982</option>
-                <option value="1983">1983</option>
-                <option value="1984">1984</option>
-                <option value="1985">1985</option>
-                <option value="1986">1986</option>
-                <option value="1987">1987</option>
-                <option value="1988">1988</option>
-                <option value="1989">1989</option>
-                <option value="1990">1990</option>
-                <option value="1991">1991</option>
-                <option value="1992">1992</option>
-                <option value="1993">1993</option>
-                <option value="1994">1994</option>
-                <option value="1995">1995</option>
-                <option value="1996">1996</option>
-                <option value="1997">1997</option>
-                <option value="1998">1998</option>
-                <option value="1999">1999</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+                <option value="2010">2010</option>
+                <option value="2009">2009</option>
+                <option value="2008">2008</option>
+                <option value="2007">2007</option>
+                <option value="2006">2006</option>
+                <option value="2005">2005</option>
+                <option value="2004">2004</option>
+                <option value="2003">2003</option>
+                <option value="2002">2002</option>
+                <option value="2001">2001</option>
                 <option value="2000">2000</option>
-                <option value="2000">2001</option>
-                <option value="2000">2002</option>
-                <option value="2000">2003</option>
+                <option value="1999">1999</option>
+                <option value="1998">1998</option>
+                <option value="1997">1997</option>
+                <option value="1996">1996</option>
+                <option value="1995">1995</option>
+                <option value="1994">1994</option>
+                <option value="1993">1993</option>
+                <option value="1992">1992</option>
+                <option value="1991">1991</option>
+                <option value="1990">1990</option>
+                <option value="1989">1989</option>
+                <option value="1988">1988</option>
+                <option value="1987">1987</option>
+                <option value="1986">1986</option>
+                <option value="1985">1985</option>
+                <option value="1984">1984</option>
+                <option value="1983">1983</option>
+                <option value="1982">1982</option>
+                <option value="1981">1981</option>
+                <option value="1980">1980</option>
+                <option value="1979">1979</option>
+                <option value="1978">1978</option>
+                <option value="1977">1977</option>
+                <option value="1976">1976</option>
+                <option value="1975">1975</option>
+                <option value="1974">1974</option>
+                <option value="1973">1973</option>
+                <option value="1972">1972</option>
+                <option value="1971">1971</option>
+                <option value="1970">1970</option>
+                <option value="1969">1969</option>
+                <option value="1968">1968</option>
+                <option value="1967">1967</option>
+                <option value="1966">1966</option>
+                <option value="1965">1965</option>
+                <option value="1964">1964</option>
+                <option value="1963">1963</option>
+                <option value="1962">1962</option>
+                <option value="1961">1961</option>
+                <option value="1960">1960</option>
+                <option value="1959">1959</option>
+                <option value="1958">1958</option>
+                <option value="1957">1957</option>
+                <option value="1956">1956</option>
+                <option value="1955">1955</option>
+                <option value="1954">1954</option>
+                <option value="1953">1953</option>
+                <option value="1952">1952</option>
+                <option value="1951">1951</option>
+                <option value="1950">1950</option>
+                <option value="1949">1949</option>
+                <option value="1948">1948</option>
+                <option value="1947">1947</option>
+                <option value="1946">1946</option>
+                <option value="1945">1945</option>
+                <option value="1944">1944</option>
+                <option value="1943">1943</option>
+                <option value="1942">1942</option>
+                <option value="1941">1941</option>
+                <option value="1940">1940</option>
+                <option value="1939">1939</option>
+                <option value="1938">1938</option>
+                <option value="1937">1937</option>
+                <option value="1936">1936</option>
+                <option value="1935">1935</option>
+                <option value="1934">1934</option>
+                <option value="1933">1933</option>
+                <option value="1932">1932</option>
+                <option value="1931">1931</option>
+                <option value="1930">1930</option>
+
               </select>
             </div>
             {/* <GoogleReCaptcha></GoogleReCaptcha> */}

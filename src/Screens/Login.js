@@ -98,8 +98,7 @@ class Login extends Component {
 
     console.log(response);
     console.log(this.props.width);
-    var res = response;
-    console.log("access token", res.accessToken);
+    console.log("access token", response.accessToken);
     if (typeof response !== undefined) {
       
       console.log("in conditions");
@@ -108,7 +107,7 @@ class Login extends Component {
         url: "https://gamehubx.com/api/v1/login/google/",
         headers: {},
         data: {
-          access_token: res.accessToken,
+          access_token: response.accessToken,
           code: "",
         },
       })
@@ -129,7 +128,7 @@ class Login extends Component {
         })
         .catch((error) => {
           console.log(error.response);
-          console.log("Couldn't Login ");
+          console.log('could not login')
         });
     }
   };
@@ -210,8 +209,8 @@ class Login extends Component {
             clientId={
               "431419828404-n5tfmqqqlkohd0luqiu8rsqrs657fshk.apps.googleusercontent.com"
             }
-            onSuccess={()=>this.responseGoogle}
-            onFailure={()=>this.responseGoogle}
+            onSuccess={(response)=>this.responseGoogle(response)}
+            onFailure={(response)=>this.responseGoogle(response)}
             className="social-login-google"
             style={{
               padding: "0px 0px",

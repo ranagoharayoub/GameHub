@@ -42,7 +42,7 @@ export default function Matches({ width }) {
     };
     callAPI2();
     // componentHandler.upgradeDom();
-  }, []);
+  }, [upcoming, inProgress]);
 
   const submitHandler = async(param) =>{
 
