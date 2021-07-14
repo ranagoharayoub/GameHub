@@ -50,6 +50,7 @@ function Profile({width}) {
        await axios
         .get("https://gamehubx.com/api/v1/user-profile/"+params.id+"/")
         .then((res) => {
+          console.log(res.data);
           setdata(res.data);
           
           setgamedata(res.data.overview);
@@ -226,9 +227,10 @@ function Profile({width}) {
                 {ent.game_title}
               </h4>
             );
-          })}
+          })
+          }
           {/* my map ending of game title */}
-          <h4
+          {/* <h4
             className={
               textUnderlined === "Fortnite"
                 ? "mr-5 border-b-2 border-neonGreen text-white rounded-b-sm md:pb-2 z-20 text-sm font-thin md:text-xl transition-colors ease-in duration-300 cursor-pointer"
@@ -263,7 +265,7 @@ function Profile({width}) {
             }}
           >
             Tom Clancy
-          </h4>
+          </h4> */}
         </div>
 
         <div className="h-0.5 -mt-0.5 mx-8 bg-scrollCol rounded-l-full rounded-r-full"></div>
@@ -346,7 +348,6 @@ function Profile({width}) {
             </div>
           </div> */}
         </div>
-        {/* ending of state data */}
       </div>
     </div>
   );

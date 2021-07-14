@@ -31,15 +31,16 @@ export default class FbGlogin extends Component {
 
   componentDidMount(){
       console.log("this is the social signup page")
-      console.log("the data in fbgsignup page",this.props.location.state.data);
-      var dataprops = this.props.location.state.data
+      console.log("the data in fbgsignup page",this.props);
+      var dataprops = this.props
+      // var dataprops = this.props.location.state.data
       if( dataprops.email !== null){
         this.setState({ email: dataprops.email, emailstate:true  });
       }
       if( dataprops.username !== null){
         this.setState({ username: dataprops.username });
       }
-      if( dataprops.timezone == null){
+      if( dataprops.timezone !== null){
         this.setState({ timezone: dataprops.timezone });
       }
       

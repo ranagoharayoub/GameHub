@@ -119,7 +119,7 @@ class Login extends Component {
                 state: param
             });
         }
-        routingFunction({ data: res.data.user_detail })
+        routingFunction(res.data.user_detail )
 
           // this.props.history.push({
           //   pathname: "/fbglogin",
