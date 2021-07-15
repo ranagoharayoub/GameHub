@@ -3,6 +3,7 @@ import "./TournamentCard.css";
 import Timer from "react-compound-timer";
 import {Link} from 'react-router-dom'
 
+
 function TournamentCard({ width, data }) {
   const [name, setname] = useState("score-cont");
 
