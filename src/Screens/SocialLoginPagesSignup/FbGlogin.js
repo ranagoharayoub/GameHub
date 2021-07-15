@@ -31,7 +31,7 @@ class FbGlogin extends Component {
 
   componentDidMount(){
       console.log("this is the social signup page")
-      console.log("the data in fbgsignup page",this.props.history.location.state.data);
+      console.log("the data in fbgsignup page",this.props.history.location.state);
       // var dataprops = this.props.state
       var dataprops = this.props.history.location.state.data
       if( dataprops.email !== null){

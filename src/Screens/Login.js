@@ -113,20 +113,12 @@ class Login extends Component {
       })
         .then((res) => {
           console.log(res.data.user_detail);
-          const routingFunction = (param) => {
-            console.log(param)
             this.props.history.push({
                 pathname: "/fbglogin",
-                state: param
-            });
-        }
-        routingFunction({ data: response.data.user_detail })
-
-          // this.props.history.push({
-          //   pathname: "/fbglogin",
-          //   state: { data: response.data.user_detail },
-          // });
+                state: { data: response.data.user_detail }
         })
+      }
+        )
         .catch((error) => {
           console.log(error.response);
           console.log('could not login');
