@@ -114,12 +114,13 @@ class Login extends Component {
         .then((res) => {
           console.log(res.data.user_detail);
           const routingFunction = (param) => {
+            console.log(param)
             this.props.history.push({
                 pathname: "/fbglogin",
                 state: param
             });
         }
-        routingFunction(res.data.user_detail )
+        routingFunction({ data: response.data.user_detail })
 
           // this.props.history.push({
           //   pathname: "/fbglogin",
@@ -128,7 +129,7 @@ class Login extends Component {
         })
         .catch((error) => {
           console.log(error.response);
-          console.log('could not login')
+          console.log('could not login');
         });
     }
   };

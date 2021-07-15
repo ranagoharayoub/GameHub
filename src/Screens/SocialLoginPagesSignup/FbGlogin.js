@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "../SignUp.css";
 import axios from "axios";
 /*eslint-disable*/
 import { Button, Modal} from "react-bootstrap";
 
-export default class FbGlogin extends Component {
+class FbGlogin extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,9 +31,9 @@ export default class FbGlogin extends Component {
 
   componentDidMount(){
       console.log("this is the social signup page")
-      console.log("the data in fbgsignup page",this.props);
-      var dataprops = this.props
-      // var dataprops = this.props.location.state.data
+      console.log("the data in fbgsignup page",this.props.history.location.state.data);
+      // var dataprops = this.props.state
+      var dataprops = this.props.history.location.state.data
       if( dataprops.email !== null){
         this.setState({ email: dataprops.email, emailstate:true  });
       }
@@ -488,3 +488,4 @@ export default class FbGlogin extends Component {
     );
   }
 }
+export default withRouter(FbGlogin)
