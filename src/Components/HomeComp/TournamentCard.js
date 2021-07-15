@@ -15,7 +15,7 @@ function TournamentCard({ width, data }) {
   function getsec(a) {
     var myDate = new Date(a); // a is start_on
     var date = new Date(); // current date
-    var dou2 = myDate.getTime() - date.getTime();
+    var dou2 = myDate - date;
     return dou2;
   }
 
@@ -38,15 +38,6 @@ function TournamentCard({ width, data }) {
           <div className="tourn-time">
            
             <div className="time">{new Date(data.start_on).toDateString()}</div>
-            {/* <div className="starts">
-              
-              Starts in{" "}
-              
-                <Timer initialTime={getsec(data.start_on)} direction="backward">
-                  <Timer.Hours /> hours <Timer.Minutes /> minutes
-                </Timer>
-              
-            </div> */}
             {
               getsec(data.start_on)>0?
               <div className="starts">
