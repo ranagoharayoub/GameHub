@@ -21,7 +21,7 @@ function SideBar({ toggle, off }) {
 
   return (
     <div
-      className="side-cont"
+      className="side-bar-cont"
       style={toggle ? { display: "flex" } : { display: "none" }}
     >
       <div className="close">
@@ -35,8 +35,8 @@ function SideBar({ toggle, off }) {
         <div>{name}</div>
       </div>
       <div className="cash-cont">
-        <img src="/icons/caution.png" height="16px" alt="alert"></img>
-        <div>Cash Matches</div>
+        {/* <img src="/icons/caution.png" height="16px" alt="alert"></img> */}
+        {/* <div>Cash Matches</div> */}
         {/* <FormControlLabel
           style={{ marginLeft: "5px" }}
           control={

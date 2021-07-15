@@ -29,7 +29,7 @@ function Settings({ width }) {
     
     callAPI()
     
-  }, [id])
+  }, [])
 
     console.log(userinfo.name? userinfo.name: 'fetch')
 

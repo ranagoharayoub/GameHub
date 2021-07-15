@@ -98,8 +98,8 @@ class Login extends Component {
 
     console.log(response);
     console.log(this.props.width);
-    console.log("access token", response.accessToken);
-    if (typeof response !== undefined) {
+    console.log("access token", typeof(response.accessToken));
+    if (typeof(response.accessToken) !== "undefined") {
       
       console.log("in conditions");
       await axios({
@@ -130,6 +130,8 @@ class Login extends Component {
         .catch((error) => {
           console.log(error.response);
           console.log('could not login');
+          this.setState({ modaltext: error.response.data.non_field_errors[0]});
+          this.setState({ show: true });
         });
     }
   };

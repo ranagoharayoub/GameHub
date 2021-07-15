@@ -15,8 +15,9 @@ function Profile({width}) {
   const [textUnderline, setTextUnderline] = useState("Overview");
   const [textUnderlined, setTextUnderlined] = useState("Fortnite");
   const [data, setdata] = useState([]);
-  const [gamedata, setgamedata] = useState([]);
+  const [gamedata, setgamedata] = useState(null);
   const [profilepic, setprofilepic] = useState(false)
+
   const [sec, setsec] = useState(0);
   // eslint-disable-next-line
   const [min, setmin] = useState(0);
@@ -53,7 +54,7 @@ function Profile({width}) {
           console.log(res.data);
           setdata(res.data);
           
-          setgamedata(res.data.overview);
+          // setgamedata(res.data.overview);
           // console.log("this is my data and overview", data);
           // console.log("this is my data and overview", gamedata);
          
@@ -61,6 +62,13 @@ function Profile({width}) {
     }
     callAPI()
     console.log('profilepic',profilepic)
+
+    const callAPI2 = async () =>{
+      axios.get("https://gamehubx.com/api/v1/tournament/?user="+params.id)
+      .then((res)=>{console.log(res.data); setgamedata(res.data)})
+      .catch((error)=> console.log(error))
+    }
+    callAPI2()
     // eslint-disable-next-line
   }, [profilepic])
 
@@ -114,8 +122,8 @@ function Profile({width}) {
             console.log('pic not selected')
           }
    }
-
-  
+   var img = "";
+   gamedata && gamedata.map((data)=> data.title === textUnderlined? img = data.image : null)
 
   return (
     <div style={width<'800' ?{overflowX:'hidden'}:null} className="flex flex-col bg-darkGray w-full md:w-full">
@@ -180,8 +188,8 @@ function Profile({width}) {
           <h4
             className={
               textUnderline === "Overview"
-                ? "mr-5 border-b-2 border-darkOrange text-white rounded-b-sm z-20 cursor-pointer md:text-xl md:pb-2"
-                : "mr-5  text-white cursor-pointer md:text-xl md:pb-2"
+                ? "mr-5 border-b-2 border-darkOrange text-white rounded-b-sm z-20  md:text-xl md:pb-2"
+                : "mr-5  text-white  md:text-xl md:pb-2"
             }
             onClick={() => {
               setTextUnderline("Overview");
@@ -189,18 +197,7 @@ function Profile({width}) {
           >
             Overview
           </h4>
-          {/* <h4
-            className={
-              textUnderline === "Tournaments"
-                ? "border-b-2 border-darkOrange text-white rounded-b-sm z-20 cursor-pointer md:text-xl md:pb-2"
-                : "text-white cursor-pointer md:text-xl md:pb-2"
-            }
-            onClick={() => {
-              setTextUnderline("Tournaments");
-            }}
-          >
-            Tournaments
-          </h4> */}
+
         </div>
         <div className="h-0.5 -mt-0.5 mx-8 bg-scrollCol rounded-l-full rounded-r-full"></div>
         <h2 className="text-white text-2xl font-semibold ml-10 mt-7">
@@ -211,61 +208,25 @@ function Profile({width}) {
         </p>
         <div className="flex mx-8 mt-7">
           {/* my map starting of game title */}
-          {gamedata.map((ent) => {
+          {gamedata && gamedata.map((ent) => {
             return (
               <h4
                 className={
-                  textUnderlined === ent.game_title
+                  textUnderlined === ent.title
                     ? "mr-5 border-b-2 border-neonGreen text-white rounded-b-sm md:pb-2 z-20 text-sm font-thin md:text-xl transition-colors ease-in duration-300 cursor-pointer"
                     : "mr-5  text-white text-sm font-thin md:text-xl md:pb-2 cursor-pointer"
                 }
                 onClick={() => {
-                  setTextUnderlined(ent.game_title);
+                  setTextUnderlined(ent.title);
                   changestate(ent);
                 }}
               >
-                {ent.game_title}
+                {ent.title}
               </h4>
             );
           })
           }
-          {/* my map ending of game title */}
-          {/* <h4
-            className={
-              textUnderlined === "Fortnite"
-                ? "mr-5 border-b-2 border-neonGreen text-white rounded-b-sm md:pb-2 z-20 text-sm font-thin md:text-xl transition-colors ease-in duration-300 cursor-pointer"
-                : "mr-5  text-white text-sm font-thin md:text-xl md:pb-2 cursor-pointer"
-            }
-            onClick={() => {
-              setTextUnderlined("Fortnite");
-            }}
-          >
-            Fortnite
-          </h4>
-          <h4
-            className={
-              textUnderlined === "COD"
-                ? "mr-5 border-b-2 border-neonGreen text-white rounded-b-sm z-20 md:pb-2 text-sm font-thin transition-colors md:text-xl ease-in duration-300 cursor-pointer"
-                : "mr-5  text-white text-sm font-thin md:text-xl md:pb-2 cursor-pointer"
-            }
-            onClick={() => {
-              setTextUnderlined("COD");
-            }}
-          >
-            Call Of Duty: Warzone
-          </h4>
-          <h4
-            className={
-              textUnderlined === "Tom"
-                ? "border-b-2 border-neonGreen text-white md:text-xl md:pb-2 rounded-b-sm z-20 text-sm font-thin pr-3 transition-colors ease-in duration-300 cursor-pointer"
-                : "text-white text-sm font-thin md:text-xl md:pb-2 cursor-pointer"
-            }
-            onClick={() => {
-              setTextUnderlined("Tom");
-            }}
-          >
-            Tom Clancy
-          </h4> */}
+          
         </div>
 
         <div className="h-0.5 -mt-0.5 mx-8 bg-scrollCol rounded-l-full rounded-r-full"></div>
@@ -274,7 +235,7 @@ function Profile({width}) {
 
           <div className="mx-8 flex mt-3 pb-10 md:pb-0 md:bg-darkGray md:mt-10">
             <img
-              src={gamestate.game_image}
+              src={img}
               alt=""
               style={{ flex: "0.25" }}
               className="h-16 w-24 md:h-52 md:w-52 mr-2 lg:h-52 lg:w-44 xl:h-80 xl:w-48"
@@ -308,45 +269,6 @@ function Profile({width}) {
               </div>
             </div>
           </div>
-
-          {/* end of my state */}
-          {/* <div className="mx-8 flex mt-3 pb-10 md:pb-0 md:bg-darkGray md:mt-10">
-            <img
-              src=''
-              alt=""
-              height={40}
-              width={40}
-              style={{ flex: "0.20" }}
-            />
-
-            <div
-              className="flex flex-col md:justify-center"
-              style={{ flex: "0.75" }}
-            >
-              <div className="flex justify-evenly -mr-10">
-                <h1 className="text-2xl font-semibold text-darkOrange md:text-6xl">
-                  05
-                </h1>
-                <h1 className="text-2xl font-semibold text-darkOrange md:text-6xl">
-                  05
-                </h1>
-                <h1 className="text-2xl font-semibold text-darkOrange md:text-6xl">
-                  05
-                </h1>
-              </div>
-              <div className="flex justify-evenly -mr-5">
-                <p className="font-thin text-white text-smallTen md:text-lg">
-                  Tournaments Entered
-                </p>
-                <p className="font-thin text-white text-smallTen md:text-lg md:-ml-9">
-                  Games Played
-                </p>
-                <p className="font-thin text-white text-smallTen md:text-lg">
-                  Total Earnings
-                </p>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>
