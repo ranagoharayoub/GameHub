@@ -2,9 +2,8 @@ import React from 'react'
 import bracketIcon from "../../bg-icons/profile-tournament.webp";
 
 function GroupBrackets({userArray, isStarted, firstCall, round, lastCall}) {
-  if (isStarted && userArray.length>0) {
-    console.log(isStarted,userArray)
-  }
+
+
 
     return (
                     <div class="tournament-details-tab-bracket-group">
@@ -20,7 +19,12 @@ function GroupBrackets({userArray, isStarted, firstCall, round, lastCall}) {
                         <img src={bracketIcon} alt='brack'/>
                         <div class="bracket-user-main">
                           <div class="tournament-details-tab-bracket-user">
-                            <div class="tournament-details-team">{userArray.length>0? userArray[0].username: null}</div>
+                          {
+                            isStarted && userArray.length>0?
+                            <div class="tournament-details-team">{userArray[0].username}</div>
+                            :
+                            <div class="tournament-details-team">{null}</div>
+                          }
                           </div>
                           <span class="tournament-match-holder"></span>
                         </div>
@@ -30,7 +34,13 @@ function GroupBrackets({userArray, isStarted, firstCall, round, lastCall}) {
                         <img src={bracketIcon} alt='brack'/>
                         <div class="bracket-user-main">
                           <div class="tournament-details-tab-bracket-user">
-                            <div class="tournament-details-team">{userArray.length>0? userArray[1].username: null}</div>
+                          {
+                            isStarted && userArray.length>0?
+                            <div class="tournament-details-team">{userArray[1].username}</div>
+                            :
+                            <div class="tournament-details-team">{null}</div>
+                          }
+                            {/* <div class="tournament-details-team">{userArray? userArray[1].username: null}</div> */}
                           </div>
                         </div>
                       </div>

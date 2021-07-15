@@ -55,7 +55,7 @@ const ticketHandler = async(param)=>{
 console.log(data)
 
   await axios
-        .post("http://gamehubx.com/api/v1/ticket/", data, {
+        .post("https://gamehubx.com/api/v1/ticket/", data, {
           headers: headers
         })
         .then((res) => {console.log(res); setmodaltext('ticket submitted'); setShow(true)})

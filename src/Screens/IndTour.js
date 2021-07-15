@@ -295,6 +295,11 @@ const enrollHandler = async() =>{
                     team_size={getsec(data.start_on)>0? data.max_team: enrolled.length}
                     isStarted={getsec(data.start_on)>0? false: true} />
                     :
+                    // <Bracket 
+                    // gameId={number(gameId)} 
+                    // enrollUser={null} 
+                    // team_size={getsec(data.start_on)>0? data.max_team: enrolled.length}
+                    // isStarted={getsec(data.start_on)>0? false: true} />
                     null
                   }
                   

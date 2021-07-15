@@ -16,7 +16,7 @@ export default function Bracket({ team_size, gameId, enrollUser, isStarted }) {
   useEffect(() => {
     const callAPI = async() =>{
       await axios.get("https://gamehubx.com/api/v1/tournament/"+gameId+"/bracket/")
-      .then((res)=> {console.log(res.data.bracket); setroundName(res.data.bracket)})
+      .then((res)=> {console.log(res.data.bracket); setroundName(res.data.bracket);})
       .catch((res)=> console.log(res))
     }
 
