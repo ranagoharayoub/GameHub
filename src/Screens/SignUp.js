@@ -345,15 +345,15 @@ export default class SignUp extends Component {
               onChange={(e) => this.handleChange(e)}
             >
               <option value="">Your preferred time zone </option>
-              <option value="-12:00">(GMT -12:00) Eniwetok, Kwajalein</option>
-              <option value="-11:00">(GMT -11:00) Midway Island, Samoa</option>
-              <option value="-10:00">(GMT -10:00) Hawaii</option>
-              <option value="-09:50">(GMT -9:30) Taiohae</option>
-              <option value="-09:00">(GMT -9:00) Alaska</option>
               <option value="-08:00">(GMT -8:00) Pacific Time (US &amp; Canada)</option>
               <option value="-07:00">(GMT -7:00) Mountain Time (US &amp; Canada)</option>
               <option value="-06:00">(GMT -6:00) Central Time (US &amp; Canada), Mexico City</option>
               <option value="-05:00">(GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima</option>
+              <option value="-09:00">(GMT -9:00) Alaska</option>
+              <option value="-10:00">(GMT -10:00) Hawaii</option>
+              <option value="-09:50">(GMT -9:30) Taiohae</option>
+              <option value="-12:00">(GMT -12:00) Eniwetok, Kwajalein</option>
+              <option value="-11:00">(GMT -11:00) Midway Island, Samoa</option>
               <option value="-04:50">(GMT -4:30) Caracas</option>
               <option value="-04:00">(GMT -4:00) Atlantic Time (Canada), Caracas, La Paz</option>
               <option value="-03:50">(GMT -3:30) Newfoundland</option>
@@ -385,17 +385,6 @@ export default class SignUp extends Component {
               <option value="+12:75">(GMT +12:45) Chatham Islands</option>
               <option value="+13:00">(GMT +13:00) Apia, Nukualofa</option>
               <option value="+14:00">(GMT +14:00) Line Islands, Tokelau</option>
-              {/* <option value="-10">Pacific/Honolulu( GMT-10)</option>
-              <option value="-9">America/Anchorage (GMT-9)</option>
-              <option value="-8">America/Los_Angeles (GMT-8)</option>
-              <option value="-7">America/Phoenix (GMT-7)</option>
-              <option value="-6">America/Chicago (GMT-6)</option>
-              <option value="-5">America/New_York (GMT-5)</option>
-              <option value="+5">Africa/Abidjan (GMT+5) </option>
-              <option value="0">Africa/Bamako (GMT0) </option>
-              <option value="+2">Africa/Banjul (GMT+2) </option>
-              <option value="+8">Africa/Bissau (GMT+8) </option>
-              <option value="-8">Africa/Casablanca (GMT-8) </option> */}
             </select>
             <label className="phone">Date of Birth*</label>
             <div className="dob-sec">
@@ -608,7 +597,7 @@ export default class SignUp extends Component {
               className="input-fields"
               // onClick={(e) => this.handlesubmit(e)}
               style={{
-                marginTop: "50px",
+                marginTop: "0px",
                 backgroundColor: "#F69204",
                 fontFamily: "Arial",
                 fontSize: "large",
