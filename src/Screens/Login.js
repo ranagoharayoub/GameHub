@@ -98,8 +98,8 @@ class Login extends Component {
 
     console.log(response);
     console.log(this.props.width);
-    console.log("access token", typeof(response.accessToken));
-    if (typeof(response.accessToken) !== "undefined") {
+    console.log("access token", response.accessToken);
+    if (typeof(response.accessToken) === "undefined") {
       
       console.log("in conditions");
       await axios({
@@ -115,15 +115,19 @@ class Login extends Component {
           console.log(res.data.user_detail);
             this.props.history.push({
                 pathname: "/fbglogin",
-                state: { data: response.data.user_detail }
+                state: { data: res.data.user_detail }
         })
       }
         )
         .catch((error) => {
           console.log(error.response);
           console.log('could not login');
-          this.setState({ modaltext: error.response.data.non_field_errors[0]});
-          this.setState({ show: true });
+          this.props.history.push({
+            pathname: "/fbglogin",
+            state: { data: error.response.data }
+    })
+          // this.setState({ modaltext: error.response.data.non_field_errors[0]});
+          // this.setState({ show: true });
         });
     }
   };
