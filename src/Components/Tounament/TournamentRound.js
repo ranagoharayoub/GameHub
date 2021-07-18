@@ -44,7 +44,12 @@ function TournamentRound({ size, odd, round, enrollUser, isStarted, displayName}
             <img src={bracketIcon} alt="brack" />
             <div class="bracket-user-main">
               <div class="tournament-details-tab-bracket-user">
-                <div class="tournament-details-team"></div>
+              {
+              displayName && enrollUser.length>0?
+              <div class="tournament-details-team">{enrollUser[0].username}</div>
+              :
+              null
+            }
               </div>
             </div>
           </div>

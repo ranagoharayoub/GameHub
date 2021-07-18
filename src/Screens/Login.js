@@ -99,7 +99,7 @@ class Login extends Component {
     console.log(response);
     console.log(this.props.width);
     console.log("access token", response.accessToken);
-    if (typeof(response.accessToken) === "undefined") {
+    if (typeof(response.accessToken) !== "undefined") {
       
       console.log("in conditions");
       await axios({
