@@ -147,10 +147,10 @@ export default function Matches({ width }) {
                               <TournamentCard width={width} data={data}></TournamentCard>
                                    <div style={{backgroundColor:'#272727', marginBottom:'50px', paddingTop:'10px'}} class="round">
                                        <button class="round-btn desk">
-                                         {data.current_round? data.current_round : "Round"}
+                                         {data.current_round? data.current_round : "Updating"}
                                        </button>
                                        <button class="round-btn mob">
-                                         round 1
+                                       Updating
                                        </button>
                                        <form >
                                          <div class="input-item">
