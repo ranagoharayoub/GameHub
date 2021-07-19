@@ -23,7 +23,7 @@ function AllTournaments({ width }) {
       });
     }
     callAPI()
-  }, [tourdata])
+  }, [])
 
   return (
     <div className="all-tourn">

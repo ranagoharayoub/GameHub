@@ -31,6 +31,7 @@ function Navbar() {
                 <Link className='link-cont' style={{textDecoration:'none', color:'inherit'}} to='/'>HOME</Link>
                 <Link className='link-cont' style={{textDecoration:'none', color:'inherit'}} to='/games'>GAMES</Link>
                 <Link className='link-cont' style={{textDecoration:'none', color:'inherit'}} to='/tournament'>TOURNAMENT</Link>
+                <Link className='link-cont' style={{textDecoration:'none', color:'inherit', textTransform:'uppercase'}} to='/champs'>Champions</Link>
             </div>
             <div className='title'>
             <Link to='/'><img src='/icons/gamehub.png' height='10px' alt='search'></img></Link> 

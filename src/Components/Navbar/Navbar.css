@@ -11,12 +11,12 @@
 
 .navbar .Links{
     box-sizing: border-box;
-    padding-left: 20px;
+    padding-left: 0px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     height: 100%;
-    width: 30%;
+    width: 40%;
     /* background-color: yellow; */
     /* border-bottom: 5px solid #f69204; */
     font-size:18px ;
@@ -53,7 +53,7 @@
 }
 
 .navbar .icons-div{
-    width: 30%;
+    width: 40%;
     height: 100%;
     display: flex;
     justify-content: flex-end;
@@ -63,7 +63,7 @@
 
 
 .icons-div .icons-cont{
-    width: 60%;
+    width: 40%;
     display: flex;
     align-items: center;
     justify-content: space-around;

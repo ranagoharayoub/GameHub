@@ -9,9 +9,11 @@ import {ContextAPI} from '../../Context/Context'
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 import {AddAPhotoOutlined} from "@material-ui/icons";
-
+import { Button, Modal} from "react-bootstrap";
 
 function Profile({width}) {
+  const [show, setShow] = useState(false);
+  const [modaltext, setmodaltext] = useState("");
   const [textUnderline, setTextUnderline] = useState("Overview");
   const [textUnderlined, setTextUnderlined] = useState("Fortnite");
   const [data, setdata] = useState([]);
@@ -61,7 +63,7 @@ function Profile({width}) {
         });
     }
     callAPI()
-    console.log('profilepic',profilepic)
+
 
     const callAPI2 = async () =>{
       axios.get("https://gamehubx.com/api/v1/tournament/?user="+params.id)
@@ -115,9 +117,13 @@ function Profile({width}) {
           const fd = new FormData();
           fd.append("image", e.target.files[0], e.target.files[0].name);
 
+          setShow(true);
+          setmodaltext("Uploading Image")
+
           await axios.patch("https://gamehubx.com/api/v1/user-profile/"+id+"/", fd, {
             headers: headers,
-          }).then(res=> {console.log(res); setprofilepic(true)}).catch(Error => console.log(Error))
+          }).then(res=> {console.log(res); setprofilepic(true); setmodaltext("Successfully Image Uploaded")})
+            .catch(Error => {console.log(Error); setmodaltext("Image could not uploaded")})
           } else {
             console.log('pic not selected')
           }
@@ -127,7 +133,15 @@ function Profile({width}) {
 
   return (
     <div style={width<'800' ?{overflowX:'hidden'}:null} className="flex flex-col bg-darkGray w-full md:w-full">
-      
+       <Modal  show={show} onHide={()=> setShow(false)}>
+        <Modal.Header style={{ backgroundColor: "#4A4747"}}>
+          <Modal.Title style={{ backgroundColor: "#4A4747"}}></Modal.Title>
+        </Modal.Header>
+        <Modal.Body style={{ backgroundColor: "#4A4747"}}>{modaltext}</Modal.Body>
+        <Modal.Footer style={{ backgroundColor: "#4A4747"}}>
+          <Button variant="secondary" onClick={()=> setShow(false)} >Close</Button>
+        </Modal.Footer>
+      </Modal>
       <div className="flex justify-center md:justify-start md:w-full">
         <img
           src={data.image? data.image : 'icons/blank-profile-picture.webp'}

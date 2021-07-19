@@ -97,7 +97,7 @@ class Login extends Component {
   responseGoogle = async (response) => {
 
     console.log(response);
-    console.log(this.props.width);
+    
     console.log("access token", response.accessToken);
     if (typeof(response.accessToken) !== "undefined") {
       
@@ -204,8 +204,8 @@ class Login extends Component {
             clientId={
               "431419828404-n5tfmqqqlkohd0luqiu8rsqrs657fshk.apps.googleusercontent.com"
             }
-            onSuccess={(response)=>this.responseGoogle(response)}
-            onFailure={(response)=>this.responseGoogle(response)}
+            onSuccess={this.responseGoogle}
+            onFailure={this.responseGoogle}
             className="social-login-google"
             style={{
               padding: "0px 0px",
