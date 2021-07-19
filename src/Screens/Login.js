@@ -122,12 +122,8 @@ class Login extends Component {
         .catch((error) => {
           console.log(error.response);
           console.log('could not login');
-          this.props.history.push({
-            pathname: "/fbglogin",
-            state: { data: error.response.data }
-    })
-          // this.setState({ modaltext: error.response.data.non_field_errors[0]});
-          // this.setState({ show: true });
+          this.setState({ modaltext: error.response.data.non_field_errors[0]});
+          this.setState({ show: true });
         });
     }
   };
