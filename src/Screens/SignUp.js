@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect, withRouter } from "react-router-dom";
 import "./SignUp.css";
 import "./Models.css";
 import axios from "axios";
 import { Button, Modal } from "react-bootstrap";
 import ReCAPTCHA from "react-google-recaptcha";
 
-export default class SignUp extends Component {
+class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,8 +30,30 @@ export default class SignUp extends Component {
       show: false,
       modaltext: "",
       recaptcha: "",
+      emailstate: false,
     };
   }
+
+
+  componentDidMount(){
+    console.log("this is the social signup page")
+    console.log("the data in fbgsignup page",this.props.history.location.state);
+    // var dataprops = this.props.state
+    var dataprops = this.props.history.location.state? this.props.history.location.state.data : null
+    if (this.props.history.location.state) {
+      if( dataprops.email !== null){
+        this.setState({ email: dataprops.email, emailstate:true  });
+      }
+      if( dataprops.username !== null){
+        this.setState({ username: dataprops.username });
+      }
+      if( dataprops.timezone !== null){
+        this.setState({ timezone: dataprops.timezone });
+      }
+      
+    }
+
+}
 
   handleChange(e) {
     // var ele = e.target.name;
@@ -210,6 +232,7 @@ export default class SignUp extends Component {
               onChange={(e) => this.handleChange(e)}
               type="email"
               placeholder="Email Address*"
+              disabled={this.state.emailstate}
             ></input>
             <input
               id="inputcolor"
@@ -613,3 +636,5 @@ export default class SignUp extends Component {
     );
   }
 }
+
+export default withRouter(SignUp)

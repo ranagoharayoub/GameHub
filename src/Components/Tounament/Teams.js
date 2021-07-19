@@ -1,7 +1,8 @@
 import React, {useState } from "react";
 import { Button, Card, Accordion } from "react-bootstrap";
-import teamImg from "../../bg/team-1.png";
+// import teamImg from "../../bg/team-1.png";
 // import teamImg1 from "../../bg/profile.webp";
+import {Avatar} from "@material-ui/core"
 import teamImg2 from "../../bg/download.png";
 /*eslint-disable*/
 export default function Teams({data}) {
@@ -26,7 +27,8 @@ export default function Teams({data}) {
             <Card.Header>
               <Accordion.Toggle as={Button} variant="link" eventKey="0">
                 <div class="team-person-image-box">
-                  <img src={teamImg} />
+                  {/* <img src={teamImg} /> */}
+                  <Avatar className='avatar' src="Team"></Avatar>
                 </div>
                 TeamShmackeddd
                 <p>Show roster</p>
@@ -40,7 +42,8 @@ export default function Teams({data}) {
                 <div class="expanded-row">
                   <div class="expanded-row-inner">
                     <div class="roster-user">
-                      <img src={data.image} />
+                      {/* <img src={data.image} /> */}
+                      <Avatar alt={data.username} src={data.image}></Avatar>
                     </div>
                     <div class="member-name-gamertag">
                       <div class="member-name">

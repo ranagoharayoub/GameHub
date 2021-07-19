@@ -26,7 +26,7 @@
 }
 .champion-list .champion-cell:first-child {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .champion-list .champion-cell {
   font-size: 18px;
@@ -49,10 +49,10 @@
 }
 .champ-text {
   text-align: left;
-  margin-left: 20px;
+  margin-left: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .team-row-text {
   display: flex;

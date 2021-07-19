@@ -36,7 +36,7 @@ export default function Champions() {
             <div class="champion-list">
             <div class="champion-cell">
               <div class="champion-logo">
-                <img src={img} alt='avatar'/>
+                <img src={data.user_image? data.user_image: img} alt='avatar'/>
               </div>
               <div class="champ-text">
                 <h4>{data.username}</h4>

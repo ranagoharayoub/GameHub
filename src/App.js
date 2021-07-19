@@ -74,7 +74,7 @@ function App() {
           <Route path="/indtour/:gameId"><IndTour width={width}/></Route>
           <Route path='/games'  ><AllGames width={width}></AllGames></Route>
           <Route path='/ticket'  ><Tickets></Tickets></Route>
-          <Route path='/signup'  ><SignUp width={width}></SignUp></Route>
+          <Route path='/signup'  ><SignUp history={history} width={width}></SignUp></Route>
           <Route path='/success'  ><AfterSignup></AfterSignup></Route>
           <Route path='/login'  ><Login width={width} history={history}></Login></Route>
           <Route path='/fbglogin'><FbGlogin history={history}></FbGlogin></Route>
