@@ -90,8 +90,37 @@ class Login extends Component {
     );
   }
 
-  responseFacebook = (response) => {
+  responseFacebook = async (response) => {
     console.log(response);
+
+    console.log("access token", response.accessToken);
+    if (typeof(response.accessToken) !== "undefined") {
+      
+      console.log("in conditions");
+      await axios({
+        method: "post",
+        url: "https://gamehubx.com/api/v1/login/facebook/",
+        headers: {},
+        data: {
+          access_token: response.accessToken,
+          code: "",
+        },
+      })
+        .then((res) => {
+          console.log(res);
+            this.props.history.push({
+                pathname: "/signup",
+                state: { data: res }
+        })
+      }
+        )
+        .catch((error) => {
+          console.log(error.response);
+          console.log('could not login');
+          this.setState({ modaltext: error.response.data.non_field_errors[0]});
+          this.setState({ show: true });
+        });
+    }
   };
 
   responseGoogle = async (response) => {
@@ -191,6 +220,7 @@ class Login extends Component {
             appId="298750325266295"
             autoLoad={false}
             callback={this.responseFacebook}
+            fields="name,email,picture"
             onClick={this.compclicked}
             render={(renderProps) => (
               <button className="social-login-fb" onClick={renderProps.onClick}>

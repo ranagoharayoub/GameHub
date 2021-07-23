@@ -477,25 +477,54 @@ body {
   content: "";
   display: block;
   width: 6%;
-  height: 85%;
+  /* height: 85%; */
   position: absolute;
   border-top: 2px solid #8aff80;
   top: 50%;
   left: 81.6%;
   border-right: 2px solid #8aff80;
 }
+
+
 .tournament-details-tab-bracket-column
   .tournament-details-tab-bracket-group:nth-of-type(even)::after {
   content: "";
   display: block;
   width: 6%;
-  height: 85%;
+  height: 113%;
   position: absolute;
   border-bottom: 2px solid #8aff80;
   bottom: 50%;
   left: 81.6%;
   border-right: 2px solid #8aff80;
 }
+
+.round-1-of-6:nth-child(2)
+  .tournament-details-tab-bracket-group:nth-of-type(even)::after {
+  height: 227%;
+}
+
+.round-1-of-6:nth-child(3)
+  .tournament-details-tab-bracket-group:nth-of-type(even)::after {
+  height: 455%;
+}
+
+.round-1-of-6:nth-child(4)
+  .tournament-details-tab-bracket-group:nth-of-type(even)::after {
+  height: 910%;
+}
+
+.round-1-of-6:nth-child(5)
+  .tournament-details-tab-bracket-group:nth-of-type(even)::after {
+  height: 1820%;
+}
+
+.round-1-of-6:nth-child(6)
+  .tournament-details-tab-bracket-group:nth-of-type(even)::after {
+  height: 3642%;
+}
+
+
 .tournament-details-tab-bracket .tournament-details-tab-bracket-user {
   width: 190px;
   height: 50px;
@@ -878,7 +907,7 @@ body {
   color: #303030;
 }
 .round-1-of-6:nth-child(6) .tournament-details-tab-bracket-group:before {
-  top: 30%;
+  top: 50%;
 }
 /* ===================================== Media Query 1350 ====================================== */
 @media only screen and (max-width: 1350px) {
