@@ -39,13 +39,13 @@
     bottom: 10%;
     right: 50%;
     transform: translate(50%, -50%);
-    padding: 10px 50px;
+    padding: 10px 60px;
     background-color: #f69204;
     outline: none;
     border: none;
     margin-top: 80px;
     cursor: pointer;
-    font-size: large;
+    font-size: 30px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
 }

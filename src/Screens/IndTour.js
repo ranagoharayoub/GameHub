@@ -176,7 +176,7 @@ const enrollHandler = async() =>{
               enrolled.map((id)=> id.user).includes(userid)?
               <div  className='enroll-now'>Already Enrolled</div>
               :
-              <div onClick={()=>enrollHandler()} className='enroll-now'>Enroll Now</div>
+              <div onClick={()=>enrollHandler()} className='enroll-now'>Enter Now</div>
               :
               null
               :

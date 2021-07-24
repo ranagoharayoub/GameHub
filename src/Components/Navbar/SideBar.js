@@ -102,11 +102,11 @@ function SideBar({ toggle, off }) {
         Sign out
       </div>
       <div className="lang">
-        <button>
+        <div className='lang-btn'>
           <img src="/icons/flag.png" alt="flag"></img>
           <div>English</div>
           <ArrowDropDown></ArrowDropDown>
-        </button>
+        </div>
       </div>
     </div>
   );

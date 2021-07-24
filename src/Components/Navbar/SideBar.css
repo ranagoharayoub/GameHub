@@ -120,7 +120,7 @@
 
 }
 
-.lang>button{
+.lang .lang-btn{
     
     display: flex;
     align-items: center;
