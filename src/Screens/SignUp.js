@@ -5,6 +5,8 @@ import "./Models.css";
 import axios from "axios";
 import { Button, Modal } from "react-bootstrap";
 import ReCAPTCHA from "react-google-recaptcha";
+import FacebookLogin from "react-facebook-login/dist/facebook-login-render-props";
+import GoogleLogin from "react-google-login";
 
 class SignUp extends Component {
   constructor(props) {
@@ -127,6 +129,37 @@ class SignUp extends Component {
     });
   };
 
+  responseGoogle = async (response) => {
+
+    console.log(response);
+    
+    console.log("access token", response.accessToken);
+    if (typeof(response.accessToken) !== "undefined") {
+      
+      console.log("in conditions");
+      await axios({
+        method: "post",
+        url: "https://gamehubx.com/api/v1/login/google/",
+        headers: {},
+        data: {
+          access_token: response.accessToken,
+          code: "",
+        },
+      })
+        .then((res) => {
+          console.log(res.data.user_detail);
+          this.setState({email :res.data.user_detail.email, username: res.data.user_detail.username})
+      }
+        )
+        .catch((error) => {
+          console.log(error.response);
+          console.log('could not login');
+          this.setState({ modaltext: error.response.data.non_field_errors[0]});
+          this.setState({ show: true });
+        });
+    }
+  };
+
   handlesubmit = async (e) => {
     e.preventDefault();
     console.log(this.state.pass, "submuit buton");
@@ -212,6 +245,41 @@ class SignUp extends Component {
               Sign in
             </Link>
           </div>
+          <FacebookLogin
+            appId="298750325266295"
+            autoLoad={false}
+            callback={this.responseFacebook}
+            fields="name,email,picture"
+            onClick={this.compclicked}
+            render={(renderProps) => (
+              <button className="social-login-fb" onClick={renderProps.onClick}>
+                <img src="/icons/fb.png" height="20px" alt="fb"></img>
+                <div className="title">Join with Facebook</div>
+              </button>
+            )}
+          />
+
+          <GoogleLogin
+            clientId={
+              "431419828404-n5tfmqqqlkohd0luqiu8rsqrs657fshk.apps.googleusercontent.com"
+            }
+            onSuccess={this.responseGoogle}
+            onFailure={this.responseGoogle}
+            className="social-login-google"
+            // style={{
+            //   padding: "0px 0px",
+            //   margin: "0px 0px",
+            //   backgroundColor: "black",
+            // }}
+            icon={false}
+          >
+            <button className=" content-center" >
+              <img src="/icons/google.png" height="20px" alt="fb" style={{paddingRight:'40px'}}></img>
+              <div className="title" style={{ paddingLeft: "0px", color:'black' }}>
+                Join with Google
+              </div>
+            </button>
+          </GoogleLogin>
           <form className="form-sect" onSubmit={(e) => this.handlesubmit(e)}>
             <input
               required

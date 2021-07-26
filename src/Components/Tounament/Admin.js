@@ -1,3 +1,4 @@
+import { Avatar } from "@material-ui/core";
 import React from "react";
 // import teamImg from "../../bg/team-1.png";
 /*eslint-disable*/
@@ -28,7 +29,8 @@ export default function Admin({data}) {
           <div class="staff-cell">
             <div class="staff-profile">
               <div class="team-person-image-box">
-                <img src={data.image} />
+                {/* <img src={data.image} /> */}
+                <Avatar className='avatar' alt={data.username} src={data.img}></Avatar>
               </div>
               <div class="team-person">
                 <h2>{data.username}</h2>

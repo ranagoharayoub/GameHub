@@ -68,7 +68,12 @@ export default function Matches({ width }) {
 
     axios.post(URL, data, {
       headers: headers
-    }).then((res) => {console.log(res); setmodaltext("Results Submitted Successfully"); setShow(true)})
+    }).then((res) => {console.log(res);
+       setmodaltext(userWon?"Thank you for submitting your result, you will be advanced to the next round. Please note that if you and your opponent both hit WIN, you will be asked to submit photo evidence of your win."
+       :
+       "Thank you for joining the tournament. Great playing and don’t get discouraged - your next win is right around the corner."
+       );
+      setShow(true)})
       .catch((error) => {console.log(error.response.data.status); setmodaltext(error.response.data.status); setShow(true)})
   }
 
