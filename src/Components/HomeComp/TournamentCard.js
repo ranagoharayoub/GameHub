@@ -137,7 +137,7 @@ function TournamentCard({ width, data }) {
         </div>
       </div>
       <div className="bottom">
-        <Link to={`/indtour/:${data.id}`} className="view-details">VIEW DETAILS</Link>
+        <Link to={`/tournament/:${data.id}`} className="view-details">VIEW DETAILS</Link>
         <img
           style={{ marginLeft: "20px" }}
           src="/icons/right-arrow .png"

@@ -40,7 +40,7 @@ function MobileMenu({menuOn, off}) {
                 <img src='/icons/home.png' height='20px' alt='icon'></img>
                 <div className='title'>Home</div>
             </Link>
-            <Link onClick={off} className='ico-title' to='/tournament'>
+            <Link onClick={off} className='ico-title' to='/alltournament'>
                 <img src='/icons/trophy.png' height='20px' alt='icon'></img>
                 <div className='title'>Tournaments</div>
             </Link>
@@ -106,7 +106,7 @@ function MobileMenu({menuOn, off}) {
                 <img src='/icons/home.png' height='20px' alt='icon'></img>
                 <div className='title'>Home</div>
             </div>
-            <Link onClick={off} className='ico-title' to='/tournament'>
+            <Link onClick={off} className='ico-title' to='/alltournament'>
                 <img src='/icons/trophy.png' height='20px' alt='icon'></img>
                 <div className='title'>Tournaments</div>
             </Link>

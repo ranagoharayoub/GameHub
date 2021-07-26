@@ -1,4 +1,6 @@
 import React from "react";
+import mymatches from '../../Images/mymatches.png'
+
 /*eslint-disable*/
 export default function Rules() {
   return (
@@ -6,14 +8,14 @@ export default function Rules() {
       {/* =================== Tournament Rules Tabs ===================== */}
       <div class="tab-content rules-content">
         {/* ============== Search Bar ============ */}
-        <div class="rules-search-bar">
+        {/* <div class="rules-search-bar">
           <i class="fas fa-search"></i>
           <input
             type="text"
             placeholder="Search Rules"
             class="rules-searchbar-input"
           />
-        </div>
+        </div> */}
         {/* ================== Accordion Tabs 1 ================ */}
         <div class="tournament-rules-tab-content">
           <div class="tournament-rules-content-inner">
@@ -30,7 +32,7 @@ export default function Rules() {
                     aria-expanded="false"
                     aria-controls="flush-collapseOne"
                   >
-                    PC Players (MUST READ)
+                    No Show & Forfeits
                   </button>
                 </h2>
                 <div
@@ -42,141 +44,22 @@ export default function Rules() {
                   <div class="accordion-body">
                     <div class="accordion-detail-content-text">
                       <p>
-                        <strong>PC Stream Requirements</strong>
+                      You or your opponent are officially considered a “no-show” if you are more than 10 MINUTES late to the start of your official match time. In addition to knowing the start time of the tournament when you sign up for it, you will also get a reminder sent to your email or phone before the tournament starts, so please be prepared. We recommend being ready, set up and in the game lobby 5 minutes prior to the start of your first match, in case any technical difficulties should happen.
                       </p>
                       <p>
-                        ALL PC players participating in a Black Ops Cold War CMG
-                        Match MUST STREAM with Past Broadcasts ENABLED so the
-                        VOD of the match is available.
+                      If your opposing team is not ready within the 10 minutes of the match start time, you must contact the tournament administrator via email or text to notify them.
                       </p>
                       <p>
-                        It is each team's responsibility to ensure that the
-                        opposing team’s PC players are streaming with past
-                        broadcasts enabled prior to the match starting. We will
-                        not issue forfeits or replays if your team fails to
-                        confirm this prior to the match starting. You can gather
-                        this information by requesting the stream links in the
-                        match chat or by viewing your opponents social media
-                        links under the roster section in the match details
-                        page.
+                      Once the administrator has been notified, they will then contact your opponent. Your opponent will be given 5 minutes to respond to the administrator and join the match.
                       </p>
                       <p>
-                        <strong>
-                          All streams are required to have Audio (Gameplay and
-                          Voice Communication - Voice changers are not allowed!)
-                          during matches. Failure to do this may result in a
-                          replay, cancel or forfeit.
-                        </strong>
-                      </p>
-                      <hr />
-                    </div>
-                    <div class="accordion-detail-content-text accordion-tab-text-2">
-                      <p>
-                        <strong>Enabling Past Broadcasts:</strong>
-                      </p>
-                      <p>
-                        For any assistance in enabling your past broadcasts on
-                        Twitch, you may refer to this article
-                        <a href="https://help.twitch.tv/s/article/video-on-demand">
-                          <span>
-                            https://help.twitch.tv/s/article/video-on-demand
-                          </span>
-                        </a>
-                      </p>
-                      <p>
-                        It is each team's responsibility to ensure that the
-                        opposing team’s PC players are streaming with past
-                        broadcasts enabled prior to the match starting. We will
-                        not issue forfeits or replays if your team fails to
-                        confirm this prior to the match starting. You can gather
-                        this information by requesting the stream links in the
-                        match chat or by viewing your opponents social media
-                        links under the roster section in the match details
-                        page.
-                      </p>
-                      <p>
-                        <strong>
-                          All streams are required to have Audio (Gameplay and
-                          Voice Communication - Voice changers are not allowed!)
-                          during matches. Failure to do this may result in a
-                          replay, cancel or forfeit.
-                        </strong>
-                      </p>
-                      <hr />
-                    </div>
-                    <div class="accordion-detail-content-text accordion-tab-text-2">
-                      <p>
-                        <strong>Cheating:</strong>
-                      </p>
-                      <p>
-                        Here at CMG we have a zero-tolerance policy for anyone
-                        who is cheating/hacking. If we find, in your stream or
-                        VOD, that you are using a 3rd party software/device to
-                        cheat/hack you will be permanently banned from the
-                        platform.
-                      </p>
-                      <p>
-                        Admins may require additional proof from any user who we
-                        may suspect is hacking. Failure to provide additional
-                        proof to an admin may result in a ban/forfeit on your
-                        match.
-                      </p>
-                      <p>
-                        For any questions regarding our PC Player Policies,
-                        please refer to this article{" "}
-                        <a href="https://www.checkmategaming.com/article/cmg-pc-transition-519.htm">
-                          <span>
-                            https://www.checkmategaming.com/article/cmg-pc-transition-519.htm
-                          </span>
-                        </a>
-                      </p>
-                      <hr />
-                    </div>
-                    <div class="accordion-detail-content-text accordion-tab-text-2">
-                      <p>
-                        <strong>Tournament Matches:</strong>
-                      </p>
-                      <p>
-                        1. If the opposing team cannot provide stream proof
-                        before the match start time you will need to treat it
-                        like a no-show. You can dispute the match and request an
-                        admin inside your match chat.
-                      </p>
-                      <p>
-                        2. Any matches played out in full will count regardless
-                        if it was streamed or not. It is each team's
-                        responsibility to ensure all PC players in the match are
-                        streaming with past broadcasts enabled prior to
-                        starting.
-                      </p>
-                      <p>
-                        3. If the match is started and you play out rounds
-                        without confirming the opposing teams PC players are
-                        streaming, those rounds will count.
-                      </p>
-                      <p>
-                        4. If any valid hacking claims are made, and proof is
-                        provided, an admin will have the ability to ensure the
-                        player(s) being accused is using ‘Display Capture’
-                        instead of ‘Game Capture’. An admin also has the ability
-                        to conduct a ‘Monitor Cam’ on the player(s) being
-                        accused of cheating. If this is not completed at the
-                        admin’s discretion a forfeit, replay or ban may be
-                        issued. 5. If you are required to provide an admin with
-                        a ‘Monitor Cam’, this can be done through Periscope or
-                        Twitch. New ‘alternate’ accounts can be created and
-                        linked to an admin separate from your match chat to
-                        ensure there is no ‘stream watching’. You may also turn
-                        a webcam on your Monitor to show on your Twitch Stream.
-                        If this is not completed within the time an admin gives
-                        you, a forfeit, replay, or ban may be issued.
+                      Failure to follow the time limit given by the administrator will result in a forfeiture and loss of the match. You will then automatically advance.
                       </p>
                     </div>
                   </div>
-                </div>
+                </div>  
               </div>
-              {/* ========= Tab item 1 End =========== */}
-              {/* ========= Tab item 2 =========== */}
+                {/* ========= Tab item 2 Start =========== */}
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwo">
                   <button
@@ -187,7 +70,7 @@ export default function Rules() {
                     aria-expanded="false"
                     aria-controls="flush-collapseTwo"
                   >
-                    No Show
+                    Showing Proof of Wins
                   </button>
                 </h2>
                 <div
@@ -197,37 +80,26 @@ export default function Rules() {
                   data-bs-parent="#accordionFlushExample"
                 >
                   <div class="accordion-body">
-                    <div class="accordion-detail-content-text tab2-text">
+                    <div class="accordion-detail-content-text">
                       <p>
-                        <strong>
-                          No Shows for Tournaments and Live Support Challenges
-                          will now exclusively be done through the CMG Chat on
-                          the Website or App - Click Here to read about it and
-                          install on your iOS or Android device
-                        </strong>
+                      After the end of your match, you will have to go to your <b>IN PROGRESS TOURNAMENTS</b> in your <b>MY MATCHES</b> section in your profile. You can that access here in your profile panel:
+                      </p>
+                      <img src={mymatches} class="img-fluid" alt='pic'></img>
+                      <p>
+                      You will truthfully report the result of your match in his section. If you won the match and you click WIN and your opponent clicks LOSE, then you will automatically advance to the next round and the bracket will reflect this.
                       </p>
                       <p>
-                        1. Each team has 15 Minutes from the scheduled match
-                        time to join/host their match. If the opposing team is
-                        not ready within the 15 minutes, you must click “no
-                        show” in your match chat and then click “request an
-                        administrator”.
+                      If you won, click WIN and your opponent also clicks WIN, you will both be required to submit photo/screenshot proof of your scoreboard. You have 5 minutes to submit this proof. In order to submit proof, go to the bottom of the website and click CREATE A TICKET, then enter your details/proof and press submit. 
                       </p>
                       <p>
-                        2. Once the administrator has been requested, the
-                        administrator will then contact your opponents. Your
-                        opponent will be given X amount of time to respond to
-                        the administrator and Join/Host. The additional amount
-                        of time is based on the administrator’s discretion.
+                      Do NOT exit your final score screen until AFTER you have advanced on the bracket. Once you both submit proof, the admin will check and advance forward the true winner.
                       </p>
                       <p>
-                        3. Failure to follow the time limit given by the
-                        administrator will result in a forfeiture of the
-                        map/match.
+                      If your opponent does not submit proof in this timeframe, you will be declared the winner & automatically advance to the next round.
                       </p>
                     </div>
                   </div>
-                </div>
+                </div>  
               </div>
               {/* ========= Tab item 2 End =========== */}
               {/* ========= Tab item  3 ========== */}
@@ -241,7 +113,7 @@ export default function Rules() {
                     aria-expanded="false"
                     aria-controls="flush-collapseThree"
                   >
-                    Submitting Proof
+                    Hosting
                   </button>
                 </h2>
                 <div
@@ -251,63 +123,10 @@ export default function Rules() {
                   data-bs-parent="#accordionFlushExample"
                 >
                   <div class="accordion-body">
-                    <div class="accordion-detail-content-text">
-                      <p>
-                        <strong>Tournament Matches - PC Players:</strong>
-                      </p>
-                      <div class="tournament-column">
-                        <div class="row">
-                          <div class="col-lg-2">
-                            <p>
-                              If the opposing team cannot provide stream proof
-                              before the match start time you will need to treat
-                              it like a no-show. You can dispute the match and
-                              request an admin inside your match chat.
-                            </p>
-                          </div>
-                          <div class="col-lg-2">
-                            <p>
-                              Any matches played out in full will count
-                              regardless if it was streamed or not. It is each
-                              team's responsibility to ensure all PC players in
-                              the match are streaming with past broadcasts
-                              enabled prior to starting.
-                            </p>
-                          </div>
-                          <div class="col-lg-2">
-                            <p>
-                              If the match is started and you play out rounds
-                              without confirming the opposing teams PC players
-                              are streaming, those rounds will count.
-                            </p>
-                          </div>
-                          <div class="col-lg-3">
-                            <p>
-                              If any valid hacking claims are made, and proof is
-                              provided, an admin will have the ability to ensure
-                              the player(s) being accused is using ‘Display
-                              Capture’ instead of ‘Game Capture’. An admin also
-                              has the ability to conduct a ‘Monitor Cam’ on the
-                              player(s) being accused of cheating. If this is
-                              not completed at the admin’s discretion a forfeit,
-                              replay or ban may be issued.
-                            </p>
-                          </div>
-                          <div class="col-lg-3">
-                            <p>
-                              If you are required to provide an admin with a
-                              ‘Monitor Cam’, this can be done through Periscope
-                              or Twitch. New ‘alternate’ accounts can be created
-                              and linked to an admin separate from your match
-                              chat to ensure there is no ‘stream watching’. You
-                              may also turn a webcam on your Monitor to show on
-                              your Twitch Stream. If this is not completed
-                              within the time an admin gives you, a forfeit,
-                              replay, or ban may be issued.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                    <div class="accordion-detail-content-text">                     
+                    <p>
+                    You will be chosen at random to become a host for each game in the tournament. Hosts are randomly chosen each round between you and your opponent. Your administrator will let you know if you are the host for the current round.
+                    </p>
                     </div>
                   </div>
                 </div>
@@ -324,7 +143,7 @@ export default function Rules() {
                     aria-expanded="false"
                     aria-controls="flush-collapseFour"
                   >
-                    Activision ID
+                    GameHub Support 
                   </button>
                 </h2>
                 <div
@@ -336,46 +155,13 @@ export default function Rules() {
                   <div class="accordion-body">
                     <div class="accordion-detail-content-text tab2-text tab4-text">
                       <p>
-                        Your Activision ID must match exactly how it is
-                        displayed on your Call of Duty profile.
+                      Your tournament will be assigned at least one admin to settle disputes, reach out to teams if they’re late, help answer questions and ensure the tournament is run smoothly and fairly.
                       </p>
                       <p>
-                        If a match is played to completion on incorrect
-                        Activision IDs, the outcome of the match will stand.
+                      You may contact your admin via phone or email throughout the tournament to ask any questions and help settle any potential disputes. You can view their contact info on the page to the right, under ADMINS. You are still required to submit proof through the ticket portal on the website in order to show proof and settle disputes.
                       </p>
                       <p>
-                        Your Activision ID must be correct. In the event that
-                        your gamer tag does not match your match details page,
-                        it is the admin's discretion to forfeit or force your
-                        team to play a man down. Please check to ensure it is
-                        correct.
-                      </p>
-                      <p>
-                        Your Activision ID can be found by going to your friend
-                        list and clicking the right thumbstick.
-                        <span>
-                          We need the "Activision ID" including the "#1234" if
-                          they are present, some players do not have these
-                          numbers and so they are not necessary.
-                        </span>
-                      </p>
-                      <p>
-                        Your Activision ID should only include the English
-                        alphabet, numbers and characters. Special characters
-                        such as emojis, faces and other languages are not
-                        permitted as they cannot be accessed on the consoles
-                        US/EU keyboard layouts. If you have any special
-                        characters, and are not adding your opponent before the
-                        no-show time, you may be forfeited at the admin's
-                        discretion.
-                      </p>
-                      <p>
-                        <strong>
-                          CMG Reserves the right of our administrators to
-                          approve of a gamertag in rare instances. This can only
-                          be done via live support and the opponents will be
-                          notified.
-                        </strong>
+                      You may contact <a style={{color: 'lightblue'}} href='mailto:support@gamehubx.com'>support@gamehubx.com</a> at any time as well with questions or help.
                       </p>
                     </div>
                   </div>
@@ -393,7 +179,7 @@ export default function Rules() {
                     aria-expanded="false"
                     aria-controls="flush-collapseFive"
                   >
-                    Recent Changes
+                    Prize Winnings Policy
                   </button>
                 </h2>
                 <div
@@ -405,46 +191,31 @@ export default function Rules() {
                   <div class="accordion-body">
                     <div class="accordion-detail-content-text">
                       <p>
-                        <strong>February 9th 2021</strong>
+                      If you are in a paid tournament and win a cash prize by placing in the Top 3 spots, you are eligible to withdraw your winnings. 
                       </p>
-                      <div class="tournament-column">
-                        <p>
-                          Items which are restricted in the CDL Search and
-                          Destroy in-game rules are no longer allowed for use in
-                          the CMG Search and Destroy ruleset
-                        </p>
-                      </div>
                     </div>
                     <div class="accordion-detail-content-text">
-                      <p>
-                        <strong>January 28th 2021 at 5am EST</strong>
-                      </p>
                       <div class="tournament-column">
-                        <p>Snipers are restricted for Search and Destroy.</p>
-                      </div>
-                    </div>
-                    <div class="accordion-detail-content-text">
-                      <p>
-                        <strong>December 15th 2020 at 2:00am EST</strong>
-                      </p>
-                      <div class="tournament-column">
-                        <p>
+                        {/* <p>
                           Miami removed for CDL Search and Destroy 1v1/2v2
                           Tournaments, XP, and Cash Matches Raid added for CDL
                           Search and Destroy Tournaments, XP, and Cash Matches
-                        </p>
+                        </p> */}
                         <div class="short-text">
                           <p>
-                            The following items are restricted for CDL Search
-                            and Destroy, CDL Hardpoint, and CDL Control;
+                          Your winnings will be deposited to your account and you will be able to request a transfer. You can request a payout in the following 3 ways:
                           </p>
-                          <p>Molotovs</p>
-                          <p>VisionTech 2x</p>
-                          <p>SUSAT Multizoom</p>
-                          <p>Axial Arms 3x</p>
-                          <p>Royal and Kross 4x</p>
+                          <p>1.	Wire transfer to your bank account. You will be able to securely submit your bank account number and routing number, and we will initiate a wire transfer. This should take 1-3 business days depending on your financial institution.</p>
+                          <p>2.	Venmo. You can submit your Venmo username and we will send your payment within 1 business day.</p>
+                          <p>3.	Cash App. You can submit your Cash App username and we will send your payment within 1 business day.</p>
                         </div>
                       </div>
+                      <p>
+                      Please be aware if you submit an incorrect name or misspell your Venmo or Cash App username, we will not be able to recover the funds sent to a mistaken account. This is your responsibility to provide the exact correct username. 
+                      </p>
+                      <p>
+                      The minimum amount of funds eligible to be withdrawn is $10. Please contact us with any questions prior or post a withdrawal by creating a ticket or emailing us <a style={{color: "lightblue"}} href="mailto:support@gamehubx.com"> support@gamehubx.com</a> .
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -454,800 +225,6 @@ export default function Rules() {
           </div>
         </div>
         {/* ================== Accordion Tabs 1 End ================ */}
-
-        {/* ================== Accordion Tabs 2 ================ */}
-        <div class="tournament-rules-tab-content accordiontabs-2">
-          <div class="tournament-rules-content-inner">
-            <h2>CMG SEARCH AND DESTROY RULES</h2>
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-              {/* ========= Tab item 1 =========== */}
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingSix">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseSix"
-                    aria-expanded="false"
-                    aria-controls="flush-collapseSix"
-                  >
-                    PC Players (MUST READ)
-                  </button>
-                </h2>
-                <div
-                  id="flush-collapseSix"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="flush-headingSix"
-                  data-bs-parent="#accordionFlushExample"
-                >
-                  <div class="accordion-body">
-                    <div class="accordion-detail-content-text">
-                      <p>
-                        <strong>PC Stream Requirements</strong>
-                      </p>
-                      <p>
-                        ALL PC players participating in a Black Ops Cold War CMG
-                        Match MUST STREAM with Past Broadcasts ENABLED so the
-                        VOD of the match is available.
-                      </p>
-                      <p>
-                        It is each team's responsibility to ensure that the
-                        opposing team’s PC players are streaming with past
-                        broadcasts enabled prior to the match starting. We will
-                        not issue forfeits or replays if your team fails to
-                        confirm this prior to the match starting. You can gather
-                        this information by requesting the stream links in the
-                        match chat or by viewing your opponents social media
-                        links under the roster section in the match details
-                        page.
-                      </p>
-                      <p>
-                        <strong>
-                          All streams are required to have Audio (Gameplay and
-                          Voice Communication - Voice changers are not allowed!)
-                          during matches. Failure to do this may result in a
-                          replay, cancel or forfeit.
-                        </strong>
-                      </p>
-                      <hr />
-                    </div>
-                    <div class="accordion-detail-content-text accordion-tab-text-2">
-                      <p>
-                        <strong>Enabling Past Broadcasts:</strong>
-                      </p>
-                      <p>
-                        For any assistance in enabling your past broadcasts on
-                        Twitch, you may refer to this article
-                        <a href="https://help.twitch.tv/s/article/video-on-demand">
-                          <span>
-                            https://help.twitch.tv/s/article/video-on-demand
-                          </span>
-                        </a>
-                      </p>
-                      <p>
-                        It is each team's responsibility to ensure that the
-                        opposing team’s PC players are streaming with past
-                        broadcasts enabled prior to the match starting. We will
-                        not issue forfeits or replays if your team fails to
-                        confirm this prior to the match starting. You can gather
-                        this information by requesting the stream links in the
-                        match chat or by viewing your opponents social media
-                        links under the roster section in the match details
-                        page.
-                      </p>
-                      <p>
-                        <strong>
-                          All streams are required to have Audio (Gameplay and
-                          Voice Communication - Voice changers are not allowed!)
-                          during matches. Failure to do this may result in a
-                          replay, cancel or forfeit.
-                        </strong>
-                      </p>
-                      <hr />
-                    </div>
-                    <div class="accordion-detail-content-text accordion-tab-text-2">
-                      <p>
-                        <strong>Cheating:</strong>
-                      </p>
-                      <p>
-                        Here at CMG we have a zero-tolerance policy for anyone
-                        who is cheating/hacking. If we find, in your stream or
-                        VOD, that you are using a 3rd party software/device to
-                        cheat/hack you will be permanently banned from the
-                        platform.
-                      </p>
-                      <p>
-                        Admins may require additional proof from any user who we
-                        may suspect is hacking. Failure to provide additional
-                        proof to an admin may result in a ban/forfeit on your
-                        match.
-                      </p>
-                      <p>
-                        For any questions regarding our PC Player Policies,
-                        please refer to this article{" "}
-                        <a href="https://www.checkmategaming.com/article/cmg-pc-transition-519.htm">
-                          <span>
-                            https://www.checkmategaming.com/article/cmg-pc-transition-519.htm
-                          </span>
-                        </a>
-                      </p>
-                      <hr />
-                    </div>
-                    <div class="accordion-detail-content-text accordion-tab-text-2">
-                      <p>
-                        <strong>Tournament Matches:</strong>
-                      </p>
-                      <p>
-                        1. If the opposing team cannot provide stream proof
-                        before the match start time you will need to treat it
-                        like a no-show. You can dispute the match and request an
-                        admin inside your match chat.
-                      </p>
-                      <p>
-                        2. Any matches played out in full will count regardless
-                        if it was streamed or not. It is each team's
-                        responsibility to ensure all PC players in the match are
-                        streaming with past broadcasts enabled prior to
-                        starting.
-                      </p>
-                      <p>
-                        3. If the match is started and you play out rounds
-                        without confirming the opposing teams PC players are
-                        streaming, those rounds will count.
-                      </p>
-                      <p>
-                        4. If any valid hacking claims are made, and proof is
-                        provided, an admin will have the ability to ensure the
-                        player(s) being accused is using ‘Display Capture’
-                        instead of ‘Game Capture’. An admin also has the ability
-                        to conduct a ‘Monitor Cam’ on the player(s) being
-                        accused of cheating. If this is not completed at the
-                        admin’s discretion a forfeit, replay or ban may be
-                        issued. 5. If you are required to provide an admin with
-                        a ‘Monitor Cam’, this can be done through Periscope or
-                        Twitch. New ‘alternate’ accounts can be created and
-                        linked to an admin separate from your match chat to
-                        ensure there is no ‘stream watching’. You may also turn
-                        a webcam on your Monitor to show on your Twitch Stream.
-                        If this is not completed within the time an admin gives
-                        you, a forfeit, replay, or ban may be issued.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* ========= Tab item 1 End =========== */}
-              {/* ========= Tab item 2 =========== */}
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingSeven">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseSeven"
-                    aria-expanded="false"
-                    aria-controls="flush-collapseSeven"
-                  >
-                    No Show
-                  </button>
-                </h2>
-                <div
-                  id="flush-collapseSeven"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="flush-headingSeven"
-                  data-bs-parent="#accordionFlushExample"
-                >
-                  <div class="accordion-body">
-                    <div class="accordion-detail-content-text">
-                      <p>
-                        <strong>PC Stream Requirements</strong>
-                      </p>
-                      <p>
-                        ALL PC players participating in a Black Ops Cold War CMG
-                        Match MUST STREAM with Past Broadcasts ENABLED so the
-                        VOD of the match is available.
-                      </p>
-                      <p>
-                        It is each team's responsibility to ensure that the
-                        opposing team’s PC players are streaming with past
-                        broadcasts enabled prior to the match starting. We will
-                        not issue forfeits or replays if your team fails to
-                        confirm this prior to the match starting. You can gather
-                        this information by requesting the stream links in the
-                        match chat or by viewing your opponents social media
-                        links under the roster section in the match details
-                        page.
-                      </p>
-                      <p>
-                        <strong>
-                          All streams are required to have Audio (Gameplay and
-                          Voice Communication - Voice changers are not allowed!)
-                          during matches. Failure to do this may result in a
-                          replay, cancel or forfeit.
-                        </strong>
-                      </p>
-                      <hr />
-                    </div>
-                    <div class="accordion-detail-content-text accordion-tab-text-2">
-                      <p>
-                        <strong>Enabling Past Broadcasts:</strong>
-                      </p>
-                      <p>
-                        For any assistance in enabling your past broadcasts on
-                        Twitch, you may refer to this article
-                        <a href="https://help.twitch.tv/s/article/video-on-demand">
-                          <span>
-                            https://help.twitch.tv/s/article/video-on-demand
-                          </span>
-                        </a>
-                      </p>
-                      <p>
-                        It is each team's responsibility to ensure that the
-                        opposing team’s PC players are streaming with past
-                        broadcasts enabled prior to the match starting. We will
-                        not issue forfeits or replays if your team fails to
-                        confirm this prior to the match starting. You can gather
-                        this information by requesting the stream links in the
-                        match chat or by viewing your opponents social media
-                        links under the roster section in the match details
-                        page.
-                      </p>
-                      <p>
-                        <strong>
-                          All streams are required to have Audio (Gameplay and
-                          Voice Communication - Voice changers are not allowed!)
-                          during matches. Failure to do this may result in a
-                          replay, cancel or forfeit.
-                        </strong>
-                      </p>
-                      <hr />
-                    </div>
-                    <div class="accordion-detail-content-text accordion-tab-text-2">
-                      <p>
-                        <strong>Cheating:</strong>
-                      </p>
-                      <p>
-                        Here at CMG we have a zero-tolerance policy for anyone
-                        who is cheating/hacking. If we find, in your stream or
-                        VOD, that you are using a 3rd party software/device to
-                        cheat/hack you will be permanently banned from the
-                        platform.
-                      </p>
-                      <p>
-                        Admins may require additional proof from any user who we
-                        may suspect is hacking. Failure to provide additional
-                        proof to an admin may result in a ban/forfeit on your
-                        match.
-                      </p>
-                      <p>
-                        For any questions regarding our PC Player Policies,
-                        please refer to this article{" "}
-                        <a href="https://www.checkmategaming.com/article/cmg-pc-transition-519.htm">
-                          <span>
-                            https://www.checkmategaming.com/article/cmg-pc-transition-519.htm
-                          </span>
-                        </a>
-                      </p>
-                      <hr />
-                    </div>
-                    <div class="accordion-detail-content-text accordion-tab-text-2">
-                      <p>
-                        <strong>Tournament Matches:</strong>
-                      </p>
-                      <p>
-                        1. If the opposing team cannot provide stream proof
-                        before the match start time you will need to treat it
-                        like a no-show. You can dispute the match and request an
-                        admin inside your match chat.
-                      </p>
-                      <p>
-                        2. Any matches played out in full will count regardless
-                        if it was streamed or not. It is each team's
-                        responsibility to ensure all PC players in the match are
-                        streaming with past broadcasts enabled prior to
-                        starting.
-                      </p>
-                      <p>
-                        3. If the match is started and you play out rounds
-                        without confirming the opposing teams PC players are
-                        streaming, those rounds will count.
-                      </p>
-                      <p>
-                        4. If any valid hacking claims are made, and proof is
-                        provided, an admin will have the ability to ensure the
-                        player(s) being accused is using ‘Display Capture’
-                        instead of ‘Game Capture’. An admin also has the ability
-                        to conduct a ‘Monitor Cam’ on the player(s) being
-                        accused of cheating. If this is not completed at the
-                        admin’s discretion a forfeit, replay or ban may be
-                        issued. 5. If you are required to provide an admin with
-                        a ‘Monitor Cam’, this can be done through Periscope or
-                        Twitch. New ‘alternate’ accounts can be created and
-                        linked to an admin separate from your match chat to
-                        ensure there is no ‘stream watching’. You may also turn
-                        a webcam on your Monitor to show on your Twitch Stream.
-                        If this is not completed within the time an admin gives
-                        you, a forfeit, replay, or ban may be issued.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* ========= Tab item 2 End =========== */}
-              {/* ========= Tab item  3 ========== */}
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingEight">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseEight"
-                    aria-expanded="false"
-                    aria-controls="flush-collapseEight"
-                  >
-                    Submitting Proof
-                  </button>
-                </h2>
-                <div
-                  id="flush-collapseEight"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="flush-headingEight"
-                  data-bs-parent="#accordionFlushExample"
-                >
-                  <div class="accordion-body">
-                    <div class="accordion-detail-content-text">
-                      <p>
-                        <strong>PC Stream Requirements</strong>
-                      </p>
-                      <p>
-                        ALL PC players participating in a Black Ops Cold War CMG
-                        Match MUST STREAM with Past Broadcasts ENABLED so the
-                        VOD of the match is available.
-                      </p>
-                      <p>
-                        It is each team's responsibility to ensure that the
-                        opposing team’s PC players are streaming with past
-                        broadcasts enabled prior to the match starting. We will
-                        not issue forfeits or replays if your team fails to
-                        confirm this prior to the match starting. You can gather
-                        this information by requesting the stream links in the
-                        match chat or by viewing your opponents social media
-                        links under the roster section in the match details
-                        page.
-                      </p>
-                      <p>
-                        <strong>
-                          All streams are required to have Audio (Gameplay and
-                          Voice Communication - Voice changers are not allowed!)
-                          during matches. Failure to do this may result in a
-                          replay, cancel or forfeit.
-                        </strong>
-                      </p>
-                      <hr />
-                    </div>
-                    <div class="accordion-detail-content-text accordion-tab-text-2">
-                      <p>
-                        <strong>Enabling Past Broadcasts:</strong>
-                      </p>
-                      <p>
-                        For any assistance in enabling your past broadcasts on
-                        Twitch, you may refer to this article
-                        <a href="https://help.twitch.tv/s/article/video-on-demand">
-                          <span>
-                            https://help.twitch.tv/s/article/video-on-demand
-                          </span>
-                        </a>
-                      </p>
-                      <p>
-                        It is each team's responsibility to ensure that the
-                        opposing team’s PC players are streaming with past
-                        broadcasts enabled prior to the match starting. We will
-                        not issue forfeits or replays if your team fails to
-                        confirm this prior to the match starting. You can gather
-                        this information by requesting the stream links in the
-                        match chat or by viewing your opponents social media
-                        links under the roster section in the match details
-                        page.
-                      </p>
-                      <p>
-                        <strong>
-                          All streams are required to have Audio (Gameplay and
-                          Voice Communication - Voice changers are not allowed!)
-                          during matches. Failure to do this may result in a
-                          replay, cancel or forfeit.
-                        </strong>
-                      </p>
-                      <hr />
-                    </div>
-                    <div class="accordion-detail-content-text accordion-tab-text-2">
-                      <p>
-                        <strong>Cheating:</strong>
-                      </p>
-                      <p>
-                        Here at CMG we have a zero-tolerance policy for anyone
-                        who is cheating/hacking. If we find, in your stream or
-                        VOD, that you are using a 3rd party software/device to
-                        cheat/hack you will be permanently banned from the
-                        platform.
-                      </p>
-                      <p>
-                        Admins may require additional proof from any user who we
-                        may suspect is hacking. Failure to provide additional
-                        proof to an admin may result in a ban/forfeit on your
-                        match.
-                      </p>
-                      <p>
-                        For any questions regarding our PC Player Policies,
-                        please refer to this article{" "}
-                        <a href="https://www.checkmategaming.com/article/cmg-pc-transition-519.htm">
-                          <span>
-                            https://www.checkmategaming.com/article/cmg-pc-transition-519.htm
-                          </span>
-                        </a>
-                      </p>
-                      <hr />
-                    </div>
-                    <div class="accordion-detail-content-text accordion-tab-text-2">
-                      <p>
-                        <strong>Tournament Matches:</strong>
-                      </p>
-                      <p>
-                        1. If the opposing team cannot provide stream proof
-                        before the match start time you will need to treat it
-                        like a no-show. You can dispute the match and request an
-                        admin inside your match chat.
-                      </p>
-                      <p>
-                        2. Any matches played out in full will count regardless
-                        if it was streamed or not. It is each team's
-                        responsibility to ensure all PC players in the match are
-                        streaming with past broadcasts enabled prior to
-                        starting.
-                      </p>
-                      <p>
-                        3. If the match is started and you play out rounds
-                        without confirming the opposing teams PC players are
-                        streaming, those rounds will count.
-                      </p>
-                      <p>
-                        4. If any valid hacking claims are made, and proof is
-                        provided, an admin will have the ability to ensure the
-                        player(s) being accused is using ‘Display Capture’
-                        instead of ‘Game Capture’. An admin also has the ability
-                        to conduct a ‘Monitor Cam’ on the player(s) being
-                        accused of cheating. If this is not completed at the
-                        admin’s discretion a forfeit, replay or ban may be
-                        issued. 5. If you are required to provide an admin with
-                        a ‘Monitor Cam’, this can be done through Periscope or
-                        Twitch. New ‘alternate’ accounts can be created and
-                        linked to an admin separate from your match chat to
-                        ensure there is no ‘stream watching’. You may also turn
-                        a webcam on your Monitor to show on your Twitch Stream.
-                        If this is not completed within the time an admin gives
-                        you, a forfeit, replay, or ban may be issued.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* ========= Tab item 3 End =========== */}
-              {/* ========= Tab item 4 =========== */}
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingNine">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseNine"
-                    aria-expanded="false"
-                    aria-controls="flush-collapseNine"
-                  >
-                    Activision ID
-                  </button>
-                </h2>
-                <div
-                  id="flush-collapseNine"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="flush-headingNine"
-                  data-bs-parent="#accordionFlushExample"
-                >
-                  <div class="accordion-body">
-                    <div class="accordion-detail-content-text">
-                      <p>
-                        <strong>PC Stream Requirements</strong>
-                      </p>
-                      <p>
-                        ALL PC players participating in a Black Ops Cold War CMG
-                        Match MUST STREAM with Past Broadcasts ENABLED so the
-                        VOD of the match is available.
-                      </p>
-                      <p>
-                        It is each team's responsibility to ensure that the
-                        opposing team’s PC players are streaming with past
-                        broadcasts enabled prior to the match starting. We will
-                        not issue forfeits or replays if your team fails to
-                        confirm this prior to the match starting. You can gather
-                        this information by requesting the stream links in the
-                        match chat or by viewing your opponents social media
-                        links under the roster section in the match details
-                        page.
-                      </p>
-                      <p>
-                        <strong>
-                          All streams are required to have Audio (Gameplay and
-                          Voice Communication - Voice changers are not allowed!)
-                          during matches. Failure to do this may result in a
-                          replay, cancel or forfeit.
-                        </strong>
-                      </p>
-                      <hr />
-                    </div>
-                    <div class="accordion-detail-content-text accordion-tab-text-2">
-                      <p>
-                        <strong>Enabling Past Broadcasts:</strong>
-                      </p>
-                      <p>
-                        For any assistance in enabling your past broadcasts on
-                        Twitch, you may refer to this article
-                        <a href="https://help.twitch.tv/s/article/video-on-demand">
-                          <span>
-                            https://help.twitch.tv/s/article/video-on-demand
-                          </span>
-                        </a>
-                      </p>
-                      <p>
-                        It is each team's responsibility to ensure that the
-                        opposing team’s PC players are streaming with past
-                        broadcasts enabled prior to the match starting. We will
-                        not issue forfeits or replays if your team fails to
-                        confirm this prior to the match starting. You can gather
-                        this information by requesting the stream links in the
-                        match chat or by viewing your opponents social media
-                        links under the roster section in the match details
-                        page.
-                      </p>
-                      <p>
-                        <strong>
-                          All streams are required to have Audio (Gameplay and
-                          Voice Communication - Voice changers are not allowed!)
-                          during matches. Failure to do this may result in a
-                          replay, cancel or forfeit.
-                        </strong>
-                      </p>
-                      <hr />
-                    </div>
-                    <div class="accordion-detail-content-text accordion-tab-text-2">
-                      <p>
-                        <strong>Cheating:</strong>
-                      </p>
-                      <p>
-                        Here at CMG we have a zero-tolerance policy for anyone
-                        who is cheating/hacking. If we find, in your stream or
-                        VOD, that you are using a 3rd party software/device to
-                        cheat/hack you will be permanently banned from the
-                        platform.
-                      </p>
-                      <p>
-                        Admins may require additional proof from any user who we
-                        may suspect is hacking. Failure to provide additional
-                        proof to an admin may result in a ban/forfeit on your
-                        match.
-                      </p>
-                      <p>
-                        For any questions regarding our PC Player Policies,
-                        please refer to this article{" "}
-                        <a href="https://www.checkmategaming.com/article/cmg-pc-transition-519.htm">
-                          <span>
-                            https://www.checkmategaming.com/article/cmg-pc-transition-519.htm
-                          </span>
-                        </a>
-                      </p>
-                      <hr />
-                    </div>
-                    <div class="accordion-detail-content-text accordion-tab-text-2">
-                      <p>
-                        <strong>Tournament Matches:</strong>
-                      </p>
-                      <p>
-                        1. If the opposing team cannot provide stream proof
-                        before the match start time you will need to treat it
-                        like a no-show. You can dispute the match and request an
-                        admin inside your match chat.
-                      </p>
-                      <p>
-                        2. Any matches played out in full will count regardless
-                        if it was streamed or not. It is each team's
-                        responsibility to ensure all PC players in the match are
-                        streaming with past broadcasts enabled prior to
-                        starting.
-                      </p>
-                      <p>
-                        3. If the match is started and you play out rounds
-                        without confirming the opposing teams PC players are
-                        streaming, those rounds will count.
-                      </p>
-                      <p>
-                        4. If any valid hacking claims are made, and proof is
-                        provided, an admin will have the ability to ensure the
-                        player(s) being accused is using ‘Display Capture’
-                        instead of ‘Game Capture’. An admin also has the ability
-                        to conduct a ‘Monitor Cam’ on the player(s) being
-                        accused of cheating. If this is not completed at the
-                        admin’s discretion a forfeit, replay or ban may be
-                        issued. 5. If you are required to provide an admin with
-                        a ‘Monitor Cam’, this can be done through Periscope or
-                        Twitch. New ‘alternate’ accounts can be created and
-                        linked to an admin separate from your match chat to
-                        ensure there is no ‘stream watching’. You may also turn
-                        a webcam on your Monitor to show on your Twitch Stream.
-                        If this is not completed within the time an admin gives
-                        you, a forfeit, replay, or ban may be issued.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* ========= Tab item 4 End =========== */}
-              {/* ========= Tab item 5 =========== */}
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingTen">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseTen"
-                    aria-expanded="false"
-                    aria-controls="flush-collapseTen"
-                  >
-                    Recent Changes
-                  </button>
-                </h2>
-                <div
-                  id="flush-collapseTen"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="flush-headingTen"
-                  data-bs-parent="#accordionFlushExample"
-                >
-                  <div class="accordion-body">
-                    <div class="accordion-detail-content-text">
-                      <p>
-                        <strong>PC Stream Requirements</strong>
-                      </p>
-                      <p>
-                        ALL PC players participating in a Black Ops Cold War CMG
-                        Match MUST STREAM with Past Broadcasts ENABLED so the
-                        VOD of the match is available.
-                      </p>
-                      <p>
-                        It is each team's responsibility to ensure that the
-                        opposing team’s PC players are streaming with past
-                        broadcasts enabled prior to the match starting. We will
-                        not issue forfeits or replays if your team fails to
-                        confirm this prior to the match starting. You can gather
-                        this information by requesting the stream links in the
-                        match chat or by viewing your opponents social media
-                        links under the roster section in the match details
-                        page.
-                      </p>
-                      <p>
-                        <strong>
-                          All streams are required to have Audio (Gameplay and
-                          Voice Communication - Voice changers are not allowed!)
-                          during matches. Failure to do this may result in a
-                          replay, cancel or forfeit.
-                        </strong>
-                      </p>
-                      <hr />
-                    </div>
-                    <div class="accordion-detail-content-text accordion-tab-text-2">
-                      <p>
-                        <strong>Enabling Past Broadcasts:</strong>
-                      </p>
-                      <p>
-                        For any assistance in enabling your past broadcasts on
-                        Twitch, you may refer to this article
-                        <a href="https://help.twitch.tv/s/article/video-on-demand">
-                          <span>
-                            https://help.twitch.tv/s/article/video-on-demand
-                          </span>
-                        </a>
-                      </p>
-                      <p>
-                        It is each team's responsibility to ensure that the
-                        opposing team’s PC players are streaming with past
-                        broadcasts enabled prior to the match starting. We will
-                        not issue forfeits or replays if your team fails to
-                        confirm this prior to the match starting. You can gather
-                        this information by requesting the stream links in the
-                        match chat or by viewing your opponents social media
-                        links under the roster section in the match details
-                        page.
-                      </p>
-                      <p>
-                        <strong>
-                          All streams are required to have Audio (Gameplay and
-                          Voice Communication - Voice changers are not allowed!)
-                          during matches. Failure to do this may result in a
-                          replay, cancel or forfeit.
-                        </strong>
-                      </p>
-                      <hr />
-                    </div>
-                    <div class="accordion-detail-content-text accordion-tab-text-2">
-                      <p>
-                        <strong>Cheating:</strong>
-                      </p>
-                      <p>
-                        Here at CMG we have a zero-tolerance policy for anyone
-                        who is cheating/hacking. If we find, in your stream or
-                        VOD, that you are using a 3rd party software/device to
-                        cheat/hack you will be permanently banned from the
-                        platform.
-                      </p>
-                      <p>
-                        Admins may require additional proof from any user who we
-                        may suspect is hacking. Failure to provide additional
-                        proof to an admin may result in a ban/forfeit on your
-                        match.
-                      </p>
-                      <p>
-                        For any questions regarding our PC Player Policies,
-                        please refer to this article{" "}
-                        <a href="https://www.checkmategaming.com/article/cmg-pc-transition-519.htm">
-                          <span>
-                            https://www.checkmategaming.com/article/cmg-pc-transition-519.htm
-                          </span>
-                        </a>
-                      </p>
-                      <hr />
-                    </div>
-                    <div class="accordion-detail-content-text accordion-tab-text-2">
-                      <p>
-                        <strong>Tournament Matches:</strong>
-                      </p>
-                      <p>
-                        1. If the opposing team cannot provide stream proof
-                        before the match start time you will need to treat it
-                        like a no-show. You can dispute the match and request an
-                        admin inside your match chat.
-                      </p>
-                      <p>
-                        2. Any matches played out in full will count regardless
-                        if it was streamed or not. It is each team's
-                        responsibility to ensure all PC players in the match are
-                        streaming with past broadcasts enabled prior to
-                        starting.
-                      </p>
-                      <p>
-                        3. If the match is started and you play out rounds
-                        without confirming the opposing teams PC players are
-                        streaming, those rounds will count.
-                      </p>
-                      <p>
-                        4. If any valid hacking claims are made, and proof is
-                        provided, an admin will have the ability to ensure the
-                        player(s) being accused is using ‘Display Capture’
-                        instead of ‘Game Capture’. An admin also has the ability
-                        to conduct a ‘Monitor Cam’ on the player(s) being
-                        accused of cheating. If this is not completed at the
-                        admin’s discretion a forfeit, replay or ban may be
-                        issued. 5. If you are required to provide an admin with
-                        a ‘Monitor Cam’, this can be done through Periscope or
-                        Twitch. New ‘alternate’ accounts can be created and
-                        linked to an admin separate from your match chat to
-                        ensure there is no ‘stream watching’. You may also turn
-                        a webcam on your Monitor to show on your Twitch Stream.
-                        If this is not completed within the time an admin gives
-                        you, a forfeit, replay, or ban may be issued.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* ========= Tab item 5 End =========== */}
-            </div>
-          </div>
-        </div>
         {/* ================== Accordion Tabs 2 End ================ */}
       </div>
     </div>

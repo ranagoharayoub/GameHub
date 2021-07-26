@@ -30,7 +30,7 @@ function Navbar() {
             <div className='Links'>
                 <Link className='link-cont' style={{textDecoration:'none', color:'inherit'}} to='/'>HOME</Link>
                 <Link className='link-cont' style={{textDecoration:'none', color:'inherit'}} to='/games'>GAMES</Link>
-                <Link className='link-cont' style={{textDecoration:'none', color:'inherit'}} to='/tournament'>TOURNAMENT</Link>
+                <Link className='link-cont' style={{textDecoration:'none', color:'inherit'}} to='/alltournament'>TOURNAMENT</Link>
                 <Link className='link-cont' style={{textDecoration:'none', color:'inherit', textTransform:'uppercase'}} to='/champs'>Champions</Link>
             </div>
             <div className='title'>

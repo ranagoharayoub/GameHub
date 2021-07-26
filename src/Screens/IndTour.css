@@ -245,9 +245,9 @@ body {
   padding-top: 4px;
 }
 .tournament-rules-tab-content h2 {
-  font-family: Calibri;
-  font-size: 30px;
-  font-weight: 700;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 25px;
+  font-weight: 600;
   letter-spacing: 0.01em;
   text-transform: uppercase;
   color: #fff;
@@ -304,17 +304,18 @@ body {
   margin-bottom: 0;
 }
 .tournament-rules-tab-content .accordion-body p:first-child {
-  color: #3498db;
+  /* color: #3498db; */
+  color: #fff;
   opacity: 1;
 }
-.tournament-rules-tab-content .accordion-body p:nth-child(2) {
-  color: #e74c3c;
+.tournament-rules-tab-content .accordion-body p {
+  color: #fff;
   opacity: 1;
   padding-bottom: 10px;
 }
-.tournament-rules-tab-content .accordion-body p:nth-child(4) {
+/* .tournament-rules-tab-content .accordion-body p:nth-child(4) {
   padding: 10px 0 7px;
-}
+} */
 .tournament-rules-tab-content .accordion-body hr {
   border-color: #fff;
   opacity: 1;
@@ -322,10 +323,10 @@ body {
 .accordion-body {
   background: #272727;
 }
-.accordion-detail-content-text.accordion-tab-text-2 p:nth-child(2) {
+/* .accordion-detail-content-text.accordion-tab-text-2 p:nth-child(2) {
   color: #fff;
   opacity: 0.7;
-}
+} */
 .accordion-detail-content-text.accordion-tab-text-2 p a {
   color: #fff;
 }
@@ -345,7 +346,7 @@ body {
 .accordion-detail-content-text.tab2-text p {
   color: #fff;
 }
-.accordion-detail-content-text .tournament-column p:first-child {
+/* .accordion-detail-content-text .tournament-column p:first-child {
   color: #fff;
   opacity: 0.7;
 }
@@ -353,9 +354,9 @@ body {
 .accordion-body .tab4-text p:first-child,
 .accordion-body .tab4-text p:nth-child(2) {
   opacity: 0.7;
-}
+} */
 .tournament-column .short-text {
-  padding-top: 25px;
+  padding-top: 5px;
 }
 .tournament-column .short-text p:nth-child(2) {
   color: #fff;
