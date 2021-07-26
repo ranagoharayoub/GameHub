@@ -71,7 +71,7 @@ function App() {
         <Switch>
           <Route exact path='/'  ><Home width={width}></Home></Route>
           <Route path='/alltournament'  ><AllTournaments width={width}></AllTournaments></Route>
-          <Route path="/tournament/:gameId"><IndTour width={width}/></Route>
+          <Route path="/tournament/:gametitle"><IndTour width={width}/></Route>
           <Route path='/games'  ><AllGames width={width}></AllGames></Route>
           <Route path='/ticket'  ><Tickets></Tickets></Route>
           <Route path='/signup'  ><SignUp history={history} width={width}></SignUp></Route>

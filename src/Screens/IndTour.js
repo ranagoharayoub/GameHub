@@ -14,7 +14,7 @@ import Teams from "../Components/Tounament/Teams";
 import Admin from "../Components/Tounament/Admin";
 import axios from "axios";
 import Timer from "react-compound-timer";
-import {useParams, useHistory} from "react-router-dom";
+import {useHistory, useLocation} from "react-router-dom";
 import '../mdl-tabs-links/material.teal-indigo.min.css'
 /*eslint-disable*/
 export default function IndTour({width}) {
@@ -28,15 +28,22 @@ const [state, setstate] = useState({
   secondprize:'',
   thirdprize:'',
 })
-const {gameId} =useParams()
+// const {gameId} =useParams()
+const location = useLocation()
+const {gameId} = location.state
+
+console.log(gameId, typeof(gameId))
+
 let history = useHistory()
 
 var token = localStorage.getItem('token')
 var userid = parseInt(localStorage.getItem("userdata"))
 console.log(userid)
-const number = (a) => {
-    return a.replace(":", "");
-  }
+
+
+// const number = (a) => {
+//     return a.replace(":", "");
+//   }
 
 
 function getsec(a) {
@@ -52,7 +59,7 @@ function getsec(a) {
     // componentHandler.upgradeDom();
 
       const callApi = async() =>{
-        await axios.get('https://gamehubx.com/api/v1/tournament/'+number(gameId)+'/')
+        await axios.get('https://gamehubx.com/api/v1/tournament/'+gameId+'/')
         .then((res)=> setdata(res.data))
         .catch((error)=> console.log(error))
         setloading(false)
@@ -63,7 +70,7 @@ function getsec(a) {
        callApi()
 
       const callAPI2 = async () =>{
-        await axios.get("https://gamehubx.com/api/v1/tournament/"+number(gameId)+"/enrolled/")
+        await axios.get("https://gamehubx.com/api/v1/tournament/"+gameId+"/enrolled/")
         .then((res)=> {console.log(res); setenrolled(res.data)}).then(()=>console.log(enrolled))
         .catch(err=> console.log(err))
 }
@@ -71,7 +78,7 @@ function getsec(a) {
 
 
       const callAPI3 = async()=>{
-        await axios.get("https://gamehubx.com/api/v1/tournament/"+number(gameId)+"/admins/")
+        await axios.get("https://gamehubx.com/api/v1/tournament/"+gameId+"/admins/")
               .then((res)=>{console.log(res.data); setadmins(res.data)})
               .catch((error)=>console.log(error))
       }
@@ -102,13 +109,13 @@ const enrollHandler = async() =>{
      console.log('sending request')
      const data = JSON.stringify({
        "user": userid,
-       "tournament":number(gameId),
+       "tournament":gameId,
      })
      const headers = {
        "Authorization": "Token "+ token,
        "Content-Type": "application/json",
      }
-     await axios.post('https://gamehubx.com/api/v1/tournament/'+number(gameId)+'/enroll/',data,{
+     await axios.post('https://gamehubx.com/api/v1/tournament/'+gameId+'/enroll/',data,{
        headers: headers,
      }).then(res => {console.log('enroll success',res); history.push("/matches")}).catch(error => console.log('enrol failure',error))
 
@@ -174,7 +181,7 @@ const enrollHandler = async() =>{
               getsec(data.start_on) > 0?
               enrolled?
               enrolled.map((id)=> id.user).includes(userid)?
-              <div  className='enroll-now'>Already Enrolled</div>
+              <div style={{cursor: 'not-allowed'}} className='enroll-now'>Entered</div>
               :
               <div onClick={()=>enrollHandler()} className='enroll-now'>Enter Now</div>
               :
@@ -210,6 +217,12 @@ const enrollHandler = async() =>{
                     <p>TOP PRIZE</p>
                     {/* <p>${ loading ? null :  data.tournament_prizes[0].amount}</p> */}
                     <p>${state.firstprize}</p>
+                  </div>
+                </div>
+                <div class="tour-small-item">
+                  <div class="tour-small-tax">
+                    <p>Entered</p>
+                    <p>{data.entered}</p>
                   </div>
                 </div>
               </div>
@@ -290,7 +303,7 @@ const enrollHandler = async() =>{
                     // console.log(enrolled)
                     enrolled ?
                     <Bracket 
-                    gameId={number(gameId)} 
+                    gameId={gameId} 
                     enrollUser={enrolled} 
                     team_size={getsec(data.start_on)>0? data.max_team: enrolled.length}
                     isStarted={getsec(data.start_on)>0? false: true} />

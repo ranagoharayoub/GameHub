@@ -19,7 +19,7 @@ export default function Rules() {
         {/* ================== Accordion Tabs 1 ================ */}
         <div class="tournament-rules-tab-content">
           <div class="tournament-rules-content-inner">
-            <h2>Black Ops Cold War General Tournament Rules</h2>
+            <h2>General Tournament Rules</h2>
             <div class="accordion accordion-flush" id="accordionFlushExample">
               {/* ========= Tab item 1 =========== */}
               <div class="accordion-item">

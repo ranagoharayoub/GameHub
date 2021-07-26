@@ -137,7 +137,18 @@ function TournamentCard({ width, data }) {
         </div>
       </div>
       <div className="bottom">
-        <Link to={`/tournament/:${data.id}`} className="view-details">VIEW DETAILS</Link>
+        <Link 
+          // to={`/tournament/:${data.id}`}
+          to={{
+            pathname: `/tournament/:${data.title.replaceAll(" ", "")}`,
+            state:{
+              gameId: data.id
+            }
+          }}
+          className="view-details"
+          >
+            VIEW DETAILS
+        </Link>
         <img
           style={{ marginLeft: "20px" }}
           src="/icons/right-arrow .png"
