@@ -129,6 +129,36 @@ class SignUp extends Component {
     });
   };
 
+  responseFacebook = async (response) => {
+    console.log(response);
+
+    console.log("access token", response.accessToken);
+    if (typeof(response.accessToken) !== "undefined") {
+      
+      console.log("in conditions");
+      await axios({
+        method: "post",
+        url: "https://gamehubx.com/api/v1/login/facebook/",
+        headers: {},
+        data: {
+          access_token: response.accessToken,
+          code: "",
+        },
+      })
+        .then((res) => {
+          console.log(res);
+          this.setState({email :res.data.user_detail.email, username: res.data.user_detail.username, emailstate: true})
+      }
+        )
+        .catch((error) => {
+          console.log(error.response);
+          console.log('could not login');
+          this.setState({ modaltext: error.response.data.non_field_errors[0]});
+          this.setState({ show: true });
+        });
+    }
+  };
+
   responseGoogle = async (response) => {
 
     console.log(response);
