@@ -108,6 +108,7 @@
 
 .column .entry{
     font: normal normal normal 13px/30px Calibri;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 0.6;
@@ -115,6 +116,7 @@
 
 .column .numbers{
     font: normal normal normal 20px/20px Calibri;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;
@@ -132,6 +134,7 @@
 
 .bottom .view-details{
     font: normal normal normal 20px/0px Calibri;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     letter-spacing: 0px;
     color: #F69204;
     opacity: 1;
@@ -213,6 +216,7 @@
     
     .tourn-cont .time{
         font: normal normal normal 10px/30px Calibri;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         letter-spacing: 0px;
         color: #FFFFFF;
         opacity: 0.6;
@@ -255,6 +259,7 @@
     
     .column .entry{
         font: normal normal normal 12px/20px Calibri;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         letter-spacing: 0px;
         color: #FFFFFF;
         opacity: 0.6;
@@ -262,6 +267,7 @@
     
     .column .numbers{
         font: normal normal normal 10px/20px Calibri;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         word-wrap: break-word;
         letter-spacing: 0px;
         color: #FFFFFF;
@@ -279,7 +285,8 @@
     }
     
     .bottom .view-details{
-        font: normal normal normal 20px/0px Calibri;
+        font: normal normal normal 14px/0px Calibri;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         letter-spacing: 0px;
         color: #F69204;
         opacity: 1;

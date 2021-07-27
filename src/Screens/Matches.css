@@ -9,6 +9,7 @@
 .matches-main {
   background: #131212;
   padding: 50px 30px;
+  min-height: 100vh;
   /* overflow-x: hidden; */
 }
 .matches-inner h1 {

@@ -121,7 +121,7 @@ export default function Matches({ width }) {
                     </div>
                     {/* Matches Cards */}
 
-                    <div style={{marginTop:'0px', marginRight:'0px', marginLeft:'0px'}} class="row">
+                    <div style={{marginTop:'0px', marginRight:'0px', marginLeft:'0px'}} class="row-card">
 
                       <div class="col-lg-12">
                         {/* ----------------Give Styling to Feature Cards. Most possibly Grid---------- */}
@@ -142,7 +142,7 @@ export default function Matches({ width }) {
                   </div>
                   {/* ================ in-progress TOURNAMENTS =============== */}
                   <div class="mdl-tabs__panel" id="mattab2">
-                    <div style={{marginLeft:'20px', marginRight:'10px'}} class="progress-tab">
+                    <div style={width<'800'? {marginLeft:'20px', marginRight:'10px'}: null} class="progress-tab">
                       <div class="row-card">
                         {/* Card 1 */}
                         <div style={{marginTop:'50px'}} class="col-lg-7 col-md-12">

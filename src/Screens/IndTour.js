@@ -3,6 +3,8 @@ import "./IndTour.css";
 import img from "../bg/inc-tour-bg.jpg";
 import callImg from "../bg/call-duty.png";
 import tabIcon1 from "../bg-icons/prizes-icon.png";
+import secondPrize from '../bg-icons/2md_Place_Icon.png'
+import thirdPrize from '../bg-icons/3rd_Place_Icon.png'
 import tabIcon2 from "../bg-icons/prizes-icon2.png";
 import tabIcon3 from "../bg-icons/prizes-icon3.png";
 import tabIcon4 from "../bg-icons/prizes-icon4.png";
@@ -14,12 +16,15 @@ import Teams from "../Components/Tounament/Teams";
 import Admin from "../Components/Tounament/Admin";
 import axios from "axios";
 import Timer from "react-compound-timer";
+import { Button, Modal} from "react-bootstrap";
 import {useHistory, useLocation} from "react-router-dom";
 import '../mdl-tabs-links/material.teal-indigo.min.css'
 /*eslint-disable*/
 export default function IndTour({width}) {
 
 const [data, setdata] = useState([])
+const [show, setShow] = useState(false);
+const [modaltext, setmodaltext] = useState("");
 const [loading, setloading] = useState(true)
 const [enrolled, setenrolled] = useState(null)
 const [admins, setadmins] = useState(null)
@@ -117,7 +122,12 @@ const enrollHandler = async() =>{
      }
      await axios.post('https://gamehubx.com/api/v1/tournament/'+gameId+'/enroll/',data,{
        headers: headers,
-     }).then(res => {console.log('enroll success',res); history.push("/matches")}).catch(error => console.log('enrol failure',error))
+     }).then(res => {console.log('enroll success',res); history.push("/matches")})
+        .catch(error =>{
+          console.log('enrol failure',error.response)
+          setmodaltext(error.response.data.status)
+          setShow(true)
+        })
 
     } else {
       history.push("/login");
@@ -130,6 +140,17 @@ const enrollHandler = async() =>{
   return (
     // Inctour Main
     <div class="inctour-main">
+      <Modal show={show} onHide={()=> setShow(false)}>
+        <Modal.Header >
+          <Modal.Title></Modal.Title>
+        </Modal.Header>
+        <Modal.Body>{modaltext}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={()=> setShow(false)}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
       {/* Inctour First Section Start */}
       <div class="inctour-main-background">
         <img src={img} />
@@ -278,14 +299,14 @@ const enrollHandler = async() =>{
                         {/* ========== Prize Card 2 ============ */}
                         <div class="prize-card">
                           <h4>2nd Place</h4>
-                          <img src={prizeIcon} />
+                          <img src={secondPrize} />
                           {/* <h5>${ loading ? null :  data.tournament_prizes[1].amount}</h5> */}
                           <h5>${state.secondprize}</h5>
                         </div>
                         {/* ========== Prize Card 3 ============ */}
                         <div class="prize-card">
                           <h4>3rd Place</h4>
-                          <img src={prizeIcon} />
+                          <img src={thirdPrize} />
                           {/* <h5>${ loading ? null :  data.tournament_prizes[2].amount}</h5> */}
                           <h5>${state.thirdprize}</h5>
                         </div>

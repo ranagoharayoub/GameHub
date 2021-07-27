@@ -225,7 +225,7 @@ class Login extends Component {
             render={(renderProps) => (
               <button className="social-login-fb" onClick={renderProps.onClick}>
                 <img src="/icons/fb.png" height="20px" alt="fb"></img>
-                <div className="title">Continue with Facebook</div>
+                <div className="title" style={{ paddingLeft: "20px", color:'white' }}>Continue with Facebook</div>
               </button>
             )}
           />
@@ -234,22 +234,20 @@ class Login extends Component {
             clientId={
               "431419828404-n5tfmqqqlkohd0luqiu8rsqrs657fshk.apps.googleusercontent.com"
             }
+            render={renderProps => (
+              <button style={{backgroundColor: 'white'}} className="social-login-google"  onClick={renderProps.onClick} >
+                <img src="/icons/google.png" height="20px" alt="google" ></img>
+                <div className="btn-title" style={{ paddingLeft: "20px", color:'black' }}>
+                Continue with Google
+                </div>
+                </button>
+            )}
+        
             onSuccess={this.responseGoogle}
             onFailure={this.responseGoogle}
             className="social-login-google"
-            style={{
-              padding: "0px 0px",
-              margin: "0px 0px",
-              backgroundColor: "black",
-            }}
             icon={false}
           >
-            <button className=" content-center" >
-              <img src="/icons/google.png" height="20px" alt="fb"></img>
-              <div className="title" style={{ paddingLeft: "25px", color:'black' }}>
-                Continue with Google
-              </div>
-            </button>
           </GoogleLogin>
           <form className="form-sect" onSubmit={(e) => this.login(e)}>
             <label className="label">Email Address</label>

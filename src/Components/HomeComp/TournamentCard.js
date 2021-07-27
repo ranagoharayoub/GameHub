@@ -87,7 +87,7 @@ function TournamentCard({ width, data }) {
               <div className="numbers">{data.team_size}</div>
             </div>
             <div className="column">
-              <div className="entry">MAX TEAMS</div>
+              <div className="entry">MAX-TEAM</div>
               <div className="numbers">{data.max_team}</div>
             </div>
             <div className="column">
@@ -121,7 +121,7 @@ function TournamentCard({ width, data }) {
           <div className="numbers">{data.team_size}</div>
         </div>
         <div className="column">
-          <div className="entry">MAX TEAMS</div>
+          <div className="entry">MAX-TEAM</div>
           <div className="numbers">{data.max_team}</div>
         </div>
         <div className="column">

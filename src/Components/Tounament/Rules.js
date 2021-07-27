@@ -125,7 +125,13 @@ export default function Rules() {
                   <div class="accordion-body">
                     <div class="accordion-detail-content-text">                     
                     <p>
-                    You will be chosen at random to become a host for each game in the tournament. Hosts are randomly chosen each round between you and your opponent. Your administrator will let you know if you are the host for the current round.
+                    You will be chosen at random to become a host for each game in the tournament.
+                    </p>
+                    <p>
+                    Hosts are randomly chosen each round between you and your opponent.
+                    </p>
+                    <p>
+                    Your administrator will let you know if you are the host for the current round.
                     </p>
                     </div>
                   </div>

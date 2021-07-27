@@ -189,6 +189,7 @@ body {
 }
 .prize-card-main {
   display: flex;
+  justify-content: space-between;
   padding-bottom: 70px;
 }
 .prize-card {
@@ -245,7 +246,7 @@ body {
   padding-top: 4px;
 }
 .tournament-rules-tab-content h2 {
-  font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+  /* font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ; */
   font-size: 25px;
   font-weight: 600;
   letter-spacing: 0.01em;
@@ -441,7 +442,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   color: #fff;
-  font-family: Calibri;
+  /* font-family: Calibri; */
 }
 .tournament-details-tab-bracket-group {
   margin: 12.5px 0px;
