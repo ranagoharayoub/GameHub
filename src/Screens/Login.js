@@ -99,7 +99,7 @@ class Login extends Component {
       console.log("in conditions");
       await axios({
         method: "post",
-        url: "https://gamehubx.com/api/v1/login/facebook/",
+        url: "https://gamehubx.com/api/v1/login/facebook/?type=login",
         headers: {},
         data: {
           access_token: response.accessToken,
@@ -133,7 +133,7 @@ class Login extends Component {
       console.log("in conditions");
       await axios({
         method: "post",
-        url: "https://gamehubx.com/api/v1/login/google/",
+        url: "https://gamehubx.com/api/v1/login/google/?type=login",
         headers: {},
         data: {
           access_token: response.accessToken,
