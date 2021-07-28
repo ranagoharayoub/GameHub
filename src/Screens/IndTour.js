@@ -76,7 +76,7 @@ function getsec(a) {
 
       const callAPI2 = async () =>{
         await axios.get("https://gamehubx.com/api/v1/tournament/"+gameId+"/enrolled/")
-        .then((res)=> {console.log(res); setenrolled(res.data)}).then(()=>console.log(enrolled))
+        .then((res)=> {console.log(res); setenrolled(res.data)})
         .catch(err=> console.log(err))
 }
       callAPI2()
@@ -201,7 +201,7 @@ const enrollHandler = async() =>{
               {
               getsec(data.start_on) > 0?
               enrolled?
-              enrolled.map((id)=> id.user).includes(userid)?
+              enrolled.map((id)=> id.user).includes(userid) && token?
               <div style={{cursor: 'not-allowed'}} className='enroll-now'>Entered</div>
               :
               <div onClick={()=>enrollHandler()} className='enroll-now'>Enter Now</div>

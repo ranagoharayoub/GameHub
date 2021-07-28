@@ -141,7 +141,7 @@ class Login extends Component {
         },
       })
         .then((res) => {
-          console.log(res.data.user_detail);
+          console.log(res.data);
             this.props.history.push({
                 pathname: "/signup",
                 state: { data: res.data.user_detail }

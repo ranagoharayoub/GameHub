@@ -10,6 +10,8 @@ function SideBar({ toggle, off }) {
   const [id, setid] = useState("");
   function signout() {
     localStorage.removeItem("token");
+    localStorage.removeItem("userdata")
+    localStorage.removeItem("name")
     window.location.href = "/";
   }
   useEffect(() => {
