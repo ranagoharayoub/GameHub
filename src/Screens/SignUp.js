@@ -308,6 +308,8 @@ class SignUp extends Component {
             icon={false}
           >
           </GoogleLogin>
+
+
           <form className="form-sect" onSubmit={(e) => this.handlesubmit(e)}>
             <input
               required
@@ -334,13 +336,14 @@ class SignUp extends Component {
               id="inputcolor"
               required
               className="input-fields"
+              style={this.state.emailstate?{display:'none'}: null}
               name="pass"
               value={this.state.pass}
               onChange={(e) => this.handleChange3(e)}
               type="password"
               placeholder="Create Password*"
             ></input>
-            <div className="issues">
+            <div className="issues" style={this.state.emailstate?{display:'none'}: null}>
               <div className="warning">
               <img
                 src={this.state.pass.trim().length>9?
@@ -400,7 +403,7 @@ class SignUp extends Component {
                 <div style={{ marginLeft: "10px" }}>Symbol</div>
               </div>
             </div>
-            <div className="pass-strength">
+            <div className="pass-strength" style={this.state.emailstate?{display:'none'}: null}>
               <div
                 className="line"
                 style={
