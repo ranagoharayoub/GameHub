@@ -108,14 +108,29 @@ class Login extends Component {
       })
         .then((res) => {
           console.log(res);
+          if (res.data.registered) {
+            localStorage.setItem("token", res.data.key)
+            localStorage.setItem("userdata", res.data.user_detail.id)
+            localStorage.setItem("name", res.data.user_detail.username)
+            window.location.href='/'
+          } else {
             this.props.history.push({
-                pathname: "/signup",
-                state: { 
-                  data: res.data.user_detail,
-                  key: res.data.key,
-                  isGoogle: false,
-                 }
-        })
+              pathname: "/signup",
+              state: { 
+                data: res.data.user_detail,
+                key: res.data.key,
+                isGoogle: false,
+               }
+              })
+          }
+        //     this.props.history.push({
+        //         pathname: "/signup",
+        //         state: { 
+        //           data: res.data.user_detail,
+        //           key: res.data.key,
+        //           isGoogle: false,
+        //          }
+        // })
       }
         )
         .catch((error) => {
@@ -146,14 +161,34 @@ class Login extends Component {
       })
         .then((res) => {
           console.log(res.data);
+          if (res.data.registered) {
+            localStorage.setItem("token", res.data.key)
+            localStorage.setItem("userdata", res.data.user_detail.id)
+            localStorage.setItem("name", res.data.user_detail.username)
+            window.location.href='/'
+          } else {
             this.props.history.push({
-                pathname: "/signup",
-                state: { 
-                  data: res.data.user_detail,
-                  key: res.data.key,
-                  isGoogle: true,
-                 }
-        })
+              pathname: "/signup",
+              state: { 
+                data: res.data.user_detail,
+                key: res.data.key,
+                isGoogle: true,
+               }
+              })
+          }
+        //   res.data.registered?
+        //   localStorage.setItem("token", res.data.key)
+        //   localStorage.setItem("userdata", res.data.user_detail.id)
+        //   localStorage.setItem("name", res.data.user_detail.username)
+        //   :
+        //     this.props.history.push({
+        //         pathname: "/signup",
+        //         state: { 
+        //           data: res.data.user_detail,
+        //           key: res.data.key,
+        //           isGoogle: true,
+        //          }
+        // })
       }
         )
         .catch((error) => {
