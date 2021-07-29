@@ -257,7 +257,8 @@ class SignUp extends Component {
 
   // }
 
-  socialProfileUpdate = async () => {
+  socialProfileUpdate = async (e) => {
+    e.preventDefault();
     console.log("socialProfileUpdate", this.state.socialId, this.state.socialkey)
     const URL = "https://gamehubx.com/api/v1/user-profile/"+this.state.socialId+"/";
     const data = {
