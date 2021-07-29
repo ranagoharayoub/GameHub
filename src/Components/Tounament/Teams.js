@@ -33,7 +33,7 @@ export default function Teams({data}) {
                   {/* <img src={teamImg} /> */}
                   <Avatar className='avatar' alt={data.username} src={data.image}></Avatar>
                 </div>
-                <div style={{marginRight:'80px', fontSize:'large'}}>{data.username}</div>
+                <div className='team-ind-name' >{data.username}</div>
                 </div>  
                 {/* <p>Show roster</p> */}
               {/* </Accordion.Toggle> */}

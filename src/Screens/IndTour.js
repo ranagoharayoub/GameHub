@@ -17,7 +17,7 @@ import Admin from "../Components/Tounament/Admin";
 import axios from "axios";
 import Timer from "react-compound-timer";
 import { Button, Modal} from "react-bootstrap";
-import {useHistory, useLocation} from "react-router-dom";
+import {useHistory, useParams} from "react-router-dom";
 import '../mdl-tabs-links/material.teal-indigo.min.css'
 /*eslint-disable*/
 export default function IndTour({width}) {
@@ -33,9 +33,9 @@ const [state, setstate] = useState({
   secondprize:'',
   thirdprize:'',
 })
-// const {gameId} =useParams()
-const location = useLocation()
-const {gameId} = location.state
+const {gameId} =useParams()
+// const location = useLocation()
+// const {gameId} = location.state
 
 console.log(gameId, typeof(gameId))
 
@@ -352,9 +352,10 @@ const enrollHandler = async() =>{
                 <div class="mdl-tabs__panel"  id="admin">
                   {
                     admins?
-                    admins.map((data)=>
-                    <Admin data={data}/>
-                    )
+                    // admins.map((data)=>
+                    // <Admin data={admins}/>
+                    // )
+                    <Admin data={admins}/>
                     :
                     null
                   }

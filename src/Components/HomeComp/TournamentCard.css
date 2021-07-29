@@ -102,6 +102,7 @@
 .score-cont .column{
         display: flex;
         flex-direction: column;
+        overflow-wrap: break-word;
         /* justify-content: space-between; */
         width: 20%;
 }

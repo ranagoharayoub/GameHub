@@ -138,13 +138,13 @@ function TournamentCard({ width, data }) {
       </div>
       <div className="bottom">
         <Link 
-          // to={`/tournament/:${data.id}`}
-          to={{
-            pathname: `/tournament/:${data.title.replaceAll(" ", "")}`,
-            state:{
-              gameId: data.id
-            }
-          }}
+          to={`/tournament/${data.slug}/${data.id}`}
+          // to={{
+          //   pathname: `/tournament/:${data.slug}/:${data.id}`,
+          //   state:{
+          //     gameId: data.id
+          //   }
+          // }}
           className="view-details"
           >
             VIEW DETAILS

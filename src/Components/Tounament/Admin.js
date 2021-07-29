@@ -25,7 +25,10 @@ export default function Admin({data}) {
         </div>
         {/* ============================== Staff Profile ============================ */}
         {/* ====================== Profile 1 ========================= */}
-        <div class="profile-main">
+        {
+            data.map((data)=>
+            
+            <div class="profile-main">
           <div class="staff-cell">
             <div class="staff-profile">
               <div class="team-person-image-box">
@@ -55,6 +58,38 @@ export default function Admin({data}) {
             <p>042356565455</p>
           </div>
         </div>
+            
+            )
+          }
+        {/* <div class="profile-main">
+          <div class="staff-cell">
+            <div class="staff-profile">
+              <div class="team-person-image-box">
+                <Avatar className='avatar' alt={data.username} src={data.img}></Avatar>
+              </div>
+              <div class="team-person">
+                <h2>{data.username}</h2>
+                <p>OLT Support</p>
+              </div>
+            </div>
+          </div>
+          <div class="staff-cell">
+            <div class="staff-icons">
+              <div class="staff-icon">
+                <i class="fab fa-twitter"></i>
+              </div>
+              <div class="staff-icon">
+                <i class="fab fa-instagram"></i>
+              </div>
+            </div>
+          </div>
+          <div class="staff-cell">
+            <p>Lozpdata@gmail.com</p>
+          </div>
+          <div class="staff-cell">
+            <p>042356565455</p>
+          </div>
+        </div> */}
         {/* ====================== Profile 2 ========================= */}
         {/* <div class="profile-main">
           <div class="staff-cell">
