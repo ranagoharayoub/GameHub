@@ -33,7 +33,8 @@ class SignUp extends Component {
       modaltext: "",
       recaptcha: "",
       emailstate: false,
-      socialkey: null
+      socialkey: null,
+      isGoogleLogin: false,
     };
   }
 
@@ -45,7 +46,10 @@ class SignUp extends Component {
     var dataprops = this.props.history.location.state? this.props.history.location.state.data : null
     
     if (this.props.history.location.state) {
-      this.setState({socialkey: this.props.history.location.state.key})
+      this.setState({
+        socialkey: this.props.history.location.state.key,
+         isGoogleLogin:this.props.history.location.state.isGoogle
+        })
       if( dataprops.email !== null){
         this.setState({ email: dataprops.email, emailstate:true  });
       }
@@ -150,7 +154,7 @@ class SignUp extends Component {
       })
         .then((res) => {
           console.log(res);
-          this.setState({email :res.data.user_detail.email, username: res.data.user_detail.username, emailstate: true, socialkey: res.data.key})
+          this.setState({email :res.data.user_detail.email, username: res.data.user_detail.username, emailstate: true, socialkey: res.data.key, isGoogleLogin: false})
       }
         )
         .catch((error) => {
@@ -181,7 +185,7 @@ class SignUp extends Component {
       })
         .then((res) => {
           console.log(res.data.user_detail);
-          this.setState({email :res.data.user_detail.email, username: res.data.user_detail.username, emailstate: true, socialkey: res.data.key})
+          this.setState({email :res.data.user_detail.email, username: res.data.user_detail.username, emailstate: true, socialkey: res.data.key, isGoogleLogin: true})
       }
         )
         .catch((error) => {
@@ -195,7 +199,7 @@ class SignUp extends Component {
 
   FacebookeHandle = async (e) =>{
     e.preventDefault();
-    console.log("google signup")
+    console.log("facebook signup")
     const URL = "https://gamehubx.com/api/v1/login/facebook/";
     const data = {
       "key": this.state.socialkey,
@@ -371,7 +375,15 @@ class SignUp extends Component {
           </GoogleLogin>
 
 
-          <form className="form-sect" onSubmit={this.state.emailstate? (e)=>this.googleHandle : (e) => this.handlesubmit(e)}>
+          <form className="form-sect" onSubmit={
+            this.state.emailstate?
+            this.state.isGoogleLogin? 
+            (e)=>this.googleHandle(e) 
+            :
+            (e)=>this.FacebookeHandle(e)
+            : 
+            (e) => this.handlesubmit(e)
+            }>
             <input
               required
               id="inputcolor"
@@ -739,23 +751,19 @@ class SignUp extends Component {
               </select>
             </div>
             {/* <GoogleReCaptcha></GoogleReCaptcha> */}
-            <div style={this.state.emailstate?{display:'none'}: null}  className="captcha">
-            <ReCAPTCHA
-              sitekey="6Lf1g48bAAAAAHDUDMbO2eD8EMZ29fy0EGetLegt"
-              onChange={(value)=>this.onChange(value)}
-              theme='dark'
-            />
-              {/* <input
-                
-                style={{ width: "60%", backgroundColor: "white" }}
-                className="input-fields"
-              ></input>
-              <div
-                style={{ width: "35%", display: "flex", alignItems: "center" }}
-                className="captcha-code"
-              >
-                Captcha code
-              </div> */}
+            <div className="captcha">
+
+              {
+                this.state.emailstate?
+                null
+                :
+                <ReCAPTCHA
+                sitekey="6Lf1g48bAAAAAHDUDMbO2eD8EMZ29fy0EGetLegt"
+                onChange={(value)=>this.onChange(value)}
+                theme='dark'
+              />
+              }
+
             </div>
             <div className="check-policy">
               <input

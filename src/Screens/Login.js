@@ -112,7 +112,8 @@ class Login extends Component {
                 pathname: "/signup",
                 state: { 
                   data: res.data.user_detail,
-                  key: res.data.key
+                  key: res.data.key,
+                  isGoogle: false,
                  }
         })
       }
@@ -149,7 +150,8 @@ class Login extends Component {
                 pathname: "/signup",
                 state: { 
                   data: res.data.user_detail,
-                  key: res.data.key
+                  key: res.data.key,
+                  isGoogle: true,
                  }
         })
       }
