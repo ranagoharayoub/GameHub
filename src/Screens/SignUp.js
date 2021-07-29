@@ -33,6 +33,7 @@ class SignUp extends Component {
       modaltext: "",
       recaptcha: "",
       emailstate: false,
+      socialkey: null
     };
   }
 
@@ -42,7 +43,9 @@ class SignUp extends Component {
     console.log("the data in fbgsignup page",this.props.history.location.state);
     // var dataprops = this.props.state
     var dataprops = this.props.history.location.state? this.props.history.location.state.data : null
+    
     if (this.props.history.location.state) {
+      this.setState({socialkey: this.props.history.location.state.key})
       if( dataprops.email !== null){
         this.setState({ email: dataprops.email, emailstate:true  });
       }
@@ -147,7 +150,7 @@ class SignUp extends Component {
       })
         .then((res) => {
           console.log(res);
-          this.setState({email :res.data.user_detail.email, username: res.data.user_detail.username, emailstate: true})
+          this.setState({email :res.data.user_detail.email, username: res.data.user_detail.username, emailstate: true, socialkey: res.data.key})
       }
         )
         .catch((error) => {
@@ -178,7 +181,7 @@ class SignUp extends Component {
       })
         .then((res) => {
           console.log(res.data.user_detail);
-          this.setState({email :res.data.user_detail.email, username: res.data.user_detail.username, emailstate: true})
+          this.setState({email :res.data.user_detail.email, username: res.data.user_detail.username, emailstate: true, socialkey: res.data.key})
       }
         )
         .catch((error) => {
@@ -190,11 +193,41 @@ class SignUp extends Component {
     }
   };
 
+  FacebookeHandle = async (e) =>{
+    e.preventDefault();
+    console.log("google signup")
+    const URL = "https://gamehubx.com/api/v1/login/facebook/";
+    const data = {
+      "key": this.state.socialkey,
+      "user_detail": {
+          "id": this.props.history.location.state.data.id,
+          "email": this.state.email,
+          "name": null,
+          "full_name": null,
+          "country_code": this.state.phoneext,
+          "phone_number": this.state.phone,
+          "image": null,
+          "cover_image": null,
+          "dob":this.state.year + "-" + this.state.month + "-" + this.state.day,
+          "username": this.state.username,
+          "timezone": this.state.timezone
+      },
+      "registered": true
+  }
+    
+    await axios.post(URL, data, {
+      headers: {}
+    }).then((res)=> {console.log(res); this.props.history.push("/login")})
+      .catch(e=>(console.log(e.response)))
+
+  }
+
   googleHandle = async (e) =>{
     e.preventDefault();
+    console.log("google signup")
     const URL = "https://gamehubx.com/api/v1/login/google/";
     const data = {
-      "key": this.props.history.location.key,
+      "key": this.state.socialkey,
       "user_detail": {
           "id": this.props.history.location.state.data.id,
           "email": this.state.email,
@@ -360,18 +393,23 @@ class SignUp extends Component {
               placeholder="Email Address*"
               disabled={this.state.emailstate}
             ></input>
-            <input
+            {
+              this.state.emailstate ?
+              null
+              :
+              <>
+              <input
               id="inputcolor"
               required
               className="input-fields"
-              style={this.state.emailstate?{display:'none'}: null}
+              // style={this.state.emailstate?{display:'none'}: null}
               name="pass"
               value={this.state.pass}
               onChange={(e) => this.handleChange3(e)}
               type="password"
               placeholder="Create Password*"
             ></input>
-            <div className="issues" style={this.state.emailstate?{display:'none'}: null}>
+            <div className="issues" >
               <div className="warning">
               <img
                 src={this.state.pass.trim().length>9?
@@ -431,7 +469,7 @@ class SignUp extends Component {
                 <div style={{ marginLeft: "10px" }}>Symbol</div>
               </div>
             </div>
-            <div className="pass-strength" style={this.state.emailstate?{display:'none'}: null}>
+            <div className="pass-strength" >
               <div
                 className="line"
                 style={
@@ -449,10 +487,11 @@ class SignUp extends Component {
                     : null
                 }
               ></div>
-              <div className="strength">{this.state.passstate}</div>
+              <div className="strength" >{this.state.passstate}</div>
             </div>
             <input
               id="inputcolor"
+              // style={this.state.emailstate?{display:'none'}: null}
               required
               className="input-fields"
               name="confpass"
@@ -461,6 +500,9 @@ class SignUp extends Component {
               type="password"
               placeholder="Confirm Password*"
             ></input>
+            </>
+            }
+            
             <label className="phone">Phone Number*</label>
             <div>
               <input
