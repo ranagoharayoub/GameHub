@@ -144,7 +144,10 @@ class Login extends Component {
           console.log(res.data);
             this.props.history.push({
                 pathname: "/signup",
-                state: { data: res.data.user_detail }
+                state: { 
+                  data: res.data.user_detail,
+                  key: res.data.key
+                 }
         })
       }
         )

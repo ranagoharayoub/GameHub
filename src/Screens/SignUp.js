@@ -190,6 +190,34 @@ class SignUp extends Component {
     }
   };
 
+  googleHandle = async (e) =>{
+    e.preventDefault();
+    const URL = "https://gamehubx.com/api/v1/login/google/";
+    const data = {
+      "key": this.props.history.location.key,
+      "user_detail": {
+          "id": this.props.history.location.state.data.id,
+          "email": this.state.email,
+          "name": null,
+          "full_name": null,
+          "country_code": this.state.phoneext,
+          "phone_number": this.state.phone,
+          "image": null,
+          "cover_image": null,
+          "dob":this.state.year + "-" + this.state.month + "-" + this.state.day,
+          "username": this.state.username,
+          "timezone": this.state.timezone
+      },
+      "registered": true
+  }
+    
+    await axios.post(URL, data, {
+      headers: {}
+    }).then((res)=> {console.log(res); this.props.history.push("/login")})
+      .catch(e=>(console.log(e.response)))
+
+  }
+
   handlesubmit = async (e) => {
     e.preventDefault();
     console.log(this.state.pass, "submuit buton");
@@ -310,7 +338,7 @@ class SignUp extends Component {
           </GoogleLogin>
 
 
-          <form className="form-sect" onSubmit={(e) => this.handlesubmit(e)}>
+          <form className="form-sect" onSubmit={this.state.emailstate? (e)=>this.googleHandle : (e) => this.handlesubmit(e)}>
             <input
               required
               id="inputcolor"
@@ -669,7 +697,7 @@ class SignUp extends Component {
               </select>
             </div>
             {/* <GoogleReCaptcha></GoogleReCaptcha> */}
-            <div className="captcha">
+            <div style={this.state.emailstate?{display:'none'}: null}  className="captcha">
             <ReCAPTCHA
               sitekey="6Lf1g48bAAAAAHDUDMbO2eD8EMZ29fy0EGetLegt"
               onChange={(value)=>this.onChange(value)}
