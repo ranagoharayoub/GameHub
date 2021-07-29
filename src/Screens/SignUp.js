@@ -274,7 +274,13 @@ class SignUp extends Component {
     };
 
     axios.patch(URL, data, {headers:headers})
-          .then((res)=> {console.log(res)})
+          .then((res)=> {
+            console.log(res)
+            localStorage.setItem("token", this.state.socialkey)
+            localStorage.setItem("userdata", this.state.socialId)
+            localStorage.setItem("name", this.state.username)
+            window.location.href='/'
+          })
           .catch((e)=> {console.log(e)})
   }
 
