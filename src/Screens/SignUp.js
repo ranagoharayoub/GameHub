@@ -34,6 +34,7 @@ class SignUp extends Component {
       recaptcha: "",
       emailstate: false,
       socialkey: null,
+      socialId: null,
       isGoogleLogin: false,
     };
   }
@@ -48,7 +49,8 @@ class SignUp extends Component {
     if (this.props.history.location.state) {
       this.setState({
         socialkey: this.props.history.location.state.key,
-         isGoogleLogin:this.props.history.location.state.isGoogle
+        isGoogleLogin:this.props.history.location.state.isGoogle,
+        socialId: dataprops.id,
         })
       if( dataprops.email !== null){
         this.setState({ email: dataprops.email, emailstate:true  });
@@ -145,7 +147,7 @@ class SignUp extends Component {
       console.log("in conditions");
       await axios({
         method: "post",
-        url: "https://gamehubx.com/api/v1/login/facebook/",
+        url: "https://gamehubx.com/api/v1/login/facebook/?type=signup",
         headers: {},
         data: {
           access_token: response.accessToken,
@@ -154,7 +156,7 @@ class SignUp extends Component {
       })
         .then((res) => {
           console.log(res);
-          this.setState({email :res.data.user_detail.email, username: res.data.user_detail.username, emailstate: true, socialkey: res.data.key, isGoogleLogin: false})
+          this.setState({email :res.data.user_detail.email, username: res.data.user_detail.username, emailstate: true, socialId:res.data.user_detail.id ,socialkey: res.data.key, isGoogleLogin: false})
       }
         )
         .catch((error) => {
@@ -176,7 +178,7 @@ class SignUp extends Component {
       console.log("in conditions");
       await axios({
         method: "post",
-        url: "https://gamehubx.com/api/v1/login/google/",
+        url: "https://gamehubx.com/api/v1/login/google/?type=signup",
         headers: {},
         data: {
           access_token: response.accessToken,
@@ -185,7 +187,7 @@ class SignUp extends Component {
       })
         .then((res) => {
           console.log(res.data.user_detail);
-          this.setState({email :res.data.user_detail.email, username: res.data.user_detail.username, emailstate: true, socialkey: res.data.key, isGoogleLogin: true})
+          this.setState({email :res.data.user_detail.email, username: res.data.user_detail.username, emailstate: true, socialId:res.data.user_detail.id ,socialkey: res.data.key, isGoogleLogin: true})
       }
         )
         .catch((error) => {
@@ -197,63 +199,84 @@ class SignUp extends Component {
     }
   };
 
-  FacebookeHandle = async (e) =>{
-    e.preventDefault();
-    console.log("facebook signup")
-    const URL = "https://gamehubx.com/api/v1/login/facebook/";
-    const data = {
-      "key": this.state.socialkey,
-      "user_detail": {
-          "id": this.props.history.location.state.data.id,
-          "email": this.state.email,
-          "name": null,
-          "full_name": null,
-          "country_code": this.state.phoneext,
-          "phone_number": this.state.phone,
-          "image": null,
-          "cover_image": null,
-          "dob":this.state.year + "-" + this.state.month + "-" + this.state.day,
-          "username": this.state.username,
-          "timezone": this.state.timezone
-      },
-      "registered": true
-  }
+  // FacebookeHandle = async (e) =>{
+  //   e.preventDefault();
+  //   console.log("facebook signup")
+  //   const URL = "https://gamehubx.com/api/v1/login/facebook/";
+  //   const data = {
+  //     "key": this.state.socialkey,
+  //     "user_detail": {
+  //         "id": this.props.history.location.state.data.id,
+  //         "email": this.state.email,
+  //         "name": null,
+  //         "full_name": null,
+  //         "country_code": this.state.phoneext,
+  //         "phone_number": this.state.phone,
+  //         "image": null,
+  //         "cover_image": null,
+  //         "dob":this.state.year + "-" + this.state.month + "-" + this.state.day,
+  //         "username": this.state.username,
+  //         "timezone": this.state.timezone
+  //     },
+  //     "registered": true
+  // }
     
-    await axios.post(URL, data, {
-      headers: {}
-    }).then((res)=> {console.log(res); this.props.history.push("/login")})
-      .catch(e=>(console.log(e.response)))
+  //   await axios.post(URL, data, {
+  //     headers: {}
+  //   }).then((res)=> {console.log(res); this.props.history.push("/login")})
+  //     .catch(e=>(console.log(e.response)))
 
-  }
+  // }
 
-  googleHandle = async (e) =>{
-    e.preventDefault();
-    console.log("google signup")
-    const URL = "https://gamehubx.com/api/v1/login/google/";
-    const data = {
-      "key": this.state.socialkey,
-      "user_detail": {
-          "id": this.props.history.location.state.data.id,
-          "email": this.state.email,
-          "name": null,
-          "full_name": null,
-          "country_code": this.state.phoneext,
-          "phone_number": this.state.phone,
-          "image": null,
-          "cover_image": null,
-          "dob":this.state.year + "-" + this.state.month + "-" + this.state.day,
-          "username": this.state.username,
-          "timezone": this.state.timezone
-      },
-      "registered": true
-  }
+  // googleHandle = async (e) =>{
+  //   e.preventDefault();
+  //   console.log("google signup")
+  //   const URL = "https://gamehubx.com/api/v1/login/google/";
+  //   const data = {
+  //     "key": this.state.socialkey,
+  //     "user_detail": {
+  //         "id": this.props.history.location.state.data.id,
+  //         "email": this.state.email,
+  //         "name": null,
+  //         "full_name": null,
+  //         "country_code": this.state.phoneext,
+  //         "phone_number": this.state.phone,
+  //         "image": null,
+  //         "cover_image": null,
+  //         "dob":this.state.year + "-" + this.state.month + "-" + this.state.day,
+  //         "username": this.state.username,
+  //         "timezone": this.state.timezone
+  //     },
+  //     "registered": true
+  // }
     
-    await axios.post(URL, data, {
-      headers: {}
-    }).then((res)=> {console.log(res); this.props.history.push("/login")})
-      .catch(e=>(console.log(e.response)))
+  //   await axios.post(URL, data, {
+  //     headers: {}
+  //   }).then((res)=> {console.log(res); this.props.history.push("/login")})
+  //     .catch(e=>(console.log(e.response)))
 
+  // }
+
+  socialProfileUpdate = async () => {
+    console.log("socialProfileUpdate", this.state.socialId, this.state.socialkey)
+    const URL = "https://gamehubx.com/api/v1/user-profile/"+this.state.socialId+"/";
+    const data = {
+      "country_code": this.state.phoneext,
+      "phone_number": this.state.phone,
+      "dob":this.state.year + "-" + this.state.month + "-" + this.state.day,
+      "username": this.state.username,
+      "timezone": this.state.timezone
+    }
+    const headers = {
+      "Authorization": "Token "+ this.state.socialkey,
+      "Content-Type": "application/json;charset=UTF-8",
+    };
+
+    axios.patch(URL, data, {headers:headers})
+          .then((res)=> {console.log(res)})
+          .catch((e)=> {console.log(e)})
   }
+
 
   handlesubmit = async (e) => {
     e.preventDefault();
@@ -325,12 +348,32 @@ class SignUp extends Component {
           </Modal.Footer>
         </Modal>
         <div className="signup-sect">
-          <div className="title">STEP UP YOUR GAME, JOIN TODAY!</div>
+          <div className="title">{
+          this.state.emailstate?
+          "Profile Update"
+          :
+          "STEP UP YOUR GAME, JOIN TODAY!"
+
+        }
+        </div>
           <div className="subtitle">
-            Already a member?
+          {
+          this.state.emailstate?
+          "Updata some fields to get Signed In"
+          :
+          "Already a member"
+
+        }
+            {/* Already a member? */}
             <Link
               to="/login"
-              style={{
+              style={
+                this.state.emailstate?
+                {
+                  display:'none'
+                }
+                :
+                {
                 color: "#F69204",
                 marginLeft: "5px",
                 textDecoration: "none",
@@ -340,6 +383,11 @@ class SignUp extends Component {
               Sign in
             </Link>
           </div>
+          {
+            this.state.emailstate ?
+            null
+            :
+            <>
           <FacebookLogin
             appId="298750325266295"
             autoLoad={false}
@@ -373,14 +421,12 @@ class SignUp extends Component {
             icon={false}
           >
           </GoogleLogin>
-
-
+          </>
+          }
+          
           <form className="form-sect" onSubmit={
             this.state.emailstate?
-            this.state.isGoogleLogin? 
-            (e)=>this.googleHandle(e) 
-            :
-            (e)=>this.FacebookeHandle(e)
+            (e) => this.socialProfileUpdate(e)
             : 
             (e) => this.handlesubmit(e)
             }>
