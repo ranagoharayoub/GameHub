@@ -11,20 +11,24 @@
 }
 
 .stats-card .stats-ico{
-    height: 100px;
-    width: auto;
+    /* height: 100px;
+    width: auto; */
+    height: auto;
+    width: 8vw;
     object-fit: cover;
 }
 
 .stats-card .numb{
-    font: normal normal bold 30px/30px Arial;
+    /* font: normal normal bold 30px/30px Arial; */
+    font: normal normal bold 2vw/2vw Arial;
     letter-spacing: 0px;
     color: #F69204;
     opacity: 1;
 }
 
 .stats-card .stat-title{
-    font: normal normal bold 15px/21px Arial;
+    /* font: normal normal bold 15px/21px Arial; */
+    font: normal normal bold 1.5vw/2vw Arial;
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 0.76;

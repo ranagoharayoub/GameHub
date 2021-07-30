@@ -29,21 +29,24 @@
 }
 
 .half-overlay .headline{
-    font: normal normal bold 25px/30px Arial;
+    /* font: normal normal bold 25px/30px Arial; */
+    font: normal normal bold 2vw/2vw Arial;
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;
 }
 
 .half-overlay .date{
-    font: normal normal normal 15px/30px Calibri;
+    /* font: normal normal normal 15px/30px Calibri; */
+    font: normal normal normal 1vw/2vw Calibri;
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;
 }
 
 .half-overlay .detail{
-    font: normal normal normal 15px/22px Calibri;
+    /* font: normal normal normal 15px/22px Calibri; */
+    font: normal normal normal 1vw/2vw Calibri;
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;
@@ -55,7 +58,8 @@
     background: #49ECF8 0% 0% no-repeat padding-box;
     border-radius: 4px;
     border: none;
-    font: normal normal bold 12px/30px Arial;
+    /* font: normal normal bold 12px/30px Arial; */
+    font: normal normal bold 1vw/2vw Arial;
     letter-spacing: 0px;
     color: #212121;
     opacity: 1;

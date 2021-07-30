@@ -139,7 +139,7 @@ function Home({ width }) {
           {/* <TournamentCard width={width}></TournamentCard>
           <TournamentCard width={width}></TournamentCard> */}
         </div>
-        <Link to="/tournament">
+        <Link to="/alltournament">
           <button className="view-btn">view all</button>
         </Link>
       </div>
