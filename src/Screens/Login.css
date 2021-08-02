@@ -51,7 +51,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 25px;
+    padding-left:2vw;
 }
 
 /* .login-cont .content-center {
@@ -67,7 +67,7 @@
 
 
 .social-login-fb .title, .social-login-google .btn-title{
-    font: normal normal bold 15px/0px Arial;
+    font: normal normal bold 1vw/0px Arial;
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 1;

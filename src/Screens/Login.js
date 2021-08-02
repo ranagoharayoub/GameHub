@@ -267,8 +267,8 @@ class Login extends Component {
             onClick={this.compclicked}
             render={(renderProps) => (
               <button className="social-login-fb" onClick={renderProps.onClick}>
-                <img src="/icons/fb.png" height="20px" alt="fb"></img>
-                <div className="title" style={{ paddingLeft: "20px", color:'white' }}>Continue with Facebook</div>
+                <img src="/icons/fb.png" height="1vw" alt="fb"></img>
+                <div className="title" style={{ paddingLeft: "2vw", color:'white' }}>Continue with Facebook</div>
               </button>
             )}
           />
@@ -279,8 +279,8 @@ class Login extends Component {
             }
             render={renderProps => (
               <button style={{backgroundColor: 'white'}} className="social-login-google"  onClick={renderProps.onClick} >
-                <img src="/icons/google.png" height="20px" alt="google" ></img>
-                <div className="btn-title" style={{ paddingLeft: "20px", color:'black' }}>
+                <img src="/icons/google.png" height="1vw" alt="google" ></img>
+                <div className="btn-title" style={{ paddingLeft: "2vw", color:'black' }}>
                 Continue with Google
                 </div>
                 </button>
