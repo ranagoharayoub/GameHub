@@ -21,17 +21,17 @@ function Footer() {
             </div>
             <div className='second-cont'>
                 <div className='payment-col'>
-                    <img src='/icons/gamehub.png' width='100px' alt='logo'></img>
-                    <img src='/icons/Payment_Trust_Badges.png' height='80px' alt='payment'></img>
+                    <img src='/icons/gamehub.png' width='35%' alt='logo'></img>
+                    <img src='/icons/Payment_Trust_Badges.png' width='100%' alt='payment'></img>
                 </div>          
             </div>
             <div className='last-cont'>
                 <div className='social-col'>
                     <div className='social-icons'>
-                        <img src='/icons/facebook.png' height='28px' alt='logo'></img>
-                        <img src='/icons/instagram.png' height='28px' alt='logo'></img>
-                        <img src='/icons/tiktok12.png' height='28px' alt='logo'></img>
-                        <img src='/icons/twitter.png' height='28px' alt='logo'></img>
+                        <img src='/icons/facebook.png' width='15%' alt='logo'></img>
+                        <img src='/icons/instagram.png' width='15%' alt='logo'></img>
+                        <img src='/icons/tiktok12.png' width='15%' alt='logo'></img>
+                        <img src='/icons/twitter.png' width='15%' alt='logo'></img>
                     </div>
                     <div className='cc'>© 2021 Gamehub Inc All Rights Reserved</div>
                     <div className='policy'> Terms of Service | Privacy Policy</div>

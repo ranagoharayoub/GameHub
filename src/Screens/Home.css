@@ -41,7 +41,8 @@
     bottom: 10%;
     right: 50%;
     transform: translate(50%, -50%);
-    padding: 10px 60px;
+    /* padding: 10px 60px; */
+    padding: 2vh 5vw;
     background-color: #f69204;
     outline: none;
     border: none;
@@ -67,7 +68,7 @@
 
 .games-corousal .game-title{
     /* font: normal normal bold 80px/49px Arial; */
-    font: normal normal bold 5vw/3vw Arial;
+    font: normal normal bold 5vw/5vw Arial;
 }
 
 .games-corousal .select{
@@ -135,7 +136,7 @@
                 
 .featured-tournament .title{
     /* font: normal normal bold 60px/40px Bahnschrift; */
-    font: normal normal bold 5vw/3vw Bahnschrift;
+    font: normal normal bold 5vw/5vw Bahnschrift;
     font-family: 'Bahnschrift', sans-serif;                                           
     
 }
@@ -159,7 +160,9 @@
     border: 2px solid #F69204;
     border-radius: 4px;
     opacity: 1;
-    padding: 10px 40px;
+    /* padding: 10px 40px; */
+    margin-top: 3vh;
+    padding: 1vh 3vw;
     /* font: normal normal bold 15px/15px Arial; */
     font: normal normal bold 1.5vw/1.5vw Arial;
     letter-spacing: 0px;
@@ -182,7 +185,7 @@
 
 .stats-cont .title{
     /* font: normal normal bold 80px/49px Bahnschrift; */
-    font: normal normal bold 5vw/3vw Bahnschrift;
+    font: normal normal bold 5vw/5vw Bahnschrift;
     font-family: 'Bahnschrift', sans-serif;
     letter-spacing: 0px;
     color: #FFFFFF;
@@ -213,7 +216,7 @@
 .champ-cont .title{
     
     /* font: normal normal bold 60px/60px Bahnschrift; */
-    font: normal normal bold 5vw/3vw Bahnschrift;
+    font: normal normal bold 5vw/5vw Bahnschrift;
     font-family: 'Bahnschrift', sans-serif;
     letter-spacing: 0px;
     color: #FFFFFF;
@@ -262,7 +265,7 @@
 
 .game-news .title{
     /* font: normal normal bold 60px/49px Bahnschrift; */
-    font: normal normal bold 5vw/3vw Bahnschrift;
+    font: normal normal bold 5vw/5vw Bahnschrift;
     font-family: 'Bahnschrift', sans-serif;    
     letter-spacing: 0px;
     color: #FFFFFF;
@@ -450,7 +453,8 @@
 }
 
 .game-news .title{
-    font: normal normal bold 60px/49px Bahnschrift;
+    /* font: normal normal bold 60px/49px Bahnschrift; */
+    font: normal normal bold 1.5vw/2vw Bahnschrift;
     font-family: 'Bahnschrift', sans-serif;    
     letter-spacing: 0px;
     color: #FFFFFF;

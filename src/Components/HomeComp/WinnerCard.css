@@ -21,17 +21,26 @@
 }
 
 .winner-card .avatar{
-    position: absolute;
+    /* position: absolute;
     top: -80px;
     left: 50%;
     transform: translateX(-50%);
     height: 100px;
     width: 100px;
+    border: 2px solid white; */
+
+    position: absolute;
+    top: -12vh;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 8vw;
+    width: 8vw;
     border: 2px solid white;
 }
 
 .winner-crown{
     position: absolute;
+    height: 5vh;
     top: 0%;
     
 }
@@ -55,7 +64,7 @@
 
 .winner-card .game-img{
     height: 25%;
-    width: 25%;
+    width: 35%;
     object-fit: cover;
     box-sizing: border-box;
     border: 1px solid white;
@@ -79,7 +88,8 @@
     color: #272727;
     text-transform: uppercase;
     opacity: 1;
-    padding: 0px 25px;
+    /* padding: 0px 25px; */
+    padding: 0px 2vw;
     border: none;
     }
 
