@@ -1,7 +1,15 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import './DepositFunds.css'
 
 function DepositFunds() {
+    const history = useHistory()
+
+    const redirect = (e)=>{
+        e.preventDefault()
+        
+        history.push('/paymentmethod')
+    }
     return (
         <div className='deposit-funds'>
             <div className='center-cont'>
@@ -16,9 +24,9 @@ function DepositFunds() {
                         $0.00
                     </div>
                 </div>
-                <form className='form' >
+                <form className='form' onSubmit={redirect}>
                     <label htmlFor='amonut' className='label'>Deposit Amount</label>
-                    <input className='input' placeholder='Deposit Amount' type='number'></input>
+                    <input required className='input' placeholder='Deposit Amount' type='number'></input>
                     <div className='minimun-input'>$5.00 minimum</div>
                     <div className='instr'>You can deposit funds to shop and enter cash matches. All funds earned through tournament play can be withdrawn.</div>
                     <div className='disc-amount'>
@@ -47,12 +55,12 @@ function DepositFunds() {
                         </div>
                     </div>
                     <div className='disc-amount'>
-                        <div className='cancel'>
+                        <div onClick={()=> history.push('/')} className='cancel'>
                         Cancel
                         </div>
-                        <div className='cancel'>
+                        <button type='submit' className='cancel'>
                         Continue
-                        </div>
+                        </button>
                     </div>
                 </form>
             </div>

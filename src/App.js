@@ -29,6 +29,7 @@ import Faq from './Screens/Faq'
 import {ContextAPI} from './Context/Context'
 import axios from 'axios';
 import DepositFunds from './Screens/DepositFunds';
+import PaymentMethod from './Screens/PaymentMethod';
 
 function App() {
   const [width, setwidth] = useState(window.innerWidth)
@@ -80,7 +81,8 @@ function App() {
           <Route path='/login'  ><Login width={width} history={history}></Login></Route>
           <Route path='/fbglogin'><FbGlogin history={history}></FbGlogin></Route>
           <Route path='/settings/:id'  ><Settings width={width}></Settings></Route>
-          <Route path='/depositfunds'  ><DepositFunds width={width}></DepositFunds></Route>  
+          <Route path='/depositfunds'  ><DepositFunds width={width}></DepositFunds></Route>
+          <Route path='/paymentmethod'  ><PaymentMethod width={width}></PaymentMethod></Route>  
           <Route path='/matches'  ><Matches width={width}></Matches></Route>
           <Route path='/champs'  ><Champions></Champions></Route>
           <Route path='/profile/:id'  > <MainPro width={width} /> </Route>
