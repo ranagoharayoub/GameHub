@@ -1,0 +1,108 @@
+.deposit-funds{
+    min-height: 93vh;
+    width: 100%;
+    background-color: #272727;
+    display: grid;
+    place-items: center;
+    color: #FFFFFF;
+}
+
+.deposit-funds .center-cont{
+    height: 70%;
+    width: 50%;
+    /* background-color: lightgray; */
+    display: flex;
+    flex-direction: column;
+
+}
+
+.deposit-funds .center-cont .title{
+    font: normal normal bold 5vw/5vw Bahnschrift;
+    font-family: 'Bahnschrift', sans-serif;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.deposit-funds .center-cont .current-balance{
+    display: flex;
+    justify-content: space-between;
+    font: normal normal bold 2vw/2vw Bahnschrift;
+    font-family: 'Bahnschrift', sans-serif;
+    margin-top: 1vh;
+}
+
+.deposit-funds .center-cont .form{
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.deposit-funds .center-cont .label{
+    font: normal normal normal 1vw/1vw Arial;
+    opacity: 0.7;
+    margin-bottom: 1vh;
+}
+
+.input{
+    width: 100%;
+    background: #4A4747 0% 0% no-repeat padding-box;
+    min-height: 7vh;
+    margin: 1vh 0%;
+    padding: 0px 1vw;
+}
+
+.deposit-funds .center-cont  .input::-webkit-outer-spin-button,
+.deposit-funds .center-cont  .input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.deposit-funds .center-cont .minimun-input{
+    font: normal normal bold 1vw/1vw Arial;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 0.7;
+    margin: 2vh 0%;
+}
+
+.deposit-funds .center-cont .instr{
+    font: normal normal normal 0.9vw/1vw Arial;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 0.7;
+}
+
+.deposit-funds .center-cont .disc-amount{
+    display: flex;
+    justify-content: space-between;
+    margin: 2vh 0%;
+}
+
+.deposit-funds .center-cont .disc-amount .disc{
+    font: normal normal normal 1vw/1vw Arial;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 0.7;
+    padding: 0px 1vw;
+}
+
+.deposit-funds .center-cont .disc-amount .amount{
+    font: normal normal normal 1vw/1vw Calibri;
+    font-family: 'Calibri';
+}
+
+.deposit-funds .center-cont .cancel{
+    display: grid;
+    place-items: center;
+    width: 48%;
+    height: 7vh;
+    background: #303030 0% 0% no-repeat padding-box;
+    border: 0.1vw solid #747474;
+    border-radius: 0.5vw;
+    color: #F69204;
+    font-weight: bold;
+    opacity: 1;
+    cursor:  pointer;
+}
+

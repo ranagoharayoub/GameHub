@@ -55,14 +55,16 @@ function SideBar({ toggle, off }) {
           <div style={{ font: "normal normal normal 15px/30px Bahnschrift" }}>
             $0.00
           </div>
-          <div
+          <Link
+            to='/depositfunds'
             style={{
               color: "#F69204",
               font: "normal normal normal 15px/10px Bahnschrift",
+              textDecoration:'none'
             }}
           >
             +Add Cash
-          </div>
+          </Link>
         </div>
         <div className="right-box">
           <div style={{ font: "normal normal normal 15px/30px Bahnschrift" }}>
