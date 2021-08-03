@@ -50,6 +50,11 @@
     min-height: 7vh;
     margin: 1vh 0%;
     padding: 0px 1vw;
+    font-weight: bold;
+}
+
+.deposit-funds .center-cont .input:focus{
+    border: 0.1vw solid #747474;
 }
 
 .deposit-funds .center-cont  .input::-webkit-outer-spin-button,
