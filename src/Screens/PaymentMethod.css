@@ -75,3 +75,55 @@
     cursor:  pointer;
     font-size: large;
 }
+
+@media (max-width: 800px) {
+    .payment-method .center{
+        height: 60%;
+        width: 85%;
+    }
+
+    .payment-method .center .title{
+        margin-bottom: 1vh;
+        font: normal normal bold 7vw/7vw Bahnschrift;
+    }
+
+    .payment-method .center .form{
+        margin-top: 2vh;
+    }
+
+    .payment-method .center .form .label{
+        font: normal normal normal 3vw/3vw Arial;
+    }
+
+    .payment-method .center .form .input{
+        width: 100%;
+        background: #4A4747 0% 0% no-repeat padding-box;
+        /* font-size: large; */
+        height: 4vh;
+        margin: 1vh 0%;
+        padding: 0px 1vw;
+        font-size: 3vw;
+    }
+
+    .payment-method .center .form .input::placeholder{
+
+        font-size: 3vw;
+    }
+
+    .payment-method .center .form .deposit{
+        margin-top: 2vh;
+        height: 4vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #303030 0% 0% no-repeat padding-box;
+        border: 0.1vw solid #747474;
+        border-radius: 1.5vw;
+        color: #F69204;
+        font-size: 3vw;
+        font-weight: bold;
+        opacity: 1;
+        cursor:  pointer;
+        /* font-size: normal; */
+    }
+}

@@ -70,7 +70,7 @@ function PaymentMethod() {
                                 >
                             {formik.touched.card_holder && formik.errors.card_holder? formik.errors.card_holder: 'Card Holder'}
                         </label>
-                        <input placeholder="type card holder name"
+                        <input placeholder="Type card holder name"
                                 type='text' 
                                 className='input' 
                                 name='card_holder' 
@@ -109,7 +109,7 @@ function PaymentMethod() {
                                 style={formik.touched.card_cvv && formik.errors.card_cvv?  {color:'red'}: null}>
                                 {formik.touched.card_cvv && formik.errors.card_cvv? formik.errors.card_cvv: 'CVC/CVV'}
                         </label>
-                        <input placeholder='enter three digits on back of your card'
+                        <input placeholder='Enter three digits on back of your card'
                                 type='number' 
                                 className='input' 
                                 name='card_cvv' 

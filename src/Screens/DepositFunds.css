@@ -111,3 +111,75 @@
     cursor:  pointer;
 }
 
+@media (max-width: 800px) {
+    .deposit-funds .center-cont{
+        height: 50%;
+        width: 85%;
+
+    }
+
+    .deposit-funds .center-cont .title{
+        font: normal normal bold 7vw/7vw Bahnschrift;
+    }
+
+    .deposit-funds .center-cont .current-balance{
+
+        font: normal normal bold 3vw/3vw Bahnschrift;
+        margin-top: 1vh;
+    }
+
+    .deposit-funds .center-cont .label{
+        font: normal normal normal 3vw/3vw Arial;
+        margin-bottom: 0vh;
+    }
+
+    .deposit-funds .center-cont .input{
+        background: #4A4747 0% 0% no-repeat padding-box;
+        min-height: 4vh;
+    }
+
+    .deposit-funds .center-cont .minimun-input{
+        font: normal normal bold 2vw/2vw Arial;
+        margin: 1vh 0%;
+        
+    }
+
+    .deposit-funds .center-cont .input::placeholder{
+        font-size: 3vw;
+    }
+
+    .deposit-funds .center-cont .instr{
+        font: normal normal normal 2vw/2vw Arial;
+
+    }
+
+    .deposit-funds .center-cont .disc-amount{
+        display: flex;
+        justify-content: space-between;
+        margin: 2vh 0%;
+    }
+
+    .deposit-funds .center-cont .disc-amount .disc{
+        font: normal normal normal 3vw/3vw Arial;
+    }
+
+    .deposit-funds .center-cont .disc-amount .amount{
+        font: normal normal normal 3vw/3vw Calibri;
+        font-family: 'Calibri';
+    }
+
+    .deposit-funds .center-cont .cancel{
+        display: grid;
+        place-items: center;
+        width: 48%;
+        height: 3vh;
+        background: #303030 0% 0% no-repeat padding-box;
+        border: 0.1vw solid #747474;
+        border-radius: 1.5vw;
+        color: #F69204;
+        font-weight: bold;
+        opacity: 1;
+        cursor:  pointer;
+        font-size: 3vw;
+    }
+}

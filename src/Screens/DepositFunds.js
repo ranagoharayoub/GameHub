@@ -46,7 +46,7 @@ function DepositFunds() {
                         value={amount}
                         onChange={(e)=> setamount(e.target.value)} 
                         className='input' 
-                        placeholder='Deposit Amount' 
+                        placeholder='Type amount here' 
                         type='number'
                         >
                     </input>
