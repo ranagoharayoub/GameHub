@@ -8,7 +8,7 @@ import TournamentCard from "../Components/HomeComp/TournamentCard";
 import StatsCard from "../Components/HomeComp/StatsCard";
 import WinnerCard from "../Components/HomeComp/WinnerCard";
 import NewsCard from "../Components/HomeComp/NewsCard";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import video from '../Video/herovid.mp4'
 
@@ -24,6 +24,7 @@ function Home({ width }) {
   //   this.splice(new_index, 0, this.splice(old_index, 1)[0]);
   // };
 
+  const history = useHistory()
 
 
   const [items, setitems] = useState(null);
@@ -107,7 +108,7 @@ function Home({ width }) {
         <div className="find">
           FIND YOUR <br></br>PERFECT TOURNAMENT
         </div>
-        <button className="play">Play</button>
+        <button onClick={()=> history.push("/depositfunds")} className="play">Play</button>
       </div>
       <div className="games-corousal">
         <div className="game-title">GAMES</div>
