@@ -2,28 +2,58 @@ import { useFormik } from 'formik'
 import React from 'react'
 import './PaymentMethod.css'
 import * as yup from 'yup';
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 function PaymentMethod() {
     
+    const history = useHistory()
     
     const formik = useFormik({
         initialValues: ({
-            name: '',
-            card: '',
+            card_holder: '',
+            card_number: '',
             exp: '',
-            cvc: '',
+            card_cvv: '',
 
         }),
 
         validationSchema : yup.object({
-            name: yup.string().required("Name is required"),
-            card: yup.string().length(13, "Enter 13 digits").required("card number is required"),
+            card_holder: yup.string().required("Name is required"),
+            card_number: yup.string().length(13, "Enter 13 digits").required("card number is required"),
             exp: yup.string().required("expiry date is required"),
-            cvc: yup.string().required("CVC/CCV number is required")
+            card_cvv: yup.string().required("CVC/CCV number is required")
         }),
 
-        onSubmit : (values)=>{
-            alert(JSON.stringify(values))
+        onSubmit : async (values)=>{
+
+            const URL = "https://gamehubx.com/api/v1/add-cash/"
+
+            const arr = values.exp.split("/")
+            const card_exp_month = arr[0]
+            const card_exp_year = arr[1]
+
+            const amountInCents = String(history.location.state*100)
+
+            let data = JSON.stringify({
+                ...values, 
+                amount: amountInCents,
+                card_exp_month,
+                card_exp_year
+            })
+
+            const token = localStorage.getItem("token")
+            const headers = {
+                "Content-Type": "application/json",
+                "Authorization": "token " + token
+            }
+
+            console.log(data, headers, typeof(String(history.location.state)))
+
+            await axios.post(URL, data, {
+                headers: headers
+            }).then(res=> console.log(res))
+               .catch(err => {console.log(err.response.data); alert(JSON.stringify(err.response.data))})
         }
     })
 
@@ -36,29 +66,29 @@ function PaymentMethod() {
 
                         <label htmlFor='name'
                                 className='label'
-                                style={formik.touched.name && formik.errors.name? {color:'red'}:null}
+                                style={formik.touched.card_holder && formik.errors.card_holder? {color:'red'}:null}
                                 >
-                            {formik.touched.name && formik.errors.name? formik.errors.name: 'Card Holder'}
+                            {formik.touched.card_holder && formik.errors.card_holder? formik.errors.card_holder: 'Card Holder'}
                         </label>
                         <input placeholder="type card holder name"
                                 type='text' 
                                 className='input' 
-                                name='name' 
-                                {...formik.getFieldProps('name')} 
+                                name='card_holder' 
+                                {...formik.getFieldProps('card_holder')} 
                                 >
                         </input>
 
-                        <label htmlFor='card' 
+                        <label htmlFor='card_number' 
                                 className='label'
-                                style={formik.touched.card && formik.errors.card?{color:'red'}:null}
+                                style={formik.touched.card_number && formik.errors.card_number?{color:'red'}:null}
                                 >
-                        {formik.touched.card && formik.errors.card? formik.errors.card: 'Credit Card Number'} 
+                        {formik.touched.card_number && formik.errors.card_number? formik.errors.card_number: 'Credit Card Number'} 
                         </label>
                         <input placeholder='1222 3355 24141'
                                 type='number'
                                 className='input' 
-                                name='card' 
-                                {...formik.getFieldProps('card')}
+                                name='card_number' 
+                                {...formik.getFieldProps('card_number')}
                                 >
                         </input>
 
@@ -74,19 +104,19 @@ function PaymentMethod() {
                                 {...formik.getFieldProps('exp')}>
                         </input>
 
-                        <label htmlFor='cvc'
+                        <label htmlFor='card_cvv'
                                 className='label' 
-                                style={formik.touched.cvc && formik.errors.cvc?  {color:'red'}: null}>
-                                {formik.touched.cvc && formik.errors.cvc? formik.errors.cvc: 'CVC/CVV'}
+                                style={formik.touched.card_cvv && formik.errors.card_cvv?  {color:'red'}: null}>
+                                {formik.touched.card_cvv && formik.errors.card_cvv? formik.errors.card_cvv: 'CVC/CVV'}
                         </label>
                         <input placeholder='enter three digits on back of your card'
                                 type='number' 
                                 className='input' 
-                                name='cvc' 
-                                {...formik.getFieldProps('cvc')}>                                    
+                                name='card_cvv' 
+                                {...formik.getFieldProps('card_cvv')}>                                    
                         </input>
 
-                        <button type='submit' className='deposit'>Deposit</button>
+                        <button type='submit' className='deposit'>Deposit ${history.location.state}</button>
                         
                     </form>
                 </div>

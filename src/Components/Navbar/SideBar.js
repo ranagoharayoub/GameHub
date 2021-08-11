@@ -70,14 +70,16 @@ function SideBar({ toggle, off }) {
           <div style={{ font: "normal normal normal 15px/30px Bahnschrift" }}>
             $0
           </div>
-          <div
+          <Link
+            to="/buycredits"
             style={{
               color: "#F69204",
               font: "normal normal normal 15px/10px Bahnschrift",
+              textDecoration:'none'
             }}
           >
             Buy Credit
-          </div>
+          </Link>
         </div>
       </div>
       <div className="view-profile">

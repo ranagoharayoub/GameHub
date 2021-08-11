@@ -16,8 +16,15 @@ function DepositFunds() {
 
     const redirect = (e)=>{
         e.preventDefault()
+        if (total<0.5) {
+            alert("minimum amount is 0.5")
+        } else {
+            history.push({
+                pathname: '/paymentmethod',
+                state: total
+            })
+        }
         
-        history.push('/paymentmethod')
     }
     return (
         <div className='deposit-funds'>
@@ -43,7 +50,7 @@ function DepositFunds() {
                         type='number'
                         >
                     </input>
-                    <div className='minimun-input'>$5.00 minimum</div>
+                    <div className='minimun-input'>$0.5 minimum</div>
                     <div className='instr'>You can deposit funds to shop and enter cash matches. All funds earned through tournament play can be withdrawn.</div>
                     <div className='disc-amount'>
                         <div className='disc'>
