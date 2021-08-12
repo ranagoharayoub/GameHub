@@ -9,6 +9,8 @@ function PaymentMethod() {
     
     const history = useHistory()
     
+
+
     const formik = useFormik({
         initialValues: ({
             card_holder: '',
@@ -52,7 +54,7 @@ function PaymentMethod() {
 
             await axios.post(URL, data, {
                 headers: headers
-            }).then(res=> console.log(res))
+            }).then(res=> {console.log(res); alert(JSON.stringify(res.data))})
                .catch(err => {console.log(err.response.data); alert(JSON.stringify(err.response.data))})
         }
     })
@@ -84,7 +86,7 @@ function PaymentMethod() {
                                 >
                         {formik.touched.card_number && formik.errors.card_number? formik.errors.card_number: 'Credit Card Number'} 
                         </label>
-                        <input placeholder='1222 3355 24141'
+                        <input placeholder='1222335524141'
                                 type='number'
                                 className='input' 
                                 name='card_number' 
