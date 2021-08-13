@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./SideBar.css";
-// import { FormControlLabel, Switch } from "@material-ui/core";
+import {ContextAPI} from '../../Context/Context'
 import { ArrowDropDown } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
 function SideBar({ toggle, off }) {
-  // const [checked, setchecked] = useState(false);
+  
+  const [profilepicture, username, balance, credits] = useContext(ContextAPI)
+
+  console.log(profilepicture, username)
+
   const [name, setname] = useState("");
   const [id, setid] = useState("");
   function signout() {
@@ -14,6 +18,7 @@ function SideBar({ toggle, off }) {
     localStorage.removeItem("name")
     window.location.href = "/";
   }
+
   useEffect(() => {
     var name = localStorage.getItem("name");
     setname(name);
@@ -53,10 +58,11 @@ function SideBar({ toggle, off }) {
       <div className="boxes">
         <div className="left-box">
           <div style={{ font: "normal normal normal 15px/30px Bahnschrift" }}>
-            $0.00
+          ${parseFloat(balance).toFixed(2)}
           </div>
           <Link
             to='/depositfunds'
+            onClick={off}
             style={{
               color: "#F69204",
               font: "normal normal normal 15px/10px Bahnschrift",
@@ -68,10 +74,11 @@ function SideBar({ toggle, off }) {
         </div>
         <div className="right-box">
           <div style={{ font: "normal normal normal 15px/30px Bahnschrift" }}>
-            $0
+            {credits? credits: 0}
           </div>
           <Link
             to="/buycredits"
+            onClick={off}
             style={{
               color: "#F69204",
               font: "normal normal normal 15px/10px Bahnschrift",

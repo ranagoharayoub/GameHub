@@ -1,15 +1,27 @@
 import { useFormik } from 'formik'
-import React from 'react'
+import React, { useState } from 'react'
 import './PaymentMethod.css'
 import * as yup from 'yup';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import { Button, Modal} from "react-bootstrap";
+
 
 function PaymentMethod() {
     
     const history = useHistory()
-    
 
+    const [show, setShow] = useState(false);
+    const [succes, setsucces] = useState(false)
+    const [modaltext, setmodaltext] = useState("");
+
+    const modalHandler = () =>{
+        setShow(false);
+        if (succes) {
+            history.go(0)
+            setsucces(false)
+        }
+    }
 
     const formik = useFormik({
         initialValues: ({
@@ -22,7 +34,7 @@ function PaymentMethod() {
 
         validationSchema : yup.object({
             card_holder: yup.string().required("Name is required"),
-            card_number: yup.string().length(13, "Enter 13 digits").required("card number is required"),
+            card_number: yup.string().required("card number is required"),
             exp: yup.string().required("expiry date is required"),
             card_cvv: yup.string().required("CVC/CCV number is required")
         }),
@@ -54,13 +66,31 @@ function PaymentMethod() {
 
             await axios.post(URL, data, {
                 headers: headers
-            }).then(res=> {console.log(res); alert(JSON.stringify(res.data))})
-               .catch(err => {console.log(err.response.data); alert(JSON.stringify(err.response.data))})
+            }).then(res=> {console.log(res);
+                 setmodaltext(`Success! ${history.location.state} has been deposited`);
+                 setShow(true)
+                 setsucces(true)
+                })
+               .catch(err => {console.log(err.response.data);
+                 setmodaltext(`${err.response.data.message}`);
+                 setShow(true)
+                 })
         }
     })
 
     return (
         <div className='payment-method'>
+            <Modal show={show} onHide={()=> modalHandler()}>
+                <Modal.Header >
+                <Modal.Title></Modal.Title>
+                </Modal.Header>
+                <Modal.Body>{modaltext}</Modal.Body>
+                <Modal.Footer>
+                <Button variant="secondary" onClick={()=> modalHandler()}>
+                    Close
+                </Button>
+                </Modal.Footer>
+            </Modal>
             <div className='center'>
                 <div className='title'>
                     PAYMENT METHOD

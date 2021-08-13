@@ -1,9 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import './DepositFunds.css'
+import {ContextAPI} from '../Context/Context'
 
 function DepositFunds() {
+
     const history = useHistory()
+
+    const [profilepicture, username, balance] = useContext(ContextAPI)
+
+    console.log(profilepicture, username)
+
     const [amount, setamount] = useState('')
     const [fee, setfee] = useState(null)
     const [total, settotal] = useState(null)
@@ -37,7 +44,7 @@ function DepositFunds() {
                         CURRENT BALANCE
                     </div>
                     <div>
-                        $0.00
+                        ${parseFloat(balance).toFixed(2)}
                     </div>
                 </div>
                 <form className='form' onSubmit={redirect}>
