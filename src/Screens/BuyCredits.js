@@ -55,13 +55,13 @@ function BuyCredits() {
 
     return (
         <div className='deposit-funds'>
-        <Modal show={show} onHide={()=> setShow(false)}>
+        <Modal show={show} onHide={modalHandler}>
             <Modal.Header >
             <Modal.Title></Modal.Title>
             </Modal.Header>
             <Modal.Body>{modaltext}</Modal.Body>
             <Modal.Footer>
-            <Button variant="secondary" onClick={()=> setShow(false)}>
+            <Button variant="secondary" onClick={modalHandler}>
                 Close
             </Button>
             </Modal.Footer>
