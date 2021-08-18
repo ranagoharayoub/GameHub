@@ -2,8 +2,11 @@
     min-height: 93vh;
     width: 100%;
     background-color: #272727;
-    display: grid;
-    place-items: center;
+    /* display: grid;
+    place-items: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #FFFFFF;
 }
 
@@ -16,7 +19,7 @@
 }
 
 .payment-method .center .title{
-    font: normal normal bold 5vw/5vw Bahnschrift;
+    font: normal normal bold 5vw/7vw Bahnschrift;
     font-family: 'Bahnschrift', sans-serif;
     letter-spacing: 0px;
     color: #FFFFFF;
@@ -29,7 +32,8 @@
 }
 
 .payment-method .center .form .label{
-    font: normal normal normal 1vw/2vw Bahnschrift;
+    font: normal normal normal 1.5vw/1.5vw Bahnschrift;
+    padding: 1vh 0vw;
     font-family: 'Bahnschrift', sans-serif;
     letter-spacing: 0px;
     color: #FFFFFF;
@@ -43,16 +47,17 @@
     height: 7vh;
     margin: 1vh 0%;
     padding: 0px 1vw;
+    font-size: 1.5vw;
 }
 
 .payment-method .center .form .input:focus{
     border: 0.1vw solid #747474;
 }
 
-.payment-method .center .form .input::placeholder{
+/* .payment-method .center .form .input::placeholder{
     
     font-size: 1vw;
-}
+} */
 
 .payment-method .center .form .input::-webkit-inner-spin-button{
     -webkit-appearance: none;
@@ -69,11 +74,11 @@
     border: 0.1vw solid #747474;
     border-radius: 0.5vw;
     color: #F69204;
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: bold;
     opacity: 1;
     cursor:  pointer;
-    font-size: large;
+    /* font-size: large; */
 }
 
 @media (max-width: 800px) {

@@ -32,7 +32,7 @@ function BuyCredits() {
         const URL = "https://gamehubx.com/api/v1/buy-credits/"
 
         const data ={
-            "amount": credits
+            "amount": addcredits
         }
 
         const token = localStorage.getItem("token")
@@ -44,7 +44,8 @@ function BuyCredits() {
         await axios.post(URL, data , {
             headers,
         }).then((res)=> {console.log(res); 
-            setmodaltext(`Congratulations! You have successfully bought ${credits} credits`)
+            setmodaltext(`Congratulations! You have successfully bought ${addcredits} credits`)
+            setsucces(true)
             setShow(true)
         })
             .catch((err)=>{ console.log(err.response)
@@ -55,64 +56,48 @@ function BuyCredits() {
 
     return (
         <div className='deposit-funds'>
-        <Modal show={show} onHide={modalHandler}>
+        <Modal  show={show} onHide={()=>modalHandler()}>
             <Modal.Header >
             <Modal.Title></Modal.Title>
             </Modal.Header>
             <Modal.Body>{modaltext}</Modal.Body>
             <Modal.Footer>
-            <Button variant="secondary" onClick={modalHandler}>
+            <Button variant="secondary" onClick={()=>modalHandler()}>
                 Close
             </Button>
             </Modal.Footer>
         </Modal>
         <div className='center-cont'>
             <div className='title'>
-                BUY CREDITS
+                GET CREDITS
             </div>
             <div className='current-balance'>
                 <div>
-                    CREDITS
+                   CURRENT CREDITS
                 </div>
                 <div>
                     {credits}
                 </div>
             </div>
             <form className='form' onSubmit={submitHandler}>
-                <label htmlFor='amonut' className='label'>Buy Credits</label>
+                <label htmlFor='amonut' className='label'>GET CREDITS</label>
                 <input required
                     value={addcredits}
                     onChange={(e)=> setcredits(e.target.value)} 
                     className='input' 
-                    placeholder='Type amount of credits you want to buy...' 
+                    placeholder='Enter amount of credits you want' 
                     type='number'
                     >
                 </input>
-                <div className='instr'>10 credits per dollar</div>
-                {/* <div className='instr'>You can deposit funds to shop and enter cash matches. All funds earned through tournament play can be withdrawn.</div> */}
-                {/* <div className='disc-amount'>
-                    <div className='disc'>
-                        1 dollar
-                    </div>
-                    <div className='amount'>
-                        5 credits
-                    </div>
-                </div>
+
+                <div className='instr'>1 credit per dollar,</div>
+                
                 <div className='disc-amount'>
                     <div className='disc'>
-                        Fees (2.9% + 0.30)
+                        Your credits will cost 
                     </div>
                     <div className='amount'>
-                        ${}
-                    </div>
-                </div> */}
-                {/* <hr></hr> */}
-                <div className='disc-amount'>
-                    <div className='disc'>
-                        You will be charged
-                    </div>
-                    <div className='amount'>
-                        ${addcredits/10}
+                        ${addcredits}
                     </div>
                 </div>
                 <div style={{width: '100%', display:'flex', justifyContent:'center'}}>
@@ -120,7 +105,7 @@ function BuyCredits() {
                     Cancel
                     </div> */}
                     <button type='submit' className='cancel' style={{width:"70%", marginTop:"5vh"}}>
-                    Purchase
+                        GET CREDITS
                     </button>
                 </div>
             </form>

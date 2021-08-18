@@ -1,7 +1,6 @@
-import { useFormik } from 'formik'
+
 import React, { useState } from 'react'
 import './PaymentMethod.css'
-import * as yup from 'yup';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { Button, Modal} from "react-bootstrap";
@@ -15,6 +14,66 @@ function PaymentMethod() {
     const [succes, setsucces] = useState(false)
     const [modaltext, setmodaltext] = useState("");
 
+    const [card_holder, setcard_holder] = useState('')
+
+    const [card_number, setcard_number] = useState('')
+   
+    const [exp, setexp] = useState('')
+
+    const [ccv, setccv] = useState('')
+
+    const [error1, seterror1] = useState('')
+    const [error2, seterror2] = useState('')
+    const [error3, seterror3] = useState('')
+    const [error4, seterror4] = useState('')
+
+    const changeCardHandler =(e)=>{
+        var numbers = /^[0-9]$/;
+
+            try {
+                if(e.target.value[card_number.length].match(numbers)){
+                    setcard_number(e.target.value)
+                      if (card_number.length===3 || card_number.length===8 || card_number.length===13) {
+                            setcard_number(prevcard_number => prevcard_number+" ")
+                        }  
+                } 
+            } catch (error) {
+                
+                setcard_number(e.target.value)
+            }
+
+            console.log(e.target.value)
+        
+    }
+
+    const changeExpHandler =(e)=>{
+        var numbers = /^[0-9]$/;
+        try {
+            if(e.target.value[exp.length].match(numbers)){
+                setexp(e.target.value)
+                if (exp.length===1) {
+                    setexp(prevexp=> prevexp+'/')
+                }
+            }
+        } catch (error) {
+            setexp(e.target.value)
+        }
+
+        console.log(e.target.value)
+    }
+
+    const changeCCVHandler =(e)=>{
+
+        var numbers = /^[0-9]$/;
+        if(e.target.value[ccv.length].match(numbers)){
+            setccv(e.target.value)
+        }
+        // setccv(e.target.value)
+        console.log(e.target.value)
+    }
+
+
+
     const modalHandler = () =>{
         setShow(false);
         if (succes) {
@@ -22,65 +81,77 @@ function PaymentMethod() {
             setsucces(false)
         }
     }
+    
+    const submitHandler = async(e) => {
+        e.preventDefault()
+        if (card_holder) {
+            if (card_number) {
+                if (exp) {
+                    if (ccv) {
+                        const URL = "https://gamehubx.com/api/v1/add-cash/"
 
-    const formik = useFormik({
-        initialValues: ({
-            card_holder: '',
-            card_number: '',
-            exp: '',
-            card_cvv: '',
+                        const arr = exp.split("/")
+                        const card_exp_month = arr[0]
+                        const card_exp_year = arr[1]
 
-        }),
+                        const cardNumber = card_number.replaceAll(" ", "")
+                        console.log(cardNumber)
 
-        validationSchema : yup.object({
-            card_holder: yup.string().required("Name is required"),
-            card_number: yup.string().required("card number is required"),
-            exp: yup.string().required("expiry date is required"),
-            card_cvv: yup.string().required("CVC/CCV number is required")
-        }),
+                        const amountInCents = String(history.location.state*100)
 
-        onSubmit : async (values)=>{
+                        let data = JSON.stringify({
+                            card_holder,
+                            card_number: cardNumber, 
+                            amount: amountInCents,
+                            card_exp_month,
+                            card_exp_year,
+                            card_cvv: ccv,
+                        })
 
-            const URL = "https://gamehubx.com/api/v1/add-cash/"
+                        const token = localStorage.getItem("token")
+                        const headers = {
+                            "Content-Type": "application/json",
+                            "Authorization": "token " + token
+                        }
 
-            const arr = values.exp.split("/")
-            const card_exp_month = arr[0]
-            const card_exp_year = arr[1]
+                        console.log(data, headers, typeof(String(history.location.state)))
 
-            const amountInCents = String(history.location.state*100)
-
-            let data = JSON.stringify({
-                ...values, 
-                amount: amountInCents,
-                card_exp_month,
-                card_exp_year
-            })
-
-            const token = localStorage.getItem("token")
-            const headers = {
-                "Content-Type": "application/json",
-                "Authorization": "token " + token
+                        await axios.post(URL, data, {
+                            headers: headers
+                        }).then(res=> {console.log(res);
+                            setmodaltext(`Thank you for your deposit. Your balance will now be updated`);
+                            setShow(true)
+                            setsucces(true)
+                            })
+                        .catch(err => {console.log(err.response.data);
+                            setmodaltext(`${err.response.data.message}`);
+                            setShow(true)
+                            })
+                        
+                    } else {
+                        seterror1('')
+                        seterror2("")
+                        seterror3("")
+                        seterror4("CVC/CCV number is required")
+                    }
+                } else {
+                    seterror1('')
+                    seterror2("")
+                    seterror3("expiry date is required")
+                }
+            } else {
+                seterror1('')
+                seterror2("card number is required")
             }
-
-            console.log(data, headers, typeof(String(history.location.state)))
-
-            await axios.post(URL, data, {
-                headers: headers
-            }).then(res=> {console.log(res);
-                 setmodaltext(`Success! ${history.location.state} has been deposited`);
-                 setShow(true)
-                 setsucces(true)
-                })
-               .catch(err => {console.log(err.response.data);
-                 setmodaltext(`${err.response.data.message}`);
-                 setShow(true)
-                 })
+        } else {
+            seterror1("Name is required")
         }
-    })
+    }
+
 
     return (
         <div className='payment-method'>
-            <Modal show={show} onHide={()=> modalHandler()}>
+            <Modal  show={show} onHide={()=> modalHandler()}>
                 <Modal.Header >
                 <Modal.Title></Modal.Title>
                 </Modal.Header>
@@ -94,58 +165,72 @@ function PaymentMethod() {
             <div className='center'>
                 <div className='title'>
                     PAYMENT METHOD
-                    <form className='form' onSubmit={formik.handleSubmit}>
+                    <form className='form' onSubmit={submitHandler}>
 
                         <label htmlFor='name'
                                 className='label'
-                                style={formik.touched.card_holder && formik.errors.card_holder? {color:'red'}:null}
+                                style={error1? {color:'red'}:null}
                                 >
-                            {formik.touched.card_holder && formik.errors.card_holder? formik.errors.card_holder: 'Card Holder'}
+                            {error1? error1: 'Card Holder'}
                         </label>
                         <input placeholder="Type card holder name"
+                                value={card_holder}
+                                onChange={(e)=> setcard_holder(e.target.value)}
                                 type='text' 
                                 className='input' 
                                 name='card_holder' 
-                                {...formik.getFieldProps('card_holder')} 
+                                // {...formik.getFieldProps('card_holder')} 
                                 >
                         </input>
 
                         <label htmlFor='card_number' 
                                 className='label'
-                                style={formik.touched.card_number && formik.errors.card_number?{color:'red'}:null}
+                                style={error2?{color:'red'}:null}
                                 >
-                        {formik.touched.card_number && formik.errors.card_number? formik.errors.card_number: 'Credit Card Number'} 
+                        {error2? error2: 'Credit Card Number'} 
                         </label>
-                        <input placeholder='1222335524141'
-                                type='number'
+                        <input placeholder='1222 4432 0293 9482'
+                                type='text'
+                                maxLength='19'
+                                value={card_number}
+                                onChange={changeCardHandler}
                                 className='input' 
-                                name='card_number' 
-                                {...formik.getFieldProps('card_number')}
+                                name='card_number'
+                                // onKeyDown={keyDOwn} 
+                                // {...formik.getFieldProps('card_number')}
                                 >
                         </input>
 
                         <label htmlFor='exp' 
                                 className='label'
-                                style={formik.touched.exp && formik.errors.exp? {color:'red'}:null}
+                                style={error3? {color:'red'}:null}
                         >
-                        {formik.touched.exp && formik.errors.exp? formik.errors.exp: 'Exp. Date'} 
+                        {error3? error3: 'Exp. Date'} 
                         </label>
-                        <input placeholder='09/24 '
+                        <input placeholder='09/24'
+                                
+                                maxLength='5'
+                                value={exp}
+                                onChange={changeExpHandler}
                                 className='input' 
                                 name='exp' 
-                                {...formik.getFieldProps('exp')}>
+                                // {...formik.getFieldProps('exp')}
+                                >
                         </input>
 
                         <label htmlFor='card_cvv'
                                 className='label' 
-                                style={formik.touched.card_cvv && formik.errors.card_cvv?  {color:'red'}: null}>
-                                {formik.touched.card_cvv && formik.errors.card_cvv? formik.errors.card_cvv: 'CVC/CVV'}
+                                style={error4?  {color:'red'}: null}>
+                                {error4? error4: 'CVC/CVV'}
                         </label>
                         <input placeholder='Enter three digits on back of your card'
-                                type='number' 
+                                type='text'
+                                maxLength='5'
+                                value={ccv}
+                                onChange={changeCCVHandler} 
                                 className='input' 
-                                name='card_cvv' 
-                                {...formik.getFieldProps('card_cvv')}>                                    
+                                name='card_cvv'
+                                >                                    
                         </input>
 
                         <button type='submit' className='deposit'>Deposit ${history.location.state}</button>

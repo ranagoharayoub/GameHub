@@ -17,7 +17,7 @@
 }
 
 .deposit-funds .center-cont .title{
-    font: normal normal bold 5vw/5vw Bahnschrift;
+    font: normal normal bold 5vw/7vw Bahnschrift;
     font-family: 'Bahnschrift', sans-serif;
     letter-spacing: 0px;
     color: #FFFFFF;
@@ -51,6 +51,7 @@
     margin: 1vh 0%;
     padding: 0px 1vw;
     font-weight: bold;
+    font-size: 1.5vw;
 }
 
 .deposit-funds .center-cont .input:focus{
@@ -89,7 +90,7 @@
     letter-spacing: 0px;
     color: #FFFFFF;
     opacity: 0.7;
-    padding: 0px 1vw;
+    /* padding: 0px 1vw; */
 }
 
 .deposit-funds .center-cont .disc-amount .amount{
@@ -108,6 +109,7 @@
     color: #F69204;
     font-weight: bold;
     opacity: 1;
+    font-size: 1.5vw;
     cursor:  pointer;
 }
 
@@ -136,20 +138,19 @@
     .deposit-funds .center-cont .input{
         background: #4A4747 0% 0% no-repeat padding-box;
         min-height: 4vh;
+        font-size: 3vw;
     }
 
     .deposit-funds .center-cont .minimun-input{
         font: normal normal bold 2vw/2vw Arial;
-        margin: 1vh 0%;
         
-    }
-
-    .deposit-funds .center-cont .input::placeholder{
-        font-size: 3vw;
+        /* margin: 1vh 0%; */
+        
     }
 
     .deposit-funds .center-cont .instr{
         font: normal normal normal 2vw/2vw Arial;
+        line-height: 1.5;
 
     }
 

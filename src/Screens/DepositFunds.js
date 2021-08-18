@@ -16,7 +16,7 @@ function DepositFunds() {
     const [total, settotal] = useState(null)
 
     useEffect(() => {
-       setfee(parseFloat((Number(amount)*0.029)+0.30).toFixed(2))
+       setfee(parseFloat((Number(amount)*0.029)).toFixed(2))
        console.log(fee, typeof(fee), fee+amount)
        settotal(Number(fee)+Number(amount))
     }, [amount, fee, total])
@@ -69,7 +69,7 @@ function DepositFunds() {
                     </div>
                     <div className='disc-amount'>
                         <div className='disc'>
-                            Fees (2.9% + 0.30)
+                        Processing Fees (2.9%)
                         </div>
                         <div className='amount'>
                             ${ amount? fee: '0'}
