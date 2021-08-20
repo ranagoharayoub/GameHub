@@ -31,25 +31,25 @@
     width: 70vw;
     text-align: center;
     /* font: normal normal bold 80px/100px Source Sans Pro; */
-    font: normal normal bold 7vw/7vw Source Sans Pro;
+    font: normal normal bold 5vw/5vw Source Sans Pro;
     font-family: 'Source Sans Pro', sans-serif;
 
 }
 
 .main-cont .play{
     position: absolute;
-    bottom: 10%;
+    bottom: 20%;
     right: 50%;
     transform: translate(50%, -50%);
     /* padding: 10px 60px; */
-    padding: 2vh 5vw;
+    padding: 1vmin 3vmax;
     background-color: #f69204;
     outline: none;
     border: none;
-    margin-top: 80px;
+    /* margin-top: 80px; */
     cursor: pointer;
     /* font-size: 30px; */
-    font-size: 2vw;
+    font-size: 1.5vmax;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -191,7 +191,8 @@
     color: #FFFFFF;
     text-transform: uppercase;
     opacity: 1;
-    margin-left: 50px;
+    text-align: center;
+    /* margin-left: 50px; */
 }
 
 .stats-cont .card-flex{

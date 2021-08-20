@@ -5,22 +5,30 @@ import {Avatar} from '@material-ui/core'
 import {ContextAPI} from '../../Context/Context'
 import { Link } from 'react-router-dom'
 function Navbar() {
+
+    
+
     const [display, setdisplay] = useState(false);
     const [LoggedIn, setLoggedIn] = useState(false);
-    // const [name, setname] = useState("");
+    const [id, setid] = useState("");
+
+ 
 
     const [profilepicture, username] = useContext(ContextAPI)
     useEffect(() => {
-       const callAPI = async () => {
+       
                 var tok = localStorage.getItem("token");
+                var id = localStorage.getItem("userdata")
                 console.log("token check in navbar",tok)
                 if(tok){
                     setLoggedIn(true)
                     setdisplay(true)
+                    setid(id)
                     // var username = localStorage.getItem("name");
                     // setname(username);
-                }}
-                callAPI()
+                }
+                
+                  
     }, [])
 
     return (
@@ -40,11 +48,13 @@ function Navbar() {
                 {
                     LoggedIn?
                     <div className='icons-cont'>
-                    <img src='/icons/search.png' height='15px'  alt='search'></img>
-                    <img src='/icons/alert.png' height='15px' alt='search'></img>
-                    <Avatar alt={username} src={profilepicture} />
-                    <div onClick={()=> setdisplay(true)} style={{fontSize:'small', opacity: '0.7'}} >{username}</div>
-                    <img  src='/icons/dropdown.png' height='6.1px' alt='search'></img>
+                    {/* <img src='/icons/search.png' height='15px'  alt='search'></img>
+                    <img src='/icons/alert.png' height='15px' alt='search'></img> */}
+                    <Link to={`/profile/${id}`} >
+                        <Avatar style={{height:'5.5vh', width:"5.5vh"}} alt={username} src={profilepicture} />
+                    </Link>
+                    <div onClick={()=> setdisplay(true)} style={{fontSize:'1vw', opacity: '0.7'}} >{username}</div>
+                    <img  src='/icons/dropdown.png' style={{height:'20%'}} alt='search'></img>
                     </div>
                     :
                     <div className='btn-flex'>

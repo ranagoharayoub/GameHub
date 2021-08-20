@@ -6,13 +6,13 @@ function Footer() {
         <div className='footer'>
             <div className='first-cont'>
                 <div className='contact-col'>
-                    <div className='title'>COMPETE COMPANY</div>
+                    <div className='title'>PLATFORM</div>
                     <div className='links'>About Us</div>
                     <div className='links'>Contact</div>
                     <div className='links'> Terms & Conditions </div>
                 </div>
                 <div className='company-col company-col-2'>
-                    <div className='title'>COMPANY</div>
+                    <div className='title'>SUPPORT</div>
                     <div className='links'>Create a Ticket</div>
                     <div className='links'>Contact us</div>
                     <div className='links'>About us</div>
@@ -21,8 +21,8 @@ function Footer() {
             </div>
             <div className='second-cont'>
                 <div className='payment-col'>
-                    <img src='/icons/gamehub.png' width='35%' alt='logo'></img>
-                    <img src='/icons/Payment_Trust_Badges.png' width='100%' alt='payment'></img>
+                    <img src='/icons/gamehub.png' width='35%' className='footer-logo' alt='logo'></img>
+                    <img src='/icons/Payment_Trust_Badges.png' width='90%' alt='payment'></img>
                 </div>          
             </div>
             <div className='last-cont'>

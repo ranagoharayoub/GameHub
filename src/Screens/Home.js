@@ -108,7 +108,7 @@ function Home({ width }) {
         <div className="find">
           FIND YOUR <br></br>PERFECT TOURNAMENT
         </div>
-        <button onClick={()=> history.push("/depositfunds")} className="play">Play</button>
+        <button onClick={()=> history.push("/alltournament")} className="play">Play</button>
       </div>
       <div className="games-corousal">
         <div className="game-title">GAMES</div>

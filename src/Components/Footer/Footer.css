@@ -57,6 +57,11 @@
     
 }
 
+.payment-col .footer-logo{
+    margin-bottom: 1vh;
+    margin-top: -1vh;
+}
+
 .footer .social-col{
     height: 90%;
     width: 100%;

@@ -14,8 +14,8 @@ import { Button, Modal} from "react-bootstrap";
 function Profile({width}) {
   const [show, setShow] = useState(false);
   const [modaltext, setmodaltext] = useState("");
-  const [textUnderline, setTextUnderline] = useState("Overview");
-  const [textUnderlined, setTextUnderlined] = useState("Fortnite");
+  const [textUnderline, setTextUnderline] = useState("");
+  const [textUnderlined, setTextUnderlined] = useState("");
   const [data, setdata] = useState([]);
   const [gamedata, setgamedata] = useState(null);
   const [profilepic, setprofilepic] = useState(false)
@@ -67,7 +67,11 @@ function Profile({width}) {
 
     const callAPI2 = async () =>{
       axios.get("https://gamehubx.com/api/v1/tournament/?user="+params.id)
-      .then((res)=>{console.log(res.data); setgamedata(res.data)})
+      .then((res)=>{
+        console.log(res.data);
+        setgamedata(res.data);
+        setTextUnderlined(res.data[0].title)
+        })
       .catch((error)=> console.log(error))
     }
     callAPI2()
