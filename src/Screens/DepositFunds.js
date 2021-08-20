@@ -16,6 +16,7 @@ function DepositFunds() {
     const [total, settotal] = useState(null)
 
     useEffect(() => {
+        window.scrollTo(0,0)
        setfee(parseFloat((Number(amount)*0.029)).toFixed(2))
        console.log(fee, typeof(fee), fee+amount)
        settotal(Number(fee)+Number(amount))

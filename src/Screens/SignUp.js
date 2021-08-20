@@ -41,6 +41,7 @@ class SignUp extends Component {
 
 
   componentDidMount(){
+    window.scrollTo(0,0)
     console.log("this is the social signup page")
     console.log("the data in fbgsignup page",this.props.history.location.state);
     // var dataprops = this.props.state

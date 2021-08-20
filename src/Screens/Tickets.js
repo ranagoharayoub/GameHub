@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Tickets.css";
 import {
   Button,
@@ -11,7 +11,11 @@ export default function Tickets() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  // const [click, setclick] = useState('clicked')
+
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [])
+
   return (
     <div class="tickets-main">
       <div class="tickets-inner">

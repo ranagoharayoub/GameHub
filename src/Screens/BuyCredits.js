@@ -1,10 +1,14 @@
 import axios from 'axios'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Button, Modal} from "react-bootstrap";
 import { useHistory } from 'react-router-dom';
 import {ContextAPI} from '../Context/Context'
 
 function BuyCredits() {
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+      }, [])
 
     const history = useHistory()
 

@@ -15,6 +15,7 @@ function AllGames() {
   // }, []);
 
   useEffect(() => {
+    window.scrollTo(0,0)
     const callAPI = async () => {
         await axios.get("https://gamehubx.com/api/v1/game/").then((res) => {
           setdata(res.data);

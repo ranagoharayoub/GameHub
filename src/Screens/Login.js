@@ -21,11 +21,9 @@ class Login extends Component {
     };
   }
 
-  // componentDidMount(){
-  //   if(this.props.location.state != undefined){
-  //     console.log("the data in props",this.props.location.state.data);
-  //   }
-  // }
+  componentDidMount(){
+    window.scrollTo(0,0)
+  }
 
   forgotPass = () =>{
     this.setState({...this.state, show: true, forgot: true, modaltext:''})

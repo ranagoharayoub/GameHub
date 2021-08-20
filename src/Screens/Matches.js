@@ -12,7 +12,9 @@ export default function Matches({ width }) {
   const [userWon, setuserWon] = useState(null)
   const [show, setShow] = useState(false);
   const [modaltext, setmodaltext] = useState("");
+  
   useEffect(() => {
+    window.scrollTo(0,0)
     var userid = localStorage.getItem("userdata");
     const callAPI = async () => {
       await axios
@@ -121,7 +123,10 @@ export default function Matches({ width }) {
                     </div>
                     {/* Matches Cards */}
 
-                    <div style={{marginTop:'0px', marginRight:'0px', marginLeft:'0px'}} class="row-card">
+                    <div style={width < '800'?{marginTop:'0px', marginRight:'0px', marginLeft:'10px'}
+                  :
+                  {marginTop:'0px', marginRight:'0px', marginLeft:'0px'}  
+                  } class="row-card">
 
                       <div class="col-lg-12">
                         {/* ----------------Give Styling to Feature Cards. Most possibly Grid---------- */}

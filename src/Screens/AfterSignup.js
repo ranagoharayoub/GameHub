@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./AfterSignup.css";
 import { Link } from "react-router-dom";
 export default function AfterSignup() {
+
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [])
+
   return (
     <div>
       <div class="after-signup-main">

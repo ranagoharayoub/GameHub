@@ -62,7 +62,7 @@ function getsec(a) {
 
   useEffect(() => {
     // componentHandler.upgradeDom();
-
+      window.scrollTo(0,0)
       const callApi = async() =>{
         await axios.get('https://gamehubx.com/api/v1/tournament/'+gameId+'/')
         .then((res)=> setdata(res.data))

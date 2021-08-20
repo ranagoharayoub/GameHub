@@ -183,7 +183,7 @@
     }
     
     
-    .social-login-fb .title, .social-login-google .title{
+    .social-login-fb .title, .social-login-google .btn-title{
         font: normal normal bold 15px/0px Arial;
         letter-spacing: 0px;
         color: #FFFFFF;

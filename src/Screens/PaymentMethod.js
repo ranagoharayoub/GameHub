@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './PaymentMethod.css'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
@@ -7,6 +7,10 @@ import { Button, Modal} from "react-bootstrap";
 
 
 function PaymentMethod() {
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+    }, [])
     
     const history = useHistory()
 

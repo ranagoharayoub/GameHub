@@ -135,7 +135,7 @@
 
 @media (max-width: 800px) {
     .footer{
-        height: 50vh;
+        min-height: max-content;
         width: 100%;
         background: #000000 0% 0% no-repeat padding-box;
         opacity: 1;
@@ -151,7 +151,7 @@
         width: 100%;
         /* background-color: aquamarine; */
         display: flex;
-        align-items: center;
+        /* align-items: center; */
         justify-content: space-between;
     }
 

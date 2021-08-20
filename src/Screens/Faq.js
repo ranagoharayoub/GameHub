@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Faq.css";
 import { Accordion, Button, Card } from "react-bootstrap";
 
 export default function Faq() {
+
+  useEffect(() => {
+    window.scrollTo(0,0)
+  }, [])
+
   return (
     <div>
       {/* =========================== Faq Main ============================== */}

@@ -18,6 +18,7 @@ function Settings({ width }) {
 
 
   useEffect(() => {
+    window.scrollTo(0,0)
     const callAPI =  async () => {
       try {
         const {data: {username, email, phone_number, country_code}} = await axios.get("https://gamehubx.com/api/v1/user-profile/"+id+"/") 

@@ -15,6 +15,9 @@ function IndividualGame({width,id}) {
     //console.log(params)
 
     useEffect(()=>{
+
+      window.scrollTo(0,0)
+
       settitle(params.game);
       const callAPI = async () => {
         await axios.get("https://gamehubx.com/api/v1/tournament/?game="+params.ind).then((res) => {

@@ -3,6 +3,7 @@ import './MobileMenu.css'
 // import { ArrowDropDown } from '@material-ui/icons'
 import { Link } from 'react-router-dom'
 import { ContextAPI } from '../../Context/Context';
+import { AccountBox } from '@material-ui/icons';
 function MobileMenu({menuOn, off}) {
     const [LoggedIn, setLoggedIn] = useState(false);
     // eslint-disable-next-line
@@ -183,15 +184,16 @@ function MobileMenu({menuOn, off}) {
     </div>
             :
 
-            <div className='menu-cont' style={menuOn?{display:'flex'}:{display:'none'}}>
-            <div className='ico-title'>
-                <img src='/icons/search.png' height='20px' alt='icon'></img>
-                <div className='title'>Find players/Teams</div>
-            </div>
-            <div className='ico-title'>
+          <div className='menu-cont' style={menuOn?{display:'flex'}:{display:'none'}} >
+            <Link className='ico-title' to='/signup' onClick={off}>
+              <AccountBox style={{ width: '17px'}} ></AccountBox>
+                {/* <img src='/icons/search.png' height='20px' alt='icon'></img> */}
+                <div className='title'>Sign up</div>
+            </Link>
+            <Link className='ico-title' onClick={off} to='/'>
                 <img src='/icons/home.png' height='20px' alt='icon'></img>
                 <div className='title'>Home</div>
-            </div>
+            </Link>
             <Link onClick={off} className='ico-title' to='/alltournament'>
                 <img src='/icons/trophy.png' height='20px' alt='icon'></img>
                 <div className='title'>Tournaments</div>
@@ -200,7 +202,7 @@ function MobileMenu({menuOn, off}) {
                 <img src='/icons/trophy.png' height='20px' alt='icon'></img>
                 <div className='title'>Games</div>
             </Link>
-            <div className='ico-title'>
+            {/* <div className='ico-title'>
                 <img src='/icons/Calendar.png' height='20px' alt='icon'></img>
                 <div className='title'>Timed Events</div>
             </div>
@@ -219,19 +221,19 @@ function MobileMenu({menuOn, off}) {
             <div className='ico-title'>
                 <img src='/icons/profits.png' height='12px' alt='icon'></img>
                 <div className='title'>Stats Tracker</div>
-            </div>
-            <Link to='/faq' className='ico-title'>
+            </div> */}
+            <Link onClick={off} to='/faq' className='ico-title'>
                 <img src='/icons/Help.png' height='20px' alt='icon'></img>
                 <div className='title'>FAQ</div>
             </Link>
-            <div className='lang' style={{paddingLeft:'20px', marginTop:'15vh'}}>
+            {/* <div className='lang' style={{paddingLeft:'20px', marginTop:'15vh'}}>
                 <button>
                     <img src='/icons/flag.png' alt='flag'></img>
                     <div>English</div>
-                    {/* <ArrowDropDown></ArrowDropDown> */}
+                    
                 </button>
-            </div>
-        </div>
+            </div> */}
+          </div>
         }
 
         </>

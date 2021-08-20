@@ -6,6 +6,7 @@ import axios from "axios";
 export default function Champions() {
   const [dataFetched, setdataFetched] = useState([])
   useEffect(() => {
+    window.scrollTo(0,0)
  const callAPI =  async() =>{
      try {
        const {data} = await axios.get('https://gamehubx.com/api/v1/champion-page/')

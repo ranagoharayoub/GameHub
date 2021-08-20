@@ -16,6 +16,7 @@ function AllTournaments({ width }) {
   // }, []);
 
   useEffect(() => {
+    window.scrollTo(0,0)
     const callAPI = async () => {
       await axios.get("https://gamehubx.com/api/v1/tournament/").then((res) => {
         settourdata(res.data);
