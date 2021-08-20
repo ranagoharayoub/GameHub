@@ -8,6 +8,8 @@
     display: flex;
     flex-direction: column;
     z-index: 11111111111111;
+    /* justify-content: space-between; */
+    /* padding: 0px 5vw; */
 }
 
 .menu-cont .ico-title{

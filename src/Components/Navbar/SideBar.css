@@ -1,5 +1,5 @@
-.side-bar-cont{
-    position: fixed;
+/* .side-bar-cont{
+    position: absolute;
     left: 85%;
     right: 0%;
     top: 0%;
@@ -7,9 +7,8 @@
     background-color: #4A4747;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     z-index: 111111111111111;
-}
+} */
 
 .side-bar-cont{
     position: absolute;
@@ -20,7 +19,7 @@
     background-color: #4A4747 !important;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+    
     z-index: 111111111111111;
 }
 
@@ -28,31 +27,31 @@
     
     display: flex;
     align-items: center;
-    font: normal normal bold 15px/30px Arial;
+    font: normal normal bold 15px/15px Arial;
 }
 
-.side-bar-cont .close>img{
+.side-bar-cont .close-icon{
     
-    margin-left: 20px;
-    margin-right: 10px;
-    
+    margin-left: 1vw;
+    margin-right: 1vw;
+    font-size: 1.5vw;
 }
 
-.side-bar-cont .cash-cont{
+/* .side-bar-cont .cash-cont, .menu-cont .cash-cont{
     
     display: flex;
     align-items: center;
     font: normal normal normal 15px/30px Calibri;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+} */
 
-.side-bar-cont .cash-cont>img{
+/* .side-bar-cont .cash-cont>img{
         
     margin-left: 20px;
     margin-right: 10px;
-}
+} */
 
-.side-bar-cont .boxes{
+.side-bar-cont .boxes, .menu-cont .boxes{
     
     display: flex;
     justify-content: space-between;
@@ -68,16 +67,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: space-around; */
+    justify-content: space-evenly;
     
 }
 
-.side-bar-cont .view-profile{
+.side-bar-cont .view-profile, .menu-cont .view-profile{
     margin-top: 10px;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     /* background: #605E5E 0% 0% no-repeat padding-box; */
-    height: 7%;
+    height: 5%;
     width: 100%;
     font: normal normal normal 13px/25px Calibri;
     
@@ -89,10 +88,10 @@
 
 
 
-.side-bar-cont .common{
-    font: normal normal normal 15px/30px Calibri;
+.side-bar-cont .common, .menu-cont .common{
+    font: normal normal normal 1vw/2vw Calibri;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    padding-left: 32px;
+    padding-left: 2vw;
     text-decoration: none;
     color: inherit;
     cursor: pointer;
@@ -103,14 +102,14 @@
     background: #605E5E 0% 0% no-repeat padding-box;
 }
 
-.side-bar-cont .line{
+.side-bar-cont .line, .menu-cont .line{
     width: 100%;
     height: 2px;
     border: 0.5px solid #CBCBCB;
     margin: 10px 0px;
 }
 
-.side-bar-cont .lang{
+.side-bar-cont .lang, .menu-cont .lang{
     margin-top: 40px;
     width: 100%;
     height: 40px;
@@ -124,11 +123,21 @@
     
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     width: 70%;
     height: 100%;
     background: #F69204 0% 0% no-repeat padding-box;
     font: normal normal bold 12px/30px Calibri;
     color: black;
     border: none;
+}
+
+@media (max-width: 800px) {
+    .side-bar-cont .common, .menu-cont .common, .menu-cont .view-profile{
+        font: normal normal normal 15px/30px Calibri;
+        padding-left: 10vw;
+        margin-bottom: 1vh;
+    }
+
+
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./SideBar.css";
 import {ContextAPI} from '../../Context/Context'
-import { ArrowDropDown } from "@material-ui/icons";
+import { Close } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
 function SideBar({ toggle, off }) {
@@ -32,32 +32,21 @@ function SideBar({ toggle, off }) {
       style={toggle ? { display: "flex" } : { display: "none" }}
     >
       <div className="close">
-        <img
+        {/* <img
           onClick={off}
           src="/icons/close.png"
-          height="11.56px"
+          
           alt="cross"
-          style={{ cursor: "pointer" }}
-        ></img>
-        <div>{name}</div>
+          style={{ cursor: "pointer", width:"1vw" }}
+        ></img> */}
+        <Close className='close-icon'></Close>
+        <p style={{font: 'normal normal bold 1.2vw / 2.5vw Arial'}}>{name}</p>
       </div>
-      <div className="cash-cont">
-        {/* <img src="/icons/caution.png" height="16px" alt="alert"></img> */}
-        {/* <div>Cash Matches</div> */}
-        {/* <FormControlLabel
-          style={{ marginLeft: "5px" }}
-          control={
-            <Switch
-              size="small"
-              checked={checked}
-              onChange={() => setchecked(!checked)}
-            />
-          }
-        /> */}
-      </div>
+      {/* <div className="cash-cont">
+      </div> */}
       <div className="boxes">
         <div className="left-box">
-          <div style={{ font: "normal normal normal 15px/30px Bahnschrift" }}>
+          <div style={{ font: "normal normal normal 1vw/1vw Bahnschrift" }}>
           ${parseFloat(balance).toFixed(2)}
           </div>
           <Link
@@ -65,7 +54,7 @@ function SideBar({ toggle, off }) {
             onClick={off}
             style={{
               color: "#F69204",
-              font: "normal normal normal 15px/10px Bahnschrift",
+              font: "normal normal normal 1vw/1vw Bahnschrift",
               textDecoration:'none'
             }}
           >
@@ -73,7 +62,7 @@ function SideBar({ toggle, off }) {
           </Link>
         </div>
         <div className="right-box">
-          <div style={{ font: "normal normal normal 15px/30px Bahnschrift" }}>
+          <div style={{ font: "normal normal normal 1vw/1vw Bahnschrift" }}>
             {credits? credits: 0}
           </div>
           <Link
@@ -81,44 +70,70 @@ function SideBar({ toggle, off }) {
             onClick={off}
             style={{
               color: "#F69204",
-              font: "normal normal normal 15px/10px Bahnschrift",
+              font: "normal normal normal 1vw/1vw Bahnschrift",
               textDecoration:'none'
             }}
           >
-            Buy Credit
+            Buy Credits
           </Link>
         </div>
       </div>
       <div className="view-profile">
         <img
-          style={{ marginLeft: "10px" }}
+          style={{ marginLeft: "2vw" }}
           src="/icons/avatar.png"
           alt="avatar"
           height="12px"
         ></img>
-        <Link onClick={off} style={{textDecoration:'none', color:'white', paddingLeft:'5px'}} className='common' to={`/profile/${id}`}>View Profile </Link>
+        <Link onClick={off} 
+        style={{textDecoration:'none', color:'white', paddingLeft:'5px', font: 'normal normal normal 1vw/2vw Calibri'}} 
+        className='common' to={`/profile/${id}`}>View Profile </Link>
       </div>
       
-      <Link to='/matches' onClick={off} className="common">My Matches</Link>
-      <div className="common">My Teams</div>
-      <div className="common">Team Invites</div>
-      <Link to='/ticket' onClick={off} className="common">My Tickets</Link>
+      <Link to='/matches' onClick={off} className="common"
+      style={{font: 'normal normal normal 1vw/2.5vw Calibri'}}
+      >My Matches</Link>
+      <div className="common"
+      style={{font: 'normal normal normal 1vw/2.5vw Calibri'}}
+      >My Teams</div>
+      <div className="common"
+      style={{font: 'normal normal normal 1vw/2.5vw Calibri'}}
+      >Team Invites</div>
+      <Link to='/ticket' onClick={off} className="common"
+      style={{font: 'normal normal normal 1vw/2.5vw Calibri'}}
+      >My Tickets</Link>
+      <div className="line"
+      style={{font: 'normal normal normal 1vw/2.5vw Calibri'}}
+      ></div>
+      <div className="common"
+      style={{font: 'normal normal normal 1vw/2.5vw Calibri'}}
+      >My Bank</div>
+      <div className="common"
+      style={{font: 'normal normal normal 1vw/2.5vw Calibri'}}
+      >Purchased Items</div>
+      <div className="common"
+      style={{font: 'normal normal normal 1vw/2.5vw Calibri'}}
+      >Prize Claims</div>
       <div className="line"></div>
-      <div className="common">My Bank</div>
-      <div className="common">Purchased Items</div>
-      <div className="common">Prize Claims</div>
-      <div className="line"></div>
-      <Link to={`/settings/${id}`} onClick={off} className="common">
+      <Link to={`/settings/${id}`} 
+      style={{font: 'normal normal normal 1vw/2.5vw Calibri'}}
+      onClick={off} className="common">
         Account Settings
       </Link>
-      <div className="common" onClick={() => signout()}>
+      <div className="common" 
+      style={{font: 'normal normal normal 1vw/2.5vw Calibri'}}
+      onClick={() => signout()}>
         Sign out
       </div>
-      <div className="lang">
-        <div className='lang-btn'>
-          <img src="/icons/flag.png" alt="flag"></img>
+      <div className="lang" style={{height: '5vh'}}>
+        <div className='lang-btn'
+        style={{font: 'normal normal bold 1.3vw/1.3vw Calibri'}}
+        >
+          <img src="/icons/flag.png" alt="flag"
+          style={{width:'2vw'}}
+          ></img>
           <div>English</div>
-          <ArrowDropDown></ArrowDropDown>
+          {/* <ArrowDropDown></ArrowDropDown> */}
         </div>
       </div>
     </div>

@@ -161,10 +161,10 @@
     border-radius: 4px;
     opacity: 1;
     /* padding: 10px 40px; */
-    margin-top: 3vh;
+    /* margin-top: 3vh; */
     padding: 1vh 3vw;
     /* font: normal normal bold 15px/15px Arial; */
-    font: normal normal bold 1.5vw/1.5vw Arial;
+    font: normal normal bold 1.5vmax/1.5vmax Arial;
     letter-spacing: 0px;
     color: #F69204;
     text-transform: uppercase;
