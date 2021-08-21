@@ -1018,6 +1018,12 @@ body {
   .inctour-main-background {
     display: none;
   }
+
+  .inctour-tabs-section {
+    background: #212121;
+    padding-top: 36%;
+  }
+
   .tournament-card-img-box {
     display: none;
   }
@@ -1052,7 +1058,7 @@ body {
   }
   .tour-lower-text p {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     background: #363636;
     margin: 10px 10px;
     padding: 10px 20px;
@@ -1068,6 +1074,8 @@ body {
   .tour-small-item {
     width: 50%;
     margin: 10px 0;
+    display: flex;
+    justify-content: flex-end;
   }
   .tour-small-main .tour-small-item:first-child {
     padding-left: 25px;
@@ -1082,7 +1090,7 @@ body {
   }
   .tour-small-main .tour-small-item:nth-of-type(odd) {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     flex-direction: column;
   }
   .inctour-tabs-section .mdl-grid {
@@ -1359,7 +1367,7 @@ body {
     font-size: 13px;
   }
   .inctour-tabs-section .mdl-grid {
-    margin-top: 80px;
+    /* margin-top: 80px; */
   }
   .btn.btn-link p {
     right: 15px;

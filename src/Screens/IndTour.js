@@ -215,7 +215,7 @@ const enrollHandler = async() =>{
                   <div class="tour-small-tax">
                     <p >ENTRY</p>
                     {/* <p>$50</p> */}
-                    <p style={{display:'flex'}} >{data.entry_fee}<p style={{fontSize:'small',textTransform:'lowercase', marginLeft:'5px'}}>Credits</p></p>
+                    <p style={{display:'flex'}} >{data.entry_fee}<p style={{fontSize:'small',textTransform:'lowercase', marginLeft:'5px', paddingTop:'0px'}}>Credits</p></p>
                     
                   </div>
                 </div>
