@@ -31,6 +31,8 @@ import axios from 'axios';
 import DepositFunds from './Screens/DepositFunds';
 import PaymentMethod from './Screens/PaymentMethod';
 import BuyCredits from './Screens/BuyCredits';
+import Policy from './Screens/Policy';
+
 
 function App() {
   const [width, setwidth] = useState(window.innerWidth)
@@ -98,6 +100,7 @@ function App() {
           <Route path='/profile/:id'  > <MainPro width={width} /> </Route>
           <Route path='/:game/:ind'  ><IndividualGame width={width}></IndividualGame></Route>
           <Route path='/faq'><Faq></Faq></Route>
+          <Route path='/privacy'><Policy></Policy></Route>
         </Switch>
         <Footer></Footer>
         </ContextAPI.Provider>

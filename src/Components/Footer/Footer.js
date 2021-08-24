@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Footer.css'
 
 function Footer() {
@@ -16,7 +17,7 @@ function Footer() {
                     <div className='links'>Create a Ticket</div>
                     <div className='links'>Contact us</div>
                     <div className='links'>About us</div>
-                    <div className='links'>FAQ</div>
+                    <div className='links'><Link style={{color:"inherit", textDecoration:'none'}} to='/faq' >FAQ</Link></div>
                 </div>
             </div>
             <div className='second-cont'>
@@ -34,7 +35,7 @@ function Footer() {
                         <img src='/icons/twitter.png' width='15%' alt='logo'></img>
                     </div>
                     <div className='cc'>© 2021 Gamehub Inc All Rights Reserved</div>
-                    <div className='policy'> Terms of Service | Privacy Policy</div>
+                    <div className='policy'><Link to='/privacy' style={{color:'inherit'}}> Terms of Service | Privacy Policy </Link></div>
                 </div>
             </div>
         </div>
