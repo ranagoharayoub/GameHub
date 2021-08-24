@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./Faq.css";
 import { Accordion, Button, Card } from "react-bootstrap";
+import { ExpandMore } from "@material-ui/icons";
 
 export default function Faq() {
 
@@ -22,7 +23,7 @@ export default function Faq() {
                 <Card.Header>
                   <Accordion.Toggle as={Button} variant="link" eventKey="0">
                     <div class="icons plus-icon">
-                      <i class="fas fa-plus"></i>
+                      <ExpandMore></ExpandMore>
                     </div>
                     GameHub General
                   </Accordion.Toggle>
@@ -41,7 +42,7 @@ export default function Faq() {
                               eventKey="0"
                             >
                               <div class="icons plus-icon">
-                                <i class="fas fa-plus"></i>
+                                <ExpandMore></ExpandMore>
                               </div>
                               What is GameHub?
                             </Accordion.Toggle>
@@ -77,7 +78,7 @@ export default function Faq() {
                               eventKey="1"
                             >
                               <div class="icons plus-icon">
-                                <i class="fas fa-plus"></i>
+                                <ExpandMore></ExpandMore>
                               </div>
                               How do I enter a tournament?
                             </Accordion.Toggle>
@@ -113,7 +114,7 @@ export default function Faq() {
                               eventKey="2"
                             >
                               <div class="icons plus-icon">
-                                <i class="fas fa-plus"></i>
+                                <ExpandMore></ExpandMore>
                               </div>
                               I am legally allowed to join?
                             </Accordion.Toggle>
@@ -150,7 +151,7 @@ export default function Faq() {
                 <Card.Header>
                   <Accordion.Toggle as={Button} variant="link" eventKey="1">
                     <div class="icons plus-icon">
-                      <i class="fas fa-plus"></i>
+                      <ExpandMore></ExpandMore>
                     </div>
                     Tournament Details
                   </Accordion.Toggle>
@@ -169,7 +170,7 @@ export default function Faq() {
                               eventKey="0"
                             >
                               <div class="icons plus-icon">
-                                <i class="fas fa-plus"></i>
+                                <ExpandMore></ExpandMore>
                               </div>
                               How are the tournaments ran?
                             </Accordion.Toggle>
@@ -205,7 +206,7 @@ export default function Faq() {
                               eventKey="1"
                             >
                               <div class="icons plus-icon">
-                                <i class="fas fa-plus"></i>
+                                <ExpandMore></ExpandMore>
                               </div>
                               How long are the tournaments?
                             </Accordion.Toggle>
@@ -241,7 +242,7 @@ export default function Faq() {
                               eventKey="2"
                             >
                               <div class="icons plus-icon">
-                                <i class="fas fa-plus"></i>
+                                <ExpandMore></ExpandMore>
                               </div>
                               Are there live admins available during the
                               tournament?
@@ -278,7 +279,7 @@ export default function Faq() {
                               eventKey="3"
                             >
                               <div class="icons plus-icon">
-                                <i class="fas fa-plus"></i>
+                                <ExpandMore></ExpandMore>
                               </div>
                               How do I advance in the tournament?
                             </Accordion.Toggle>
@@ -314,7 +315,7 @@ export default function Faq() {
                               eventKey="4"
                             >
                               <div class="icons plus-icon">
-                                <i class="fas fa-plus"></i>
+                                <ExpandMore></ExpandMore>
                               </div>
                               How does GameHub deal with delays in the
                               tournament?
@@ -351,7 +352,7 @@ export default function Faq() {
                               eventKey="5"
                             >
                               <div class="icons plus-icon">
-                                <i class="fas fa-plus"></i>
+                                <ExpandMore></ExpandMore>
                               </div>
                               How will I remember when the tournament starts?
                             </Accordion.Toggle>
@@ -388,7 +389,7 @@ export default function Faq() {
                 <Card.Header>
                   <Accordion.Toggle as={Button} variant="link" eventKey="2">
                     <div class="icons plus-icon">
-                      <i class="fas fa-plus"></i>
+                      <ExpandMore></ExpandMore>
                     </div>
                     Entry Fees & Payouts
                   </Accordion.Toggle>
@@ -407,7 +408,7 @@ export default function Faq() {
                               eventKey="0"
                             >
                               <div class="icons plus-icon">
-                                <i class="fas fa-plus"></i>
+                                <ExpandMore></ExpandMore>
                               </div>
                               How do I pay to enter a tournament?
                             </Accordion.Toggle>
@@ -443,7 +444,7 @@ export default function Faq() {
                               eventKey="1"
                             >
                               <div class="icons plus-icon">
-                                <i class="fas fa-plus"></i>
+                                <ExpandMore></ExpandMore>
                               </div>
                               How much do tournaments cost?
                             </Accordion.Toggle>
@@ -479,7 +480,7 @@ export default function Faq() {
                               eventKey="2"
                             >
                               <div class="icons plus-icon">
-                                <i class="fas fa-plus"></i>
+                                <ExpandMore></ExpandMore>
                               </div>
                               Are my payment details secure?
                             </Accordion.Toggle>
@@ -515,7 +516,7 @@ export default function Faq() {
                               eventKey="3"
                             >
                               <div class="icons plus-icon">
-                                <i class="fas fa-plus"></i>
+                                <ExpandMore></ExpandMore>
                               </div>
                               I won. How do I get my winnings?
                             </Accordion.Toggle>
@@ -551,7 +552,7 @@ export default function Faq() {
                               eventKey="4"
                             >
                               <div class="icons plus-icon">
-                                <i class="fas fa-plus"></i>
+                                <ExpandMore></ExpandMore>
                               </div>
                               How much does GameHub rake from the pot?
                             </Accordion.Toggle>
@@ -588,7 +589,7 @@ export default function Faq() {
                 <Card.Header>
                   <Accordion.Toggle as={Button} variant="link" eventKey="3">
                     <div class="icons plus-icon">
-                      <i class="fas fa-plus"></i>
+                      <ExpandMore></ExpandMore>
                     </div>
                     GameHub Community
                   </Accordion.Toggle>
@@ -607,7 +608,7 @@ export default function Faq() {
                               eventKey="0"
                             >
                               <div class="icons plus-icon">
-                                <i class="fas fa-plus"></i>
+                                <ExpandMore></ExpandMore>
                               </div>
                               How do I become Champion of the Week?
                             </Accordion.Toggle>
@@ -643,7 +644,7 @@ export default function Faq() {
                               eventKey="1"
                             >
                               <div class="icons plus-icon">
-                                <i class="fas fa-plus"></i>
+                                <ExpandMore></ExpandMore>
                               </div>
                               How can I get featured on GameHubs social media
                               accounts?
@@ -680,7 +681,7 @@ export default function Faq() {
                               eventKey="2"
                             >
                               <div class="icons plus-icon">
-                                <i class="fas fa-plus"></i>
+                                <ExpandMore></ExpandMore>
                               </div>
                               How do I find other players to play with?
                             </Accordion.Toggle>

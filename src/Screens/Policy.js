@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./Faq.css";
 import { Accordion, Button, Card } from "react-bootstrap";
+import { ExpandMore } from "@material-ui/icons";
 
 function Policy() {
     
@@ -23,7 +24,8 @@ function Policy() {
                 <Card.Header>
                   <Accordion.Toggle as={Button} variant="link" eventKey="0">
                     <div class="icons plus-icon">
-                      <i class="fas fa-plus"></i>
+                      <ExpandMore></ExpandMore>
+                      {/* <ExpandMore></ExpandMore> */}
                     </div>
                     YOUR PRIVACY RIGHTS
                   </Accordion.Toggle>
@@ -48,7 +50,7 @@ function Policy() {
                 <Card.Header>
                   <Accordion.Toggle as={Button} variant="link" eventKey="0">
                     <div class="icons plus-icon">
-                      <i class="fas fa-plus"></i>
+                      <ExpandMore></ExpandMore>
                     </div>
                     WHAT IS PERSONAL-IDENTIFYING INFORMATION?
                   </Accordion.Toggle>
@@ -73,7 +75,7 @@ function Policy() {
                 <Card.Header>
                   <Accordion.Toggle as={Button} variant="link" eventKey="0">
                     <div class="icons plus-icon">
-                      <i class="fas fa-plus"></i>
+                      <ExpandMore></ExpandMore>
                     </div>
                     WHAT IS OUR POLICY FOR?
                   </Accordion.Toggle>
@@ -98,7 +100,7 @@ function Policy() {
                 <Card.Header>
                   <Accordion.Toggle as={Button} variant="link" eventKey="0">
                     <div class="icons plus-icon">
-                      <i class="fas fa-plus"></i>
+                      <ExpandMore></ExpandMore>
                     </div>
                     WHEN WE COLLECT PERSONAL-IDENTIFYING INFORMATION
                   </Accordion.Toggle>
@@ -124,7 +126,7 @@ function Policy() {
                 <Card.Header>
                   <Accordion.Toggle as={Button} variant="link" eventKey="0">
                     <div class="icons plus-icon">
-                      <i class="fas fa-plus"></i>
+                      <ExpandMore></ExpandMore>
                     </div>
                     HOW WE USE PERSONAL-IDENTIFYING INFORMATION
                   </Accordion.Toggle>
@@ -151,7 +153,7 @@ function Policy() {
                 <Card.Header>
                   <Accordion.Toggle as={Button} variant="link" eventKey="0">
                     <div class="icons plus-icon">
-                      <i class="fas fa-plus"></i>
+                      <ExpandMore></ExpandMore>
                     </div>
                     LINKS TO OTHER WEB SITES.
                   </Accordion.Toggle>
@@ -176,7 +178,7 @@ function Policy() {
                 <Card.Header>
                   <Accordion.Toggle as={Button} variant="link" eventKey="0">
                     <div class="icons plus-icon">
-                      <i class="fas fa-plus"></i>
+                      <ExpandMore></ExpandMore>
                     </div>
                     HOW WE PROTECT YOUR PERSONAL-IDENTIFYING INFORMATION
                   </Accordion.Toggle>
@@ -203,7 +205,7 @@ function Policy() {
                 <Card.Header>
                   <Accordion.Toggle as={Button} variant="link" eventKey="0">
                     <div class="icons plus-icon">
-                      <i class="fas fa-plus"></i>
+                      <ExpandMore></ExpandMore>
                     </div>
                     HOW YOU CAN SUBMIT OPT-OUT REQUESTS, REMOVAL REQUESTS AND QUESTIONS.
                   </Accordion.Toggle>
@@ -229,7 +231,7 @@ function Policy() {
                 <Card.Header>
                   <Accordion.Toggle as={Button} variant="link" eventKey="0">
                     <div class="icons plus-icon">
-                      <i class="fas fa-plus"></i>
+                      <ExpandMore></ExpandMore>
                     </div>
                     CHILDREN YOUNGER THAN 13 YEARS OF AGE.
                   </Accordion.Toggle>
@@ -255,7 +257,7 @@ function Policy() {
                 <Card.Header>
                   <Accordion.Toggle as={Button} variant="link" eventKey="0">
                     <div class="icons plus-icon">
-                      <i class="fas fa-plus"></i>
+                      <ExpandMore></ExpandMore>
                     </div>
                     “COOKIES” AND OTHER TRACKING DEVICES.
                   </Accordion.Toggle>
@@ -286,7 +288,7 @@ function Policy() {
                 <Card.Header>
                   <Accordion.Toggle as={Button} variant="link" eventKey="0">
                     <div class="icons plus-icon">
-                      <i class="fas fa-plus"></i>
+                      <ExpandMore></ExpandMore>
                     </div>
                     COMMON ID COOKIE
                   </Accordion.Toggle>
@@ -311,7 +313,7 @@ function Policy() {
                 <Card.Header>
                   <Accordion.Toggle as={Button} variant="link" eventKey="0">
                     <div class="icons plus-icon">
-                      <i class="fas fa-plus"></i>
+                      <ExpandMore></ExpandMore>
                     </div>
                     ADVERTISING PRIVACY SETTINGS
                   </Accordion.Toggle>
