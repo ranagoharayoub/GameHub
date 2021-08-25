@@ -39,7 +39,7 @@ function SideBar({ toggle, off }) {
           alt="cross"
           style={{ cursor: "pointer", width:"1vw" }}
         ></img> */}
-        <Close className='close-icon'></Close>
+        <Close style={{ cursor: "pointer", width:"2vw" }} onClick={off} className='close-icon'></Close>
         <p style={{font: 'normal normal bold 1.2vw / 2.5vw Arial'}}>{name}</p>
       </div>
       {/* <div className="cash-cont">

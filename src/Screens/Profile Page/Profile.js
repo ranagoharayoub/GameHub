@@ -127,7 +127,7 @@ function Profile({width}) {
           await axios.patch("https://gamehubx.com/api/v1/user-profile/"+id+"/", fd, {
             headers: headers,
           }).then(res=> {console.log(res); setprofilepic(true); setmodaltext("Successfully Image Uploaded")})
-            .catch(Error => {console.log(Error); setmodaltext("Image could not uploaded")})
+            .catch(Error => {console.log(Error.response); setmodaltext("Image could not uploaded")})
           } else {
             console.log('pic not selected')
           }
@@ -137,7 +137,11 @@ function Profile({width}) {
 
   return (
     <div style={width<'800' ?{overflowX:'hidden'}:null} className="flex flex-col bg-darkGray w-full md:w-full">
-       <Modal  show={show} onHide={()=> setShow(false)}>
+       <Modal  backdrop="static"
+        keyboard={false}  
+        show={show} 
+        onHide={()=> setShow(false)}
+      >
         <Modal.Header style={{ backgroundColor: "#4A4747"}}>
           <Modal.Title style={{ backgroundColor: "#4A4747"}}></Modal.Title>
         </Modal.Header>

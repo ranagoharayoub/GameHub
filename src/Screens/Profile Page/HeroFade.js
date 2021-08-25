@@ -55,7 +55,11 @@ function HeroFade() {
 
   return (
     <div className="relative w-full h-40 md:h-72">
-      <Modal  show={show} onHide={()=> setShow(false)}>
+      <Modal  backdrop="static"
+        keyboard={false}  
+        show={show} 
+        onHide={()=> setShow(false)}
+      >
         <Modal.Header style={{ backgroundColor: "#4A4747"}}>
           <Modal.Title style={{ backgroundColor: "#4A4747"}}></Modal.Title>
         </Modal.Header>
