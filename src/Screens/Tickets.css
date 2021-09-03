@@ -454,9 +454,9 @@ body {
     padding-right: 0;
     width: 100%;
   }
-  .general-submenu.tournaments-submenu {
+  /* .general-submenu.tournaments-submenu {
     top: -367px;
-  }
+  } */
 }
 @media only screen and (max-width: 499px) {
   .create-ticket-box p {
@@ -505,9 +505,9 @@ body {
     padding-top: 0px;
     /* padding: 0 20px 0 13px; */
   }
-  .general-submenu.tournaments-submenu {
+  /* .general-submenu.tournaments-submenu {
     top: -331px;
-  }
+  } */
   .modal.show .modal-dialog {
     margin-bottom: 170px;
   }
