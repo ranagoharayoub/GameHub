@@ -274,9 +274,9 @@ function Profile({width}) {
                 <h1 className="text-2xl font-semibold text-darkOrange md:text-6xl">
                   {gamestate.game_played}
                 </h1>
-                <h1 className="text-2xl font-semibold text-darkOrange md:text-6xl">
+                {/* <h1 className="text-2xl font-semibold text-darkOrange md:text-6xl">
                   {gamestate.total_earnings}
-                </h1>
+                </h1> */}
               </div>
               <div className="flex justify-evenly -mr-7 ml-5 md:ml-0 md:-mr-5">
                 <p className="font-thin text-white text-smallTen md:text-lg">
@@ -285,9 +285,9 @@ function Profile({width}) {
                 <p className="font-thin text-white text-smallTen md:text-lg md:-ml-9">
                   Games Played
                 </p>
-                <p className="font-thin text-white text-smallTen md:text-lg">
+                {/* <p className="font-thin text-white text-smallTen md:text-lg">
                   Total Earnings
-                </p>
+                </p> */}
               </div>
             </div>
           </div>

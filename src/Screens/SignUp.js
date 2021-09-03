@@ -157,7 +157,22 @@ class SignUp extends Component {
       })
         .then((res) => {
           console.log(res);
-          this.setState({email :res.data.user_detail.email, username: res.data.user_detail.username, emailstate: true, socialId:res.data.user_detail.id ,socialkey: res.data.key, isGoogleLogin: false})
+          if (res.data.registered) {
+            localStorage.setItem("token", res.data.key)
+            localStorage.setItem("userdata", res.data.user_detail.id)
+            localStorage.setItem("name", res.data.user_detail.username)
+            window.location.href='/'
+          } else {
+            this.props.history.push({
+              pathname: "/signup",
+              state: { 
+                data: res.data.user_detail,
+                key: res.data.key,
+                isGoogle: false,
+               }
+              })
+            }
+          // this.setState({email :res.data.user_detail.email, username: res.data.user_detail.username, emailstate: true, socialId:res.data.user_detail.id ,socialkey: res.data.key, isGoogleLogin: false})
       }
         )
         .catch((error) => {
@@ -188,7 +203,23 @@ class SignUp extends Component {
       })
         .then((res) => {
           console.log(res.data.user_detail);
-          this.setState({email :res.data.user_detail.email, username: res.data.user_detail.username, emailstate: true, socialId:res.data.user_detail.id ,socialkey: res.data.key, isGoogleLogin: true})
+          console.log(res.data);
+          if (res.data.registered) {
+            localStorage.setItem("token", res.data.key)
+            localStorage.setItem("userdata", res.data.user_detail.id)
+            localStorage.setItem("name", res.data.user_detail.username)
+            window.location.href='/'
+          } else {
+            this.props.history.push({
+              pathname: "/signup",
+              state: { 
+                data: res.data.user_detail,
+                key: res.data.key,
+                isGoogle: true,
+               }
+              })
+          }
+          // this.setState({email :res.data.user_detail.email, username: res.data.user_detail.username, emailstate: true, socialId:res.data.user_detail.id ,socialkey: res.data.key, isGoogleLogin: true})
       }
         )
         .catch((error) => {
@@ -367,7 +398,7 @@ class SignUp extends Component {
           <div className="subtitle">
           {
           this.state.emailstate?
-          "Updata some fields to get Signed In"
+          "Update a few fields to get signed in"
           :
           "Already a member"
 

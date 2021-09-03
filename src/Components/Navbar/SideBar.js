@@ -93,12 +93,12 @@ function SideBar({ toggle, off }) {
       <Link to='/matches' onClick={off} className="common"
       style={{font: 'normal normal normal 1vw/2.5vw Calibri'}}
       >My Matches</Link>
-      <div className="common"
+      {/* <div className="common"
       style={{font: 'normal normal normal 1vw/2.5vw Calibri'}}
       >My Teams</div>
       <div className="common"
       style={{font: 'normal normal normal 1vw/2.5vw Calibri'}}
-      >Team Invites</div>
+      >Team Invites</div> */}
       <Link to='/ticket' onClick={off} className="common"
       style={{font: 'normal normal normal 1vw/2.5vw Calibri'}}
       >My Tickets</Link>
@@ -108,12 +108,12 @@ function SideBar({ toggle, off }) {
       <div className="common"
       style={{font: 'normal normal normal 1vw/2.5vw Calibri'}}
       >My Bank</div>
-      <div className="common"
+      {/* <div className="common"
       style={{font: 'normal normal normal 1vw/2.5vw Calibri'}}
       >Purchased Items</div>
       <div className="common"
       style={{font: 'normal normal normal 1vw/2.5vw Calibri'}}
-      >Prize Claims</div>
+      >Prize Claims</div> */}
       <div className="line"></div>
       <Link to={`/settings/${id}`} 
       style={{font: 'normal normal normal 1vw/2.5vw Calibri'}}

@@ -185,7 +185,7 @@ export default function Rules() {
                     aria-expanded="false"
                     aria-controls="flush-collapseFive"
                   >
-                    Prize Winnings Policy
+                    Prize Information & Payouts
                   </button>
                 </h2>
                 <div
@@ -197,7 +197,7 @@ export default function Rules() {
                   <div class="accordion-body">
                     <div class="accordion-detail-content-text">
                       <p>
-                      If you are in a paid tournament and win a cash prize by placing in the Top 3 spots, you are eligible to withdraw your winnings. 
+                      The total prize money in every GameHub contest is determined by the total number of players in the contest. We take 15.9% from the total pot, then we distribute the remaining amount as winnings between 1st, 2nd, and 3rd place, 70%, 20%, and 10% respectively. The 3rd place game is played between the 2 SemiFinal Losers.
                       </p>
                     </div>
                     <div class="accordion-detail-content-text">
@@ -209,16 +209,41 @@ export default function Rules() {
                         </p> */}
                         <div class="short-text">
                           <p>
-                          Your winnings will be deposited to your account and you will be able to request a transfer. You can request a payout in the following 3 ways:
+                          The total prize money in every GameHub contest is determined by the total number of players in the contest. This number is constantly subject to change, so the prize payout amounts may change after you enter the content. The prize payout amounts will lock shortly before the content starts, so please check then to know what the final numbers are.
                           </p>
-                          <p>1.	Wire transfer to your bank account. You will be able to securely submit your bank account number and routing number, and we will initiate a wire transfer. This should take 1-3 business days depending on your financial institution.</p>
-                          <p>2.	Venmo. You can submit your Venmo username and we will send your payment within 1 business day.</p>
-                          <p>3.	Cash App. You can submit your Cash App username and we will send your payment within 1 business day.</p>
+
+                          <p>As an organization, GameHub takes 15.9% from the total pot for administrative house fees, and the rest is distributed amongst the 1st, 2nd and 3rd place winners. The 1st place winner takes 70% of the remaining pot, 2nd place takes 20% and 3rd place takes 10%. For example, if the total prize pot for a contest is $5,000 - GameHub would take $795 (15.9%), and $4,205 would remain for the winners. 1st place would get $2,943 (70% of $4,205); 2nd place would get $841 (20% of $4,205) and 3rd place would receive $420.5 (10% of $4,205).  
+                          </p>
+
+                          <p>The 3rd place game is played between the 2 Semi-final losers.
+                          </p>
+
+                          <p>If you are in a paid tournament and win a cash prize by placing in the Top 3 spots, you are eligible to withdraw your winnings.
+                          </p>
+
+                          <p>You can request a payout in the following 3 ways:
+                          </p>
+
+                          <p>1. Wire transfer to your bank account. You will be able to securely submit your bank account number and routing number, and we will initiate a wire transfer. This should take 1-3 business days depending on your financial institution.
+                          </p>
+
+                          <p>2. Venmo. You can submit your Venmo username and we will send your payment within 1 business day.
+                          </p>
+
+                          <p>
+                           3. Cash App. You can submit your Cash App username and we will send your payment within 1 business day.
+                          </p>
+
                         </div>
                       </div>
                       <p>
-                      Please be aware if you submit an incorrect name or misspell your Venmo or Cash App username, we will not be able to recover the funds sent to a mistaken account. This is your responsibility to provide the exact correct username. 
+                      Please be aware if you submit an incorrect name or misspell your Venmo or Cash App username, we will not be able to recover the funds sent to a mistaken account. This is your responsibility to provide the exact correct username.
                       </p>
+
+                      <p>
+                      You can submit a ticket through the website as a request to withdraw your funds - just provide your username, the tournament you won, how much you would like to withdraw and which method above. Additionally, you can also email <a style={{color: "lightblue"}} href="mailto:prizes@gamehubx.com"> prizes@gamehubx.com</a> with the same request. Please make sure all your information is accurate. 
+                      </p>
+
                       <p>
                       The minimum amount of funds eligible to be withdrawn is $10. Please contact us with any questions prior or post a withdrawal by creating a ticket or emailing us <a style={{color: "lightblue"}} href="mailto:support@gamehubx.com"> support@gamehubx.com</a> .
                       </p>

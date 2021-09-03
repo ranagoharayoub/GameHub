@@ -114,6 +114,26 @@ export default function Bracket({ team_size, gameId, enrollUser, isStarted }) {
               COMPACT
             </button>
           </li>
+          <li class="nav-item" role="presentation">
+            <div
+              // class="nav-link"
+              style={
+                !isStarted?
+                {fontSize:"1.3vmax", fontStyle:'italic', color:"#95989a"}
+                :
+                {display:'none'}
+              }
+              id="pills-profile-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-compact"
+              // type="button"
+              role="tab"
+              aria-controls="pills-compact"
+              aria-selected="false"
+            >
+              The teams in the bracket will not be revealed until the tournament is live. 
+            </div>
+          </li>
         </ul>
 
         <div class="tab-content" id="pills-tabContent">

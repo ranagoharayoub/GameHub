@@ -389,6 +389,7 @@ body {
 }
 .nav.nav-pills {
   padding: 20px 0;
+  align-items: center;
 }
 .tournament-bracket-useless-bar {
   background-color: #404040;
@@ -803,7 +804,7 @@ body {
 }
 .team-row {
   background-color: #303030;
-  padding-bottom: 45px;
+  /* padding-bottom: 10px; */
 }
 .team-row.team-row-top p {
   margin-bottom: 0;
@@ -956,7 +957,7 @@ body {
 @media only screen and (max-width: 991px) {
 
   .inctour-main{
-    background-color: #303030;
+    background-color: black;
   }
   
 
@@ -1003,8 +1004,8 @@ body {
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: large;
-    margin-top: 0px;
-    margin-bottom: 10px;
+    margin-top: 100px;
+    margin-bottom: 15px;
     border-radius: 5px;
     margin-left: 20%;
     width: 60%;

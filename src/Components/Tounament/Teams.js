@@ -5,7 +5,7 @@ import { Card, Accordion } from "react-bootstrap";
 import {Avatar} from "@material-ui/core"
 // import teamImg2 from "../../bg/download.png";
 /*eslint-disable*/
-export default function Teams({data}) {
+export default function Teams({data, isStarted}) {
   const [open, setOpen] = useState(false);
   return (
     <div>
@@ -21,6 +21,15 @@ export default function Teams({data}) {
             </div>
           </div>
           <div class="team-label">Team</div>
+          <div 
+          style={
+            !isStarted?
+            {fontSize:"1.3vmax", fontStyle:'italic', color:"#95989a", padding:"1vmax"}
+            :
+            {display:'none'}
+            }>
+              The teams in the bracket will not be revealed until the tournament is live. 
+          </div>
         </div>
         <Accordion> 
           {

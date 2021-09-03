@@ -168,7 +168,8 @@ const enrollHandler = async() =>{
             <h2>{data.title}</h2>
             <div class="tour-lower-text">
               <p>
-                <b>Platform:</b> {data.platform_detail}
+                <b>Platform: {data.platform_detail}</b>
+                
               </p>
               <p>
                 {
@@ -362,7 +363,7 @@ const enrollHandler = async() =>{
                 <div class="mdl-tabs__panel"  id="team">
                   {
                     enrolled?
-                        <Teams data={enrolled} />
+                        <Teams isStarted={getsec(data.start_on)>0? false: true} data={enrolled} />
                     :
                     null
                   }

@@ -51,19 +51,7 @@ export default function Faq() {
                             <Card.Body>
                               <div class="card-body-inner-content">
                                 <p>
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry. Lorem Ipsum
-                                  has been the industry's standard dummy text
-                                  ever since the 1500s, when an unknown printer
-                                  took a galley of type and scrambled it to make
-                                  a type specimen book. It has survived not only
-                                  five centuries, but also the leap into
-                                  electronic typesetting, remaining essentially
-                                  unchanged. It was popularised in the 1960s
-                                  with the release of Letraset sheets containing
-                                  Lorem Ipsum passages, and more recently with
-                                  desktop publishing software like Aldus
-                                  PageMaker including versions of Lorem Ipsum.
+                                GameHub is a eSports gaming tournament platform, hosting all kinds of tournaments across every single available gaming platform, including mobile! We aim to deliver outstanding player service and offer as many tournaments across as many games as possible.
                                 </p>
                               </div>
                             </Card.Body>
@@ -87,19 +75,7 @@ export default function Faq() {
                             <Card.Body>
                               <div class="card-body-inner-content">
                                 <p>
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry. Lorem Ipsum
-                                  has been the industry's standard dummy text
-                                  ever since the 1500s, when an unknown printer
-                                  took a galley of type and scrambled it to make
-                                  a type specimen book. It has survived not only
-                                  five centuries, but also the leap into
-                                  electronic typesetting, remaining essentially
-                                  unchanged. It was popularised in the 1960s
-                                  with the release of Letraset sheets containing
-                                  Lorem Ipsum passages, and more recently with
-                                  desktop publishing software like Aldus
-                                  PageMaker including versions of Lorem Ipsum.
+                                Click on Games or Tournaments above to find the tournament that is right for you, then hit the ENTER NOW button on the individual tournament page.
                                 </p>
                               </div>
                             </Card.Body>
@@ -123,19 +99,7 @@ export default function Faq() {
                             <Card.Body>
                               <div class="card-body-inner-content">
                                 <p>
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry. Lorem Ipsum
-                                  has been the industry's standard dummy text
-                                  ever since the 1500s, when an unknown printer
-                                  took a galley of type and scrambled it to make
-                                  a type specimen book. It has survived not only
-                                  five centuries, but also the leap into
-                                  electronic typesetting, remaining essentially
-                                  unchanged. It was popularised in the 1960s
-                                  with the release of Letraset sheets containing
-                                  Lorem Ipsum passages, and more recently with
-                                  desktop publishing software like Aldus
-                                  PageMaker including versions of Lorem Ipsum.
+                                Yes you are. We do restrict paid tournaments in certain state or territories where it is not permitted, but we also have many free tournaments where anyone can join.
                                 </p>
                               </div>
                             </Card.Body>
@@ -179,19 +143,7 @@ export default function Faq() {
                             <Card.Body>
                               <div class="card-body-inner-content">
                                 <p>
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry. Lorem Ipsum
-                                  has been the industry's standard dummy text
-                                  ever since the 1500s, when an unknown printer
-                                  took a galley of type and scrambled it to make
-                                  a type specimen book. It has survived not only
-                                  five centuries, but also the leap into
-                                  electronic typesetting, remaining essentially
-                                  unchanged. It was popularised in the 1960s
-                                  with the release of Letraset sheets containing
-                                  Lorem Ipsum passages, and more recently with
-                                  desktop publishing software like Aldus
-                                  PageMaker including versions of Lorem Ipsum.
+                                Tournaments start at the starting time posted and are usually single elimination. There is admin assigned to each tournament that facilitates on time starts, advancing teams into the next round and handling any disputes.
                                 </p>
                               </div>
                             </Card.Body>
@@ -215,19 +167,7 @@ export default function Faq() {
                             <Card.Body>
                               <div class="card-body-inner-content">
                                 <p>
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry. Lorem Ipsum
-                                  has been the industry's standard dummy text
-                                  ever since the 1500s, when an unknown printer
-                                  took a galley of type and scrambled it to make
-                                  a type specimen book. It has survived not only
-                                  five centuries, but also the leap into
-                                  electronic typesetting, remaining essentially
-                                  unchanged. It was popularised in the 1960s
-                                  with the release of Letraset sheets containing
-                                  Lorem Ipsum passages, and more recently with
-                                  desktop publishing software like Aldus
-                                  PageMaker including versions of Lorem Ipsum.
+                                This depends on the game and how many teams have joined, but anywhere from 1 to 4-5 hours. All tournaments are started and completed in one continuous session and the same day or night, so you don't have to worry about having days in between games or matches.
                                 </p>
                               </div>
                             </Card.Body>
@@ -252,19 +192,7 @@ export default function Faq() {
                             <Card.Body>
                               <div class="card-body-inner-content">
                                 <p>
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry. Lorem Ipsum
-                                  has been the industry's standard dummy text
-                                  ever since the 1500s, when an unknown printer
-                                  took a galley of type and scrambled it to make
-                                  a type specimen book. It has survived not only
-                                  five centuries, but also the leap into
-                                  electronic typesetting, remaining essentially
-                                  unchanged. It was popularised in the 1960s
-                                  with the release of Letraset sheets containing
-                                  Lorem Ipsum passages, and more recently with
-                                  desktop publishing software like Aldus
-                                  PageMaker including versions of Lorem Ipsum.
+                                Yes there are. You can communicate with them through text or email.
                                 </p>
                               </div>
                             </Card.Body>
@@ -288,19 +216,7 @@ export default function Faq() {
                             <Card.Body>
                               <div class="card-body-inner-content">
                                 <p>
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry. Lorem Ipsum
-                                  has been the industry's standard dummy text
-                                  ever since the 1500s, when an unknown printer
-                                  took a galley of type and scrambled it to make
-                                  a type specimen book. It has survived not only
-                                  five centuries, but also the leap into
-                                  electronic typesetting, remaining essentially
-                                  unchanged. It was popularised in the 1960s
-                                  with the release of Letraset sheets containing
-                                  Lorem Ipsum passages, and more recently with
-                                  desktop publishing software like Aldus
-                                  PageMaker including versions of Lorem Ipsum.
+                                You must win your current round to advanced to the next round.
                                 </p>
                               </div>
                             </Card.Body>
@@ -325,19 +241,8 @@ export default function Faq() {
                             <Card.Body>
                               <div class="card-body-inner-content">
                                 <p>
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry. Lorem Ipsum
-                                  has been the industry's standard dummy text
-                                  ever since the 1500s, when an unknown printer
-                                  took a galley of type and scrambled it to make
-                                  a type specimen book. It has survived not only
-                                  five centuries, but also the leap into
-                                  electronic typesetting, remaining essentially
-                                  unchanged. It was popularised in the 1960s
-                                  with the release of Letraset sheets containing
-                                  Lorem Ipsum passages, and more recently with
-                                  desktop publishing software like Aldus
-                                  PageMaker including versions of Lorem Ipsum.
+                                This is on a per situation basis, but we will always gave teams 5-10 minutes post the starting time to arrive and start playing. We will text or email them if they are not showing up and then if they keep delaying or dont respond, they will automatically lose and the other team will advance.
+
                                 </p>
                               </div>
                             </Card.Body>
@@ -361,19 +266,7 @@ export default function Faq() {
                             <Card.Body>
                               <div class="card-body-inner-content">
                                 <p>
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry. Lorem Ipsum
-                                  has been the industry's standard dummy text
-                                  ever since the 1500s, when an unknown printer
-                                  took a galley of type and scrambled it to make
-                                  a type specimen book. It has survived not only
-                                  five centuries, but also the leap into
-                                  electronic typesetting, remaining essentially
-                                  unchanged. It was popularised in the 1960s
-                                  with the release of Letraset sheets containing
-                                  Lorem Ipsum passages, and more recently with
-                                  desktop publishing software like Aldus
-                                  PageMaker including versions of Lorem Ipsum.
+                                After you sign up for a tournament, you will get an email confirmation that you signed up. The starting time for the tournament is always displayed on the individual tournament page, so make sure to check that and know when its starting.
                                 </p>
                               </div>
                             </Card.Body>
@@ -417,19 +310,7 @@ export default function Faq() {
                             <Card.Body>
                               <div class="card-body-inner-content">
                                 <p>
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry. Lorem Ipsum
-                                  has been the industry's standard dummy text
-                                  ever since the 1500s, when an unknown printer
-                                  took a galley of type and scrambled it to make
-                                  a type specimen book. It has survived not only
-                                  five centuries, but also the leap into
-                                  electronic typesetting, remaining essentially
-                                  unchanged. It was popularised in the 1960s
-                                  with the release of Letraset sheets containing
-                                  Lorem Ipsum passages, and more recently with
-                                  desktop publishing software like Aldus
-                                  PageMaker including versions of Lorem Ipsum.
+                                You have to register as a new user first. Then once you are registered, you hit the +Add Cash button on your user panel, and enter the amount of money you’d like to deposit. Then from there, you need to get credits. 1 credit is $1 dollar. You enter a tournament with credits.
                                 </p>
                               </div>
                             </Card.Body>
@@ -453,19 +334,7 @@ export default function Faq() {
                             <Card.Body>
                               <div class="card-body-inner-content">
                                 <p>
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry. Lorem Ipsum
-                                  has been the industry's standard dummy text
-                                  ever since the 1500s, when an unknown printer
-                                  took a galley of type and scrambled it to make
-                                  a type specimen book. It has survived not only
-                                  five centuries, but also the leap into
-                                  electronic typesetting, remaining essentially
-                                  unchanged. It was popularised in the 1960s
-                                  with the release of Letraset sheets containing
-                                  Lorem Ipsum passages, and more recently with
-                                  desktop publishing software like Aldus
-                                  PageMaker including versions of Lorem Ipsum.
+                                Tournaments generally range from 20-100 credits. Some big or special tournaments may be less or more, it will depend on the tournament.
                                 </p>
                               </div>
                             </Card.Body>
@@ -489,19 +358,7 @@ export default function Faq() {
                             <Card.Body>
                               <div class="card-body-inner-content">
                                 <p>
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry. Lorem Ipsum
-                                  has been the industry's standard dummy text
-                                  ever since the 1500s, when an unknown printer
-                                  took a galley of type and scrambled it to make
-                                  a type specimen book. It has survived not only
-                                  five centuries, but also the leap into
-                                  electronic typesetting, remaining essentially
-                                  unchanged. It was popularised in the 1960s
-                                  with the release of Letraset sheets containing
-                                  Lorem Ipsum passages, and more recently with
-                                  desktop publishing software like Aldus
-                                  PageMaker including versions of Lorem Ipsum.
+                                Absolutely. We use Stripe for our payments which has world class payment security and technology. We comply with all PCI protocols, deploy the latest SSL protocols and employ advanced tokenization measures, to ensure all data is anonymously and securely protected.
                                 </p>
                               </div>
                             </Card.Body>
@@ -525,19 +382,7 @@ export default function Faq() {
                             <Card.Body>
                               <div class="card-body-inner-content">
                                 <p>
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry. Lorem Ipsum
-                                  has been the industry's standard dummy text
-                                  ever since the 1500s, when an unknown printer
-                                  took a galley of type and scrambled it to make
-                                  a type specimen book. It has survived not only
-                                  five centuries, but also the leap into
-                                  electronic typesetting, remaining essentially
-                                  unchanged. It was popularised in the 1960s
-                                  with the release of Letraset sheets containing
-                                  Lorem Ipsum passages, and more recently with
-                                  desktop publishing software like Aldus
-                                  PageMaker including versions of Lorem Ipsum.
+                                You can submit a prize withdrawal ticket or send an email to <a style={{color: "lightblue"}} href="mailto: prizes@gamehubx.com"> prizes@gamehubx.com</a>  with your request.
                                 </p>
                               </div>
                             </Card.Body>
@@ -554,26 +399,14 @@ export default function Faq() {
                               <div class="icons plus-icon">
                                 <ExpandMore></ExpandMore>
                               </div>
-                              How much does GameHub rake from the pot?
+                              How much does GameHub take from the pot?
                             </Accordion.Toggle>
                           </Card.Header>
                           <Accordion.Collapse eventKey="4">
                             <Card.Body>
                               <div class="card-body-inner-content">
                                 <p>
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry. Lorem Ipsum
-                                  has been the industry's standard dummy text
-                                  ever since the 1500s, when an unknown printer
-                                  took a galley of type and scrambled it to make
-                                  a type specimen book. It has survived not only
-                                  five centuries, but also the leap into
-                                  electronic typesetting, remaining essentially
-                                  unchanged. It was popularised in the 1960s
-                                  with the release of Letraset sheets containing
-                                  Lorem Ipsum passages, and more recently with
-                                  desktop publishing software like Aldus
-                                  PageMaker including versions of Lorem Ipsum.
+                                We take 15.9% percent from each pot. This goes to administrative fees, employee fees, hosting and website fees and just the general expenses it takes to run and host a complicated service such as this.
                                 </p>
                               </div>
                             </Card.Body>
@@ -610,26 +443,14 @@ export default function Faq() {
                               <div class="icons plus-icon">
                                 <ExpandMore></ExpandMore>
                               </div>
-                              How do I become Champion of the Week?
+                              How do I become a recent champion featured on the homepage?
                             </Accordion.Toggle>
                           </Card.Header>
                           <Accordion.Collapse eventKey="0">
                             <Card.Body>
                               <div class="card-body-inner-content">
                                 <p>
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry. Lorem Ipsum
-                                  has been the industry's standard dummy text
-                                  ever since the 1500s, when an unknown printer
-                                  took a galley of type and scrambled it to make
-                                  a type specimen book. It has survived not only
-                                  five centuries, but also the leap into
-                                  electronic typesetting, remaining essentially
-                                  unchanged. It was popularised in the 1960s
-                                  with the release of Letraset sheets containing
-                                  Lorem Ipsum passages, and more recently with
-                                  desktop publishing software like Aldus
-                                  PageMaker including versions of Lorem Ipsum.
+                                  We choose homepage champions at random!
                                 </p>
                               </div>
                             </Card.Body>
@@ -646,27 +467,14 @@ export default function Faq() {
                               <div class="icons plus-icon">
                                 <ExpandMore></ExpandMore>
                               </div>
-                              How can I get featured on GameHubs social media
-                              accounts?
+                              How can I get featured on GameHubs social media accounts?
                             </Accordion.Toggle>
                           </Card.Header>
                           <Accordion.Collapse eventKey="1">
                             <Card.Body>
                               <div class="card-body-inner-content">
                                 <p>
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry. Lorem Ipsum
-                                  has been the industry's standard dummy text
-                                  ever since the 1500s, when an unknown printer
-                                  took a galley of type and scrambled it to make
-                                  a type specimen book. It has survived not only
-                                  five centuries, but also the leap into
-                                  electronic typesetting, remaining essentially
-                                  unchanged. It was popularised in the 1960s
-                                  with the release of Letraset sheets containing
-                                  Lorem Ipsum passages, and more recently with
-                                  desktop publishing software like Aldus
-                                  PageMaker including versions of Lorem Ipsum.
+                                We choose to feature players on our social media accounts all the time, this is mostly by random choice as well. It won’t be long before you are featured on one of our channels!
                                 </p>
                               </div>
                             </Card.Body>
@@ -690,19 +498,7 @@ export default function Faq() {
                             <Card.Body>
                               <div class="card-body-inner-content">
                                 <p>
-                                  Lorem Ipsum is simply dummy text of the
-                                  printing and typesetting industry. Lorem Ipsum
-                                  has been the industry's standard dummy text
-                                  ever since the 1500s, when an unknown printer
-                                  took a galley of type and scrambled it to make
-                                  a type specimen book. It has survived not only
-                                  five centuries, but also the leap into
-                                  electronic typesetting, remaining essentially
-                                  unchanged. It was popularised in the 1960s
-                                  with the release of Letraset sheets containing
-                                  Lorem Ipsum passages, and more recently with
-                                  desktop publishing software like Aldus
-                                  PageMaker including versions of Lorem Ipsum.
+                                In the future we will implement a community pool of players that can reach out to one another to join forces on a team tournament and play together. For now, we suggest you to ask some friends that enjoy similar games as you or post requests on your social media accounts asking if anyone is interested in joining a tournament with you.
                                 </p>
                               </div>
                             </Card.Body>

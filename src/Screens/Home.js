@@ -166,7 +166,7 @@ function Home({ width }) {
         </div>
       </div>
       <div className="champ-cont">
-        <div className="title">CHAMPIONS OF THE WEEK</div>
+        <div className="title">RECENT CHAMPIONS</div>
         <div className="winner-cont">
           {/* {champdata.map((ent) => {
             return (
