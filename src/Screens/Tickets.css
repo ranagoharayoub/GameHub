@@ -384,6 +384,8 @@ body {
   }
   .modal {
     background: #303030;
+    padding: 0% !important;
+    height: 60vh;
   }
   .modal-content {
     width: 100%;
@@ -410,11 +412,16 @@ body {
   }
 }
 @media only screen and (max-width: 599px) {
+  .ticket-cat-main {
+    margin: 70px 0;
+  }
+
   .general-submenu {
-    max-width: 100%;
+    max-width: 105%;
   }
   .modal-dialog {
-    width: 109%;
+    width: 100%;
+    margin: 0% !important;
   }
   .modal.show .modal-dialog {
     margin-top: 0;
@@ -475,8 +482,8 @@ body {
     padding: 25px 0;
   }
   .modal-dialog {
-    width: 107%;
-    left: -10px;
+    /* width: 107%; */
+    /* left: -10px; */
   }
   .modal-content {
     padding-right: 30px;
@@ -489,7 +496,7 @@ body {
   }
   .general-submenu .modal-content {
     padding-top: 0;
-    padding: 0 20px 0 13px;
+    /* padding: 0 20px 0 13px; */
   }
   .general-submenu.tournaments-submenu {
     top: -331px;
@@ -505,11 +512,12 @@ body {
   }
   .general-submenu .modal-footer {
     padding: 0 !important;
+    margin-bottom: 10px;
   }
 }
 @media only screen and (max-width: 400px) {
   .modal-dialog {
-    width: 109%;
+    /* width: 109%; */
   }
   .modal.show .modal-dialog {
     margin-bottom: 280px;

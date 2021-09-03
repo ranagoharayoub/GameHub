@@ -118,22 +118,14 @@ return (
                             <div class="general-subb-cat">
                               <DropdownSubmenu href="#action/3.7" title="General">
                                 <NavDropdown.Item href="#action/9.1">
-                                  Tournaments
+                                  General
                                 </NavDropdown.Item>
                               </DropdownSubmenu>
                             </div>
                             <div class="general-subb-cat last">
                               <input name="tickets_proof_links" value={ticketProof} onChange={e=>setticketProof(e.target.value)} style={{width:'100%', height:'50px', backgroundColor:'#4a4747', padding:'0px 20px'}} type='text' placeholder='Proof Link 1'></input>
                             </div>
-                            {/* <div class="general-add">
-                              <input style={{display:'none'}} id="uploadimage" type='file' onChange={(e)=>{console.log(e.target.files[0]); if (e.target.files[0]) {
-                                setscreenshot(e.target.files[0])
-                              }}}></input>
-                              <p>
-                                <i style={{cursor:'pointer'}} onClick={()=> document.getElementById("uploadimage").click()} class="fas fa-plus-circle"></i>Add Game Results
-                                Screenshot Proof
-                              </p>
-                            </div> */}
+                        
                             <div class="general-add">
                               <ReactFileReader fileTypes={[".jpg",".jpeg, .png"]} base64={true} multipleFiles={false} handleFiles={handleFiles}>
                                 <i style={{cursor:'pointer'}}  class="fas fa-plus-circle"></i>
@@ -178,7 +170,7 @@ return (
                               for a match dispute it will be disregarded.
                             </p>
                             <div class="general-subb-cat">
-                              <DropdownSubmenu href="#action/3.7" title="General">
+                              <DropdownSubmenu href="#action/3.7" title="Tournaments">
                                 <NavDropdown.Item href="#action/9.1">
                                   Tournaments
                                 </NavDropdown.Item>
@@ -211,6 +203,44 @@ return (
                                 Screenshot Proof
                               </p>
                             </div>
+                            <div class="general-forms">
+                              <form action="#">
+                                <textarea
+                                  value={message}
+                                  onChange={(e)=>setmessage(e.target.value)}
+                                  placeholder="Enter message"
+                                  rows="4"
+                                ></textarea>
+                              </form>
+                            </div>
+                          </div>
+                        </Modal.Body>
+                        <Modal.Footer>
+                          <Button onClick={props.onHide}>Cancel</Button>
+                          <Button onClick={()=>ticketHandler("tournament")}>Create</Button>
+                        </Modal.Footer>
+                      </Modal.Dialog>
+                    </div>
+                  </DropdownSubmenu>
+
+                  <DropdownSubmenu href="#action/3.7" title="Prize Claim">
+                    <div class="general-submenu tournaments-submenu">
+                      <Modal.Dialog>
+                        <Modal.Body>
+                          <div class="create-box-line"></div>
+                          <div class="general-sub-cat-inner">
+                            <h2>CREATE TICKET</h2>
+                            <p>
+                            Let us know the method of payout you would like: Bank Account, Venmo or CashApp. Please type in your username, the tournament you won, the correct name of your Venmo or CashApp account (if you choose either of these methods) and the amount you would like withdrawn.
+                            </p>
+                            <div class="general-subb-cat">
+                              <DropdownSubmenu href="#action/3.7" title="Prize Claim">
+                                <NavDropdown.Item href="#action/9.1">
+                                  Prize Claim
+                                </NavDropdown.Item>
+                              </DropdownSubmenu>
+                            </div>
+
                             <div class="general-forms">
                               <form action="#">
                                 <textarea
