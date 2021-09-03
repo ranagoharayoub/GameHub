@@ -94,7 +94,7 @@ function BuyCredits() {
                     >
                 </input>
 
-                <div className='instr'>1 credit per dollar,</div>
+                <div className='instr'>1 credit per dollar</div>
                 
                 <div className='disc-amount'>
                     <div className='disc'>

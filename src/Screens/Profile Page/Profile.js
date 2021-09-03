@@ -259,7 +259,7 @@ function Profile({width}) {
             <img
               src={img}
               alt=""
-              style={{ flex: "0.25" }}
+              style={{ flex: "0.15" }}
               className="h-16 w-24 md:h-52 md:w-52 mr-2 lg:h-52 lg:w-44 xl:h-80 xl:w-48"
             />
 

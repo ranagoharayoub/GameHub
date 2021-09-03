@@ -3,10 +3,12 @@ body {
 }
 
 /* =================== First Section Inctour top background */
+
 .inctour-main-background {
   width: 100%;
   height: 60vh;
   position: relative;
+  
 }
 .inctour-main-background img {
   width: 100%;
@@ -53,7 +55,7 @@ body {
   margin-bottom: 0;
 }
 
-.tournament-card-text-box .enroll-now {
+.enroll-now {
   /* background-color: #f69204;
   color: white; */
   background-color: #8AFE80;
@@ -952,6 +954,12 @@ body {
 }
 /* ===================================== Media Query 991 ====================================== */
 @media only screen and (max-width: 991px) {
+
+  .inctour-main{
+    background-color: #303030;
+  }
+  
+
   .tournament-card-inner {
     height: 300px;
   }
@@ -986,7 +994,7 @@ body {
     height: 40px;
   }
 
-  .tournament-card-text-box .enroll-now {
+   .enroll-now {
     /* background-color: #f69204;
     color: white; */
     background-color: #8aff80;
@@ -1021,7 +1029,7 @@ body {
 
   .inctour-tabs-section {
     background: #212121;
-    padding-top: 36%;
+    /* padding-top: 36%; */
   }
 
   .tournament-card-img-box {
@@ -1060,7 +1068,7 @@ body {
     display: flex;
     /* flex-direction: column; */
     background: #363636;
-    margin: 10px 10px;
+    /* margin: 10px 10px; */
     padding: 10px 20px;
     font-size: 15px;
   }

@@ -102,7 +102,7 @@ function App() {
           <Route path='/faq'><Faq></Faq></Route>
           <Route path='/privacy'><Policy></Policy></Route>
         </Switch>
-        <Footer></Footer>
+        <Footer width={width}></Footer>
         </ContextAPI.Provider>
       </Router>
   );

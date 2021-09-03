@@ -199,12 +199,15 @@ const enrollHandler = async() =>{
                 }
               </p>
               {
+              width>'800'?  
               getsec(data.start_on) > 0?
               enrolled?
               enrolled.map((id)=> id.user).includes(userid) && token?
               <div style={{cursor: 'not-allowed'}} className='enroll-now'>Entered</div>
               :
               <div onClick={()=>enrollHandler()} className='enroll-now'>Enter Now</div>
+              :
+              null
               :
               null
               :
@@ -252,6 +255,23 @@ const enrollHandler = async() =>{
         </div>
       </div>
       {/* Inctour First Section End */}
+
+      {
+              width<'800'?  
+              getsec(data.start_on) > 0?
+              enrolled?
+              enrolled.map((id)=> id.user).includes(userid) && token?
+              <div style={{cursor: 'not-allowed', marginTop: '15vh',
+              marginBottom: '2vh'}} className='enroll-now'>Entered</div>
+              :
+              <div onClick={()=>enrollHandler()} className='enroll-now'>Enter Now</div>
+              :
+              null
+              :
+              null
+              :
+              null
+      }
 
       {/* Inctour Tabs Section Start */}
       <section class="inctour-tabs-section">

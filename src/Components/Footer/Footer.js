@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Footer.css'
 
-function Footer() {
+function Footer({width}) {
     return (
         <div className='footer'>
             <div className='first-cont'>
@@ -10,7 +10,7 @@ function Footer() {
                     <div className='title'>PLATFORM</div>
                     <div className='links'>About Us</div>
                     <div className='links'>Contact</div>
-                    <div className='links'> Terms & Conditions </div>
+                    <div className='links'><Link to='/privacy' style={{color:'inherit'}}>Terms & Conditions</Link>  </div>
                 </div>
                 <div className='company-col company-col-2'>
                     <div className='title'>SUPPORT</div>
@@ -23,7 +23,9 @@ function Footer() {
             <div className='second-cont'>
                 <div className='payment-col'>
                     <img src='/icons/gamehub.png' width='35%' className='footer-logo' alt='logo'></img>
-                    <img src='/icons/Payment_Trust_Badges.png' width='90%' alt='payment'></img>
+                    <img src='/icons/Payment_Trust_Badges.png' width='90%' alt='payment'
+                    style={width>'800' ?{display:"flex"}: {display:"none"}}
+                    ></img>
                 </div>          
             </div>
             <div className='last-cont'>
