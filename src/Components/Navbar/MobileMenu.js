@@ -160,13 +160,13 @@ function MobileMenu({menuOn, off}) {
       </div>
       
       <Link to='/matches' onClick={off} className="common">My Matches</Link>
-      <div className="common">My Teams</div>
-      <div className="common">Team Invites</div>
+      {/* <div className="common">My Teams</div>
+      <div className="common">Team Invites</div> */}
       <Link to='/ticket' onClick={off} className="common">My Tickets</Link>
       <div className="line"></div>
       <div className="common">My Bank</div>
-      <div className="common">Purchased Items</div>
-      <div className="common">Prize Claims</div>
+      {/* <div className="common">Purchased Items</div>
+      <div className="common">Prize Claims</div> */}
       <div className="line"></div>
       <Link to={`/settings/${id}`} onClick={off} className="common">
         Account Settings

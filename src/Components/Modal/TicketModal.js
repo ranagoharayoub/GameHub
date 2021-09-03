@@ -70,7 +70,7 @@ const handleFiles = (files) => {
 
 return (
         <div>
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={show} onHide={handleClose} >
                 <Modal.Header >
                   <Modal.Title></Modal.Title>
                 </Modal.Header>
@@ -224,7 +224,7 @@ return (
                   </DropdownSubmenu>
 
                   <DropdownSubmenu href="#action/3.7" title="Prize Claim">
-                    <div class="general-submenu tournaments-submenu">
+                    <div class="general-submenu prize-claim">
                       <Modal.Dialog>
                         <Modal.Body>
                           <div class="create-box-line"></div>

@@ -11,6 +11,7 @@ import NewsCard from "../Components/HomeComp/NewsCard";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import video from '../Video/herovid.mp4'
+import homeImg from '../bg/signup.jpg'
 
 function Home({ width }) {
   // eslint-disable-next-line
@@ -105,7 +106,13 @@ function Home({ width }) {
   return (
     <div className="home-cont">
       <div className="main-cont">
-        <video className="video-cont" src={video}  autoPlay loop muted ></video>
+        {
+          width>"800" ? 
+          <video className="video-cont" src={video}  autoPlay loop muted ></video>
+          :
+          <img src={homeImg} className="video-cont" alt={''}></img>
+        }
+   
         <div className="find">
           FIND YOUR <br></br>PERFECT TOURNAMENT
         </div>

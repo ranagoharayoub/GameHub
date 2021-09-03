@@ -385,8 +385,9 @@ body {
   .modal {
     background: #303030;
     padding: 0% !important;
-    height: 60vh;
+    height: 90vh;
   }
+
   .modal-content {
     width: 100%;
     background: #303030;
@@ -412,6 +413,7 @@ body {
   }
 }
 @media only screen and (max-width: 599px) {
+
   .ticket-cat-main {
     margin: 70px 0;
   }
@@ -434,6 +436,10 @@ body {
   .general-submenu.tournaments-submenu {
     top: -390px;
   }
+  .general-submenu.prize-claim {
+    top: -390px;
+  }
+  
 }
 @media only screen and (max-width: 575px) {
   .modal-content {
@@ -479,7 +485,7 @@ body {
     left: -10px;
   }
   .general-submenu .general-sub-cat-inner {
-    padding: 25px 0;
+    /* padding: 25px 0; */
   }
   .modal-dialog {
     /* width: 107%; */
@@ -495,7 +501,8 @@ body {
     padding: 0 15px;
   }
   .general-submenu .modal-content {
-    padding-top: 0;
+    margin-top: -25px;
+    padding-top: 0px;
     /* padding: 0 20px 0 13px; */
   }
   .general-submenu.tournaments-submenu {
