@@ -148,7 +148,7 @@ class SignUp extends Component {
       console.log("in conditions");
       await axios({
         method: "post",
-        url: "https://gamehubx.com/api/v1/login/facebook/?type=signup",
+        url: "https://gamehubx.com/api/v1/login/facebook/?type=login",
         headers: {},
         data: {
           access_token: response.accessToken,
@@ -194,7 +194,7 @@ class SignUp extends Component {
       console.log("in conditions");
       await axios({
         method: "post",
-        url: "https://gamehubx.com/api/v1/login/google/?type=signup",
+        url: "https://gamehubx.com/api/v1/login/google/?type=login",
         headers: {},
         data: {
           access_token: response.accessToken,
