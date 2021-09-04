@@ -32,6 +32,7 @@ import DepositFunds from './Screens/DepositFunds';
 import PaymentMethod from './Screens/PaymentMethod';
 import BuyCredits from './Screens/BuyCredits';
 import Policy from './Screens/Policy';
+import MyBank from './Screens/MyBank';
 
 
 function App() {
@@ -101,6 +102,7 @@ function App() {
           <Route path='/:game/:ind'  ><IndividualGame width={width}></IndividualGame></Route>
           <Route path='/faq'><Faq></Faq></Route>
           <Route path='/privacy'><Policy></Policy></Route>
+          <Route path='/mybank'><MyBank></MyBank></Route>
         </Switch>
         <Footer width={width}></Footer>
         </ContextAPI.Provider>

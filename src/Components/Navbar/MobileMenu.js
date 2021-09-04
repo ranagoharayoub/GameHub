@@ -164,7 +164,7 @@ function MobileMenu({menuOn, off}) {
       <div className="common">Team Invites</div> */}
       <Link to='/ticket' onClick={off} className="common">My Tickets</Link>
       <div className="line"></div>
-      <div className="common">My Bank</div>
+      <Link to="/mybank" className="common">My Bank</Link>
       {/* <div className="common">Purchased Items</div>
       <div className="common">Prize Claims</div> */}
       <div className="line"></div>

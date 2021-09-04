@@ -105,9 +105,9 @@ function SideBar({ toggle, off }) {
       <div className="line"
       style={{font: 'normal normal normal 1vw/2.5vw Calibri'}}
       ></div>
-      <div className="common"
+      <Link to='/mybank' onClick={off} className="common"
       style={{font: 'normal normal normal 1vw/2.5vw Calibri'}}
-      >My Bank</div>
+      >My Bank</Link>
       {/* <div className="common"
       style={{font: 'normal normal normal 1vw/2.5vw Calibri'}}
       >Purchased Items</div>
