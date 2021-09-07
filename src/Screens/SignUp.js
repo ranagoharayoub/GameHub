@@ -171,6 +171,7 @@ class SignUp extends Component {
                 isGoogle: false,
                }
               })
+              this.props.history.go(0)
             }
           // this.setState({email :res.data.user_detail.email, username: res.data.user_detail.username, emailstate: true, socialId:res.data.user_detail.id ,socialkey: res.data.key, isGoogleLogin: false})
       }
@@ -218,6 +219,7 @@ class SignUp extends Component {
                 isGoogle: true,
                }
               })
+              this.props.history.go(0)
           }
           // this.setState({email :res.data.user_detail.email, username: res.data.user_detail.username, emailstate: true, socialId:res.data.user_detail.id ,socialkey: res.data.key, isGoogleLogin: true})
       }
