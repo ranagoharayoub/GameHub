@@ -19,7 +19,7 @@ function Navbar() {
        
                 var tok = localStorage.getItem("token");
                 var id = localStorage.getItem("userdata")
-                //console.log("token check in navbar",tok)
+
                 if(tok){
                     setLoggedIn(true)
                     setdisplay(true)
