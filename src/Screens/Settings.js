@@ -24,7 +24,7 @@ function Settings({ width }) {
         const {data: {username, email, phone_number, country_code}} = await axios.get("https://gamehubx.com/api/v1/user-profile/"+id+"/") 
         setuserinfo({name:username, email: email, phone: phone_number, country_code: country_code})
       } catch (error) {
-        console.log(error)
+        //console.log(error)
       }
     }
     
@@ -32,7 +32,7 @@ function Settings({ width }) {
     
   }, [])
 
-    console.log(userinfo.name? userinfo.name: 'fetch')
+    //console.log(userinfo.name? userinfo.name: 'fetch')
 
   const [state, setState] = React.useState({
     username: '',
@@ -63,7 +63,7 @@ useEffect(() => {
   const [conpass, setconpass] = useState("");
 
   async function usersave() {
-    console.log("userbutton working");
+    //console.log("userbutton working");
     
     var tok = localStorage.getItem("token");
     var id = localStorage.getItem("userdata");
@@ -87,13 +87,13 @@ useEffect(() => {
       .catch((error) => {
         setmodaltext("couldn't chnge username")
         setShow(true)
-        console.log(error);
+        //console.log(error);
         // alert("unable to change username")
       });
   }
 
   async function emailsave() {
-    console.log("userbutton working");
+    //console.log("userbutton working");
     var tok = localStorage.getItem("token");
     var id = localStorage.getItem("userdata");
   const headers = {
@@ -109,16 +109,16 @@ useEffect(() => {
       })
       .then((response) => {
         alert("successfully changed email")
-        console.log(response);
+        //console.log(response);
       })
       .catch((error) => {
         alert("unable to change email")
-        console.log(error);
+        //console.log(error);
       });
   }
 
   async function phonesave() {
-    console.log("userbutton working");
+    //console.log("userbutton working");
     var tok = localStorage.getItem("token");
     var id = localStorage.getItem("userdata");
   const headers = {
@@ -138,14 +138,14 @@ useEffect(() => {
         setShow(true)
       })
       .catch((error) => {
-        console.log(error)
+        //console.log(error)
         setmodaltext("unable to change phone")
         setShow(true)
       });
   }
 
   async function savepass(){
-    console.log("change pass btn" ,pass, conpass);
+    //console.log("change pass btn" ,pass, conpass);
     var tok = localStorage.getItem("token");
     var id = localStorage.getItem("userdata");
   const headers = {
@@ -180,7 +180,7 @@ useEffect(() => {
   }
 
   const saveTime = async () =>{
-    console.log(state.timezone)
+    //console.log(state.timezone)
     var tok = localStorage.getItem("token");
     var id = localStorage.getItem("userdata");
   const headers = {
@@ -215,12 +215,12 @@ useEffect(() => {
       ...state,
       [evt.target.name]: value,
     });
-    console.log(state);
+    //console.log(state);
   }
 
   React.useEffect(
     function effectFunction() {
-      console.log("in use effect pass",pass);
+      //console.log("in use effect pass",pass);
       //var pass = state.pass;
       // eslint-disable-next-line
       var reg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{9,32}$/;
@@ -231,12 +231,12 @@ useEffect(() => {
 
       if (pass !== undefined) {
         if (test & format.test(pass) & (pass.length > 9)) {
-          console.log("contains symbol and length of pass",pass.length);
+          //console.log("contains symbol and length of pass",pass.length);
           setState({ btnstate: false });
           // setcross("/icons/tick.png");
-          console.log("pass3");
+          //console.log("pass3");
         } else {
-          console.log("fail3");
+          //console.log("fail3");
           // setState({ cross: "/icons/Cancel.png" });
           setState({ btnstate: true });
           // setcross("/icons/Cancel.png");

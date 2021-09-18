@@ -73,19 +73,19 @@ function Profile() {
           // console.log("this is my data and overview", data);
           // console.log("this is my data and overview", gamedata);
           var dt1 = new Date(data.last_login);
-          console.log("date coming from data on load", dt1.toLocaleDateString());
+          //console.log("date coming from data on load", dt1.toLocaleDateString());
           var dt2 = new Date();
   
           var diff = (dt2.getTime() - dt1.getTime()) / 1000;
           diff /= 60;
           setmin(Math.abs(Math.round(diff)));
-          console.log("diff in minutes", Math.abs(Math.round(diff)));
+          //console.log("diff in minutes", Math.abs(Math.round(diff)));
   
           var diff2 = (dt2.getTime() - dt1.getTime()) / 1000;
           diff2 /= 60 * 60;
-          console.log("diff in hours", Math.abs(Math.round(diff2)));
+          //console.log("diff in hours", Math.abs(Math.round(diff2)));
           sethour(Math.abs(Math.round(diff2)));
-          console.log("diff in days", Math.abs(Math.floor(diff2 / 24)));
+          //console.log("diff in days", Math.abs(Math.floor(diff2 / 24)));
           setday(Math.abs(Math.floor(diff2 / 24)));
           setsec(hour * 60);
         });
@@ -94,13 +94,13 @@ function Profile() {
   })
 
   function changestate(data) {
-    console.log("change state function");
+    //console.log("change state function");
     setgamestate(data);
   }
 
   // function getsec(a) {
   //   var myDate = new Date(a); // a is start_on
-  //   console.log("cross check", myDate.toLocaleTimeString());
+  //   //console.log("cross check", myDate.toLocaleTimeString());
   //   var date = new Date(); // current date
   //   var dou2 = myDate.getTime() - date.getTime();
   //   var newdate = new Date(dou2);

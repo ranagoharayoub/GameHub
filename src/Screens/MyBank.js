@@ -54,12 +54,12 @@ function MyBank() {
             headers: headers
         }
             ).then((res)=> {
-                console.log(res)
+                //console.log(res)
                 setmodaltext(`Your request to withdraw $${amount} has been succesfully sent.`)
                 setShow(true)
             })
             .catch((e)=>{
-                console.log(e.response.data)
+                //console.log(e.response.data)
                 setmodaltext(Object.values(e.response.data)[0])
                 setShow(true)
             })

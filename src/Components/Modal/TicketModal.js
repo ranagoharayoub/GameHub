@@ -24,7 +24,7 @@ function TicketModal(props) {
 
 
 const ticketHandler = async(param)=>{
-  console.log(ticketProof, message)
+  //console.log(ticketProof, message)
 
   const emptyURL = "http://127.0.0.1:8011/api/v1/ticket/"
 
@@ -32,7 +32,7 @@ const ticketHandler = async(param)=>{
   var optionalProof2 = ticketProof2? ticketProof2 : emptyURL
   
 
-  console.log('screenshot', screenshot)
+  //console.log('screenshot', screenshot)
 
   var token = localStorage.getItem('token')
   var userid = parseInt(localStorage.getItem('userdata'))
@@ -52,19 +52,23 @@ const ticketHandler = async(param)=>{
     "user": userid,
     "category": param,
   })
-console.log(data)
+//console.log(data)
 
   await axios
         .post("https://gamehubx.com/api/v1/ticket/", data, {
           headers: headers
         })
-        .then((res) => {console.log(res); setmodaltext('ticket submitted'); setShow(true)})
+        .then((res) => {
+          //console.log(res); 
+          setmodaltext('ticket submitted'); setShow(true)})
         .then(()=>{setmessage(""); setticketProof("") ;setticketProof1(""); setticketProof2(""); setscreenshot("")})
-        .catch(error => {console.log(error.response); setmodaltext('ticket could not submitted'); setShow(true)})
+        .catch(error => {
+          //console.log(error.response); 
+          setmodaltext('ticket could not submitted'); setShow(true)})
 }
 
 const handleFiles = (files) => {
-  console.log(typeof(files.base64));
+  //console.log(typeof(files.base64));
   setscreenshot(files.base64)
 }
 

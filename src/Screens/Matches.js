@@ -21,8 +21,9 @@ export default function Matches({ width }) {
         .get("https://gamehubx.com/api/v1/tournament/?user=" + userid+ "&status=upcoming")
         .then((res) => setupcoming(res.data))
 
-        // .then((data)=>{setupcoming(res.data); console.log('upcoming',upcoming)})
-        .catch((error) => console.log(error));
+        // .catch((error) => 
+        // console.log(error)
+        // );
         componentHandler.upgradeDom();
     };
     callAPI();
@@ -34,12 +35,12 @@ export default function Matches({ width }) {
             "&status=ongoing"
         )
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           setinProgress(res.data);
         })
 
         // .then((data)=>{setupcoming(res.data); console.log('upcoming',upcoming)})
-        .catch((error) => console.log(error));
+        // .catch((error) => console.log(error));
         componentHandler.upgradeDom();
     };
     callAPI2();
@@ -50,7 +51,7 @@ export default function Matches({ width }) {
 
     var userid = parseInt(localStorage.getItem("userdata"));
     var is_won =  userWon==="Win"? true : false;
-    console.log(userid, is_won)
+    // console.log(userid, is_won)
     const data = JSON.stringify({
       "user": userid,
       "tournament": param,
@@ -66,7 +67,7 @@ export default function Matches({ width }) {
     }
 
     var URL = `https://gamehubx.com/api/v1/tournament/${param}/upload-result/`
-    console.log(URL, data, headers)
+    // console.log(URL, data, headers)
 
     axios.post(URL, data, {
       headers: headers
@@ -76,7 +77,10 @@ export default function Matches({ width }) {
        "Thank you for joining the tournament. Great playing and don’t get discouraged - your next win is right around the corner."
        );
       setShow(true)})
-      .catch((error) => {console.log(error.response.data.status); setmodaltext(error.response.data.status); setShow(true)})
+      .catch((error) => {
+        // console.log(error.response.data.status); 
+        setmodaltext(error.response.data.status); 
+        setShow(true)})
   }
 
   return (

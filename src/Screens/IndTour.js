@@ -37,13 +37,13 @@ const {gameId} =useParams()
 // const location = useLocation()
 // const {gameId} = location.state
 
-console.log(gameId, typeof(gameId))
+//console.log(gameId, typeof(gameId))
 
 let history = useHistory()
 
 var token = localStorage.getItem('token')
 var userid = parseInt(localStorage.getItem("userdata"))
-console.log(userid)
+//console.log(userid)
 
 
 // const number = (a) => {
@@ -66,7 +66,7 @@ function getsec(a) {
       const callApi = async() =>{
         await axios.get('https://gamehubx.com/api/v1/tournament/'+gameId+'/')
         .then((res)=> setdata(res.data))
-        .catch((error)=> console.log(error))
+        // .catch((error)=> console.log(error))
         setloading(false)
 
         componentHandler.upgradeDom()
@@ -76,16 +76,20 @@ function getsec(a) {
 
       const callAPI2 = async () =>{
         await axios.get("https://gamehubx.com/api/v1/tournament/"+gameId+"/enrolled/")
-        .then((res)=> {console.log(res); setenrolled(res.data)})
-        .catch(err=> console.log(err))
+        .then((res)=> {
+          // console.log(res); 
+          setenrolled(res.data)})
+        // .catch(err=> console.log(err))
 }
       callAPI2()
 
 
       const callAPI3 = async()=>{
         await axios.get("https://gamehubx.com/api/v1/tournament/"+gameId+"/admins/")
-              .then((res)=>{console.log(res.data); setadmins(res.data)})
-              .catch((error)=>console.log(error))
+              .then((res)=>{
+                // console.log(res.data); 
+                setadmins(res.data)})
+              // .catch((error)=>console.log(error))
       }
       callAPI3()
   }, [])
@@ -100,18 +104,18 @@ useEffect(() => {
       thirdprize: data.tournament_prizes[2].amount,
     })
   } catch (error) {
-    console.log(error)
+    // console.log(error)
   }
   }
 }, [loading])
 
 
-console.log(getsec(data.start_on))
+// console.log(getsec(data.start_on))
 
 const enrollHandler = async() =>{
     if (token) {
      var userid = localStorage.getItem('userdata')
-     console.log('sending request')
+    //  console.log('sending request')
      const data = JSON.stringify({
        "user": userid,
        "tournament":gameId,
@@ -122,9 +126,11 @@ const enrollHandler = async() =>{
      }
      await axios.post('https://gamehubx.com/api/v1/tournament/'+gameId+'/enroll/',data,{
        headers: headers,
-     }).then(res => {console.log('enroll success',res); history.push("/matches")})
+     }).then(res => {
+      //  console.log('enroll success',res); 
+       history.push("/matches")})
         .catch(error =>{
-          console.log('enrol failure',error.response)
+          // console.log('enrol failure',error.response)
           setmodaltext(error.response.data.status)
           setShow(true)
         })

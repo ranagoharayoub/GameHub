@@ -25,12 +25,12 @@ function Profile({width}) {
   const [min, setmin] = useState(0);
   const [hour, sethour] = useState(0);
   const [day, setday] = useState(0);
-
+  // eslint-disable-next-line
   const profilepicture = useContext(ContextAPI)
-  console.log('Contextprofile',profilepicture)
+  //console.log('Contextprofile',profilepicture)
 
   const params = useParams()  
-  console.log("PARASM in pro",params)
+  //console.log("PARASM in pro",params)
 
   const [gamestate, setgamestate] = useState({
     id: 1,
@@ -53,7 +53,7 @@ function Profile({width}) {
        await axios
         .get("https://gamehubx.com/api/v1/user-profile/"+params.id+"/")
         .then((res) => {
-          console.log(res.data);
+          //console.log(res.data);
           setdata(res.data);
           
           // setgamedata(res.data.overview);
@@ -68,11 +68,12 @@ function Profile({width}) {
     const callAPI2 = async () =>{
       axios.get("https://gamehubx.com/api/v1/tournament/?user="+params.id)
       .then((res)=>{
-        console.log(res.data);
+        //console.log(res.data);
         setgamedata(res.data);
         setTextUnderlined(res.data[0].title)
         })
-      .catch((error)=> console.log(error))
+      // .catch((error)=> 
+      // console.log(error))
     }
     callAPI2()
     // eslint-disable-next-line
@@ -83,19 +84,19 @@ function Profile({width}) {
   React.useEffect(
     function effectFunction() {
       var dt1 = new Date(data.last_login);
-      console.log("date coming from data on load", dt1.toLocaleDateString());
+      //console.log("date coming from data on load", dt1.toLocaleDateString());
       var dt2 = new Date();
   
       var diff = (dt2.getTime() - dt1.getTime()) / 1000;
       diff /= 60;
       setmin(Math.abs(Math.round(diff)));
-      console.log("diff in minutes", Math.abs(Math.round(diff)));
+      //console.log("diff in minutes", Math.abs(Math.round(diff)));
   
       var diff2 = (dt2.getTime() - dt1.getTime()) / 1000;
       diff2 /= 60 * 60;
-      console.log("diff in hours", Math.abs(Math.round(diff2)));
+      //console.log("diff in hours", Math.abs(Math.round(diff2)));
       sethour(Math.abs(Math.round(diff2)));
-      console.log("diff in days", Math.abs(Math.floor(diff2 / 24)));
+      //console.log("diff in days", Math.abs(Math.floor(diff2 / 24)));
       setday(Math.abs(Math.floor(diff2 / 24)));
       setsec(hour * 60); 
     },
@@ -109,7 +110,7 @@ function Profile({width}) {
   }
 
    const filehandler = async(e) =>{
-          console.log('success', e.target.files[0]);
+          //console.log('success', e.target.files[0]);
           if (e.target.files[0]) {
           var token = localStorage.getItem('token');
           var id = localStorage.getItem('userdata')
@@ -126,10 +127,14 @@ function Profile({width}) {
 
           await axios.patch("https://gamehubx.com/api/v1/user-profile/"+id+"/", fd, {
             headers: headers,
-          }).then(res=> {console.log(res); setprofilepic(true); setmodaltext("Successfully Image Uploaded")})
-            .catch(Error => {console.log(Error.response); setmodaltext("Image could not uploaded")})
+          }).then(res=> {
+            //console.log(res); 
+            setprofilepic(true); setmodaltext("Successfully Image Uploaded")})
+            .catch(Error => {
+              //console.log(Error.response); 
+              setmodaltext("Image could not uploaded")})
           } else {
-            console.log('pic not selected')
+            //console.log('pic not selected')
           }
    }
    var img = "";
@@ -183,7 +188,9 @@ function Profile({width}) {
               </> }
               
             </p>
-            <input id='inputfile' style={{height:"0px", overflow:"hidden"}} type='file' onChange={(e)=>{console.log(e.target.files[0]); if (e.target.files[0]) {
+            <input id='inputfile' style={{height:"0px", overflow:"hidden"}} type='file' onChange={(e)=>{
+              //console.log(e.target.files[0]); 
+              if (e.target.files[0]) {
               filehandler(e)
             }}} ></input>
 

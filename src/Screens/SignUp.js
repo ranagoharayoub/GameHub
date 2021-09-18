@@ -42,8 +42,8 @@ class SignUp extends Component {
 
   componentDidMount(){
     window.scrollTo(0,0)
-    console.log("this is the social signup page")
-    console.log("the data in fbgsignup page",this.props.history.location.state);
+    //console.log("this is the social signup page")
+    //console.log("the data in fbgsignup page",this.props.history.location.state);
     // var dataprops = this.props.state
     var dataprops = this.props.history.location.state? this.props.history.location.state.data : null
     
@@ -74,27 +74,12 @@ class SignUp extends Component {
       {
         [e.target.name]: e.target.value,
       },
-      () => {
-        console.log(
-          this.state.username,
-          this.state.email,
-          this.state.pass,
-          this.state.confpass,
-          this.state.phoneext,
-          this.state.phone,
-          this.state.timezone,
-          this.state.day + "-" + this.state.month + "-" + this.state.year,
-          this.state.term,
-          this.state.eight,
-          this.state.pass.length,
-        );
-      }
     );
   }
   
   handleChange2(e) {
     let isChecked = e.target.checked;
-    console.log("is check stuff", e.target.value);
+    //console.log("is check stuff", e.target.value);
     if (isChecked === true) {
       this.setState({
         [e.target.name]: "true",
@@ -109,20 +94,20 @@ class SignUp extends Component {
       var reg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{9,32}$/;
       // eslint-disable-next-line
       var format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-      console.log("length of pass", this.state.pass.length);
+      //console.log("length of pass", this.state.pass.length);
       var test = reg.test(pass);
 
       if (test & format.test(pass) & (this.state.pass.length > 9)) {
-        console.log(
-          "contains symbol and length of pass",
-          this.state.pass.length
-        );
+        //console.log(
+        //   "contains symbol and length of pass",
+        //   this.state.pass.length
+        // );
         // this.setState({ cross: "/icons/tick.png" });
         this.setState({ passStrength: true });
 
-        console.log("pass3");
+        //console.log("pass3");
       } else {
-        console.log("fail3");
+        //console.log("fail3");
         // this.setState({ cross: "/icons/Cancel.png" }, () => {});
         this.setState({ passStrength: false }, () => {});
       }
@@ -140,12 +125,12 @@ class SignUp extends Component {
   };
 
   responseFacebook = async (response) => {
-    console.log(response);
+    //console.log(response);
 
-    console.log("access token", response.accessToken);
+    //console.log("access token", response.accessToken);
     if (typeof(response.accessToken) !== "undefined") {
       
-      console.log("in conditions");
+      //console.log("in conditions");
       await axios({
         method: "post",
         url: "https://gamehubx.com/api/v1/login/facebook/?type=login",
@@ -156,7 +141,7 @@ class SignUp extends Component {
         },
       })
         .then((res) => {
-          console.log(res);
+          //console.log(res);
           if (res.data.registered) {
             localStorage.setItem("token", res.data.key)
             localStorage.setItem("userdata", res.data.user_detail.id)
@@ -177,8 +162,8 @@ class SignUp extends Component {
       }
         )
         .catch((error) => {
-          console.log(error.response);
-          console.log('could not login');
+          //console.log(error.response);
+          //console.log('could not login');
           this.setState({ modaltext: error.response.data.non_field_errors[0]});
           this.setState({ show: true });
         });
@@ -187,12 +172,12 @@ class SignUp extends Component {
 
   responseGoogle = async (response) => {
 
-    console.log(response);
+    //console.log(response);
     
-    console.log("access token", response.accessToken);
+    //console.log("access token", response.accessToken);
     if (typeof(response.accessToken) !== "undefined") {
       
-      console.log("in conditions");
+      //console.log("in conditions");
       await axios({
         method: "post",
         url: "https://gamehubx.com/api/v1/login/google/?type=login",
@@ -203,8 +188,8 @@ class SignUp extends Component {
         },
       })
         .then((res) => {
-          console.log(res.data.user_detail);
-          console.log(res.data);
+          //console.log(res.data.user_detail);
+          //console.log(res.data);
           if (res.data.registered) {
             localStorage.setItem("token", res.data.key)
             localStorage.setItem("userdata", res.data.user_detail.id)
@@ -225,8 +210,8 @@ class SignUp extends Component {
       }
         )
         .catch((error) => {
-          console.log(error.response);
-          console.log('could not login');
+          //console.log(error.response);
+          //console.log('could not login');
           this.setState({ modaltext: error.response.data.non_field_errors[0]});
           this.setState({ show: true });
         });
@@ -293,7 +278,7 @@ class SignUp extends Component {
 
   socialProfileUpdate = async (e) => {
     e.preventDefault();
-    console.log("socialProfileUpdate", this.state.socialId, this.state.socialkey)
+    //console.log("socialProfileUpdate", this.state.socialId, this.state.socialkey)
     const URL = "https://gamehubx.com/api/v1/user-profile/"+this.state.socialId+"/";
     const data = {
       "country_code": this.state.phoneext,
@@ -309,23 +294,25 @@ class SignUp extends Component {
 
     axios.patch(URL, data, {headers:headers})
           .then((res)=> {
-            console.log(res)
+            //console.log(res)
             localStorage.setItem("token", this.state.socialkey)
             localStorage.setItem("userdata", this.state.socialId)
             localStorage.setItem("name", this.state.username)
             window.location.href='/'
           })
-          .catch((e)=> {console.log(e)})
+          .catch((e)=> {
+            //console.log(e)
+          })
   }
 
 
   handlesubmit = async (e) => {
     e.preventDefault();
-    console.log(this.state.pass, "submuit buton");
+    //console.log(this.state.pass, "submuit buton");
     var pass = this.state.pass;
     var conf = this.state.confpass;
     if (pass === conf && this.state.passStrength) {
-      console.log("SSAAAMMEEE");
+      //console.log("SSAAAMMEEE");
       await axios({
         method: "post",
         url: "https://gamehubx.com/api/v1/signup/",
@@ -343,12 +330,12 @@ class SignUp extends Component {
         },
       })
         .then((response) => {
-          console.log(response);
+          //console.log(response);
           this.setState({ success: true });
         })
 
         .catch((error) => {
-          console.log(error.response);
+          //console.log(error.response);
           this.setState({ modaltext: `${Object.keys(error.response.data)[0]}: ${Object.values(error.response.data)[0]}` });
           this.setState({ show: true });
         });
@@ -357,12 +344,12 @@ class SignUp extends Component {
       this.setState({ show: true });
     }
 
-    console.log(this.state.success);
+    //console.log(this.state.success);
   };
 
    onChange = (value)=> {
     // console.log("Captcha value:", value);
-    this.setState({...this.state, recaptcha: value}, ()=>console.log('recaptcha',this.state.recaptcha))
+    this.setState({...this.state, recaptcha: value})
   }
 
   render() {

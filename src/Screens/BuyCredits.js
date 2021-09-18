@@ -11,10 +11,10 @@ function BuyCredits() {
       }, [])
 
     const history = useHistory()
-
+/* eslint-disable */
     const [profilepicture, username, balance, credits] = useContext(ContextAPI)
 
-    console.log(profilepicture, username, balance)
+    //console.log(profilepicture, username, balance)
 
     const [show, setShow] = useState(false);
     const [modaltext, setmodaltext] = useState("");
@@ -47,12 +47,14 @@ function BuyCredits() {
         
         await axios.post(URL, data , {
             headers,
-        }).then((res)=> {console.log(res); 
+        }).then((res)=> {
+            //console.log(res); 
             setmodaltext(`Congratulations! You have successfully bought ${addcredits} credits`)
             setsucces(true)
             setShow(true)
         })
-            .catch((err)=>{ console.log(err.response)
+            .catch((err)=>{ 
+                //console.log(err.response)
                 setmodaltext(err.response.data.error)
                 setShow(true)
             })

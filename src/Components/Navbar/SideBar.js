@@ -5,10 +5,10 @@ import { Close } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
 function SideBar({ toggle, off }) {
-  
+  /* eslint-disable */
   const [profilepicture, username, balance, credits] = useContext(ContextAPI)
 
-  console.log(profilepicture, username)
+  //console.log(profilepicture, username)
 
   const [name, setname] = useState("");
   const [id, setid] = useState("");

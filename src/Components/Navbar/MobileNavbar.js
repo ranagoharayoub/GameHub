@@ -18,7 +18,7 @@ function MobileNavbar() {
     useEffect(() => {
        const callAPI = async () => {
                 var tok = localStorage.getItem("token");
-                console.log("token check in navbar",tok)
+                //console.log("token check in navbar",tok)
                 
                 if(tok){
                     setLoggedIn(true)

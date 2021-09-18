@@ -9,10 +9,10 @@ function MobileMenu({menuOn, off}) {
     // eslint-disable-next-line
     const [name, setname] = useState("");
     const [id, setid] = useState("");
-
+// eslint-disable-next-line
     const [profilepicture, username, balance, credits] = useContext(ContextAPI)
 
-    console.log(profilepicture, username)
+    //console.log(profilepicture, username)
 
     function signout() {
         localStorage.removeItem("token");
@@ -24,7 +24,7 @@ function MobileMenu({menuOn, off}) {
     useEffect(() => {
         const callAPI = async () => {
                  var tok = localStorage.getItem("token");
-                 console.log("token check in navbar",tok)
+                 //console.log("token check in navbar",tok)
                  if(tok){
                      setLoggedIn(true)
                      var name = localStorage.getItem("name");

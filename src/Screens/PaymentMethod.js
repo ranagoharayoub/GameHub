@@ -46,7 +46,7 @@ function PaymentMethod() {
                 setcard_number(e.target.value)
             }
 
-            console.log(e.target.value)
+            //console.log(e.target.value)
         
     }
 
@@ -63,7 +63,7 @@ function PaymentMethod() {
             setexp(e.target.value)
         }
 
-        console.log(e.target.value)
+        //console.log(e.target.value)
     }
 
     const changeCCVHandler =(e)=>{
@@ -73,7 +73,7 @@ function PaymentMethod() {
             setccv(e.target.value)
         }
         // setccv(e.target.value)
-        console.log(e.target.value)
+        //console.log(e.target.value)
     }
 
 
@@ -99,7 +99,7 @@ function PaymentMethod() {
                         const card_exp_year = arr[1]
 
                         const cardNumber = card_number.replaceAll(" ", "")
-                        console.log(cardNumber)
+                        //console.log(cardNumber)
 
                         const amountInCents = String(history.location.state*100)
 
@@ -118,16 +118,18 @@ function PaymentMethod() {
                             "Authorization": "token " + token
                         }
 
-                        console.log(data, headers, typeof(String(history.location.state)))
+                        //console.log(data, headers, typeof(String(history.location.state)))
 
                         await axios.post(URL, data, {
                             headers: headers
-                        }).then(res=> {console.log(res);
+                        }).then(res=> {
+                            //console.log(res);
                             setmodaltext(`Thank you for your deposit. Your balance will now be updated`);
                             setShow(true)
                             setsucces(true)
                             })
-                        .catch(err => {console.log(err.response.data);
+                        .catch(err => {
+                            //console.log(err.response.data);
                             setmodaltext(`${err.response.data.message}`);
                             setShow(true)
                             })

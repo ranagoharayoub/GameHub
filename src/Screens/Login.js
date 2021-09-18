@@ -40,20 +40,22 @@ class Login extends Component {
     }
     await axios.post(URL, data, {
       headers: headers
-    }).then((res) => {console.log(res);
+    }).then((res) => {
+      //console.log(res);
       this.setState({...this.state, forgot: false, modaltext:`${res.data.detail} at ${this.state.email}`})
        })
-      .catch((error)=> {console.log(error.response.data.email[0]);
+      .catch((error)=> {
+        //console.log(error.response.data.email[0]);
         this.setState({...this.state,modaltext:`${Object.keys(error.response.data)}: ${Object.values(error.response.data)}`})
       })
-    console.log('email', this.state.email)
+    //console.log('email', this.state.email)
     
   }
  
 
   login = async (e) => {
     e.preventDefault();
-    console.log("login button", this.state.email, this.state.pass);
+    //console.log("login button", this.state.email, this.state.pass);
     await axios({
       method: "post",
       url: "https://gamehubx.com/api/v1/login/",
@@ -64,14 +66,14 @@ class Login extends Component {
       },
     })
       .then((response) => {
-        console.log(response.data);
+        //console.log(response.data);
         localStorage.setItem("token", response.data.key);
         localStorage.setItem("userdata", response.data.user_detail.id);
         localStorage.setItem("name", response.data.user_detail.username);
         window.location.href = "/";
       })
       .catch((error) => {
-        console.log(error.response.data.non_field_errors[0]);
+        //console.log(error.response.data.non_field_errors[0]);
         this.setState({ modaltext: error.response.data.non_field_errors[0]});
         this.setState({ show: true });
       });
@@ -82,19 +84,16 @@ class Login extends Component {
       {
         [e.target.name]: e.target.value,
       },
-      () => {
-        console.log(this.state.email, this.state.pass);
-      }
     );
   }
 
   responseFacebook = async (response) => {
-    console.log(response);
+    //console.log(response);
 
-    console.log("access token", response.accessToken);
+    //console.log("access token", response.accessToken);
     if (typeof(response.accessToken) !== "undefined") {
       
-      console.log("in conditions");
+      //console.log("in conditions");
       await axios({
         method: "post",
         url: "https://gamehubx.com/api/v1/login/facebook/?type=login",
@@ -105,7 +104,7 @@ class Login extends Component {
         },
       })
         .then((res) => {
-          console.log(res);
+          //console.log(res);
           if (res.data.registered) {
             localStorage.setItem("token", res.data.key)
             localStorage.setItem("userdata", res.data.user_detail.id)
@@ -132,8 +131,8 @@ class Login extends Component {
       }
         )
         .catch((error) => {
-          console.log(error.response);
-          console.log('could not login');
+          //console.log(error.response);
+          //console.log('could not login');
           this.setState({ modaltext: error.response.data.non_field_errors[0]});
           this.setState({ show: true });
         });
@@ -142,12 +141,12 @@ class Login extends Component {
 
   responseGoogle = async (response) => {
 
-    console.log(response);
+    //console.log(response);
     
-    console.log("access token", response.accessToken);
+    //console.log("access token", response.accessToken);
     if (typeof(response.accessToken) !== "undefined") {
       
-      console.log("in conditions");
+      //console.log("in conditions");
       await axios({
         method: "post",
         url: "https://gamehubx.com/api/v1/login/google/?type=login",
@@ -158,7 +157,7 @@ class Login extends Component {
         },
       })
         .then((res) => {
-          console.log(res.data);
+          //console.log(res.data);
           if (res.data.registered) {
             localStorage.setItem("token", res.data.key)
             localStorage.setItem("userdata", res.data.user_detail.id)
@@ -190,8 +189,8 @@ class Login extends Component {
       }
         )
         .catch((error) => {
-          console.log(error.response);
-          console.log('could not login');
+          //console.log(error.response);
+          //console.log('could not login');
           this.setState({ modaltext: error.response.data.non_field_errors[0]});
           this.setState({ show: true });
         });
@@ -199,12 +198,12 @@ class Login extends Component {
   };
 
   compclicked = () => {
-    console.log("clicked");
+    //console.log("clicked");
   };
 
   render() {
-    const {width, history} = this.props
-    console.log(width,history)
+    // const {width, history} = this.props
+    //console.log(width,history)
     return (
       <div className="login-cont">
         <Modal

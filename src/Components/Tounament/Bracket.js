@@ -6,7 +6,7 @@ export default function Bracket({ team_size, gameId, enrollUser, isStarted }) {
  
   const [roundName, setroundName] = useState(null)
   
-  console.log('enrollUser',enrollUser)
+  //console.log('enrollUser',enrollUser)
 
     // for (let index = 0; index < enrollUser.length; index=index+2) {
     //   const element = enrollUser.slice(index, index+2);
@@ -16,8 +16,10 @@ export default function Bracket({ team_size, gameId, enrollUser, isStarted }) {
   useEffect(() => {
     const callAPI = async() =>{
       await axios.get("https://gamehubx.com/api/v1/tournament/"+gameId+"/bracket/")
-      .then((res)=> {console.log(res.data.bracket); setroundName(res.data.bracket);})
-      .catch((res)=> console.log(res))
+      .then((res)=> {
+        //console.log(res.data.bracket); 
+        setroundName(res.data.bracket);})
+      // .catch((res)=> console.log(res))
     }
 
     callAPI()
@@ -27,7 +29,7 @@ export default function Bracket({ team_size, gameId, enrollUser, isStarted }) {
   
   if (roundName) {
     Object.keys(roundName).map(data => name.push(data))
-    console.log(name)
+    // console.log(name)
   }
 
  

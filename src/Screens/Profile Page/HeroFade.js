@@ -28,7 +28,7 @@ function HeroFade() {
 
   const uploadHandler = async(e) =>{
  
-    console.log('success',e.target.files[0])
+    //console.log('success',e.target.files[0])
     
     if (e.target.files[0]) {
       var token = localStorage.getItem("token");
@@ -46,10 +46,14 @@ function HeroFade() {
       
       await axios.patch("https://gamehubx.com/api/v1/user-profile/" + id+"/",fd, {
         headers: headers
-      } ).then((res)=> {console.log('uploaded success',res); setisUploaded(true); setmodaltext("Successfully Image Uploaded")})
-         .catch((error)=> {console.log('uploaded error',error); setmodaltext("Image could not uploaded")})
+      } ).then((res)=> {
+        //console.log('uploaded success',res);
+        setisUploaded(true); setmodaltext("Successfully Image Uploaded")})
+         .catch((error)=> {
+           //console.log('uploaded error',error); 
+         setmodaltext("Image could not uploaded")})
     } else {
-      console.log('image is not selected')
+      //console.log('image is not selected')
     }
   }
 
@@ -71,7 +75,9 @@ function HeroFade() {
       <img src={data.cover_image} alt="" className="w-full h-full" />
       <div className="absolute top-0 bg-black h-full w-full text-white opacity-70"></div>
       <div style={{height:"0px", overflow:"hidden"}}>
-          <input id="fileInput"  type='file' onChange={(e)=>{console.log(e.target.files[0]); if (e.target.files[0]) {
+          <input id="fileInput"  type='file' onChange={(e)=>{
+            //console.log(e.target.files[0]); 
+            if (e.target.files[0]) {
             uploadHandler(e)
           }} } style={{height:"0px", overflow:"hidden"}} ></input>
       </div>

@@ -10,15 +10,15 @@ export default function Champions() {
  const callAPI =  async() =>{
      try {
        const {data} = await axios.get('https://gamehubx.com/api/v1/champion-page/')
-       console.log(data)
+       //console.log(data)
        setdataFetched(data)
      } catch (error) {
-       console.log(error)
+       //console.log(error)
      }
    }
    callAPI()
   }, [])
-  console.log(dataFetched)
+  //console.log(dataFetched)
   return (
     <div>
       {/* ================= Champion ================= */}

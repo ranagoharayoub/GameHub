@@ -6,10 +6,10 @@ import {ContextAPI} from '../Context/Context'
 function DepositFunds() {
 
     const history = useHistory()
-
+/* eslint-disable */
     const [profilepicture, username, balance] = useContext(ContextAPI)
 
-    console.log(profilepicture, username)
+    //console.log(profilepicture, username)
 
     const [amount, setamount] = useState('')
     const [fee, setfee] = useState(null)
@@ -18,7 +18,7 @@ function DepositFunds() {
     useEffect(() => {
         window.scrollTo(0,0)
        setfee(parseFloat((Number(amount)*0.029)).toFixed(2))
-       console.log(fee, typeof(fee), fee+amount)
+       //console.log(fee, typeof(fee), fee+amount)
        settotal(Number(fee)+Number(amount))
     }, [amount, fee, total])
 
